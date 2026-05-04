@@ -804,6 +804,13 @@ Use /clear when:
 
 Do NOT clear between small related patches in the same feature thread.
 
+Before the user runs /clear, remind them to:
+1. Run: git add . && git commit -m "pre-clear backup"
+2. Say "wrap session" if this is end of session
+3. Only then run /clear
+
+If the user says "clear" or asks to clear Claude Code, always show this reminder first before giving any other instructions.
+
 ---
 
 ## CLAUDE.md IMMUTABILITY RULE
