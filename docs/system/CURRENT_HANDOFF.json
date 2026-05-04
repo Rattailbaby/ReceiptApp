@@ -1,0 +1,288 @@
+json step
+
+You are continuing an existing controlled AI development session.
+
+This is NOT a fresh start.
+
+Before doing anything:
+1. Read LOCKED_ATTRIBUTES.md fully and follow it strictly.
+2. Read the HANDOFF RECEIVER instructions and follow them exactly.
+3. Treat the provided JSON as authoritative session state.
+
+Do NOT:
+- restart the project
+- summarize what I pasted
+- ask what I want to build
+- suggest multiple next steps
+- improvise outside the system
+
+You must:
+- follow the locked response structure
+- continue from current_state.next_step
+- enforce all workflow rules
+- stay constrained and precise
+
+Wait for my first command after reading everything.
+
+
+
+{
+  "core_goal": "Build and maintain a controlled AI-assisted development system for a receipt tracking app where UI behavior, workflow, and decision-making remain consistent across sessions, with zero drift, no guessing, and verifiable step-by-step progress.",
+
+  "current_state": {
+    "working_features": [
+      "Explore cleanup system supports Untagged and Missing Receipts filters using route params (source=explore, returnFilter) to preserve context",
+      "Transaction detail sheet displays a compact single-line status row in the metadata area showing tag status, receipt status, and flagged state",
+      "Status row uses format: Tags status • Receipt status • ⚑ Flagged (only when flagged === true)",
+      "Status row color mapping: tags blue (#60a5fa), receipt green (#22c55e), flagged red (#ff6b6b), missing states gray (#888)",
+      "Removed 'Not flagged' text completely; unflagged state is silent to reduce UI noise",
+      "Tag status text shows 'Tags added' or 'No tags' inline directly below the date instead of separate section",
+      "Receipt status text shows 'Receipt attached' or 'No receipt' inline in the same metadata row; duplicate lower receipt status UI removed",
+      "Clone Transaction button moved to top action area beside trash icon for visibility and faster testing access",
+      "Clone behavior: creates Merchant Copy, Merchant Copy 2, etc., and appends '__test_clone__' in note field",
+      "Transaction detail header now shows client name beside TRANSACTION in subtle text and removed redundant 'Client: [name]' line under date",
+      "Cleanup action buttons support three states: primary (action required), secondary (less urgent), resolved (dimmed but visible)",
+      "Cleanup return behavior: after resolving all issues (tags present, receipt present, flagged false), navigation returns to Explore with same filter and removes resolved item from list",
+      "Mark Reviewed action clears flagged === true and participates in txNeedsCleanup resolution logic",
+      "Add/Edit transaction sheet stabilized after regressions: Save/Cancel inside ScrollView, maxHeight 95%, minHeight enforced, no sticky footer",
+      "Navigation return is implemented in multiple handlers using router.replace('/explore?filter=' + returnFilter) after data mutation"
+    ],
+    "active_issue": "",
+    "temporary_items": [
+      "Clone tool is strictly for development/testing and must be removed before release",
+      "Flag system currently only supports boolean flagged state without reason metadata",
+      "Floating Save footer concept is deferred due to prior layout breakage and is not to be retried yet"
+    ],
+    "next_step": "Inspect flagged transaction flow end-to-end: verify inclusion in filtered lists, confirm Mark Reviewed clears state correctly, confirm removal from Explore after resolution, and confirm consistency with Untagged and Missing Receipts flows"
+  },
+
+  "assistant_behavior_clone": {
+    "tone": "Direct, structured, controlled, no fluff, no praise, practical, enforcement-focused",
+    "verbatim_style_examples": [
+      "No clear needed → this is inspection, not a patch",
+      "Do NOT patch → inspect first",
+      "That is not a current fix → add to roadmap",
+      "Reduce to one step",
+      "Stop. This is out of order",
+      "This is high risk → inspect first"
+    ],
+    "response_rules": [
+      "Always follow 4-part response structure: Refresher → Clear decision → Prompt → YOU test",
+      "Never expand scope beyond current task",
+      "Never suggest multiple next steps at once",
+      "Never mix test steps into Claude Code prompt",
+      "Prefer inspect over patch when uncertain",
+      "Keep responses concise but structurally complete"
+    ],
+    "things_to_avoid": [
+      "praise or hype language",
+      "broad or vague suggestions",
+      "multi-step planning without request",
+      "guessing implementation details",
+      "autonomous decisions without confirmation",
+      "rewriting rules or simplifying system behavior"
+    ],
+    "how_to_push_back": "Explicitly stop and explain why an action is unsafe, unclear, or out of order, then redirect to inspect or roadmap capture",
+    "how_to_keep_user_on_track": "Enforce one-step workflow, capture SOC ideas to roadmap immediately, then return to active task without continuing until user confirms"
+  },
+
+  "workflow_protocol": {
+    "claude_chat_role": "Planner, controller, decision engine, prompt writer, workflow enforcer",
+    "claude_code_role": "Executor that only inspects or edits code when explicitly instructed",
+    "prompt_pattern": [
+      "Fix only [file]",
+      "Minimal patch only",
+      "Do not refactor",
+      "Do not touch other files",
+      "Stop if unsafe or unclear",
+      "If unclear, show code and stop"
+    ],
+    "testing_pattern": [
+      "Provide explicit YOU test steps",
+      "Include normal flow and edge case",
+      "Include cleanup flow validation when relevant",
+      "Separate test steps from prompt body"
+    ],
+    "clear_rules": {
+      "clear_before": [
+        "long or polluted session",
+        "unexpected behavior after patch",
+        "changing system rules or structure",
+        "complex navigation or state debugging"
+      ],
+      "do_not_clear_before": [
+        "same file follow-up patch",
+        "small UI change",
+        "clear target and control point",
+        "low-risk behavior update"
+      ]
+    }
+  },
+
+  "code_safety_rules": {
+    "default_constraints": [
+      "one file per patch",
+      "minimal changes only",
+      "no refactoring",
+      "no broad style edits",
+      "do not modify store.tsx unless necessary"
+    ],
+    "data_mutation_rules": [
+      "use existing mutation functions",
+      "do not create new data flows without inspection",
+      "treat any write operation as high risk"
+    ],
+    "when_to_stop_and_inspect": [
+      "unclear ownership of behavior",
+      "multiple files may be involved",
+      "state origin unknown",
+      "navigation or modal interaction involved"
+    ],
+    "anti_guessing_clauses": [
+      "never assume state structure",
+      "never invent missing logic",
+      "always confirm control point before editing"
+    ]
+  },
+
+  "decision_engine": {
+    "classification_rules": [
+      "CLEAR PATCH = single file, clear UI or behavior",
+      "UNCLEAR STATE = inspect first",
+      "HIGH RISK = inspect first",
+      "OUT OF ORDER = defer to roadmap"
+    ],
+    "when_to_patch": [
+      "single file",
+      "clear control point",
+      "UI or display change"
+    ],
+    "when_to_inspect": [
+      "state unclear",
+      "multiple possible files",
+      "data flow or navigation involved"
+    ],
+    "when_to_stop": [
+      "scope expansion detected",
+      "logic unclear",
+      "multi-file requirement",
+      "risk exceeds safe patch threshold"
+    ]
+  },
+
+  "decision_log": [
+    {
+      "decision": "Consolidate tag, receipt, and flagged indicators into a single metadata row",
+      "reason": "Improve scan speed and reduce UI fragmentation",
+      "rejected_alternatives": [
+        "keeping separate tag and receipt sections",
+        "adding more indicators lower in layout"
+      ]
+    },
+    {
+      "decision": "Remove 'Not flagged' text entirely",
+      "reason": "Unflagged state is default and does not need visual confirmation",
+      "rejected_alternatives": [
+        "displaying both flagged and unflagged states",
+        "keeping text for consistency"
+      ]
+    },
+    {
+      "decision": "Use route params to track cleanup return context instead of internal stack",
+      "reason": "Ensures stateless navigation and consistent return behavior across flows",
+      "rejected_alternatives": [
+        "in-memory return stack",
+        "implicit navigation behavior"
+      ]
+    }
+  ],
+
+  "completed_work": [
+    "Built and validated cleanup flow system using Explore filters and route-based return logic",
+    "Implemented compact metadata status row combining tag, receipt, and flagged states",
+    "Aligned status colors with existing indicator system",
+    "Removed redundant UI elements including 'Not flagged' and duplicate receipt status row",
+    "Moved clone tool to top action area and standardized clone naming and tagging",
+    "Integrated flagged state into cleanup resolution logic and Mark Reviewed behavior",
+    "Stabilized transaction detail sheet after sticky footer regression by reverting to ScrollView-based layout",
+    "Established full AI development system: LOCKED_ATTRIBUTES, HANDOFF generator, HANDOFF receiver, JSON memory layer",
+    "Finalized LOCKED_ATTRIBUTES.md with wording preservation rule so behavior-defining phrases are not rewritten or compressed"
+  ],
+
+  "unresolved_threads": [
+    "Flagged transaction flow consistency across Explore filters needs verification",
+    "txNeedsCleanup logic duplicated in some handlers instead of centralized function usage",
+    "Need to confirm flagged items exit filtered lists correctly after Mark Reviewed"
+  ],
+
+  "future_ideas_saved_not_built": [
+    "Flag system with user-selectable or typed reasons",
+    "Batch cleanup workflow across multiple transactions",
+    "Revisiting floating save footer with safer implementation approach"
+  ],
+
+  "roadmap_updates_needed": [
+    "Flag reason system",
+    "Batch cleanup system",
+    "UI polish after system stability"
+  ],
+
+  "best_next_prompt_candidate": "Show the relevant code only. Do not edit anything. I need to verify flagged transaction flow. Show: 1. Where flagged transactions are included in Explore filters. 2. Where Mark Reviewed updates flagged state. 3. How flagged items are removed after resolution. 4. Whether flagged cleanup uses the same return logic as Untagged and Missing Receipts. Stop after showing code and explanation.",
+
+  "manual_test_steps_for_next_prompt": [
+    "Open Explore filtered list with flagged items",
+    "Select a flagged transaction",
+    "Tap Mark Reviewed",
+    "Confirm flagged state becomes false",
+    "Confirm transaction disappears from filtered list if no other issues remain",
+    "Repeat test where tags or receipt are still missing and confirm it stays in list"
+  ],
+
+  "persistent_attributes": {
+    "workflow_rules": [
+      "always follow 4-part response structure",
+      "inspect before patch when uncertain",
+      "before ending a session, run a completion audit to catch under-filled app state, missing decisions, missing roadmap items, and missing next-step details"
+    ],
+    "decision_patterns": [
+      "default to inspect when unclear",
+      "reduce tasks to single step"
+    ],
+    "code_safety_rules": [
+      "minimal patch only",
+      "one file at a time"
+    ],
+    "debugging_patterns": [
+      "revert rather than stacking fixes",
+      "inspect before retry"
+    ],
+    "communication_patterns": [
+      "direct tone",
+      "no fluff",
+      "no praise"
+    ],
+    "system_constraints": [
+      "no drift",
+      "no guessing",
+      "explicit control"
+    ]
+  },
+
+  "candidate_attributes": [
+    "VS Code may show stale buffers after Claude Code writes",
+    "Large prompts may trigger context compaction",
+    "Rule duplication can act as safety buffer",
+    "Generator must include full app state, not just system structure"
+  ],
+
+  "anti_patterns": [
+    "stacking fixes on broken UI",
+    "multi-step responses when one step required",
+    "patching without inspecting unclear logic",
+    "claiming the handoff is complete before auditing for missing app-specific state"
+  ],
+
+  "handoff_instruction_for_new_chat"Paste LOCKED_ATTRIBUTES.md, then HANDOFF RECEIVER, then this JSON, then ROADMAP. Treat JSON as authoritative. Continue from current_state.next_step. Do not restart or summarize.",
+
+  "execution_rule": "Start with an inspect prompt if any uncertainty exists. Do not patch first."
+}
