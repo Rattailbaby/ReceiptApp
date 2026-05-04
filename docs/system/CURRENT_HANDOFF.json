@@ -45,7 +45,11 @@ Wait for my first command after reading everything.
       "Cleanup return behavior: after resolving all issues (tags present, receipt present, flagged false), navigation returns to Explore with same filter and removes resolved item from list",
       "Mark Reviewed action clears flagged === true and participates in txNeedsCleanup resolution logic",
       "Add/Edit transaction sheet stabilized after regressions: Save/Cancel inside ScrollView, maxHeight 95%, minHeight enforced, no sticky footer",
-      "Navigation return is implemented in multiple handlers using router.replace('/explore?filter=' + returnFilter) after data mutation"
+      "Navigation return is implemented in multiple handlers using router.replace('/explore?filter=' + returnFilter) after data mutation",
+      "Explore tag picker has two tiers: dropdown shows top 8 most-used tags (usage-desc, alphabetical tiebreak); 'More tags' opens a bottom-sheet Modal browsing all tags alphabetically",
+      "Tag modal in client-detail switches to 'Create Tag' mode when tagSearch has no substring match — header text, placeholder, and bottom button all branch on noMatch; Create Tag press calls handleCreateTag and leaves modal open",
+      "Tag modal keyboard stays up while creating multiple tags (keyboardShouldPersistTaps='handled' on chip ScrollView, plus tagSearchRef.current?.focus() at end of handleCreateTag)",
+      "Search → tap transaction → Close returns to Search reliably (router.push always carries source=explore, returnFilter, extra, match; closeTxDetail redirects on source==='explore' even when returnFilter is empty)"
     ],
     "active_issue": "",
     "temporary_items": [
@@ -206,7 +210,12 @@ Wait for my first command after reading everything.
     "Integrated flagged state into cleanup resolution logic and Mark Reviewed behavior",
     "Stabilized transaction detail sheet after sticky footer regression by reverting to ScrollView-based layout",
     "Established full AI development system: LOCKED_ATTRIBUTES, HANDOFF generator, HANDOFF receiver, JSON memory layer",
-    "Finalized LOCKED_ATTRIBUTES.md with wording preservation rule so behavior-defining phrases are not rewritten or compressed"
+    "Finalized LOCKED_ATTRIBUTES.md with wording preservation rule so behavior-defining phrases are not rewritten or compressed",
+    "Explore 'More tags' split into quick dropdown (top 8 by usage, alphabetical tiebreak) and full bottom-sheet modal browser (alphabetical)",
+    "Tag modal in client-detail keeps keyboard open after creating a tag via keyboardShouldPersistTaps='handled' on the chip ScrollView and a refocus on tagSearchRef",
+    "Tag modal disambiguates Search vs Create: header, placeholder, and bottom button all branch on existing noMatch flag — Create Tag press routes to handleCreateTag and keeps modal open",
+    "Search → tap transaction → Close returns to Search even when no main filter is active (explore.tsx always passes source=explore + context; client-detail closeTxDetail guard relaxed to source==='explore')",
+    "System-file infrastructure expanded: CLAUDE.md gains SESSION FILES LOCATION + SESSION WRAP COMMAND + clear-flow reminder; HANDOFF_GENERATOR gains CLONE CONTINUITY / BEHAVIOR TRANSFER / EVOLUTION CAPTURE / NEXT STEP INTEGRITY / SESSION LOG SYNC / SYSTEM EVOLUTION + 24-section response/discipline rule block + file_updates_needed schema slot; HANDOFF_RECEIVER SOC rule points at ROADMAP.md Claude Code prompt; LOCKED_ATTRIBUTES section 28 expanded with prompt templates and sections 29 (THREE ROLE SYSTEM) + 30 (SYSTEM EVOLUTION RULE) added; NEW_CHAT_STARTER.md created; ROADMAP gains Storage Export + Tablet Support saved-ideas entries"
   ],
 
   "unresolved_threads": [

@@ -804,12 +804,24 @@ Use /clear when:
 
 Do NOT clear between small related patches in the same feature thread.
 
-Before the user runs /clear, remind them to:
-1. Run: git add . && git commit -m "pre-clear backup"
-2. Say "wrap session" if this is end of session
-3. Only then run /clear
+When the user says "clear" or asks to clear Claude Code:
 
-If the user says "clear" or asks to clear Claude Code, always show this reminder first before giving any other instructions.
+1. Automatically run wrap session first:
+   - Read docs/SESSION_LOG.md
+   - Read docs/system/CURRENT_HANDOFF.json
+   - Sync completed work and working features
+   - Update ROADMAP if needed
+   - Report what was synced
+
+2. Then remind the user:
+   "Wrap complete. Now run these in PowerShell before clearing:
+   git add .
+   git commit -m 'pre-clear backup'
+   Then run /clear and paste the starter block."
+
+3. Provide the starter block ready to paste after /clear.
+
+Do this automatically. Do not wait for the user to say wrap session separately.
 
 ---
 
@@ -944,5 +956,24 @@ After completing the wrap, remind the user:
 "Session wrapped. Run the handoff generator now before starting a new chat."
 
 Stop after reporting.
+
+After the wrap report, always end with this exact format:
+
+---
+NEXT ACTIONS
+
+1. PowerShell:
+git add .
+git commit -m "pre-clear backup"
+
+2. Run /clear in Claude Code
+
+3. Paste this starter block immediately after clearing:
+
+[starter block here]
+---
+
+Keep the wrap report brief. End every wrap with this clean action block.
+The user should be able to scroll to the bottom and immediately know what to do next.
 
 End of file.

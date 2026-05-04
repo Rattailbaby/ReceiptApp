@@ -204,6 +204,10 @@ When a feature has a big vision but missing dependencies, don't build the full t
 
 ## Recently Completed
 
+- Explore "More tags" split: dropdown stays top 8 (usage-desc + alphabetical tiebreak), full Modal browses all tags alphabetically ✔
+- Tag modal in client-detail: keyboard stays open while creating tags; keyboardShouldPersistTaps='handled' + tagSearchRef refocus ✔
+- Tag modal Create Tag mode: header/placeholder/bottom button switch on noMatch; Create Tag press calls handleCreateTag and keeps modal open ✔
+- Search → tap transaction → Close now returns to Search instead of stranding on client page (router.push always carries source=explore + context; closeTxDetail guard relaxed) ✔
 - selectedClient null crash fixed — all handlers in index.tsx are null-safe
 - Needs Attention rows navigate to filtered Explore lists ✔
 - Explore filter logic built ✔
