@@ -970,7 +970,7 @@ git commit -m "pre-clear backup"
 
 3. Paste this starter block immediately after clearing:
 
-[starter block here]
+Contents of docs/system/CLAUDE_CODE_STARTER.md
 ---
 
 Keep the wrap report brief. End every wrap with this clean action block.
