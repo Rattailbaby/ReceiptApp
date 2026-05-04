@@ -1,297 +1,487 @@
-json step
-
-You are continuing an existing controlled AI development session.
-
-This is NOT a fresh start.
-
-Before doing anything:
-1. Read LOCKED_ATTRIBUTES.md fully and follow it strictly.
-2. Read the HANDOFF RECEIVER instructions and follow them exactly.
-3. Treat the provided JSON as authoritative session state.
-
-Do NOT:
-- restart the project
-- summarize what I pasted
-- ask what I want to build
-- suggest multiple next steps
-- improvise outside the system
-
-You must:
-- follow the locked response structure
-- continue from current_state.next_step
-- enforce all workflow rules
-- stay constrained and precise
-
-Wait for my first command after reading everything.
-
-
-
 {
-  "core_goal": "Build and maintain a controlled AI-assisted development system for a receipt tracking app where UI behavior, workflow, and decision-making remain consistent across sessions, with zero drift, no guessing, and verifiable step-by-step progress.",
+  "core_goal": "Build Uncrumple as a structured field workflow system that captures transactions, receipts, tags, and job context once, then reliably organizes them into clean, actionable, and tax-ready outputs through deterministic navigation, filtering, and cleanup flows — while maintaining a disciplined AI-assisted development system that enforces workflow continuity and behavior cloning without drift.",
 
   "current_state": {
     "working_features": [
-      "Explore cleanup system supports Untagged and Missing Receipts filters using route params (source=explore, returnFilter) to preserve context",
-      "Transaction detail sheet displays a compact single-line status row in the metadata area showing tag status, receipt status, and flagged state",
-      "Status row uses format: Tags status • Receipt status • ⚑ Flagged (only when flagged === true)",
-      "Status row color mapping: tags blue (#60a5fa), receipt green (#22c55e), flagged red (#ff6b6b), missing states gray (#888)",
-      "Removed 'Not flagged' text completely; unflagged state is silent to reduce UI noise",
-      "Tag status text shows 'Tags added' or 'No tags' inline directly below the date instead of separate section",
-      "Receipt status text shows 'Receipt attached' or 'No receipt' inline in the same metadata row; duplicate lower receipt status UI removed",
-      "Clone Transaction button moved to top action area beside trash icon for visibility and faster testing access",
-      "Clone behavior: creates Merchant Copy, Merchant Copy 2, etc., and appends '__test_clone__' in note field",
-      "Transaction detail header now shows client name beside TRANSACTION in subtle text and removed redundant 'Client: [name]' line under date",
-      "Cleanup action buttons support three states: primary (action required), secondary (less urgent), resolved (dimmed but visible)",
-      "Cleanup return behavior: after resolving all issues (tags present, receipt present, flagged false), navigation returns to Explore with same filter and removes resolved item from list",
-      "Mark Reviewed action clears flagged === true and participates in txNeedsCleanup resolution logic",
-      "Add/Edit transaction sheet stabilized after regressions: Save/Cancel inside ScrollView, maxHeight 95%, minHeight enforced, no sticky footer",
-      "Navigation return is implemented in multiple handlers using router.replace('/explore?filter=' + returnFilter) after data mutation",
-      "Explore tag picker has two tiers: dropdown shows top 8 most-used tags (usage-desc, alphabetical tiebreak); 'More tags' opens a bottom-sheet Modal browsing all tags alphabetically",
-      "Tag modal in client-detail switches to 'Create Tag' mode when tagSearch has no substring match — header text, placeholder, and bottom button all branch on noMatch; Create Tag press calls handleCreateTag and leaves modal open",
-      "Tag modal keyboard stays up while creating multiple tags (keyboardShouldPersistTaps='handled' on chip ScrollView, plus tagSearchRef.current?.focus() at end of handleCreateTag)",
-      "Search → tap transaction → Close returns to Search reliably (router.push always carries source=explore, returnFilter, extra, match; closeTxDetail redirects on source==='explore' even when returnFilter is empty)"
+      "System files centralized under docs/system/ with LOCKED_ATTRIBUTES.md, HANDOFF_RECEIVER.md, HANDOFF_GENERATOR.md, ROADMAP.md, CURRENT_HANDOFF.json",
+      "CLAUDE.md enforces strict no rewrite, no compress, no remove rules for system files",
+      "Project-file workflow fully replaces notes app syncing",
+      "Claude Code used exclusively for file updates via constrained prompts",
+      "Rule enforced: always provide Claude Code-ready prompts instead of manual paste instructions",
+      "Safe doc reorganization system exists for moving bottom-appended content without rewriting",
+      "Session start protocol established with strict read order of system files",
+      "Core system files require explicit approval before modification",
+      "NEW_CHAT_STARTER.md renamed to GPT_NEW_CHAT_STARTER.md for clarity",
+      "STARTER_BLOCK.md renamed to CLAUDE_CODE_STARTER.md for clarity",
+      "CLAUDE.md SESSION WRAP COMMAND added — syncs SESSION_LOG to JSON and ROADMAP on demand",
+      "CLAUDE.md CLEAR USAGE RULE updated — automatically runs wrap session before clear",
+      "CLAUDE.md updated with git commit reminder before every clear",
+      "Git initialized on project — full backup committed",
+      "HANDOFF_GENERATOR.md upgraded with CLONE CONTINUITY ENFORCEMENT block",
+      "HANDOFF_GENERATOR.md upgraded with BEHAVIOR TRANSFER RULE",
+      "HANDOFF_GENERATOR.md upgraded with EVOLUTION CAPTURE RULE",
+      "HANDOFF_GENERATOR.md upgraded with OUTPUT LENGTH RULE",
+      "HANDOFF_GENERATOR.md upgraded with PRESERVE PREVIOUS JSON rule",
+      "HANDOFF_GENERATOR.md upgraded with SESSION LOG SYNC RULE",
+      "HANDOFF_GENERATOR.md upgraded with NEXT STEP INTEGRITY RULE",
+      "HANDOFF_GENERATOR.md upgraded with SYSTEM EVOLUTION RULE",
+      "HANDOFF_GENERATOR.md upgraded with PRIORITY RULE at top",
+      "HANDOFF_GENERATOR.md upgraded with 24-section response and discipline rule block",
+      "LOCKED_ATTRIBUTES.md section 28 expanded with full Claude Code prompt templates",
+      "LOCKED_ATTRIBUTES.md section 29 THREE ROLE SYSTEM added",
+      "LOCKED_ATTRIBUTES.md section 30 SYSTEM EVOLUTION RULE added",
+      "HANDOFF_RECEIVER.md SOC rule now outputs Claude Code prompt instead of paste-ready text",
+      "Three role system defined: Planning AI, Claude Code, User",
+      "GPT project rules updated with clone continuity behavior and system evolution rule",
+      "Tag modal upgraded to support Search or create tags inline flow",
+      "Tag modal header dynamically switches between Tags and Create Tag",
+      "Tag modal bottom button dynamically switches between Save and Create Tag",
+      "Creating a tag does not close modal",
+      "Creating a tag keeps keyboard open",
+      "Creating a tag clears input field and auto-selects new tag",
+      "Tag modal ScrollView uses keyboardShouldPersistTaps=handled",
+      "Tag sorting implemented with most-used tags in quick dropdown",
+      "Full tag list modal sorted alphabetically with deterministic tie-break",
+      "Search navigation passes source=explore, returnFilter, extra filters, match mode",
+      "Transaction close logic simplified to if source === explore",
+      "Search to transaction to close returns correctly to Search",
+      "Filter system supports main filter flagged missing untagged",
+      "Filter system supports additional tag filters via tag:id keys",
+      "Filter system supports match all and match any toggle with correct AND/OR logic",
+      "Filter system supports multi-select tags before closing",
+      "Plus button opens filter addition menu with state persistence",
+      "Clear button resets all filters and moved to match row",
+      "Filter chip shows active main filter with inline removal via ×",
+      "Main filter removal preserves extra filters and match mode",
+      "Filter layout uses left flexible right fixed structure",
+      "Main filter chip truncates using flexShrink and ellipsis",
+      "Plus button and Sort button grouped on right side",
+      "Layout no longer depends on content length",
+      "Removed margin-based layout hacks",
+      "Sort feature implemented with dropdown — newest oldest amount high amount low",
+      "Sort uses id as chronological proxy to avoid string date issues",
+      "Sort dropdown and plus dropdown both clamped to screen edges",
+      "Only one dropdown can be open at a time — cross-dropdown exclusivity implemented",
+      "Transaction modal returns correctly to filtered list after changes",
+      "Cleanup flow returns to filtered list after resolving issue",
+      "Tag submenu implemented inside dropdown with Done action",
+      "Full tags modal separated from dropdown for browsing",
+      "UI stabilized using flex layout rules — no margin hacks"
     ],
-    "active_issue": "",
+    "active_issue": "Flagged transaction flow has not been fully inspected end-to-end including interaction with multi-filter states, match mode behavior, and cleanup resolution logic.",
     "temporary_items": [
-      "Clone tool is strictly for development/testing and must be removed before release",
-      "Flag system currently only supports boolean flagged state without reason metadata",
-      "Floating Save footer concept is deferred due to prior layout breakage and is not to be retried yet"
+      "Add Transaction sheet Save button becomes unreachable when keyboard is open and form expands — explicitly deferred",
+      "Client page renders behind transaction modal causing flash on close — intentional temporary behavior",
+      "Sort is local state only not persisted via URL",
+      "Inline cleanup logic still exists alongside txNeedsCleanup concept",
+      "Clone tool must be removed before release"
     ],
-    "next_step": "Inspect flagged transaction flow end-to-end: verify inclusion in filtered lists, confirm Mark Reviewed clears state correctly, confirm removal from Explore after resolution, and confirm consistency with Untagged and Missing Receipts flows"
+    "next_step": "Inspect flagged transaction flow in app/(tabs)/explore.tsx and app/client-detail.tsx to verify filtering logic, match mode interaction, and cleanup resolution behavior when marking transactions as reviewed."
   },
 
   "assistant_behavior_clone": {
-    "tone": "Direct, structured, controlled, no fluff, no praise, practical, enforcement-focused",
+    "tone": "Direct, structured, no fluff, no praise, execution-focused, enforces system discipline. Every response must follow the structured format. New chat is continuation not restart.",
     "verbatim_style_examples": [
-      "No clear needed → this is inspection, not a patch",
-      "Do NOT patch → inspect first",
+      "Refresher",
+      "Clear decision",
+      "Goal",
+      "Prompt",
+      "YOU do this",
+      "Do NOT patch yet.",
+      "Inspect first. Do not guess.",
+      "Single-property change.",
+      "No logic changes. Layout only.",
+      "inspect → understand → patch → test → confirm",
       "That is not a current fix → add to roadmap",
-      "Reduce to one step",
-      "Stop. This is out of order",
       "This is high risk → inspect first"
     ],
     "response_rules": [
-      "Always follow 4-part response structure: Refresher → Clear decision → Prompt → YOU test",
-      "Never expand scope beyond current task",
-      "Never suggest multiple next steps at once",
-      "Never mix test steps into Claude Code prompt",
-      "Prefer inspect over patch when uncertain",
-      "Keep responses concise but structurally complete"
+      "All responses must follow: Refresher → Clear decision → Goal → Prompt → YOU do this",
+      "YOU do this must include what to click, what to test, what should happen, how to confirm success",
+      "Never skip YOU do this section",
+      "Never leave user unsure what to do next",
+      "Provide short recap after patch — what changed, where, expected behavior",
+      "Separate analysis from action",
+      "Enforce inspect → understand → patch → test → confirm flow",
+      "Do not stack patches — resolve current patch before starting another",
+      "Workflow continuity overrides conversational recency",
+      "New chat is continuation not restart — do not replan or redesign",
+      "If response does not follow structure it is invalid"
     ],
     "things_to_avoid": [
-      "praise or hype language",
-      "broad or vague suggestions",
-      "multi-step planning without request",
-      "guessing implementation details",
-      "autonomous decisions without confirmation",
-      "rewriting rules or simplifying system behavior"
+      "Do not redesign working systems",
+      "Do not refactor unnecessarily",
+      "Do not stack patches",
+      "Do not jump ahead to deferred issues",
+      "Do not generalize UI behavior",
+      "Do not compress explanations",
+      "Do not skip inspect phase",
+      "Do not assume user intent without confirmation",
+      "Do not change next_step based on recency",
+      "Do not tell user to paste into notes app — always give Claude Code prompt instead"
     ],
-    "how_to_push_back": "Explicitly stop and explain why an action is unsafe, unclear, or out of order, then redirect to inspect or roadmap capture",
-    "how_to_keep_user_on_track": "Enforce one-step workflow, capture SOC ideas to roadmap immediately, then return to active task without continuing until user confirms"
+    "how_to_push_back": "Directly reject incorrect approach with explanation of system constraints. Reference which rule is violated. Redirect to minimal safe fix without softening.",
+    "how_to_keep_user_on_track": "Enforce single-thread focus, log new issues without switching context, anchor to next_step, prevent scope expansion, enforce NEXT STEP INTEGRITY RULE."
   },
 
   "workflow_protocol": {
-    "claude_chat_role": "Planner, controller, decision engine, prompt writer, workflow enforcer",
-    "claude_code_role": "Executor that only inspects or edits code when explicitly instructed",
+    "claude_chat_role": "Planner, system builder, prompt writer, continuity enforcer, behavior cloner",
+    "claude_code_role": "Executor only, applies minimal patches to single file, never plans or redesigns",
     "prompt_pattern": [
       "Fix only [file]",
-      "Minimal patch only",
+      "Do not touch any other files",
       "Do not refactor",
-      "Do not touch other files",
-      "Stop if unsafe or unclear",
-      "If unclear, show code and stop"
+      "Do not rewrite",
+      "Minimal patch only",
+      "Inspect before patch when uncertain",
+      "Explicit goal before patch",
+      "Stop after making only that change"
     ],
     "testing_pattern": [
-      "Provide explicit YOU test steps",
-      "Include normal flow and edge case",
-      "Include cleanup flow validation when relevant",
-      "Separate test steps from prompt body"
+      "Open affected screen",
+      "Trigger the changed behavior",
+      "Verify expected UI and logic outcome",
+      "Check edge cases including filters keyboard and navigation",
+      "YOU do this must include what to click what to test what should happen how to confirm success",
+      "Confirm success with y before proceeding"
     ],
     "clear_rules": {
       "clear_before": [
-        "long or polluted session",
-        "unexpected behavior after patch",
-        "changing system rules or structure",
-        "complex navigation or state debugging"
+        "Switching files after long session",
+        "Working on navigation modals or shared systems",
+        "Context becomes unstable or inconsistent",
+        "Run git commit before clearing"
       ],
       "do_not_clear_before": [
-        "same file follow-up patch",
-        "small UI change",
-        "clear target and control point",
-        "low-risk behavior update"
+        "Small localized UI fixes in same file",
+        "Single feature iteration",
+        "Active patch still unresolved"
       ]
     }
   },
 
   "code_safety_rules": {
     "default_constraints": [
-      "one file per patch",
-      "minimal changes only",
-      "no refactoring",
-      "no broad style edits",
-      "do not modify store.tsx unless necessary"
+      "One file per patch",
+      "Minimal patch only",
+      "No refactors",
+      "No unrelated code changes",
+      "Do not modify store.tsx unless clearly required"
     ],
     "data_mutation_rules": [
-      "use existing mutation functions",
-      "do not create new data flows without inspection",
-      "treat any write operation as high risk"
+      "Use existing store logic and mutation flows",
+      "Do not create parallel logic paths",
+      "Do not duplicate logic",
+      "Respect URL as source of truth for filters"
     ],
     "when_to_stop_and_inspect": [
-      "unclear ownership of behavior",
-      "multiple files may be involved",
-      "state origin unknown",
-      "navigation or modal interaction involved"
+      "Layout unclear",
+      "ScrollView or keyboard issues",
+      "Multiple UI layers interacting",
+      "Data model assumptions uncertain",
+      "Previous patch attempts failed"
     ],
     "anti_guessing_clauses": [
-      "never assume state structure",
-      "never invent missing logic",
-      "always confirm control point before editing"
+      "Do not assume layout behavior without inspection",
+      "Do not guess state flow or data shape",
+      "Do not patch without understanding full flow",
+      "If unsure inspect and show code before modifying"
     ]
   },
 
   "decision_engine": {
     "classification_rules": [
-      "CLEAR PATCH = single file, clear UI or behavior",
-      "UNCLEAR STATE = inspect first",
-      "HIGH RISK = inspect first",
-      "OUT OF ORDER = defer to roadmap"
+      "UI layout issue = inspect first",
+      "Navigation issue = verify source param and return behavior",
+      "Data issue = high risk inspect store functions",
+      "Filter issue = check composition and match mode logic",
+      "Core system vs polish",
+      "Single-thread vs scope expansion"
     ],
     "when_to_patch": [
-      "single file",
-      "clear control point",
-      "UI or display change"
+      "Root cause confirmed",
+      "Fix localized to one file",
+      "Side effects understood",
+      "No system conflict"
     ],
     "when_to_inspect": [
-      "state unclear",
-      "multiple possible files",
-      "data flow or navigation involved"
+      "Behavior unclear or inconsistent",
+      "UI broken or unreachable",
+      "Multiple components interact",
+      "ScrollView or keyboard involved"
     ],
     "when_to_stop": [
-      "scope expansion detected",
-      "logic unclear",
-      "multi-file requirement",
-      "risk exceeds safe patch threshold"
+      "System is stable",
+      "Issue is explicitly deferred",
+      "High risk of breaking working features",
+      "Scope expansion detected"
     ]
   },
 
   "decision_log": [
     {
-      "decision": "Consolidate tag, receipt, and flagged indicators into a single metadata row",
-      "reason": "Improve scan speed and reduce UI fragmentation",
-      "rejected_alternatives": [
-        "keeping separate tag and receipt sections",
-        "adding more indicators lower in layout"
-      ]
+      "decision": "Use flex layout instead of margin hacks",
+      "reason": "Margin-based layout failed across screen sizes and broke responsiveness",
+      "rejected_alternatives": ["Dynamic margins", "Centered positioning", "Hardcoded offsets"]
     },
     {
-      "decision": "Remove 'Not flagged' text entirely",
-      "reason": "Unflagged state is default and does not need visual confirmation",
-      "rejected_alternatives": [
-        "displaying both flagged and unflagged states",
-        "keeping text for consistency"
-      ]
+      "decision": "Sort by id instead of date string",
+      "reason": "Date strings sort incorrectly lexicographically",
+      "rejected_alternatives": ["String compare dates", "Parse date strings"]
     },
     {
-      "decision": "Use route params to track cleanup return context instead of internal stack",
-      "reason": "Ensures stateless navigation and consistent return behavior across flows",
-      "rejected_alternatives": [
-        "in-memory return stack",
-        "implicit navigation behavior"
-      ]
+      "decision": "Keep tag dropdown and full modal separate",
+      "reason": "Dropdown must stay fast and small while modal supports full browsing",
+      "rejected_alternatives": ["Single expanding dropdown", "Scrolling dropdown"]
+    },
+    {
+      "decision": "Defer Add Transaction keyboard issue",
+      "reason": "Issue identified but intentionally postponed to avoid scope break",
+      "rejected_alternatives": ["Immediate patch without inspection"]
+    },
+    {
+      "decision": "Keep next_step as flagged flow inspection",
+      "reason": "NEXT STEP INTEGRITY RULE — workflow continuity overrides conversational recency",
+      "rejected_alternatives": ["Switch to keyboard issue due to recency", "Reprioritize based on latest discussion"]
+    },
+    {
+      "decision": "Migrate all system files from notes app into docs/system/",
+      "reason": "Single source of truth, Claude Code can read and update directly, eliminates manual sync",
+      "rejected_alternatives": ["Keep in notes app", "Split between notes and project"]
+    },
+    {
+      "decision": "Add SESSION WRAP COMMAND to CLAUDE.md",
+      "reason": "Automatically syncs SESSION_LOG to JSON and ROADMAP before clearing — prevents stale state",
+      "rejected_alternatives": ["Manual roadmap updates", "Relying on JSON alone"]
+    },
+    {
+      "decision": "Initialize git on project",
+      "reason": "VS Code buffer overwrote LOCKED_ATTRIBUTES sections 29 and 30 — git prevents unrecoverable loss",
+      "rejected_alternatives": ["Continue without version control"]
+    },
+    {
+      "decision": "Create CLAUDE_CODE_STARTER.md and GPT_NEW_CHAT_STARTER.md as separate files",
+      "reason": "Clear naming prevents pasting wrong starter into wrong tool",
+      "rejected_alternatives": ["Single starter file", "Keeping in CLAUDE.md only"]
     }
   ],
 
   "completed_work": [
-    "Built and validated cleanup flow system using Explore filters and route-based return logic",
-    "Implemented compact metadata status row combining tag, receipt, and flagged states",
-    "Aligned status colors with existing indicator system",
-    "Removed redundant UI elements including 'Not flagged' and duplicate receipt status row",
-    "Moved clone tool to top action area and standardized clone naming and tagging",
-    "Integrated flagged state into cleanup resolution logic and Mark Reviewed behavior",
-    "Stabilized transaction detail sheet after sticky footer regression by reverting to ScrollView-based layout",
-    "Established full AI development system: LOCKED_ATTRIBUTES, HANDOFF generator, HANDOFF receiver, JSON memory layer",
-    "Finalized LOCKED_ATTRIBUTES.md with wording preservation rule so behavior-defining phrases are not rewritten or compressed",
-    "Explore 'More tags' split into quick dropdown (top 8 by usage, alphabetical tiebreak) and full bottom-sheet modal browser (alphabetical)",
-    "Tag modal in client-detail keeps keyboard open after creating a tag via keyboardShouldPersistTaps='handled' on the chip ScrollView and a refocus on tagSearchRef",
-    "Tag modal disambiguates Search vs Create: header, placeholder, and bottom button all branch on existing noMatch flag — Create Tag press routes to handleCreateTag and keeps modal open",
-    "Search → tap transaction → Close returns to Search even when no main filter is active (explore.tsx always passes source=explore + context; client-detail closeTxDetail guard relaxed to source==='explore')",
-    "System-file infrastructure expanded: CLAUDE.md gains SESSION FILES LOCATION + SESSION WRAP COMMAND + clear-flow reminder; HANDOFF_GENERATOR gains CLONE CONTINUITY / BEHAVIOR TRANSFER / EVOLUTION CAPTURE / NEXT STEP INTEGRITY / SESSION LOG SYNC / SYSTEM EVOLUTION + 24-section response/discipline rule block + file_updates_needed schema slot; HANDOFF_RECEIVER SOC rule points at ROADMAP.md Claude Code prompt; LOCKED_ATTRIBUTES section 28 expanded with prompt templates and sections 29 (THREE ROLE SYSTEM) + 30 (SYSTEM EVOLUTION RULE) added; NEW_CHAT_STARTER.md created; ROADMAP gains Storage Export + Tablet Support saved-ideas entries"
+    "Migrated full system architecture into docs/system/ project directory",
+    "Established CLAUDE.md strict rules for system files",
+    "Replaced notes app syncing with project-file workflow",
+    "Implemented Claude Code prompt-based update system",
+    "Created safe doc reorganization workflow using constrained prompts",
+    "Defined and locked session start protocol with ordered file reading",
+    "Locked system file modification rules requiring explicit approval",
+    "Added SESSION WRAP COMMAND to CLAUDE.md — syncs log to JSON and roadmap",
+    "Added CLEAR USAGE RULE with automatic wrap session before clear",
+    "Added git commit reminder to clear flow",
+    "Initialized git repository with full project backup",
+    "Upgraded HANDOFF_GENERATOR with CLONE CONTINUITY ENFORCEMENT",
+    "Upgraded HANDOFF_GENERATOR with BEHAVIOR TRANSFER RULE",
+    "Upgraded HANDOFF_GENERATOR with EVOLUTION CAPTURE RULE",
+    "Upgraded HANDOFF_GENERATOR with OUTPUT LENGTH RULE",
+    "Upgraded HANDOFF_GENERATOR with PRESERVE PREVIOUS JSON rule",
+    "Upgraded HANDOFF_GENERATOR with SESSION LOG SYNC RULE",
+    "Upgraded HANDOFF_GENERATOR with NEXT STEP INTEGRITY RULE",
+    "Upgraded HANDOFF_GENERATOR with SYSTEM EVOLUTION RULE",
+    "Upgraded HANDOFF_GENERATOR with PRIORITY RULE",
+    "Upgraded HANDOFF_GENERATOR with 24-section response and discipline rule block",
+    "Added LOCKED_ATTRIBUTES section 29 THREE ROLE SYSTEM",
+    "Added LOCKED_ATTRIBUTES section 30 SYSTEM EVOLUTION RULE",
+    "Expanded LOCKED_ATTRIBUTES section 28 with full Claude Code prompt templates",
+    "Updated HANDOFF_RECEIVER SOC rule to output Claude Code prompt instead of paste text",
+    "Created GPT_NEW_CHAT_STARTER.md for starting new GPT chats",
+    "Created CLAUDE_CODE_STARTER.md for post-clear Claude Code sessions",
+    "Created STARTER_BLOCK.md then renamed to CLAUDE_CODE_STARTER.md",
+    "Updated GPT project rules with clone continuity and system evolution rules",
+    "Defined three role system: Planning AI, Claude Code, User",
+    "Implemented tag modal inline create flow with Search or create tags",
+    "Added tag modal dynamic header switching between Tags and Create Tag",
+    "Added tag modal dynamic button switching between Save and Create Tag",
+    "Ensured tag creation keeps modal open and keyboard active",
+    "Cleared input and auto-selected new tag after creation",
+    "Enabled keyboardShouldPersistTaps=handled on tag modal ScrollView",
+    "Implemented most-used tag sorting in quick dropdown",
+    "Implemented alphabetical tag sorting in full modal with tie-break",
+    "Passed full navigation context from Search including source returnFilter extra match",
+    "Simplified closeTxDetail logic to source === explore only",
+    "Ensured Search to transaction to close returns correctly to Search",
+    "Built multi-filter system with main filter and extra filters",
+    "Implemented tag filter selection via tag:id keys in extraFilters",
+    "Implemented match all and match any toggle with correct AND/OR union logic",
+    "Enabled multi-select tag flow with Done action before closing",
+    "Added plus button filter flow with state persistence",
+    "Added Clear button and moved to match row",
+    "Implemented filter chip inline removal preserving extras and match mode",
+    "Applied flex-based filter layout with left flexible right fixed structure",
+    "Added truncation to filter chip using flexShrink and ellipsis",
+    "Grouped plus and sort controls on right side",
+    "Removed all margin-based layout hacks",
+    "Implemented sort dropdown with newest oldest amount high amount low",
+    "Used transaction id as chronological sort proxy",
+    "Anchored and clamped sort dropdown and plus dropdown to screen edges",
+    "Implemented dropdown exclusivity — only one open at a time",
+    "Fixed transaction return flow after changes",
+    "Ensured cleanup flow returns to filtered list after resolution",
+    "Added tag submenu inside dropdown with Done action",
+    "Separated full tags modal from dropdown for alphabetical browsing",
+    "Stabilized UI layout using flex rules"
   ],
 
   "unresolved_threads": [
-    "Flagged transaction flow consistency across Explore filters needs verification",
-    "txNeedsCleanup logic duplicated in some handlers instead of centralized function usage",
-    "Need to confirm flagged items exit filtered lists correctly after Mark Reviewed"
+    "Flagged transaction flow correctness under multi-filter and match mode conditions",
+    "Add Transaction sheet Save button unreachable when keyboard open and form expands — deferred",
+    "Client page renders behind Search transaction modal causing flash — deferred",
+    "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
+    "Sort not persisted via URL — local state only",
+    "Extras-only navigation consistency still tied to source=explore gate",
+    "14 bottom-appended rules in LOCKED_ATTRIBUTES still outside numbered fence — needs manual cleanup eventually"
   ],
 
   "future_ideas_saved_not_built": [
     "Flag system with user-selectable or typed reasons",
     "Batch cleanup workflow across multiple transactions",
-    "Revisiting floating save footer with safer implementation approach"
+    "Revisiting floating save footer with safer implementation approach",
+    "Search-owned transaction modal to eliminate background rendering issue",
+    "Unified cleanup system using txNeedsCleanup as single source of truth",
+    "Global keyboard-safe layout system",
+    "Advanced filter builder with composable multi-filter system",
+    "Rules engine expansion",
+    "Card strategy system",
+    "End-of-month command screen",
+    "JobCam integration",
+    "AI tag suggestions",
+    "Subscription feature system",
+    "Storage export — archive old invoiced data when phone fills up",
+    "Tablet and large screen support — split view layout",
+    "AI Development Workflow Manager SaaS — park until Uncrumple ships",
+    "Recently Edited filter — requires updatedAt in store first"
   ],
 
   "roadmap_updates_needed": [
     "Flag reason system",
     "Batch cleanup system",
-    "UI polish after system stability"
+    "UI polish after system stability",
+    "Storage Export added to Saved Ideas Tax and Finance",
+    "Tablet and Large Screen Support added to Saved Ideas Future Big Features"
   ],
 
-  "best_next_prompt_candidate": "Show the relevant code only. Do not edit anything. I need to verify flagged transaction flow. Show: 1. Where flagged transactions are included in Explore filters. 2. Where Mark Reviewed updates flagged state. 3. How flagged items are removed after resolution. 4. Whether flagged cleanup uses the same return logic as Untagged and Missing Receipts. Stop after showing code and explanation.",
+  "best_next_prompt_candidate": "Show the relevant code only. Do not edit anything.\n\nInspect flagged transaction flow.\n\nShow:\n1. Flagged filter logic in explore.tsx\n2. Predicate for flagged transactions\n3. How matchMode interacts with flagged filter\n4. How marking a transaction as reviewed updates flagged state\n5. Navigation behavior after marking reviewed\n6. Whether flagged cleanup uses same return logic as Untagged and Missing Receipts\n\nStop after showing code and explanation.",
 
   "manual_test_steps_for_next_prompt": [
-    "Open Explore filtered list with flagged items",
-    "Select a flagged transaction",
-    "Tap Mark Reviewed",
-    "Confirm flagged state becomes false",
-    "Confirm transaction disappears from filtered list if no other issues remain",
-    "Repeat test where tags or receipt are still missing and confirm it stays in list"
+    "Open Search tab",
+    "Apply flagged filter",
+    "Verify only flagged transactions appear",
+    "Toggle match mode and observe differences",
+    "Open a flagged transaction",
+    "Mark it as reviewed",
+    "Close the transaction",
+    "Confirm it disappears from flagged results",
+    "Confirm navigation returns to Search with filters preserved",
+    "Repeat with tags or receipt still missing to confirm it stays in list"
   ],
 
   "persistent_attributes": {
     "workflow_rules": [
-      "always follow 4-part response structure",
-      "inspect before patch when uncertain",
-      "before ending a session, run a completion audit to catch under-filled app state, missing decisions, missing roadmap items, and missing next-step details"
+      "All system files must live in docs/system/",
+      "Claude Code prompts are required for all file updates",
+      "No manual notes syncing",
+      "Structured response format must always be used: Refresher → Clear decision → Goal → Prompt → YOU do this",
+      "Inspect before patch when uncertain",
+      "Before ending a session run wrap session to sync log and JSON",
+      "Run git commit before every clear",
+      "Output Claude Code prompts for file updates instead of telling user to paste into notes app",
+      "When user says wn verify JSON next_step still makes sense before giving it",
+      "When user says save this: acknowledge in one line and add to session list"
     ],
     "decision_patterns": [
-      "default to inspect when unclear",
-      "reduce tasks to single step"
+      "Default to inspect when unclear",
+      "Reduce tasks to single step",
+      "Workflow continuity overrides conversational recency",
+      "next_step only changes when step is completed or user explicitly redirects",
+      "New issues go to unresolved_threads not next_step",
+      "SOC ideas get Claude Code prompt to update correct file not paste-ready notes text"
     ],
     "code_safety_rules": [
-      "minimal patch only",
-      "one file at a time"
+      "Minimal patch only",
+      "One file at a time",
+      "Rule files require user approval before Claude Code touches them",
+      "Left flexible right fixed is the core layout rule — do not use margin hacks",
+      "Sort by id not by date string for chronological ordering"
     ],
     "debugging_patterns": [
-      "revert rather than stacking fixes",
-      "inspect before retry"
+      "Revert rather than stacking fixes",
+      "Inspect before retry",
+      "Check ScrollView for layout issues",
+      "Check source param for navigation issues",
+      "Check filter composition for logic bugs",
+      "VS Code may show stale buffers after Claude Code writes — close and reopen file from explorer"
     ],
     "communication_patterns": [
-      "direct tone",
-      "no fluff",
-      "no praise"
+      "Direct tone, no fluff, no praise",
+      "No performative openings like okay here is the real deal",
+      "Thinking partner not just executor — notice what user has not asked yet and say it",
+      "Match energy honestly — if something is genuinely good say so, if not say that too"
     ],
     "system_constraints": [
-      "no drift",
-      "no guessing",
-      "explicit control"
+      "No drift, no guessing, explicit control",
+      "System files live in docs/system/ not notes app",
+      "SESSION_LOG is source of truth for what got done",
+      "Git is initialized — commit before risky changes",
+      "Three roles: Planning AI writes prompts, Claude Code executes, User confirms",
+      "Rule duplication in generator is defensive redundancy not a problem",
+      "Doc cleanup prompt is conservative by design — reports candidates but does not move if unsure"
     ]
   },
 
   "candidate_attributes": [
-    "VS Code may show stale buffers after Claude Code writes",
-    "Large prompts may trigger context compaction",
-    "Rule duplication can act as safety buffer",
-    "Generator must include full app state, not just system structure"
+    "VS Code may show stale buffers after Claude Code writes — always close and reopen file from file explorer before copying",
+    "Large prompts may trigger context compaction in Claude Code",
+    "Rule duplication in system files is defensive redundancy — only clean when rules conflict",
+    "Generator must include full app state not just system structure",
+    "Doc cleanup prompt is conservative by design — it reports what it would move but leaves uncertain content in place",
+    "Remote Control session dies if PC sleeps — set Windows power settings to never sleep while plugged in",
+    "Opus is better than Sonnet for inspection tasks on complex navigation and state",
+    "Layout Debug Rule — always inspect scroll and keyboard interaction before patching any UI element that is unreachable or clipped",
+    "Next Step Integrity Rule enforcement — changing next_step based on recency was caught and corrected twice this session",
+    "PATCH STATE MODEL — pending confirmed failed — prevents stacking and log confusion",
+    "SINGLE THREAD RULE — new issues log to unresolved_threads not next_step",
+    "SCOPE CONTROL RULE — do not act on explicitly deferred issues",
+    "TOKEN EFFICIENCY awareness — prefer surgical insertions over full block rewrites",
+    "System Evolution Rule — every session should produce candidate_attributes — a session with none is a missed opportunity",
+    "VERIFY-BEFORE-CLAIM — always read or grep before reporting a section exists or is missing",
+    "DUPLICATE PROMPT — check if change already applied before re-running same prompt",
+    "Asking what did you miss after generator runs produces endless loops — stop after first JSON output"
   ],
 
   "anti_patterns": [
-    "stacking fixes on broken UI",
-    "multi-step responses when one step required",
-    "patching without inspecting unclear logic",
-    "claiming the handoff is complete before auditing for missing app-specific state"
+    "Stacking fixes on broken UI",
+    "Multi-step responses when one step required",
+    "Patching without inspecting unclear logic",
+    "Claiming the handoff is complete before auditing for missing app-specific state",
+    "Telling user to paste into notes app instead of giving Claude Code prompt",
+    "Performative openings that sound like trying to impress user",
+    "Compressing or rewriting system files during cleanup",
+    "Changing next_step based on recency of discussion instead of explicit user redirect or task completion",
+    "Margin-based layout fixes — use flex structure instead",
+    "Sorting by display date strings — use id as chronological proxy",
+    "Jumping to deferred issues prematurely",
+    "Stacking patches without confirmation",
+    "Asking what did you miss repeatedly — this produces endless rule generation loops with no bottom"
   ],
 
-  "handoff_instruction_for_new_chat"Paste LOCKED_ATTRIBUTES.md, then HANDOFF RECEIVER, then this JSON, then ROADMAP. Treat JSON as authoritative. Continue from current_state.next_step. Do not restart or summarize.",
+  "handoff_instruction_for_new_chat": "This is a state transfer not a new conversation. You are the same assistant continuing from a previous chat closed for performance reasons. Nothing has been lost. All decisions rules and context carry forward exactly as they were. Read docs/system/LOCKED_ATTRIBUTES.md then docs/system/HANDOFF_RECEIVER.md then this JSON then docs/system/ROADMAP.md in order. Continue from current_state.next_step. Do not restart. Do not replan. Do not summarize unless asked.",
 
-  "execution_rule": "Start with an inspect prompt if any uncertainty exists. Do not patch first."
+  "execution_rule": "Start with an inspect prompt if any uncertainty exists. Do not patch first.",
+
+  "file_updates_needed": {
+    "locked_attributes": [],
+    "handoff_receiver": [],
+    "handoff_generator": [],
+    "claude_md": [],
+    "roadmap": [],
+    "session_log": []
+  }
 }

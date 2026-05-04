@@ -1,5 +1,10 @@
 # SESSION LOG
 
+## 2026-05-04 — HANDOFF_GENERATOR gains PRIORITY RULE block
+
+- In `docs/system/HANDOFF_GENERATOR.md`, inserted a new `PRIORITY RULE` block directly before the line `Your ONLY job is to generate a complete handoff JSON for the next AI assistant session.` Block lists the conflict-resolution priority: 1) Response structure rules, 2) Workflow discipline, 3) Next step integrity, 4) Everything else, with a closing line that lower priority rules must not override higher priority ones.
+- Pure insertion. Nothing above or below the anchor was rephrased, reordered, or removed.
+
 ## 2026-04-30 — CLAUDE.md gains SYSTEM FILES LOCATION section before End of file.
 
 - In `CLAUDE.md`, appended a new `## SYSTEM FILES LOCATION` section directly above the existing `End of file.` marker. Lists each file in `docs/system/` with a one-line purpose, restates the read-full / no-compress / no-remove handling rules, and re-states the rule-files-vs-safe-files split (the same split now lives in LOCKED_ATTRIBUTES section 28).
