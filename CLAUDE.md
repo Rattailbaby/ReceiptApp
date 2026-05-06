@@ -103,6 +103,7 @@ Do NOT ask this question for:
 - inspection prompts
 - no-op changes
 - failed or unclear patches
+- doc file updates (DID_YOU_KNOW.md, WORKFLOW_IDEAS.md, system files)
 
 Do NOT use wording like:
 "Should I log this?"
@@ -868,6 +869,7 @@ Do NOT ask this for:
 - no-op changes
 - failed patches
 - unclear patches
+- doc file updates (DID_YOU_KNOW.md, WORKFLOW_IDEAS.md, system files)
 
 Do NOT ask:
 "Should I log this?"
@@ -892,11 +894,48 @@ When user says "clean up docs" or "run doc cleanup":
 2. Execute exactly what it says
 3. Report what moved, what duplicates were removed, what was left in place
 4. Confirm no content was rewritten, compressed, or removed
-5. Do not touch any app code
-6. Do not touch any .tsx files
-7. Stop after reporting
+5. If docs/DID_YOU_KNOW.md exists, reorganize tips into categories:
+   - ## 🪟 Windows
+   - ## 📝 VS Code
+   - ## 🔧 Git
+   - ## ⚛️ React Native and Expo
+   - ## 🤖 Claude and AI Workflow
+   - ## 📱 Android and Mobile
+   - ## 🏗️ Build and Productivity
+   - ## 🎯 GPT Tips
+   - ## ⭐ Important
+   - ## 💡 General
+   Move each tip under the correct category based on its emoji.
+   Do not rewrite tip content.
+   Do not remove any tips.
+
+6. If docs/WORKFLOW_IDEAS.md exists, reorganize ideas into categories:
+   - ## App Features
+   - ## Dev Workflow
+   - ## System Improvements
+   - ## Business Ideas
+   - ## Other
+   Move each idea under the correct category.
+   Do not rewrite idea content.
+   Do not remove any ideas.
+
+7. Do not touch any app code
+8. Do not touch any .tsx files
+9. Stop after reporting
 
 Do not run this automatically. Only run when explicitly triggered.
+
+CLEANUP SUGGESTION RULE
+
+After every 5 doc file updates in a session
+(DID_YOU_KNOW.md, WORKFLOW_IDEAS.md, system files),
+suggest running doc cleanup:
+
+"You have updated several doc files this session. 
+Consider running 'clean up docs' to organize them."
+
+Do not run cleanup automatically.
+Only suggest it.
 
 ## SYSTEM FILES LOCATION
 
@@ -957,6 +996,12 @@ After completing the wrap, remind the user:
 
 Stop after reporting.
 
+After completing the wrap report, automatically run:
+git add .
+git commit -m "session wrap backup"
+
+Then report: "Git committed. Ready to clear."
+
 After the wrap report, always end with this exact format:
 
 ---
@@ -975,5 +1020,50 @@ Contents of docs/system/CLAUDE_CODE_STARTER.md
 
 Keep the wrap report brief. End every wrap with this clean action block.
 The user should be able to scroll to the bottom and immediately know what to do next.
+
+## DID YOU KNOW COMMAND
+
+When user pastes a message that starts with any of these emojis:
+💡 🪟 📝 🔧 ⚛️ 🤖 📱 🏗️ 🎯 ⭐
+
+Append it to docs/DID_YOU_KNOW.md using the emoji category system.
+If the emoji is not in the known list, use context to determine 
+the best category. If unsure, append under ## 💡 General.
+
+Append it to docs/DID_YOU_KNOW.md under ## Tips using this format:
+
+---
+
+[emoji] [tip text]
+
+---
+
+Emoji key:
+💡 General tip
+⭐ Important — worth acting on
+🪟 Windows tip
+📝 VS Code tip
+🔧 Git tip
+⚛️ React Native and Expo tip
+🤖 Claude and AI workflow tip
+📱 Android and mobile tip
+🏗️ Build and productivity tip
+🎯 GPT tip
+
+If tip starts with ⭐ mark it as important.
+Strip any "Did you know:" or "Power tip:" prefix before saving.
+Create the file if it does not exist.
+Do not touch any other files.
+Report: "Saved to DID_YOU_KNOW.md"
+
+## CLEVER IDEA COMMAND
+
+When user pastes a message that starts with:
+🧠 Idea:
+
+Append it to docs/WORKFLOW_IDEAS.md under ## Ideas
+Create the file if it does not exist.
+Do not touch any other files.
+Report: "Saved to WORKFLOW_IDEAS.md"
 
 End of file.
