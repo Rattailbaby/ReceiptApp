@@ -1418,6 +1418,13 @@ tagIds always array
 - "Attach to last job" quick flow
 - Bulk actions: Add Note to All, Add Tags to All
 
+📱 "Remind me of this transaction" button — tap a saved transaction 
+to set a local notification to come back to it after X hours. 
+Different from Later Queue (which catches unassigned incoming 
+transactions) — this is for already-saved transactions that need 
+follow-up. Notification deep links back to that specific transaction.
+Requires notification system to be built first.
+
 ## Saved Ideas — Receipts
 - Receipt annotation tools (highlight, draw, text box)
 - Bulk export receipts by client or date range

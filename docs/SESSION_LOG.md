@@ -1,5 +1,29 @@
 # SESSION LOG
 
+## 2026-05-06 — Add Transaction sheet keyboard offset for persistent footer
+
+- In `app/client-detail.tsx`, added `addKeyboardHeight` state alongside other useState declarations.
+- Added a `useEffect` scoped to `showAddSheet` that subscribes to `keyboardDidShow` / `keyboardDidHide` only while the Add sheet is open, with cleanup. Uses `Keyboard` (already imported).
+- Applied `style={{ paddingBottom: addKeyboardHeight }}` to the Add sheet `KeyboardAvoidingView` only — Edit sheet KAV untouched.
+- Lifts the persistent footer (Save/Cancel) above the Android soft keyboard regardless of `adjustPan`/`adjustResize` because it operates in JS layer rather than relying on KAV frame manipulation.
+- Sheet `s.sheet`, `MIN_SHEET_HEIGHT`, KAV `behavior`, Modal props, footer structure, `addReady`, ScrollView `flexShrink`, validation, tag modal, and receipt logic all untouched.
+
+## 2026-05-06 — Add Transaction persistent footer with state-driven button
+
+- In `app/client-detail.tsx`, added `addReady` derivation alongside `txMissingReceipt`/`txMissingTags`: `merchant.trim().length > 0 && parseFloat(amount.replace(/[^0-9.]/g, '')) > 0`.
+- Added `style={{ flexShrink: 1 }}` to the Add sheet ScrollView only.
+- Moved Save Transaction and Cancel out of the ScrollView into a new footer `View` sibling immediately after the ScrollView, still inside the existing sheet `View`.
+- Single state-driven footer button: amber `s.btnPrimary` "Save Transaction" calling `saveTransaction` when `addReady`, ghost `s.btnGhost` "Cancel" closing the sheet otherwise.
+- Edit sheet, sheet style, `MIN_SHEET_HEIGHT`, KAV behavior, validation logic, and existing Amount-submit `scrollToEnd` behavior all untouched.
+
+## 2026-05-06 — client-detail cleanup return uses txNeedsCleanup as single source of truth
+
+- In `app/client-detail.tsx`, made post-fix return-to-Explore behavior consistent across flagged, missing, and untagged filters.
+- Mark Reviewed handler: condition broadened from `returnFilter === 'flagged'` to any truthy `returnFilter`.
+- Add Receipt success block: replaced inline `uri && capturedTagIds.length > 0 && capturedFlagged !== true` check with `!txNeedsCleanup({ ...selectedTx, receiptUri: uri })`.
+- Save Tags success block (tag modal): replaced inline `selectedTx?.receiptUri && editTagIds.length > 0 && selectedTx?.flagged !== true` check with `!txNeedsCleanup({ ...selectedTx, tagIds: editTagIds })`.
+- `txNeedsCleanup` itself unchanged. No styles, refactors, or unrelated logic touched.
+
 ## 2026-05-04 — HANDOFF_GENERATOR gains PRIORITY RULE block
 
 - In `docs/system/HANDOFF_GENERATOR.md`, inserted a new `PRIORITY RULE` block directly before the line `Your ONLY job is to generate a complete handoff JSON for the next AI assistant session.` Block lists the conflict-resolution priority: 1) Response structure rules, 2) Workflow discipline, 3) Next step integrity, 4) Everything else, with a closing line that lower priority rules must not override higher priority ones.

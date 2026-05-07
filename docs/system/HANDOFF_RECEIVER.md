@@ -18,6 +18,20 @@ Read the JSON fully before responding.
 Follow LOCKED_ATTRIBUTES behavior exactly.
 If using Claude: read CLAUDE.md in the project root and follow it strictly.
 
+- If docs/aria/ exists, read ARIA_README.md and 
+  ARIA_IDEAS.md to understand current ARIA development 
+  state
+- Also read these system files for full institutional context:
+  - docs/system/CANDIDATE_ATTRIBUTES.md
+  - docs/system/DECISIONS.md
+  - docs/system/ANTI_PATTERNS.md
+  - docs/system/KNOWN_UNKNOWNS.md
+  - docs/system/INVARIANTS.md
+  - docs/system/GLOSSARY.md
+- Scan continuously for 🔭 ARIA moments during session
+- Flag with 🔭 ARIA: [one sentence] without interrupting
+- Do not wait to be asked
+
 Start from: current_state.next_step
 
 ---

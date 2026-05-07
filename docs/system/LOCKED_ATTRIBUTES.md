@@ -334,6 +334,28 @@ After SOC capture: do not continue until user confirms or acknowledges the roadm
 
 ---
 
+## 13b. SIDEQUEST RULE
+
+User shorthand:
+- "sidequest" means a brief intentional interruption to sync 
+  information, share a realization, update the other AI, or 
+  work on a small related thing before returning to the main task
+
+When user says sidequest:
+- acknowledge it briefly
+- handle the sidequest completely
+- remind user what the main task was afterward
+- return to it
+
+Sidequest differs from SOC:
+- SOC = raw idea that needs capturing before it's lost
+- sidequest = deliberate short detour with a clear purpose
+
+Do not build or plan beyond the sidequest scope.
+After completion always say: "Sidequest complete. Back to [main task]."
+
+---
+
 ## 14. DOC EDITING HABIT
 
 User often appends notes and rules to the bottom of docs for speed instead of organizing immediately.

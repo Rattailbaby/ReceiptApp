@@ -14,7 +14,7 @@
 
 ---
 
-## Tips
+## 🪟 Windows
 
 ---
 
@@ -30,8 +30,23 @@
 
 ---
 
-⭐ IMPORTANT
-💡 Power tip: Settings → System → Power & Sleep → set Screen to turn off after 1-2 minutes and Sleep to Never — screen goes dark to save energy but Claude Code and Remote Control keep running in the background.
+## 📝 VS Code
+
+---
+
+## 🔧 Git
+
+---
+
+## ⚛️ React Native and Expo
+
+---
+
+⚛️ flexShrink: 1 lets a ScrollView yield space to a footer without forcing the parent to have a fixed height; flex: 1 can collapse inside min/max-height sheets on Android.
+
+---
+
+## 🤖 Claude and AI Workflow
 
 ---
 
@@ -39,6 +54,35 @@
 
 ---
 
+🤖 Candidate attributes are like a probation period for rules — they get captured in the handoff JSON but not locked into LOCKED_ATTRIBUTES until they prove useful across multiple sessions. If a pattern keeps showing up, GPT promotes it. If it doesn't, it stays as a suggestion.
+
+---
+
+## 📱 Android and Mobile
+
+---
+
+## 🏗️ Build and Productivity
+
+---
+
 🏗️ If you find yourself doing the same manual step more than three times, that's a sign it should be automated — your "wrap session" command is a perfect example of that thinking.
+
+---
+
+## 🎯 GPT Tips
+
+---
+
+## ⭐ Important
+
+---
+
+⭐ IMPORTANT
+💡 Power tip: Settings → System → Power & Sleep → set Screen to turn off after 1-2 minutes and Sleep to Never — screen goes dark to save energy but Claude Code and Remote Control keep running in the background.
+
+---
+
+## 💡 General
 
 ---

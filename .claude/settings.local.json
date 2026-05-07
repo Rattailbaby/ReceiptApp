@@ -1,1 +1,13 @@
-{}
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Get-Clipboard *)",
+      "PowerShell(Set-Clipboard *)",
+      "PowerShell($cfg = Get-Content .claude\\\\settings.json -Raw | ConvertFrom-Json; $cfg.hooks.Stop[0].hooks[0])",
+      "PowerShell($cfg = Get-Content .claude\\\\settings.json -Raw | ConvertFrom-Json; $cfg.hooks.Stop[0].hooks[0] | Format-List)"
+    ]
+  }
+}

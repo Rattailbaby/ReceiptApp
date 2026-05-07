@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File .claude\\hooks\\copy-last-response.ps1"
+          }
+        ]
+      }
+    ]
+  }
+}

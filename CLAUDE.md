@@ -820,7 +820,13 @@ When the user says "clear" or asks to clear Claude Code:
    git commit -m 'pre-clear backup'
    Then run /clear and paste the starter block."
 
-3. Provide the starter block ready to paste after /clear.
+3. Run the DOC CLEANUP COMMAND automatically (same behavior as
+   when user says "clean up docs") — reorganize DID_YOU_KNOW.md
+   and WORKFLOW_IDEAS.md by emoji category
+
+4. Report what was reorganized alongside the normal wrap report
+
+5. Provide the starter block ready to paste after /clear.
 
 Do this automatically. Do not wait for the user to say wrap session separately.
 
@@ -1065,5 +1071,16 @@ Append it to docs/WORKFLOW_IDEAS.md under ## Ideas
 Create the file if it does not exist.
 Do not touch any other files.
 Report: "Saved to WORKFLOW_IDEAS.md"
+
+## SESSION HEALTH CHECK COMMAND
+
+When user says "health check":
+1. Count confirmed patches this session from SESSION_LOG.md
+2. Estimate context heaviness (number of files read, length of session)
+3. Report:
+   - Patches this session: X
+   - Files touched: X  
+   - Recommendation: continue / consider clearing soon / clear now
+4. Do not touch any files. Report only.
 
 End of file.

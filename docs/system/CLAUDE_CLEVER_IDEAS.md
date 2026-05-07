@@ -501,3 +501,96 @@ kind of loss that makes someone say "I should have known better."
 
 The best features solve problems people didn't know they had 
 until the problem was already solved.
+
+---
+
+## Incoming / Unsorted
+
+## BEHAVIOR TRANSFER > STATE TRANSFER
+
+The most important realization about the handoff system:
+
+Carrying state forward (JSON with features, next steps, working features) is not 
+enough to reconstruct the same assistant. What actually gets lost between sessions 
+is reasoning style, workflow rhythm, interaction patterns, and discipline.
+
+This is why assistant_behavior_clone, LOCKED_ATTRIBUTES, and the SYSTEM EVOLUTION 
+RULE exist — they carry HOW the assistant thinks, not just WHAT it knows.
+
+When evaluating any handoff quality, ask: "Could the next chat continue accurately 
+AND feel like the same thinking partner?" If only the first part is true, the 
+handoff is incomplete.
+
+---
+
+## THE DEVELOPMENT OPERATING SYSTEM (DevOS)
+
+This is the most important idea in this file.
+
+What it is:
+The file structure and workflow system built during Uncrumple 
+development is not app-specific. It is a reusable AI-assisted 
+development operating system. The app (Uncrumple) is the payload. 
+The system is the operating environment.
+
+System layer files (reusable on any project):
+- LOCKED_ATTRIBUTES.md — permanent behavioral rules
+- CANDIDATE_ATTRIBUTES.md — staging for possible rules
+- DECISIONS.md — why choices were made
+- ANTI_PATTERNS.md — what must never be repeated
+- KNOWN_UNKNOWNS.md — dangerous deferred ambiguity
+- INVARIANTS.md — constitutional truths
+- GLOSSARY.md — shared semantic meaning
+- SESSION_LOG.md — confirmed change history
+- CURRENT_HANDOFF.json — behavioral state transfer
+- HANDOFF_GENERATOR.md — how to clone the AI
+- HANDOFF_RECEIVER.md — how to resume from clone
+- CLAUDE.md — execution rules for Claude Code
+- DID_YOU_KNOW.md — accumulated tips
+- WORKFLOW_IDEAS.md — accumulated process ideas
+
+App layer files (Uncrumple-specific, replace per project):
+- ROADMAP.md — this app's future
+- CLAUDE_CLEVER_IDEAS.md — this app's saved feature ideas
+- APP_MAP.md, DATA_FLOW.md, USER_FLOWS.md etc
+
+The three-role system (also reusable):
+- User = director and vision holder
+- Planning AI (GPT/Claude chat) = continuity, prompts, evolution
+- Execution AI (Claude Code) = patches only, never plans
+
+What needs to be built to make this reusable:
+1. SYSTEM_README.md — origin story, what each file does, 
+   how to deploy fresh on a new project
+2. SYSTEM_EVOLUTION.md — version history of the DevOS itself, 
+   session by session, so the system's own growth is traceable
+3. Clear folder separation: docs/system/ = OS layer, 
+   docs/ = app layer
+4. Eventually: a template repo others can fork, a CLI that 
+   scaffolds the structure, a course explaining the philosophy
+
+Why this matters:
+Every developer using AI hits the same problems within weeks:
+- context degradation between sessions
+- role confusion between planning and execution
+- behavioral drift as rules get forgotten
+- lost decisions that get relitigated
+- no way to transfer AI behavior across chats
+
+This system solved all of those. Systematically. 
+That solution is the product.
+
+Connection to existing saved idea:
+The entry "The AI development workflow system built for Uncrumple 
+could itself become a product" in ROADMAP.md is this same idea 
+at an earlier stage. This entry supersedes it with full detail.
+
+Build order:
+1. Finish Uncrumple using this system (proof of concept)
+2. Extract and document the system layer separately
+3. Package as template/CLI/course
+4. Build DevOS as its own product if demand exists
+
+Do not build DevOS yet. Uncrumple ships first.
+This entry exists so the idea is fully preserved when the 
+time comes.

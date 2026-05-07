@@ -60,12 +60,30 @@ export default function ClientDetail() {
   const [tagSearch, setTagSearch] = useState('');
   const [showTagModal, setShowTagModal] = useState(false);
   const [tagModalForEdit, setTagModalForEdit] = useState(false);
+  const [addKeyboardHeight, setAddKeyboardHeight] = useState(0);
 
   const noteInputRef = useRef(null);
   const amountInputRef = useRef(null);
   const editAmountInputRef = useRef(null);
   const addFormScrollRef = useRef(null);
   const tagSearchRef = useRef(null);
+
+  useEffect(() => {
+    if (!showAddSheet) {
+      setAddKeyboardHeight(0);
+      return;
+    }
+    const showSub = Keyboard.addListener('keyboardDidShow', (e) => {
+      setAddKeyboardHeight(e.endCoordinates.height);
+    });
+    const hideSub = Keyboard.addListener('keyboardDidHide', () => {
+      setAddKeyboardHeight(0);
+    });
+    return () => {
+      showSub.remove();
+      hideSub.remove();
+    };
+  }, [showAddSheet]);
 
   useEffect(() => {
     if (addTx === '1') setShowAddSheet(true);
@@ -315,10 +333,9 @@ export default function ClientDetail() {
       const uri = result.assets[0].uri;
       editTransaction?.(txId, { receipt: true, receiptUri: uri });
       setSelectedTx(prev => prev ? { ...prev, receipt: true, receiptUri: uri } : null);
-      if (source === 'explore' && returnFilter) {
-        if (uri && capturedTagIds.length > 0 && capturedFlagged !== true) {
-          router.replace(exploreReturnUrl);
-        }
+      const updatedTx = { ...selectedTx, receiptUri: uri };
+      if (source === 'explore' && returnFilter && !txNeedsCleanup(updatedTx)) {
+        router.replace(exploreReturnUrl);
       }
     }
   };
@@ -383,6 +400,7 @@ export default function ClientDetail() {
 
   const txMissingReceipt = !!selectedTx && !selectedTx.receiptUri;
   const txMissingTags = !!selectedTx && !(selectedTx?.tagIds?.length);
+  const addReady = merchant.trim().length > 0 && parseFloat(amount.replace(/[^0-9.]/g, '')) > 0;
 
   return (
     <SafeAreaView style={s.root}>
@@ -582,9 +600,9 @@ export default function ClientDetail() {
       {/* Add transaction */}
       <Modal visible={showAddSheet} transparent animationType="slide" onRequestClose={() => setShowAddSheet(false)}>
         <TouchableOpacity style={s.overlay} activeOpacity={1} onPress={() => setShowAddSheet(false)} />
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ paddingBottom: addKeyboardHeight }}>
           <View style={[s.sheet, { maxHeight: '95%', minHeight: MIN_SHEET_HEIGHT }]}>
-            <ScrollView ref={addFormScrollRef} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 16 }}>
+            <ScrollView ref={addFormScrollRef} style={{ flexShrink: 1 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 16 }}>
             <Text style={s.sheetLabel}>ADD TO {client.name.toUpperCase()}</Text>
             <TextInput
               style={s.noteInput}
@@ -714,13 +732,18 @@ export default function ClientDetail() {
               <Text style={s.btnGhostText}>{receiptUri ? '📷 Retake Photo' : '📷 Take Receipt Photo'}</Text>
             </TouchableOpacity>
             <View style={{ height: 8 }} />
-            <TouchableOpacity style={s.btnPrimary} onPress={saveTransaction}>
-              <Text style={s.btnPrimaryText}>Save Transaction</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setShowAddSheet(false)}>
-              <Text style={s.skipText}>Cancel</Text>
-            </TouchableOpacity>
             </ScrollView>
+            <View>
+              {addReady ? (
+                <TouchableOpacity style={s.btnPrimary} onPress={saveTransaction}>
+                  <Text style={s.btnPrimaryText}>Save Transaction</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity style={s.btnGhost} onPress={() => setShowAddSheet(false)}>
+                  <Text style={s.btnGhostText}>Cancel</Text>
+                </TouchableOpacity>
+              )}
+            </View>
           </View>
         </KeyboardAvoidingView>
       </Modal>
@@ -791,7 +814,7 @@ export default function ClientDetail() {
                     onPress={() => {
                       editTransaction?.(selectedTx.id, { flagged: false });
                       setSelectedTx(prev => prev ? { ...prev, flagged: false } : null);
-                      if (source === 'explore' && returnFilter === 'flagged') {
+                      if (source === 'explore' && returnFilter) {
                         const updated = { ...selectedTx, flagged: false };
                         if (!txNeedsCleanup(updated)) {
                           router.replace(exploreReturnUrl);
@@ -1058,10 +1081,9 @@ export default function ClientDetail() {
             if (tagModalForEdit && selectedTx?.id) {
               editTransaction?.(selectedTx.id, { tagIds: editTagIds });
               setSelectedTx(prev => prev ? { ...prev, tagIds: editTagIds } : null);
-              if (source === 'explore' && returnFilter) {
-                if (!!selectedTx?.receiptUri && editTagIds.length > 0 && selectedTx?.flagged !== true) {
-                  router.replace(exploreReturnUrl);
-                }
+              const updatedTx = { ...selectedTx, tagIds: editTagIds };
+              if (source === 'explore' && returnFilter && !txNeedsCleanup(updatedTx)) {
+                router.replace(exploreReturnUrl);
               }
             }
             setShowTagModal(false);

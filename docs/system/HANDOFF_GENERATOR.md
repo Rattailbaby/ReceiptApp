@@ -530,6 +530,18 @@ Before generating JSON:
 6. Do NOT rely on memory alone
 7. Do NOT skip entries because they seem minor
 8. A SESSION_LOG entry missing from completed_work is a handoff failure
+9. Also read:
+   - docs/system/CANDIDATE_ATTRIBUTES.md
+   - docs/system/DECISIONS.md
+   - docs/system/ANTI_PATTERNS.md
+   - docs/system/KNOWN_UNKNOWNS.md
+   - docs/system/INVARIANTS.md
+   - docs/system/GLOSSARY.md
+   - docs/aria/ARIA_README.md
+   - docs/aria/ARIA_IDEAS.md
+10. During handoff generation, scan session for 🔭 ARIA 
+    moments not yet saved. Add high-value ones to 
+    docs/aria/ARIA_IDEAS.md via Code prompt.
 
 RESPONSE STRUCTURE RULE (MANDATORY)
 
@@ -783,6 +795,10 @@ Before outputting JSON, scan the conversation for:
 - any communication pattern that worked well
 - any mistake pattern that caused problems
 - any decision that should become a standing rule
+- Scan for 🔭 ARIA moments — cognitive patterns, system 
+  insights, or ARIA feature ideas that emerged during 
+  the session. Add to docs/aria/ARIA_IDEAS.md via 
+  Claude Code prompt if not already captured.
 
 Add discoveries to:
 - candidate_attributes (if useful)
