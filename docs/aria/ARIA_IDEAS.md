@@ -2290,3 +2290,20 @@ implementation detail.
 - Operational continuity: AMORTIZED GOVERNANCE RULE
 - Governance continuity: LOCKED_ATTRIBUTES evolution
 All without collapsing into one giant ritual.
+
+[2026-05-08] — Handoff metrics / continuity observability
+
+Not productivity metrics. Continuity integrity metrics.
+
+Eventually ARIA should track:
+- continuity integrity score
+- unresolved branch count
+- governance debt (stale candidates, unpromoted rules)
+- unsynced ARIA ideas
+- reconstruction confidence
+
+"Continuity observability" — once the system becomes 
+operationally real, you need to be able to see its 
+health at a glance, not just feel it.
+
+Future layer. Not now. Stabilize first.

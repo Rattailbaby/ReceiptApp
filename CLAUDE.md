@@ -898,9 +898,15 @@ When user says "handoff":
 7. Auto-commit: git add . && git commit -m "session close backup"
 
 8. Note remaining external steps the user must do manually:
-   - Update GPT project rules (paste latest LOCKED_ATTRIBUTES)
-   - Update Claude (chat) project rules
-   - Generate handoff JSON via GPT before starting new chat
+   - Update GPT project rules — slim version, points GPT at 
+     github.com/Rattailbaby/ReceiptApp (GPT has direct read 
+     access). Only session-specific delta needs paste.
+   - Update Claude (chat) project rules — either paste latest 
+     LOCKED_ATTRIBUTES content OR instruct Claude to WebFetch 
+     repo files on first turn of new chat.
+   - Generate handoff JSON via GPT — GPT reads repo files 
+     directly, only needs the session-specific delta and 
+     aria_state synthesis pasted.
 
 9. Provide the starter block ready to paste after /clear.
 

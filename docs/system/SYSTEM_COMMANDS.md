@@ -105,3 +105,38 @@ Quick diagnostic → say "health check"
 Save an idea → drop emoji prefix
 Save ARIA insight → use 🔭 ARIA: anywhere
 Check what's next → say "wn"
+
+## Idea Routing (which file gets which type of idea)
+
+ARIA-as-product ideas (cognition layer, branch management, 
+continuity infrastructure, ambient noticing concepts)
+→ docs/aria/ARIA_IDEAS.md
+
+DevOS / system-layer process ideas (improvements to the 
+governance/handoff/candidate system itself)
+→ docs/system/WORKFLOW_IDEAS.md
+
+Uncrumple app feature ideas (transactions, receipts, 
+clients, tags, cleanup flow)
+→ docs/system/ROADMAP.md (or docs/system/CLAUDE_CLEVER_IDEAS.md 
+for speculative)
+
+Project-level workflow about building Uncrumple (distinct 
+from system-layer)
+→ docs/WORKFLOW_IDEAS.md
+
+When ambiguous, ask before writing.
+
+## The Three-Role System
+
+User = director and vision holder, decision maker
+Planning AI (GPT or Claude chat) = architect, prompt writer, 
+continuity engine, strategic synthesizer
+Execution AI (Claude Code) = minimal patches only, never plans, 
+never decides
+Claude (chat) = systems thinking partner, verifier, idea 
+expander, second opinion alongside GPT
+
+Cross-AI behavior: synthesize or principled-disagree, never 
+silent-defer between roles. See LOCKED_ATTRIBUTES section 29 
+THREE ROLE SYSTEM and the cross-AI reconciliation candidate.

@@ -384,7 +384,8 @@
     "Sort not persisted via URL — local state only",
     "Extras-only navigation consistency still tied to source=explore gate",
     "14 bottom-appended rules in LOCKED_ATTRIBUTES still outside numbered fence — needs manual cleanup eventually",
-    "Before starting new GPT chat, confirm GPT has: (1) crumple-to-flat animation saved in ROADMAP as priority product identity idea, (2) CLAUDE_CODE_STARTER.md updated with 9 system/ARIA files reading list, (3) close session command is new and should become permanent in GPT project rules, (4) ARIA renamed to Ambient Reasoning and Insight Architecture - no more DevOS or AI-Resilient Infrastructure Architecture references, (5) docs/aria/ folder exists with full infrastructure."
+    "Before starting new GPT chat, confirm GPT has: (1) crumple-to-flat animation saved in ROADMAP as priority product identity idea, (2) CLAUDE_CODE_STARTER.md updated with 9 system/ARIA files reading list, (3) close session command is new and should become permanent in GPT project rules, (4) ARIA renamed to Ambient Reasoning and Insight Architecture - no more DevOS or AI-Resilient Infrastructure Architecture references, (5) docs/aria/ folder exists with full infrastructure.",
+    "GitHub repo now at github.com/Rattailbaby/ReceiptApp. GPT connected via Rattailbaby account. Block C no longer requires manual JSON paste — GPT reads files directly."
   ],
 
   "future_ideas_saved_not_built": [

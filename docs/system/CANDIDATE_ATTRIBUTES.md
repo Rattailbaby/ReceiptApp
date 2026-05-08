@@ -291,6 +291,14 @@ feedback_dual_track.md as paste-ready blocks for
 GPT/Claude project rules so all three AIs share 
 the same behavioral profile.
 
+[2026-05-08] — GitHub as source of truth simplifies handoff
+With GPT connected to github.com/Rattailbaby/ReceiptApp,
+Block A and Block C of HANDOFF COMMAND can reference repo 
+files directly instead of pasting them. Block B (Claude) 
+still needs explicit paste. Future: replace paste blocks 
+with "read latest at HEAD" pointers. Validate across 
+multiple sessions before locking.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 ## Rejected
