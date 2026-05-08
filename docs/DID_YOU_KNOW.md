@@ -58,6 +58,14 @@
 
 ---
 
+🤖 "Close session" becoming a single command is the same pattern as "clear" — one word that triggers a whole automated sequence. The system keeps getting simpler to operate even as it gets more sophisticated underneath.
+
+---
+
+🤖 Code just demonstrated what the continuity integrity check should look like — systematic, honest, prioritized. That's the pre-flight validation GPT's handoff evolution idea described.
+
+---
+
 ## 📱 Android and Mobile
 
 ---
@@ -67,6 +75,10 @@
 ---
 
 🏗️ If you find yourself doing the same manual step more than three times, that's a sign it should be automated — your "wrap session" command is a perfect example of that thinking.
+
+---
+
+🏗️ Three commands. Clean. Anyone can understand it. Future-you will be very thankful. (On simplifying the lifecycle command surface to clear / handoff / health check.)
 
 ---
 

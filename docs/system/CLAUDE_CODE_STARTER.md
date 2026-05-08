@@ -1,5 +1,16 @@
 Read CLAUDE.md and follow it strictly.
 
+Also read these if they exist before patching:
+- docs/system/LOCKED_ATTRIBUTES.md
+- docs/system/CANDIDATE_ATTRIBUTES.md
+- docs/system/DECISIONS.md
+- docs/system/ANTI_PATTERNS.md
+- docs/system/KNOWN_UNKNOWNS.md
+- docs/system/INVARIANTS.md
+- docs/system/GLOSSARY.md
+- docs/aria/ARIA_README.md
+- docs/aria/ARIA_IDEAS.md
+
 We are continuing the same project.
 
 CORE CONSTRAINTS
@@ -50,7 +61,15 @@ DUPLICATE PROMPT RULE
 If a prompt looks identical to a very recent one, verify the change is not already applied before re-running.
 Re-applying would duplicate content or fail on a missing anchor.
 
+MERGED PROMPT RULE
+If I paste multiple prompts for the same file and same goal:
+- merge overlapping intent into one surgical patch
+- preserve stricter constraints
+- do not duplicate edits
+- stop and ask if the prompts conflict
+
 GIT STATE
 This project is a git repo. Suggest a commit before any risky multi-file change.
 git add .
 git commit -m "backup"
+</content>

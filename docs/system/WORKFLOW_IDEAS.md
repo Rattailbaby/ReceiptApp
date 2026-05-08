@@ -21,3 +21,12 @@ Needs:
 This could become a product itself after Uncrumple ships.
 The AI workflow system idea saved in CLAUDE_CLEVER_IDEAS.md 
 is the same idea — they should be merged and expanded.
+
+🧠 [2026-05-06] — Coordination overhead is the failure mode
+Advanced systems often fail not because individual components 
+are weak, but because coordination overhead grows faster than 
+the system's ability to manage it coherently. Implication for 
+DevOS: as new layers, files, and rules are added, coordination 
+cost between them must stay below their combined value. Watch 
+for the threshold where adding structure begins reducing 
+clarity instead of increasing it.

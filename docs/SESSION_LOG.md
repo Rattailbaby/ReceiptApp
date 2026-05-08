@@ -1,5 +1,20 @@
 # SESSION LOG
 
+## 2026-05-07 — Add Transaction footer pinned via absolute positioning above keyboard
+
+- In `app/client-detail.tsx`, replaced the JS-layer keyboard-offset workaround (which failed on device) with absolute footer positioning that pins the Save/Cancel button above the keyboard.
+- Sheet View: removed `marginBottom: addKeyboardHeight` from inline style. Sheet stays in its natural position; the footer now handles keyboard offset on its own.
+- Add sheet ScrollView contentContainerStyle: `paddingBottom: 16` → `paddingBottom: 80 + addKeyboardHeight`. Reserves space below the last form item so the receipt button can be scrolled into view above the absolute footer overlay zone (extra room when keyboard is open).
+- Footer wrapper View: changed from `{ flexShrink: 0, minHeight: 80, backgroundColor: 'red' }` (red-debug state) to absolute positioning — `{ position: 'absolute', left: 28, right: 28, bottom: addKeyboardHeight ? addKeyboardHeight + 16 : 48 }`. Pins to the bottom of the sheet at 48 px (matching original visual margin) when keyboard is closed; jumps to `keyboardHeight + 16` above the bottom when keyboard is open.
+- `addKeyboardHeight` state and `keyboardDidShow` / `keyboardDidHide` listeners reused unchanged.
+- KAV behavior, MIN_SHEET_HEIGHT, s.sheet, Edit sheet, saveTransaction, tag/receipt logic all untouched.
+- Confirmed working on device: footer stays visible across all four states (sheet open / merchant focused / amount focused / note focused / keyboard dismissed).
+
+## 2026-05-07 — app.json android softwareKeyboardLayoutMode set to "resize"
+
+- In `app.json`, added `"softwareKeyboardLayoutMode": "resize"` to the `android` block alongside `edgeToEdgeEnabled` and `predictiveBackGestureEnabled`. Switches Android from default `adjustPan` to `adjustResize`.
+- Native config change — requires dev-client rebuild to take effect on device.
+
 ## 2026-05-06 — Add Transaction sheet keyboard offset for persistent footer
 
 - In `app/client-detail.tsx`, added `addKeyboardHeight` state alongside other useState declarations.

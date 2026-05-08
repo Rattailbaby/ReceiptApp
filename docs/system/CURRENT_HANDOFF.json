@@ -74,7 +74,12 @@
       "LOCKED_ATTRIBUTES 13b SIDEQUEST RULE codifies brief-interruption-with-return pattern",
       "Add Transaction sheet has persistent state-driven Save/Cancel footer reachable above Android keyboard",
       "Cleanup return navigation uses txNeedsCleanup uniformly across Mark Reviewed, Add Receipt, Save Tags handlers",
-      "HANDOFF_RECEIVER and HANDOFF_GENERATOR both require reading the expanded system + ARIA file set on session start"
+      "HANDOFF_RECEIVER and HANDOFF_GENERATOR both require reading the expanded system + ARIA file set on session start",
+      "Add Transaction footer uses absolute positioning above Android keyboard (final working fix)",
+      "ARIA name finalized as Ambient Reasoning and Insight Architecture",
+      "Three-command user surface (clear / handoff / health check) with two internal subroutines (wrap session, clean up docs)",
+      "LOCKED_ATTRIBUTES has 35 numbered sections + CANDIDATE PROMOTION RULE + CEREMONY RULE",
+      "CLAUDE.md has 13-file SYSTEM FILES READING RULE so fresh Code sessions self-bootstrap into ARIA + governance context"
     ],
     "active_issue": "Flagged transaction flow has not been fully inspected end-to-end including interaction with multi-filter states, match mode behavior, and cleanup resolution logic.",
     "temporary_items": [
@@ -353,7 +358,23 @@
     "Expanded HANDOFF_RECEIVER.md INITIALIZATION required-reading list with CANDIDATE_ATTRIBUTES, DECISIONS, ANTI_PATTERNS, KNOWN_UNKNOWNS, INVARIANTS, GLOSSARY, ARIA_README, ARIA_IDEAS plus 🔭 ARIA scan instructions",
     "Expanded HANDOFF_GENERATOR.md SESSION LOG SYNC RULE with steps 9-10 — read all new system files plus ARIA files, scan session for unsaved 🔭 ARIA moments",
     "Added 🔭 ARIA scan line to HANDOFF_GENERATOR TRAIT DISCOVERY SCAN checklist",
-    "Created .claude/settings.json with Stop hook + .claude/hooks/copy-last-response.ps1 — auto-copies last assistant response to Windows clipboard"
+    "Created .claude/settings.json with Stop hook + .claude/hooks/copy-last-response.ps1 — auto-copies last assistant response to Windows clipboard",
+    "Add Transaction footer pinned via absolute positioning above keyboard — final fix, replaced earlier marginBottom approach which failed on device under Android adjustPan",
+    "app.json android softwareKeyboardLayoutMode set to 'resize' — enables adjustResize at OS level (requires dev-client rebuild)",
+    "ARIA renamed from AI-Resilient Infrastructure Architecture to Ambient Reasoning and Insight Architecture in ARIA_README.md",
+    "ARIA_README.md gained Working Pitch + Canonical Pitch sections — 'Pick up exactly where your brain left off' as official user-facing pitch",
+    "ARIA_README.md gained Current Working Definition + Explain it to anyone sections",
+    "LOCKED_ATTRIBUTES sections 31-35 promoted from candidates: 31 BASE TASK CONTINUITY REASSURANCE, 32 SIDEQUEST CONTEXT PRESERVATION, 33 AUTOMATIC HIGH-VALUE ARCHITECTURE CAPTURE, 34 ARIA EPISTEMIC CONFIDENCE LAYERS, 35 INSPIRATION FLOW CAPTURE",
+    "LOCKED_ATTRIBUTES section 13b SIDEQUEST RULE + 13c CONTINUITY REASSURANCE RULE numbered consistently",
+    "LOCKED_ATTRIBUTES gained CANDIDATE PROMOTION RULE + CANDIDATE PROMOTION CEREMONY RULE",
+    "CLAUDE.md gained SYSTEM FILES READING RULE listing 13 system/ARIA files to read before patching",
+    "CLAUDE.md gained DUPLICATE PROMPT RULE, MERGED PROMPT RULE, VERIFY-BEFORE-CLAIM RULE, DUAL-TRACK RULE, AMORTIZED GOVERNANCE RULE",
+    "CLAUDE.md What Is This App section now references ARIA layer under docs/aria/",
+    "CLOSE SESSION COMMAND renamed to HANDOFF COMMAND with goal-audit step added; close session alias dropped",
+    "Command surface simplified to 3 user commands: clear / handoff / health check; SESSION WRAP and DOC CLEANUP demoted to internal subroutines",
+    "CLEAR USAGE RULE gained session metrics as first step",
+    "Created docs/system/SYSTEM_COMMANDS.md as authoritative reference for all triggers and commands",
+    "Memory files added: feedback_dual_track.md (execution-constraint vs ambient-capture parallel tracks), project_aria.md (ARIA routing rules)"
   ],
 
   "unresolved_threads": [
@@ -362,7 +383,8 @@
     "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
     "Sort not persisted via URL — local state only",
     "Extras-only navigation consistency still tied to source=explore gate",
-    "14 bottom-appended rules in LOCKED_ATTRIBUTES still outside numbered fence — needs manual cleanup eventually"
+    "14 bottom-appended rules in LOCKED_ATTRIBUTES still outside numbered fence — needs manual cleanup eventually",
+    "Before starting new GPT chat, confirm GPT has: (1) crumple-to-flat animation saved in ROADMAP as priority product identity idea, (2) CLAUDE_CODE_STARTER.md updated with 9 system/ARIA files reading list, (3) close session command is new and should become permanent in GPT project rules, (4) ARIA renamed to Ambient Reasoning and Insight Architecture - no more DevOS or AI-Resilient Infrastructure Architecture references, (5) docs/aria/ folder exists with full infrastructure."
   ],
 
   "future_ideas_saved_not_built": [

@@ -65,11 +65,6 @@ to execution. Distinguish between dopamine brainstorm
 noise and emergent structural insight. Current thread 
 is the second type.
 
-[2026-05-06] — Thread branching needed
-Repeated verbal reminders to return to a task (footer) 
-are a system failure. ARIA should hold thread context 
-so neither human nor AI needs to keep a verbal bookmark.
-
 [2026-05-06] — Inspiration flow capture rule
 During high-inspiration architecture exploration, preserve and expand strong system-level ideas before redirecting back to execution.
 
@@ -121,6 +116,180 @@ LOCKED_ATTRIBUTES → proven and permanent
 
 Auto-saving everything collapses these tiers into noise.
 The flag is ambient noticing. The review is intentional.
+
+[2026-05-06] — Base task continuity reassurance
+When sidequests, synthesis flow, or deferred capture occurs,
+maintain awareness of the suspended base task. Short
+reassurance phrases like "Base task still held." or
+"Deferred queue preserved." reduce cognitive anxiety and
+improve exploratory freedom by making continuity visible.
+
+Candidate for CLAUDE.md promotion if it consistently proves
+valuable across multiple sessions.
+
+[2026-05-06] — Automatic high-value architecture capture
+When a discussion reveals a potentially foundational ARIA or system concept, GPT should not only discuss the idea but also proactively provide:
+- preservation classification
+- suggested file destination
+- save prompt generation
+
+Especially when phrases like:
+- “this may become a core ARIA concept”
+- “this feels foundational”
+- “this changes the architecture”
+- “this explains the real problem”
+appear during synthesis.
+
+Reason:
+High-value architectural emergence should not depend on the user remembering to manually request preservation prompts.
+
+[2026-05-06] — Coordination-overhead awareness
+Advanced systems often fail not because individual components 
+are weak, but because coordination overhead grows faster than 
+the system's ability to manage it coherently.
+
+Behavioral implication: when proposing new files, layers, or 
+rules, weigh the coordination cost they introduce against the 
+clarity they add. If a proposed addition would require yet 
+another file to explain how it relates to existing ones, that 
+is a signal the system is approaching coordination-overhead 
+saturation and stabilization should precede expansion.
+
+[2026-05-06] — Multi-source prompt convergence
+The user may send multiple prompts from different AI planners 
+(GPT + Claude) for the same task before Code responds.
+
+Observed behavior:
+Code successfully merged overlapping intent from two nearly 
+identical footer-fix prompts into one clean surgical patch.
+
+Potential workflow rule:
+When multiple prompts clearly target the same file and same 
+goal, prefer:
+- merging overlapping intent
+- preserving stricter constraints
+- avoiding duplicate edits
+- synthesizing the clearest execution path
+
+Do NOT:
+- stack conflicting implementations
+- apply both patches independently
+- duplicate edits
+- widen scope silently
+
+If prompts conflict:
+- stop and ask for clarification.
+
+Reason:
+The multi-role system may intentionally use parallel reasoning 
+to improve architecture quality before execution.
+
+Candidate only until tested across more sessions.
+
+[2026-05-07] — Documentation confidence system as signature UX
+📱 A future "documentation confidence system" could become 
+one of Uncrumple's signature UX ideas because it teaches 
+better habits passively instead of forcing compliance.
+
+[2026-05-07] — Formal session closing process
+The session closing process has grown significantly and 
+needs to become a formalized rule. Current steps that 
+should happen every session close:
+
+1. y confirmation logs final patch
+2. clear triggers wrap/commit/doc cleanup/starter block
+3. CANDIDATE_ATTRIBUTES review — GPT presents each 
+   pending candidate: keep, promote, or discard
+4. Promoted candidates move to LOCKED_ATTRIBUTES via 
+   Code prompt
+5. ARIA scan — GPT checks session for unsaved 🔭 moments
+6. Handoff JSON generated capturing both Uncrumple state 
+   AND ARIA state separately
+7. New chat with starter block + handoff JSON
+
+Missing infrastructure:
+- No ARIA state section in handoff JSON schema
+- No automated candidate review prompt
+- No session closing checklist command in CLAUDE.md
+- Handoff process not documented as a formal checklist
+
+Candidate for promotion: add ## SESSION CLOSING CHECKLIST 
+command to CLAUDE.md that runs all steps automatically 
+when user says "close session."
+
+[2026-05-07] — "Close session" as a single automated command
+GPT should respond to "close session" by running the full 
+closing sequence automatically: candidate review → ARIA scan 
+→ handoff generation → starter block. GPT should also 
+proactively suggest closing when context shows signs of 
+degradation (shorter responses, losing recent decisions, 
+slower reasoning). This prevents session entropy from 
+accumulating silently.
+
+[2026-05-08] — Cross-AI prompt reconciliation / role integrity under cross-validation
+
+When GPT and Claude both produce prompts, recommendations, 
+or reviews for the same task, they must not simply defer to 
+each other ("use theirs").
+
+Required behavior:
+- identify what is stronger in own version
+- identify what is stronger in the other AI's version
+- merge non-conflicting strengths into one combined output
+- drop weaker or duplicate parts
+- if the other AI covers something yours missed, generate a 
+  merged version including both
+- if there is genuine conflict: state disagreement clearly 
+  with reasoning and hold position
+- if truly equivalent: say so and let Code merge via the 
+  MERGED PROMPT RULE
+- never make the user manually assemble the answer from 
+  two partial responses
+
+If the prompts conflict in goal, file scope, or implementation 
+strategy:
+- stop and ask the user to decide
+
+Reason:
+The user should not have to mentally arbitrate between 
+overlapping AI prompts during fast workflow. The trio 
+system should reduce coordination burden, not increase it.
+The correct behavior is synthesis or principled disagreement —
+not mutual deference.
+
+This applies to both GPT and Claude roles.
+
+Candidate for future LOCKED_ATTRIBUTES or CLAUDE.md promotion 
+if repeatedly useful.
+
+[2026-05-08] — Heuristic defaults for candidate review
+During handoff candidate review, Code suggests a default 
+action per candidate based on session signals:
+- PROMOTE: mentioned 3+ times OR explicitly used/accepted
+- KEEP: mentioned once, no validation yet
+- DEFER: vague or low-information
+- REJECT: contradicted by later events
+User reviews defaults and only overrides disagreements.
+Cuts review from 15 minutes to 2 minutes.
+
+[2026-05-08] — Trio-routing paste-ready prompt automation
+When handoff hits a trio-judgment step, Code generates 
+paste-ready blocks for GPT and Claude automatically.
+User pastes, gets responses, brings back to Code.
+No manual assembly required.
+
+[2026-05-08] — Synthesis-mode signal
+User can say "synthesis mode" to tell Code not to 
+suggest clear during architecture/ARIA exploration.
+User can say "execution mode" to resume normal 
+clear cadence. Gives explicit control over the 
+synthesis-vs-token tradeoff.
+
+[2026-05-08] — Memory-file paste blocks for GPT/Claude
+During handoff, Code surfaces project_aria.md and 
+feedback_dual_track.md as paste-ready blocks for 
+GPT/Claude project rules so all three AIs share 
+the same behavioral profile.
 
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 

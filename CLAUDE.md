@@ -4,10 +4,39 @@ Last updated: April 2025
 This file is for Claude Code only.
 Read this entire file before editing anything.
 
+## SYSTEM FILES READING RULE
+
+Before patching, read and use these files if they exist:
+- docs/system/LOCKED_ATTRIBUTES.md
+- docs/system/CANDIDATE_ATTRIBUTES.md
+- docs/system/DECISIONS.md
+- docs/system/ANTI_PATTERNS.md
+- docs/system/KNOWN_UNKNOWNS.md
+- docs/system/INVARIANTS.md
+- docs/system/GLOSSARY.md
+- docs/system/SYSTEM_EVOLUTION.md
+- docs/aria/ARIA_README.md
+- docs/aria/ARIA_IDEAS.md
+- docs/aria/ARIA_DECISIONS.md
+- docs/aria/ARIA_KNOWN_UNKNOWNS.md
+- docs/aria/ARIA_ROADMAP.md
+
+LOCKED_ATTRIBUTES.md contains permanent behavior rules.
+CANDIDATE_ATTRIBUTES.md contains possible future rules.
+ARIA files contain infrastructure and cognition-system context.
+
+If a task touches workflow behavior, handoff, ARIA, sidequests, SOC, or system rules, check these files before editing.
+
 ---
 
 ## What Is This App
 Uncrumple is a React Native / Expo Android app for tradespeople to track receipts, expenses, clients, tags, cards, rules, and cleanup items. No backend. All data is local. Use existing app logic whenever possible.
+
+This project also hosts ARIA — Ambient Reasoning and 
+Insight Architecture — under docs/aria/. ARIA is a 
+reusable AI development operating system that emerged 
+from building Uncrumple. See docs/aria/ARIA_README.md 
+for the full system layer description.
 
 ## Tech Stack
 - Expo SDK 54, Expo Router (file-based routing)
@@ -807,28 +836,81 @@ Do NOT clear between small related patches in the same feature thread.
 
 When the user says "clear" or asks to clear Claude Code:
 
-1. Automatically run wrap session first:
+1. Run session metrics (count patches this session, 
+   estimate context heaviness) and report inline.
+
+2. Automatically run wrap session first:
    - Read docs/SESSION_LOG.md
    - Read docs/system/CURRENT_HANDOFF.json
    - Sync completed work and working features
    - Update ROADMAP if needed
    - Report what was synced
 
-2. Then remind the user:
+3. Then remind the user:
    "Wrap complete. Now run these in PowerShell before clearing:
    git add .
    git commit -m 'pre-clear backup'
    Then run /clear and paste the starter block."
 
-3. Run the DOC CLEANUP COMMAND automatically (same behavior as
+4. Run the DOC CLEANUP COMMAND automatically (same behavior as
    when user says "clean up docs") — reorganize DID_YOU_KNOW.md
    and WORKFLOW_IDEAS.md by emoji category
 
-4. Report what was reorganized alongside the normal wrap report
+5. Report what was reorganized alongside the normal wrap report
 
-5. Provide the starter block ready to paste after /clear.
+6. Provide the starter block ready to paste after /clear.
 
 Do this automatically. Do not wait for the user to say wrap session separately.
+
+---
+
+## HANDOFF COMMAND
+
+When user says "handoff":
+
+1. Run the full wrap session sequence (read SESSION_LOG, sync 
+   CURRENT_HANDOFF.json completed_work and working_features, 
+   update ROADMAP if needed)
+
+2. Run the DOC CLEANUP COMMAND automatically — reorganize 
+   DID_YOU_KNOW.md and WORKFLOW_IDEAS.md by category
+
+3. Read docs/system/CANDIDATE_ATTRIBUTES.md and surface each 
+   pending candidate for review. For each one, prompt the user:
+   KEEP / PROMOTE / REJECT / DEFER.
+
+4. For any candidate marked PROMOTE, automatically generate the 
+   exact Code prompt to add it to docs/system/LOCKED_ATTRIBUTES.md 
+   (per CANDIDATE PROMOTION CEREMONY RULE in LOCKED_ATTRIBUTES). 
+   Multiple promotions can be batched into one prompt.
+
+5. Scan the session for unsaved 🔭 ARIA moments. List any that 
+   are not yet in docs/aria/ARIA_IDEAS.md. Generate a save prompt 
+   if any are found.
+
+6. Audit session goals against actual file state.
+   For each item the user listed as a session goal,
+   check actual file state and report:
+   ✅ DONE — with file:line evidence
+   ❌ MISSING — with suggested fix
+   ⚠️ PARTIAL — with what remains
+
+7. Auto-commit: git add . && git commit -m "session close backup"
+
+8. Note remaining external steps the user must do manually:
+   - Update GPT project rules (paste latest LOCKED_ATTRIBUTES)
+   - Update Claude (chat) project rules
+   - Generate handoff JSON via GPT before starting new chat
+
+9. Provide the starter block ready to paste after /clear.
+
+Handoff is heavier than clear. clear is just wrap + 
+commit + starter. Handoff adds candidate review, ARIA 
+scan, audit, and external-sync packet generation — 
+used when transferring the trio to a new chat.
+
+Do this automatically. Do not wait for the user to ask for 
+each step.
 
 ---
 
@@ -882,6 +964,65 @@ Do NOT ask:
 
 ---
 
+## VERIFY-BEFORE-CLAIM RULE
+Before reporting that a section, file, or line exists 
+or is missing, read or grep it first.
+Do not rely on memory of recent edits — files can be 
+modified outside the session.
+If uncertain, grep before claiming.
+
+---
+
+## DUPLICATE PROMPT RULE
+
+If a prompt looks identical to a very recent one, verify the change is not already applied before re-running. Re-applying would duplicate content or fail on a missing anchor.
+
+---
+
+## MERGED PROMPT RULE
+
+When the user pastes multiple prompts that target the same file and same goal:
+- merge overlapping intent into one surgical patch
+- preserve stricter constraints
+- do not duplicate edits
+- report what was merged
+- stop and ask if the prompts conflict
+
+Treat the merged result as one patch for logging purposes.
+
+---
+
+## DUAL-TRACK RULE
+"Fix only X" execution constraints and ambient 🔭/🧠 
+capture are independent behaviors. They do not suppress 
+each other.
+
+When a structured task prompt says "Fix only X":
+- apply the fix to X only (execution constraint honored)
+- still capture any 🔭 ARIA or 🧠 markers present 
+  (ambient capture continues)
+
+Both tracks run simultaneously. Neither overrides the other.
+
+---
+
+## AMORTIZED GOVERNANCE RULE
+When a decision is made, an anti-pattern is observed, 
+or an invariant is at risk during a session, prompt 
+the user to capture it immediately rather than batching 
+for handoff. Mid-session capture preserves reasoning 
+while it is fresh and reduces handoff burden.
+
+Trigger conditions:
+- A decision is made between alternatives → prompt to 
+  add to DECISIONS.md
+- A failure mode is hit → prompt to add to 
+  ANTI_PATTERNS.md
+- A patch could violate an invariant → flag and verify 
+  before continuing
+
+---
+
 ## REGRESSION RULE
 
 If a patch makes behavior worse:
@@ -892,7 +1033,10 @@ If a patch makes behavior worse:
 - Return to the last known working state before attempting another fix
 - Do not fix forward through a broken layout unless there is no safe revert
 
-## DOC CLEANUP COMMAND
+## INTERNAL: DOC CLEANUP SUBROUTINE
+
+Called automatically by clear and handoff.
+Not a user-facing command.
 
 When user says "clean up docs" or "run doc cleanup":
 
@@ -972,7 +1116,10 @@ Safe to update with explicit instruction:
 - CURRENT_HANDOFF.json
 - docs/SESSION_LOG.md
 
-## SESSION WRAP COMMAND
+## INTERNAL: SESSION WRAP SUBROUTINE
+
+Called automatically by clear and handoff. 
+Not a user-facing command.
 
 When user says "wrap session":
 

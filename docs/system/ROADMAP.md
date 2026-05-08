@@ -1425,6 +1425,78 @@ transactions) — this is for already-saved transactions that need
 follow-up. Notification deep links back to that specific transaction.
 Requires notification system to be built first.
 
+📱 Save button color progression as completion signal — 
+button color shifts based on transaction completeness 
+without blocking save. Example progression:
+- Grey = minimum fields only (merchant + amount)
+- Amber = plus note or card added  
+- Green = fully complete (receipt + tags + card + note)
+Gives ambient feedback without friction. User feels 
+the button becoming "more confident" as they document more.
+No blocking, no alerts, just color as signal.
+
+📱 Crumple-to-flat Save button animation — the Save button 
+has a crumpled/wrinkled visual texture when transaction is 
+minimally complete (merchant + amount only). As the user adds 
+note, card, tags, receipt — the button visually flattens and 
+smooths out. Fully complete = perfectly flat, clean button. 
+Ties directly to the Uncrumple brand metaphor. The core 
+interaction literally animates the app's name and concept. 
+Works regardless of app name change — concept is 
+"organizing chaos into clarity."
+
+📱 Transaction completeness progress bar under Save button — 
+thin bar below the Save button fills as optional fields are 
+completed (note, card, tags, receipt). Color shifts grey → 
+amber → green. Optionally small icons above each segment 
+showing what's missing. Self-explanatory — no user education 
+needed. Pairs with Save button color progression idea. 
+The bar communicates "there's more you could add" without 
+blocking or nagging.
+
+📱 "Why was I here?" transaction history — open a 
+transaction from weeks ago and see: when it was created, 
+when receipt was added, how many times opened, what's 
+still missing. Smallest version of ARIA's reconstruction 
+snapshot concept. Proves the pattern on tiny data.
+
+📱 Sidequest pattern inside Add Transaction — mid-flow 
+"I need a new tag": park current Add sheet with state 
+preserved, create the tag, return to Add with new tag 
+selectable. ARIA branch orchestration tested at app scale.
+
+📱 "Uncrumpling" completion feedback tied to transaction quality
+
+Instead of generic progress colors alone, transaction completion feedback could visually match the Uncrumple theme itself.
+
+Concept:
+As the user adds more useful transaction information:
+- receipt
+- tags
+- card
+- note
+the Save/confirmation UI gradually appears more "uncrumpled."
+
+Examples:
+- wrinkled/crumpled texture becomes flatter
+- paper edges smooth out
+- subtle fold lines disappear
+- confidence/progress bar straightens
+- receipt icon visually uncrumples
+- shadow/noise decreases as completeness improves
+
+Core idea:
+The transaction visually transforms from:
+messy / risky / incomplete
+into:
+organized / protected / future-proofed
+
+Important:
+This is ambient emotional feedback, not punishment UX.
+The system encourages stronger documentation passively through visual transformation.
+
+Works even if the app name changes later because the mechanic represents reducing informational chaos rather than branding alone.
+
 ## Saved Ideas — Receipts
 - Receipt annotation tools (highlight, draw, text box)
 - Bulk export receipts by client or date range

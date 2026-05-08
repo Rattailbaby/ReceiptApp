@@ -600,9 +600,9 @@ export default function ClientDetail() {
       {/* Add transaction */}
       <Modal visible={showAddSheet} transparent animationType="slide" onRequestClose={() => setShowAddSheet(false)}>
         <TouchableOpacity style={s.overlay} activeOpacity={1} onPress={() => setShowAddSheet(false)} />
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ paddingBottom: addKeyboardHeight }}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <View style={[s.sheet, { maxHeight: '95%', minHeight: MIN_SHEET_HEIGHT }]}>
-            <ScrollView ref={addFormScrollRef} style={{ flexShrink: 1 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 16 }}>
+            <ScrollView ref={addFormScrollRef} style={{ flexShrink: 1 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 80 + addKeyboardHeight }}>
             <Text style={s.sheetLabel}>ADD TO {client.name.toUpperCase()}</Text>
             <TextInput
               style={s.noteInput}
@@ -733,7 +733,14 @@ export default function ClientDetail() {
             </TouchableOpacity>
             <View style={{ height: 8 }} />
             </ScrollView>
-            <View>
+            <View
+              style={{
+                position: 'absolute',
+                left: 28,
+                right: 28,
+                bottom: addKeyboardHeight ? addKeyboardHeight + 16 : 48,
+              }}
+            >
               {addReady ? (
                 <TouchableOpacity style={s.btnPrimary} onPress={saveTransaction}>
                   <Text style={s.btnPrimaryText}>Save Transaction</Text>
