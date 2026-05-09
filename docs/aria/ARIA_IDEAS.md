@@ -2550,3 +2550,81 @@ This is a continuity primitive worth elevating. Most "save before quitting" inte
 Possible expansion: This pattern could apply beyond AI handoffs. Any time someone is about to leave a deep context (end of project, end of role, end of life), the ambiguous-question round captures things that wouldn't be volunteered. ARIA's pitch — "Pick up exactly where your brain left off" — is fully delivered only if you also captured what the brain was about to forget it knew.
 
 Captured per SOC marker, 2026-05-09 final pre-clear pass.
+
+
+[2026-05-09] — Generative Harvest extras (GPT-1 final pass)
+
+Five additional ARIA primitives surfaced during the same pre-clear generative round that produced the Generative Harvest pattern itself. Saved per user instruction: no idea wasted — reading one idea often sparks better ones or builds on it.
+
+1. UNKNOWN-VALUE SWEEP
+
+At handoff, don't only ask "what changed?" Ask:
+"What became obvious to you that the user may not realize is valuable?"
+
+Why this matters:
+The AI may notice patterns the user is too tired to name. End of session is when the user's filter is weakest, but the AI's pattern-matching is at peak. Captures things the user wouldn't have known to ask about.
+
+This is the inverse of the normal harvest direction — the AI volunteers what the USER might have missed, not just what the AI noticed.
+
+2. FRICTION-TO-FEATURE CONVERSION
+
+Every time the user says "this is annoying," ARIA should ask:
+"Is this annoyance a product feature, a workflow rule, or just fatigue?"
+
+Three buckets:
+- Product feature → goes to ROADMAP (the annoyance reveals a missing capability)
+- Workflow rule → goes to CANDIDATE_ATTRIBUTES (the annoyance reveals a missing behavior rule)
+- Just fatigue → ignore (the annoyance is transient and doesn't generalize)
+
+This session showed irritation often exposes hidden coordination burden — but not always. The classifier prevents over-encoding fatigue into permanent rules.
+
+3. HARVEST BEFORE COMPRESSION
+
+Lightweight version of Generative Harvest for normal clears (not handoffs).
+
+Before any /clear, ARIA should ask one short final question:
+"Anything valuable in your current context that will be expensive to rediscover later?"
+
+Single question. Short answer expected. If yes, capture. If no, proceed.
+
+This makes the harvest principle scalable — heavy version for handoffs, one-line version for routine clears. Doesn't bloat normal token-reset flow but doesn't lose signal either.
+
+4. ROLE-SPECIFIC LAST WORDS
+
+Each role gets one final dedicated lane at handoff:
+- GPT: What continuity will future GPT lose?
+- Claude: What structure is unstable?
+- Code: What file/process truth is not obvious?
+- USER: What still feels wrong?
+
+Note: this includes the user. Most handoff systems treat the user as the orchestrator, not as a contributor. But the user has continuity the AIs don't (across all sessions, across all generations). Adding "what still feels wrong" gives the user a permanent lane to flag drift the AIs can't see from inside.
+
+This could become a beautiful ARIA primitive — the trio + user, all four with structured final-words slots.
+
+5. FUTURE-ME FILTER (eventual lock candidate)
+
+This is a reusable decision lens already proven this session:
+"Will this reduce future continuity tax, or create more system to maintain?"
+
+Currently captured in persistent_attributes.decision_patterns of CURRENT_HANDOFF.json. May eventually deserve LOCKED-rule status if it keeps proving itself across sessions.
+
+Watch criteria for promotion to LOCKED:
+- Used in at least 3 distinct decisions across 3 sessions
+- Caught at least one over-build that other rules would have missed
+- User confirms the filter matches their actual decision pattern
+- Not duplicative of existing held #14 coordination-overhead candidate
+
+Until then, decision_patterns entry is the right home.
+
+CONNECTING THESE FIVE:
+
+All five share a thesis: the most valuable continuity capture happens at the boundary of context-loss. The system has rituals for what's already known (logs, JSON, candidates). What it lacks is structured capture for what was almost-known but never said.
+
+Generative Harvest is the umbrella. These five are sub-primitives within it, each tuned to a different shape of almost-said knowledge:
+- Unknown-value sweep → AI surfaces what user missed
+- Friction-to-feature → user friction surfaces structural gaps
+- Harvest before compression → continuous low-cost capture
+- Role-specific last words → structured per-role + user surface area
+- Future-me filter → decision lens that prevents over-capture
+
+Together: a continuity capture system that's proportional to context value, not to ceremony weight.

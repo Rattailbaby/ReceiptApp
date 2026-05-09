@@ -309,48 +309,58 @@ Candidate only — validate by tracking 3 sequential GPT chats and
 checking whether the numbering surfaces meaningful patterns. If it 
 just adds bureaucracy with no signal, reject.
 
-[2026-05-09] — Pre-handoff ambiguous question round
+[2026-05-09] — Generative Harvest during handoff
 
-Before final /clear in any handoff ceremony, each trio AI receives 
-ONE ambiguous, generative question. Not review (reactive), not 
-candidate verdict (rule-shaped), not state check (factual). 
-Open-ended.
+During handoff, before clearing a high-context AI chat, ask each active role one open-ended reflection prompt designed to surface ideas that checklists miss.
 
-The signal:
-This session's deepest improvements (CLEAR vs HANDOFF semantic 
-split, tier model, HANDOFF_CHEATSHEET, role-truth split, 
-experienced-vs-fresh GPT distinction) all emerged from open-ended 
-exchange when the AIs were heavy with context. Most came from "what 
-do you think we're missing?" type prompts mid-session, not 
-checklist work.
+Purpose:
+Candidate review evaluates known items.
+Generative Harvest discovers unknown but high-value items before context disappears.
 
-Why it works:
-- AIs at end-of-session have maximum context loaded
-- Once /clear happens, that context is gone forever
-- The few-minute cost of asking is dwarfed by the value of catching 
-  one architectural gap
-- Different from candidate review — generative not reactive
+This is especially valuable when the session involved:
+- ARIA architecture
+- governance changes
+- handoff/clear changes
+- role behavior changes
+- user workflow friction
+- repeated confusion or irritation
+- major synthesis
 
-Asymmetric per role (different vantage points):
-- Code: "What's hidden in the file structure that would surprise a 
-  fresh Code reading this?"
-- GPT: "What's true about how you think now that isn't in any file?"
-- Claude: "What would you push back on if you read this system 
-  clean?"
+Suggested prompt shape:
 
-Behavior:
-- Add to HANDOFF COMMAND between candidate review and final commit
-- Each AI gets ~5-15 bullet points of free-form output
-- Code routes worth-keeping items to appropriate files (decision_log, 
-  ARIA_IDEAS, candidates)
-- Items that don't fit anywhere get logged to ARIA_IDEAS as raw 
-  observations
+"Before clear, while you are still heavy with this session's context:
+What are we missing?
+What would future-us be thankful we captured now?
+What friction did you notice?
+What should be simplified next time?
+What should become an ARIA idea?
+What should become an Uncrumple idea?
+What hidden risk has not been named?
+What would reduce future coordination burden?"
 
-Reason this is candidate-worthy:
-The user explicitly named this pattern as high-signal. The current 
-HANDOFF_CHEATSHEET 10-step order doesn't include it. Without 
-formalizing, it depends on the user remembering to ask, which is 
-fragile.
+Role-specific use:
+- GPT: clone-behavior, continuity, orchestration, prompt-system ideas
+- Claude: systems pressure-test, overbuilding risk, architecture gaps
+- Code: file truth, workflow friction, automation opportunities, ceremony gaps
+
+Rules:
+- Do not make this a giant mandatory essay every normal clear.
+- Use it during handoff, Level 2 Targeted Clone Refresh, or Level 3 Full Clone Regeneration.
+- Keep output short: 5-10 bullets per role (note: user instruction is "save all the ideas — no idea gets wasted, because reading one idea usually sparks a better idea or builds on it." So bias toward saving over filtering. The user reads them all.)
+- Route outputs into the correct file:
+  - ARIA/product architecture → docs/aria/ARIA_IDEAS.md
+  - workflow behavior → docs/system/CANDIDATE_ATTRIBUTES.md
+  - command/process history → docs/system/SYSTEM_EVOLUTION.md
+  - app ideas → docs/system/ROADMAP.md
+  - transient context → starter block only
+
+Save-everything rule (per user 2026-05-09):
+Do not aggressively filter ideas during harvest. The user reads every idea. Reading one idea often sparks a better one or builds on it. Filtering at capture time loses signal. Filtering happens at promotion time, not capture time.
+
+Reason:
+Some of the best ARIA and Uncrumple ideas emerge late in long sessions after the AIs have absorbed the user's reasoning style and project direction. Handoff should harvest that context before clearing, without turning every clear into heavy ceremony.
+
+This session's deepest improvements (CLEAR vs HANDOFF split, tier model, HANDOFF_CHEATSHEET, Code-as-writer / GPT-as-reviewer / Claude-as-pressure-tester role split, experienced-vs-fresh GPT distinction, "future me would be thankful" filter) all emerged from open-ended exchange when AIs were heavy with context — not from checklists.
 
 Validation criteria:
 Run across 3 handoffs. Track:
@@ -359,8 +369,9 @@ Run across 3 handoffs. Track:
 - How many were already covered (would have been caught anyway)
 - How many caught gaps that nothing else would have caught
 
-If signal-to-noise is good, promote. If it just generates noise, 
-reject.
+If signal-to-noise is good, promote. If it just generates noise, reject.
+
+Candidate only until tested across multiple handoffs.
 
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
