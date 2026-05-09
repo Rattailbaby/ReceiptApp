@@ -430,6 +430,46 @@ If signal-to-noise is good, promote. If it just generates noise, reject.
 
 Candidate only until tested across multiple handoffs.
 
+[2026-05-09] — Everything is a tool / experience as system signal
+
+Proposed behavior rule:
+When the user expresses discomfort, friction, confusion, avoidance, excitement, or any other felt experience during a session — treat it as a signal about the system, not just a conversational moment.
+
+Map the feeling to the appropriate category:
+- Avoidance / "this is annoying" → possible feature request or friction point
+- Confusion → documentation gap or unclear system design
+- Excitement → direction worth following
+- Heaviness → coordination overhead accumulating
+- Repeated forgetting → system gap that needs a file or rule
+- Repeated explanation → needs to be written down somewhere durable
+- Resistance → something might be wrong with the proposal
+- Delight → direction worth amplifying
+
+Add "texture of session" as a standing handoff question:
+"Was this session heavy or light? Exciting or frustrating?"
+Answer goes into SESSION_LOG or SYSTEM_EVOLUTION.md as a health signal.
+
+Implementation guidance:
+- Do NOT treat user feelings as mere venting to acknowledge and move past
+- Do NOT psychologize the user — observe felt-experience-as-signal, don't analyze the user
+- DO surface the connection: "you mentioned this annoys you — should we capture it as a friction point in CANDIDATE_ATTRIBUTES or a feature request in ROADMAP?"
+- DO let the user decide the routing — AI surfaces, user routes
+
+Connection to existing rules:
+- Extends NO IDEA GETS WASTED to include feeling-shaped signals, not just thought-shaped ones
+- Aligns with friction-to-feature conversion candidate from earlier this session
+- Provides empirical input for coordination-overhead candidate #14 (held)
+
+Validation criteria:
+Run across at least 3 sessions. Track:
+- How often felt-experience-as-signal surfaces something the user agrees was previously hidden
+- Whether the "texture of session" question produces meaningful health data
+- Whether routing surfaces feel natural or intrusive
+
+If the pattern catches real signals without feeling invasive, promote.
+
+Do not promote to LOCKED yet. Validate across multiple sessions first.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

@@ -111,6 +111,32 @@ Required step before any LOCKED promotion: "what's the strongest argument agains
 ⭐ 🔭 Idea Intake Mode for notes app batch imports (2026-05-09)
 When user brings a list from outside the trio (notes app, voice memos, paper notes), treat as batch import of synthesis-layer-validated content. 6-step protocol: preserve raw, categorize by emoji, drop nothing, ⭐ flag standouts, route by category, produce 4 outputs (full list / ⭐ shelf / possible builds / possible rules / preserved compost). Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Idea Intake Mode section. Don't build automation tonight — save the principle.
 
+⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
+Nothing is just a problem. Everything is information.
+
+Discomfort = signal that something needs attention
+Friction = signal that a system needs improvement
+Confusion = signal that something isn't clear enough yet
+Resistance = signal that something might be wrong
+Boredom = signal that you're past the interesting part
+Excitement = signal that you're close to something real
+Avoidance = signal that something has too much cost
+Repeating the same explanation = signal that it should be written down
+Forgetting something repeatedly = signal that it's a system gap
+
+The reframe: every experience while building is data about the thing being built.
+
+When something annoys you → that's a feature request
+When something confuses you → that's a documentation gap
+When something scares you → that's a risk worth examining
+When something delights you → that's a direction worth following
+When something feels heavy → that's coordination overhead
+When you avoid something → that's either too costly or wrongly designed
+
+The system should be porous to your experience, not just your instructions. ARIA currently captures what you say. It should also capture what you feel while saying it — not invasively, but as a standing question: "What's the texture of this session?" Heavy? Light? Exciting? Frustrating? That texture is information about the system's health, not just the work's progress.
+
+Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Everything is a tool section. Candidate behavior rule in CANDIDATE_ATTRIBUTES.md.
+
 ---
 
 ## THE HONEST SUBSCRIPTION NUDGE
@@ -939,3 +965,5 @@ Same emotional primitive: when Needs Attention hits zero, app says something. Wh
 
 🤖 Connection layer between compost and high-signal
 CONNECTED_IDEAS.md = ideas that link to each other. User's synthesis process works by linking ideas, not just ranking them. An idea that connects two other ideas is often more valuable than either alone.
+
+⭐ 🧠 Everything is a tool — see ## ⭐ You Should Really Look At These at top of file

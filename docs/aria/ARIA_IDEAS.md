@@ -3030,3 +3030,48 @@ Connection to existing principles:
 - Both express the AIs-capture-user-synthesizes foundational principle
 - Both honor the NO IDEA GETS WASTED rule
 - Together they bracket the session: intake at the start, harvest at the end
+
+
+[2026-05-09] — ⭐ Everything is a tool — experience as signal stream
+
+Core principle:
+Nothing is just a problem. Everything is information.
+
+The ideas produced during a session are the output.
+The feelings experienced during a session are the input.
+Both need to be preserved.
+
+Signal map:
+- Discomfort → something needs attention
+- Friction → system needs improvement
+- Confusion → something isn't clear enough
+- Resistance → something might be wrong
+- Boredom → past the interesting part
+- Excitement → close to something real
+- Avoidance → too costly or wrongly designed
+- Repeated explanation → needs to be written down
+- Repeated forgetting → system gap
+- Delight → direction worth following
+- Heaviness → coordination overhead
+
+ARIA implication:
+ARIA's job isn't just capturing ideas. It's capturing the full signal stream of how the user experiences building. The system should be porous to experience, not just instructions.
+
+Standing question to add to handoff ceremony:
+"What was the texture of this session?"
+Heavy? Light? Exciting? Frustrating? Confusing? Clear?
+That answer is information about the system's health.
+
+Uncrumple parallel:
+A tradesperson's anxiety about taxes is a signal about which features matter most. The receipt state problem, the date problem, the missing undo — these aren't just bugs. They're the pain points that create distrust. Mapping emotional response to technical gap = correct prioritization.
+
+Future direction:
+Session texture tracking over time. If sessions feel increasingly heavy, that's a signal the system is accumulating coordination overhead. If they feel lighter over time, the infrastructure is working. Neither is currently measurable. Both should be.
+
+Connection to existing principles:
+- Extends AIs-capture-user-synthesizes by capturing experience, not just ideas
+- Honors NO IDEA GETS WASTED rule applied to feelings, not just thoughts
+- Provides empirical input for coordination-overhead candidate (#14 held)
+- The "what's the texture of this session?" question is a natural addition to the Generative Harvest pattern's role-specific questions
+
+This is one of the broader reframings of the session. It changes ARIA from "idea capture infrastructure" to "experience capture infrastructure where ideas are one signal among several."
