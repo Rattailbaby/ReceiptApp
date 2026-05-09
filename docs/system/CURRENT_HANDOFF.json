@@ -79,7 +79,12 @@
       "ARIA name finalized as Ambient Reasoning and Insight Architecture",
       "Three-command user surface (clear / handoff / health check) with two internal subroutines (wrap session, clean up docs)",
       "LOCKED_ATTRIBUTES has 35 numbered sections + CANDIDATE PROMOTION RULE + CEREMONY RULE",
-      "CLAUDE.md has 13-file SYSTEM FILES READING RULE so fresh Code sessions self-bootstrap into ARIA + governance context"
+      "CLAUDE.md has 13-file SYSTEM FILES READING RULE so fresh Code sessions self-bootstrap into ARIA + governance context",
+      "GitHub repo public at github.com/Rattailbaby/ReceiptApp — GPT direct read verified, Claude via Project Knowledge",
+      "Per-role reading manifest in SYSTEM_COMMANDS.md routes each AI to relevant files with cognitive-function context",
+      "FRESH CHAT PROTOCOL pattern designed for both GPT and Claude project rules to self-bootstrap on first message",
+      "Slim GPT project rules pattern (95 lines, repo-referencing) replaces 250+ line duplicated version",
+      "Cross-AI verification working in practice: GPT and Claude independently read repo, identify gaps, flag corrections"
     ],
     "active_issue": "Flagged transaction flow has not been fully inspected end-to-end including interaction with multi-filter states, match mode behavior, and cleanup resolution logic.",
     "temporary_items": [
@@ -374,7 +379,19 @@
     "Command surface simplified to 3 user commands: clear / handoff / health check; SESSION WRAP and DOC CLEANUP demoted to internal subroutines",
     "CLEAR USAGE RULE gained session metrics as first step",
     "Created docs/system/SYSTEM_COMMANDS.md as authoritative reference for all triggers and commands",
-    "Memory files added: feedback_dual_track.md (execution-constraint vs ambient-capture parallel tracks), project_aria.md (ARIA routing rules)"
+    "Memory files added: feedback_dual_track.md (execution-constraint vs ambient-capture parallel tracks), project_aria.md (ARIA routing rules)",
+    "GitHub repo made public at github.com/Rattailbaby/ReceiptApp — enables direct read access for GPT and verified end-to-end via fetch test",
+    "Per-role reading manifest added to docs/system/SYSTEM_COMMANDS.md — GPT/Claude/Code/User entries with both file paths AND cognitive function each file serves per role",
+    "SYSTEM_EVOLUTION.md 2026-05-09 entry: handoff procedure overhaul (CLEAR vs HANDOFF, three-command surface, governance rules locked, per-role manifest, GitHub-as-source-of-truth, FRESH CHAT PROTOCOL, slim GPT project rules pattern, repo truth boundary, ARIA naming finalized, Uncrumple-as-design-language insight)",
+    "Repo truth boundary discovered and captured as candidate: GitHub only shows committed+pushed state; local working tree is invisible to AI verification — caught during GPT GitHub access verification when an unpushed entry appeared missing",
+    "Trio Repo Symmetry insight saved to ARIA_IDEAS.md — first time all three trio roles can independently verify repo state",
+    "Slim GPT project rules pattern designed (95 lines vs 250+) — repo references replace duplicated content, GPT reads from authoritative files in repo as needed",
+    "FRESH CHAT PROTOCOL designed for GPT and Claude project rules — on first message of new chat, AI reads CURRENT_HANDOFF.json before responding to ground itself in current state",
+    "14-step target handoff architecture saved as reference in ARIA_IDEAS.md (currently 9 steps in HANDOFF COMMAND; 5 steps still missing — candidate↔JSON reconciliation, ARIA state capture, decisions/anti-patterns/invariants prompts, naming scan, session summary)",
+    "Claude (chat) Layer 2 restoration via Project Knowledge tested and confirmed working — Claude can read repo files + identify validation gaps independently",
+    "Cross-AI integrity rule validated in real use — GPT corrected SYSTEM_EVOLUTION wording (live → committed+pushed-only); corrections incorporated; Claude flagged per-role manifest as unvalidated in fresh-chat scenario",
+    "Stabilization-phase reframings captured in ARIA_IDEAS.md — recovery is layered, repo is continuity infrastructure, governance subordinate to cognition, future-me principle as legitimacy filter",
+    "Cross-pollination synthesis: 10 specific ways Uncrumple is ARIA's design language (cleanup flow → ARIA close-session UX, txNeedsCleanup → epistemic confidence layers, receipts → ARIA continuity primitive, etc.)"
   ],
 
   "unresolved_threads": [
