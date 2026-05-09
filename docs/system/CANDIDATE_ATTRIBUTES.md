@@ -309,6 +309,59 @@ Candidate only — validate by tracking 3 sequential GPT chats and
 checking whether the numbering surfaces meaningful patterns. If it 
 just adds bureaucracy with no signal, reject.
 
+[2026-05-09] — Pre-handoff ambiguous question round
+
+Before final /clear in any handoff ceremony, each trio AI receives 
+ONE ambiguous, generative question. Not review (reactive), not 
+candidate verdict (rule-shaped), not state check (factual). 
+Open-ended.
+
+The signal:
+This session's deepest improvements (CLEAR vs HANDOFF semantic 
+split, tier model, HANDOFF_CHEATSHEET, role-truth split, 
+experienced-vs-fresh GPT distinction) all emerged from open-ended 
+exchange when the AIs were heavy with context. Most came from "what 
+do you think we're missing?" type prompts mid-session, not 
+checklist work.
+
+Why it works:
+- AIs at end-of-session have maximum context loaded
+- Once /clear happens, that context is gone forever
+- The few-minute cost of asking is dwarfed by the value of catching 
+  one architectural gap
+- Different from candidate review — generative not reactive
+
+Asymmetric per role (different vantage points):
+- Code: "What's hidden in the file structure that would surprise a 
+  fresh Code reading this?"
+- GPT: "What's true about how you think now that isn't in any file?"
+- Claude: "What would you push back on if you read this system 
+  clean?"
+
+Behavior:
+- Add to HANDOFF COMMAND between candidate review and final commit
+- Each AI gets ~5-15 bullet points of free-form output
+- Code routes worth-keeping items to appropriate files (decision_log, 
+  ARIA_IDEAS, candidates)
+- Items that don't fit anywhere get logged to ARIA_IDEAS as raw 
+  observations
+
+Reason this is candidate-worthy:
+The user explicitly named this pattern as high-signal. The current 
+HANDOFF_CHEATSHEET 10-step order doesn't include it. Without 
+formalizing, it depends on the user remembering to ask, which is 
+fragile.
+
+Validation criteria:
+Run across 3 handoffs. Track:
+- How many ideas surfaced per round
+- How many got captured to files
+- How many were already covered (would have been caught anyway)
+- How many caught gaps that nothing else would have caught
+
+If signal-to-noise is good, promote. If it just generates noise, 
+reject.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

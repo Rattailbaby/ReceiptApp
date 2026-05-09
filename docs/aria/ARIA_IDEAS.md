@@ -2496,3 +2496,57 @@ Let the tiered clone model prove itself first.
 Core insight:
 The goal is not to regenerate the artifact.
 The goal is to preserve meaningful behavioral evolution without turning every handoff into a ceremony.
+
+
+[2026-05-09] — Pre-handoff ambiguous question round (generative continuity capture)
+
+Pattern observation:
+
+The deepest architectural improvements of this session emerged from open-ended exchange between the trio when each AI was heavy with context — NOT from checklist work, candidate review, or diff verification.
+
+Examples that came from "what are we missing?" type prompts:
+- CLEAR vs HANDOFF semantic split (was conflated before)
+- Tier model for clone regeneration
+- HANDOFF_CHEATSHEET as consolidation file
+- Code-as-writer / GPT-as-reviewer / Claude-as-pressure-tester split
+- Experienced GPT vs fresh GPT distinction
+- "Future me would be thankful" decision filter
+
+The user named the pattern explicitly:
+"Asking before /clear produces more good ideas while you're heavy with all the knowledge and ideas and used to the mindset from being a part of the conversation for so long."
+
+Why this matters for ARIA:
+
+End-of-session is the single richest moment of context an AI ever has. The session has loaded all the connections, surfaced all the friction, integrated all the corrections. /clear erases that immediately and permanently.
+
+A 5-minute ambiguous-question round at the end of every handoff converts the highest-value context window into permanent artifacts. The ROI is asymmetric — small time cost, irreplaceable signal.
+
+Question allocation should be asymmetric per role:
+
+- Code: "What's hidden in the file structure that would surprise a fresh Code?" (file-truth angle)
+- GPT: "What's true about how you think now that isn't in any file?" (working-texture angle)
+- Claude: "What would you push back on if you read this clean?" (pressure-test angle)
+
+Same question to all three wastes their differentiated vantage.
+
+Generative differs from review:
+- Review checks against known criteria (covered in diff summary review)
+- Candidate review verdicts on rule-shaped proposals (covered in candidate review step)
+- Generative asks for what the AI noticed but didn't volunteer
+
+This is the difference between "did I cover the checklist" and "what would I want to leave for my next clone if I had to."
+
+Routing for outputs:
+- Behavioral observations → assistant_behavior_clone in CURRENT_HANDOFF.json
+- ARIA-product insights → ARIA_IDEAS.md (this file)
+- Rule-shaped proposals → CANDIDATE_ATTRIBUTES.md
+- User-pattern observations → memory files
+- Doesn't-fit-anywhere → raw entry in ARIA_IDEAS.md
+
+Future ARIA implication:
+
+This is a continuity primitive worth elevating. Most "save before quitting" interfaces ask "do you want to save changes?" — which only captures the work product. The ambiguous-question round captures the COGNITION around the work product. The half that usually disappears.
+
+Possible expansion: This pattern could apply beyond AI handoffs. Any time someone is about to leave a deep context (end of project, end of role, end of life), the ambiguous-question round captures things that wouldn't be volunteered. ARIA's pitch — "Pick up exactly where your brain left off" — is fully delivered only if you also captured what the brain was about to forget it knew.
+
+Captured per SOC marker, 2026-05-09 final pre-clear pass.
