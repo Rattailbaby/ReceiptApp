@@ -299,6 +299,23 @@ still needs explicit paste. Future: replace paste blocks
 with "read latest at HEAD" pointers. Validate across 
 multiple sessions before locking.
 
+[2026-05-09] — Repo verification requires committed and pushed state
+
+When GPT or Claude verifies repository state through GitHub, they only see committed and pushed origin/main state.
+
+Local uncommitted changes are invisible to repo-based verification.
+
+Before asking GPT or Claude to verify a file through GitHub:
+- Code should check git status
+- commit relevant changes
+- push to origin/main
+- then ask GPT/Claude to verify
+
+Reason:
+This prevents false failure diagnoses where repo access works correctly but GitHub appears stale because local changes were never pushed.
+
+Candidate for future LOCKED_ATTRIBUTES if this repeats.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 ## Rejected
