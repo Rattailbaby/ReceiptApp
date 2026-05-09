@@ -324,6 +324,11 @@
       "decision": "Execute Tier 3 ceremony via Tier 2 mechanics due to GitHub fetch_file truncation",
       "reason": "GPT could not safely generate full CURRENT_HANDOFF.json from truncated fetch — would fabricate tail. Code has full local file access, GPT does clone-behavior review. This validates the natural Code-as-writer / GPT-as-reviewer split.",
       "rejected_alternatives": ["Have user paste full JSON to GPT (defeats GitHub-as-source-of-truth)", "Skip regeneration", "Have GPT regenerate with truncated source"]
+    },
+    {
+      "decision": "Keep filename HANDOFF_CHEATSHEET.md (not rename to HANDOFF_CEREMONY.md)",
+      "reason": "'Cheat sheet' describes the actual job: quick human reference when confused. 'Ceremony' sounds heavier and more formal. The whole point is to reduce friction, not signal importance. User-facing lightweight name preserves the consolidation-not-bloat intent.",
+      "rejected_alternatives": ["Rename to HANDOFF_CEREMONY.md", "Rename to HANDOFF_PROTOCOL.md", "Keep both names"]
     }
   ],
 
@@ -525,7 +530,8 @@
       "Workflow continuity overrides conversational recency",
       "next_step only changes when step is completed or user explicitly redirects",
       "New issues go to unresolved_threads not next_step",
-      "SOC ideas get Claude Code prompt to update correct file not paste-ready notes text"
+      "SOC ideas get Claude Code prompt to update correct file not paste-ready notes text",
+      "'Future me would be thankful' decision filter — improve workflow infrastructure when it reduces repeated future burden, but avoid fake productivity / governance overbuilding. Test: does this reduce future continuity tax, or create more system to maintain?"
     ],
     "code_safety_rules": [
       "Minimal patch only",
@@ -651,7 +657,8 @@
       "Trio reflection during handoff — exercised 3+ times this ceremony, opposite directions, all correct calls",
       "LOCKED 37 cross-AI reconciliation — exercised both directions (held position on #25 vs #19, yielded on clone augmentations)",
       "Heuristic defaults for candidate review — cut review from 15min to 2min",
-      "Code-as-writer / GPT-as-reviewer split — emerged from GitHub truncation constraint, validates Tier 2 mechanics for substrate sessions"
+      "Code-as-writer / GPT-as-reviewer split — emerged from GitHub truncation constraint, validates Tier 2 mechanics for substrate sessions",
+      "User's 'wait, this doesn't make sense' moments are high-signal architecture checks — caught experienced-vs-fresh GPT distinction, repo truth boundary, HANDOFF_CHEATSHEET need, Tier 3 weight concern, old GPT clone-reflection loss. Treat user confusion on architecture as signal, not noise to smooth over."
     ],
     "repo_truth_boundary": "AI repo verification only sees committed+pushed origin/main state. Code must commit+push before asking GPT/Claude to verify. AI tool output may also truncate on large files — surface constraint and propose Code-assisted alternative rather than fabricating missing content.",
     "ceremony_choreography_reference": "docs/system/HANDOFF_CHEATSHEET.md is the canonical reference for clear vs handoff vs /clear, the three tiers, the 10-step full handoff order, and the experienced-vs-fresh GPT distinction. All three trio roles read from this file."
