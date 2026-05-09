@@ -2964,3 +2964,69 @@ When user says "this is annoying" — ARIA asks: is this a product feature, a wo
 Every Uncrumple UX pattern → check if ARIA needs the equivalent.
 Field work + imperfect data + cleanup flow + evidence trail = same shape.
 Should become a deliberate design method, not accidental cross-pollination.
+
+
+[2026-05-09] — ⭐ Idea Intake Mode (for notes app batch import + future external imports)
+
+When the user brings a list (notes app, paper notes, voice memo dump, anywhere capture happened outside the trio), the system should not treat it as "some notes." Treat it as batch import of the user's thinking — content that already passed through the user's synthesis layer once.
+
+Intake protocol:
+
+1. Preserve raw list exactly
+   - Save unmodified version first, before any reorganization
+   - This is the source of truth if categorization later proves wrong
+
+2. Categorize every item by emoji/category
+   - 🔭 ARIA insights
+   - 🧠 workflow/system ideas
+   - 📱 app/product ideas
+   - 💡 tips / did-you-know
+   - 🏗️ infrastructure/handoff
+   - 🤖 meta-system observations
+   - ⭐ high-signal flag (additive — overlays category)
+   - When user-supplied items have no category, assign one based on content
+
+3. Do not drop anything
+   - Vague items still preserved
+   - Half-formed items still preserved
+   - Apparent duplicates preserved with cross-reference
+   - Items that don't fit a category go in 💡 General
+
+4. Mark ⭐ high-signal items
+   - AI flags items it judges especially strong
+   - User can override (add or remove ⭐)
+   - ⭐ items also live in their normal category — never only one place
+
+5. Route by category
+   - ARIA/system ideas → ARIA_IDEAS.md
+   - app/product ideas → ROADMAP.md or CLAUDE_CLEVER_IDEAS.md
+   - behavior rules → CANDIDATE_ATTRIBUTES.md (NEVER auto-promote to LOCKED)
+   - proven rules → only via explicit promotion ceremony
+
+6. Produce four outputs after intake:
+   - Full categorized list (the raw preservation)
+   - ⭐ You Should Really Look At These (the shelf view)
+   - Possible Next Builds (items shaped like buildable features)
+   - Possible Future Rules (items shaped like behavior rules)
+   - Just Compost But Preserved (everything else — explicitly named so user knows it's preserved on purpose)
+
+Why this matters:
+
+The user's notes app list is the purest form of high-signal capture in the system. It was generated without AI prompting, without filtering ceremony, without performance pressure. Each item represents something the user thought was worth preserving in the moment — which is exactly the synthesis-layer signal that AIs should defer to.
+
+If the AI flattens or summarizes that list during intake, it destroys the very synthesis the user has been doing. Intake mode protects against that failure.
+
+Failure modes to avoid:
+- Summarizing a list to "save space" — never. Save in full.
+- Categorizing items the user didn't categorize, then asking for confirmation — categorize and proceed; user corrects later if wanted
+- Skipping items that seem trivial — those are often the connection points
+- Auto-promoting captured items to candidates or locked rules — capture only
+
+Build status:
+Save the principle. Do not implement automated intake tooling tonight. The current files (ARIA_IDEAS, CLAUDE_CLEVER_IDEAS with ⭐ shelf, CANDIDATE_ATTRIBUTES, ROADMAP) already serve the function manually. When user shares the notes list, this protocol guides the routing.
+
+Connection to existing principles:
+- This is the input-side analog of the Generative Harvest output-side pattern
+- Both express the AIs-capture-user-synthesizes foundational principle
+- Both honor the NO IDEA GETS WASTED rule
+- Together they bracket the session: intake at the start, harvest at the end

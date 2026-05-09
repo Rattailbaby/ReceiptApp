@@ -108,6 +108,9 @@ Watch session drop, watch reconstruction. Visceral. The product pitch for ARIA i
 ⭐ 🏗️ Pre-mortem before promotion (2026-05-09)
 Required step before any LOCKED promotion: "what's the strongest argument against this?" Make ad-hoc pressure-test standing. See PRE-CLEAR SYNTHESIS HARVEST below.
 
+⭐ 🔭 Idea Intake Mode for notes app batch imports (2026-05-09)
+When user brings a list from outside the trio (notes app, voice memos, paper notes), treat as batch import of synthesis-layer-validated content. 6-step protocol: preserve raw, categorize by emoji, drop nothing, ⭐ flag standouts, route by category, produce 4 outputs (full list / ⭐ shelf / possible builds / possible rules / preserved compost). Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Idea Intake Mode section. Don't build automation tonight — save the principle.
+
 ---
 
 ## THE HONEST SUBSCRIPTION NUDGE
