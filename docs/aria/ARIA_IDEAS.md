@@ -2438,3 +2438,61 @@ Cross-AI integrity firing as designed — synthesis on most
 items, principled disagreement when the evidence didn't 
 support the claim. The pattern caught real over-eagerness 
 that single-AI-led promotion would have missed.
+
+
+[2026-05-09] — Clone Delta Packets and behavioral evolution capture
+
+A major handoff insight emerged:
+
+"Cloning the AI" and "regenerating the JSON" are not the same thing.
+
+The old full HANDOFF_GENERATOR flow protected clone fidelity, but it was heavy because it regenerated the entire continuity artifact even when only a small amount of assistant behavior changed.
+
+Better model:
+Capture behavioral evolution as deltas.
+
+The system should distinguish:
+- operational state changes
+- workflow/governance changes
+- clone substrate changes
+
+Most sessions only need operational continuity.
+Some sessions need targeted clone refresh.
+Rare sessions need full clone regeneration.
+
+Behavioral Delta / Clone Delta Packet:
+A small structured packet capturing what changed about the assistant clone since last handoff:
+- new behavioral attributes
+- decision-log additions
+- persistent attribute shifts
+- anti-patterns observed
+- clone-worthy knowledge gained
+- deprecated behaviors
+- fresh-chat risks
+
+This applies git's insight to cognition:
+store deltas when possible, not full snapshots every time.
+
+Future augmentation ideas:
+
+1. 🧬 Ambient clone-worthy capture
+GPT, Claude, or Code could emit 🧬 markers when they notice something future clones should preserve.
+These markers could eventually route to CLONE_FRAGMENTS.md.
+Do not implement yet.
+
+2. Diff-as-input
+Targeted clone refresh could read git log + git diff since last handoff rather than all files.
+Input cost scales with session activity instead of repo size.
+
+3. Living fragments
+If CURRENT_HANDOFF.json becomes too monolithic, split continuity into:
+- STATE.json = high-churn operational state
+- BEHAVIOR.md = rare assistant behavior changes
+- KNOWLEDGE.md = append-only learned context
+
+Do not split yet.
+Let the tiered clone model prove itself first.
+
+Core insight:
+The goal is not to regenerate the artifact.
+The goal is to preserve meaningful behavioral evolution without turning every handoff into a ceremony.

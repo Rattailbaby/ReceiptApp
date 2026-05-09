@@ -197,6 +197,76 @@ Candidate only until tested across at least one real handoff.
 
 VALIDATED 2026-05-09: This very handoff exercised the pattern. GPT identified Category C (4 promotes), Claude pressure-tested and reduced to 2 (#6, #19), Code reconciled and applied Claude's conservative read. The pattern caught a real over-eager promotion. Repeats once more before LOCKED.
 
+[2026-05-09] — Tiered clone regeneration / Clone Delta Packet
+
+Full HANDOFF_GENERATOR regeneration should not run every clear or every handoff by default.
+
+The system should distinguish:
+
+1. NORMAL CLEAR
+Used for normal app work and token maintenance.
+Actions:
+- wrap session
+- log confirmed work
+- update CURRENT_HANDOFF incrementally
+- commit/push
+- starter block
+
+2. TARGETED CLONE REFRESH
+Used when limited behavior/governance changes occurred.
+Actions:
+- generate a Clone Delta Packet
+- update only affected CURRENT_HANDOFF sections
+- preserve existing JSON structure
+- commit/push
+- verify by git diff rather than rereading the entire JSON
+
+Clone Delta Packet should include:
+- new behavioral attributes
+- promoted rules
+- deprecated behaviors
+- command meaning changes
+- ARIA direction changes
+- project rule updates needed
+- fresh-chat risks
+- whether full regen is recommended
+
+3. FULL CLONE REGENERATION
+Used only when clone substrate changed:
+- GPT/Claude behavior drifted
+- command semantics changed
+- LOCKED_ATTRIBUTES changed significantly
+- ARIA identity/direction changed
+- repo/handoff structure changed
+- assistant_behavior_clone is stale
+- fresh-chat fidelity is uncertain
+
+Decision heuristic:
+Ask:
+- Did command meanings change?
+- Did role behavior change?
+- Did LOCKED_ATTRIBUTES change?
+- Did ARIA identity/direction change?
+- Did repo/handoff structure change?
+- Did current GPT/Claude feel behaviorally different by the end?
+
+0-1 yes = normal clear
+2-3 yes = targeted clone refresh
+4+ yes = full clone regeneration
+
+Reason:
+This preserves the safety of old full clone regeneration without forcing every session into a heavy ceremony.
+It protects future clone fidelity while reducing governance burden.
+
+Future augmentations:
+- 🧬 ambient capture marker for clone-worthy observations during sessions
+- Diff-as-input for Targeted Refresh using git log + git diff since last handoff
+- Living Fragments split if CURRENT_HANDOFF.json becomes too monolithic:
+  STATE.json, BEHAVIOR.md, KNOWLEDGE.md
+
+Do not implement augmentations yet.
+Candidate only until tested across multiple handoffs.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
