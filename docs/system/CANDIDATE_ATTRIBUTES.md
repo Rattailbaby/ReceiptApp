@@ -363,6 +363,57 @@ When ideas are generated with emoji/category tags, preserve every idea under an 
 User's notes app list:
 When shared, treat as highest-priority capture. It has already passed through the user's synthesis layer once. Save everything, categorize everything, flag strong items with ⭐. Goes to High-Signal Shelf, not raw compost. Do not summarize in a way that loses items. Do not wait to be asked to preserve it.
 
+
+[2026-05-09] — No Idea Gets Wasted / categorized idea preservation (dedicated candidate)
+
+Note: An expanded version of this rule was earlier locked into LOCKED_ATTRIBUTES.md (commit 05e74bb). User flagged that locking bypassed the promotion process. This dedicated candidate entry preserves the proper promotion path. The locked version remains in place pending user decision on whether to revert.
+
+Every meaningful idea captured during pre-clear synthesis, SOC, sidequest, harvest, or any session should be saved completely.
+
+No idea should be silently dropped, ignored, or filtered out before saving.
+
+Why this matters:
+The user reads old ideas. Reading one idea often sparks a better idea or builds on it. The user is the synthesis layer. AIs capture. User synthesizes. Never reverse this.
+
+A filtered idea that gets discarded might have been the connection point for the most important later insight. The AI cannot know in advance which idea will become useful.
+
+Core distinction:
+- Idea preservation is not governance promotion.
+- Raw ideas are compost, not commitments.
+- Save generously.
+- Promote selectively.
+- Build intentionally.
+
+Capture rules:
+- Preserve all ideas in a cluster, even weak or half-formed ones.
+- Categorize ideas using the established emoji/category system when available.
+- AI may clean up wording, group duplicates, and reorder for readability.
+- AI must not leave one out or silently ignore one.
+- If an idea seems especially strong, flag it with ⭐ or place/copy it into a high-value/revisit section.
+- Strong ideas should be highlighted, not used as a reason to discard weaker ideas.
+- Filtering happens at promotion/build time, not capture time.
+
+Routing:
+- 🔭 ARIA insights → docs/aria/ARIA_IDEAS.md
+- 🧠 workflow/system ideas → docs/WORKFLOW_IDEAS.md or docs/system/WORKFLOW_IDEAS.md depending on scope
+- 📱 app/product ideas → docs/system/ROADMAP.md or docs/system/CLAUDE_CLEVER_IDEAS.md if that file exists
+- 💡 tips / did-you-know style items → docs/DID_YOU_KNOW.md
+- ⭐ especially strong ideas → also copy/reference in a "You Should Really Look At These" section if available
+
+User notes app:
+The user maintains a separate notes list that AIs have not seen yet.
+When the user shares it, treat it as high-priority capture.
+Save everything.
+Categorize everything.
+Flag especially strong ideas with ⭐.
+Do not summarize in a way that loses items.
+Do not wait to be asked to preserve it.
+
+Reason:
+This is a foundational ARIA principle because the user's synthesis often happens later while rereading saved idea clusters. A weak idea can become valuable by connecting to another idea. The capture system must protect that possibility without turning every idea into a rule or build task.
+
+Candidate only until tested across multiple captures/handoffs.
+
 Reason:
 Some of the best ARIA and Uncrumple ideas emerge late in long sessions after the AIs have absorbed the user's reasoning style and project direction. Handoff should harvest that context before clearing, without turning every clear into heavy ceremony.
 

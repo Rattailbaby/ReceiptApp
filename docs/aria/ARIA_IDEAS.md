@@ -2888,3 +2888,79 @@ For ideas that could be tested cheaply, AI generates a one-prompt experiment tha
 - Notes app pre-import sweep (highest immediate value — user is about to share the list)
 - "What did you almost not save?" meta-question (could become standing pre-clear question)
 - Idea provenance tracking (long-term compounding value)
+
+
+[2026-05-09] — ⭐ Pre-Clear Synthesis Window — named ceremony step
+
+Maximum context load, minimum future recovery cost. Asking loaded AIs generative questions at session end extracts architectural insight that won't survive the clear. Should be a named, standing handoff step.
+
+Asymmetric role-specific questions:
+- Code: "What's hidden in the file structure that would surprise a fresh Code?"
+- GPT: "What's true about how I think now that isn't in any file?"
+- Claude: "What would I push back on if I read this system clean?"
+- User (optional): "What still feels wrong?"
+
+The user reads all captured ideas. No idea gets wasted — reading one sparks a better idea or builds on it. This is a design principle and preservation rule simultaneously.
+
+
+[2026-05-09] — ⭐ "No continuity tax" — candidate ARIA pitch
+
+Current: "Pick up exactly where your brain left off."
+Candidate: "No continuity tax."
+Names the cost being eliminated. Psychologically more motivating.
+Worth testing in positioning alongside current pitch.
+
+
+[2026-05-09] — ⭐ High-Signal Shelf as ARIA architecture primitive
+
+IDEA_COMPOST.md = everything raw preserved
+HIGH_SIGNAL_IDEAS.md = worth rereading first
+CONNECTED_IDEAS.md = ideas that link to each other (future layer)
+ROADMAP.md = worth building
+CANDIDATE_ATTRIBUTES.md = worth testing as behavior
+LOCKED_ATTRIBUTES.md = proven
+
+Uncrumple parallel:
+Full transaction list = compost
+Needs Attention = High-Signal Shelf
+Cleanup flow = how you process the shelf
+Same architecture. Different domain.
+
+User's notes app = purest High-Signal content. Captured without AI prompting, without filtering. When shared, goes directly to shelf.
+
+Do not build files yet. Architecture is the deliverable.
+
+
+[2026-05-09] — ⭐ AIs capture. User synthesizes. Never reverse this.
+
+Foundational ARIA design principle.
+The user is the synthesis layer. AIs capture everything raw.
+Cannot know in advance which idea will be the connection point for the most important insight. Capture first. Trust the human to synthesize.
+
+Uncrumple parallel: quick-capture flow exists because capture first, organize later is right for field work. App trusts user to clean up later. ARIA should operate the same way.
+
+
+[2026-05-09] — Clone regeneration frequency as stability metric
+
+Track Level 1/2/3 per session in SYSTEM_EVOLUTION.md.
+Frequent Level 3 = system in flux. Sustained Level 1 = stable.
+Empirical stability curve over time. Turns subjective feeling into signal.
+
+
+[2026-05-09] — Receipt as ARIA evidence primitive
+
+Every behavioral claim gets an attached receipt: conversation moment, commit hash, file diff. Not abstract validation — actual evidence.
+When AIs say "I did X" — the receipt is right there.
+Maps directly to Uncrumple → ARIA isomorphism. The receipt IS the proof.
+
+
+[2026-05-09] — "Friction-to-feature conversion" as ARIA behavior
+
+When user says "this is annoying" — ARIA asks: is this a product feature, a workflow rule, or just fatigue? Irritation often exposes hidden coordination burden. This session validated the pattern multiple times.
+
+
+[2026-05-09] — Uncrumple ↔ ARIA isomorphism as deliberate design tool
+
+Every Uncrumple UX pattern → check if ARIA needs the equivalent.
+Field work + imperfect data + cleanup flow + evidence trail = same shape.
+Should become a deliberate design method, not accidental cross-pollination.

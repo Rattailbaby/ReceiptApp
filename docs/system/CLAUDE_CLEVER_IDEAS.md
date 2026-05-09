@@ -75,6 +75,39 @@ root idea has produced multiple evolved versions = signal of a
 deep pattern. Long-term compounding value. Full entry: 
 docs/aria/ARIA_IDEAS.md 2026-05-09 Code's pre-clear extras section.
 
+⭐ 🏗️ Pre-handoff "weakest link" question + asymmetric role questions (2026-05-09)
+"What would break first if you weren't here next session?" + Code/GPT/Claude get different angle questions. Generative not reactive. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🤖 "No continuity tax" as ARIA pitch (2026-05-09)
+Sharper than "pick up exactly where your brain left off." Names the cost being eliminated. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🤖 The "ask the loaded AI" pattern as ARIA primitive (2026-05-09)
+ARIA detects session ending + heavy context, prompts for harvest automatically. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🤖 High-Signal Shelf architecture (2026-05-09)
+Six-layer stack: COMPOST / SHELF / CONNECTIONS / ROADMAP / CANDIDATES / LOCKED. Save the architecture, build later. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🏗️ APP_LOG vs ARIA_LOG separation (2026-05-09)
+Practical, implementable soon. Currently can't measure app progress vs ARIA evolution separately. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🏗️ Anti-pattern: system explaining the system (2026-05-09)
+Testable rule: governance files >2× shipped features = prioritize app next session. Self-correcting bloat detector. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 📱 "All caught up" moment in Uncrumple (2026-05-09)
+Tiny build cost (~10 lines), huge emotional impact. Should be next prompt. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 📱 Date problem — launch trust risk (2026-05-09)
+Transactions without year = tax screen lies. Trust problem with target audience. Move up before launch, not after. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 📱 Undo for destructive actions (2026-05-09)
+5-second toast before delete commits. Asymmetric: very low build cost, very high trust impact. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🤖 Handoff as product demo (2026-05-09)
+Watch session drop, watch reconstruction. Visceral. The product pitch for ARIA itself. See PRE-CLEAR SYNTHESIS HARVEST below.
+
+⭐ 🏗️ Pre-mortem before promotion (2026-05-09)
+Required step before any LOCKED promotion: "what's the strongest argument against this?" Make ad-hoc pressure-test standing. See PRE-CLEAR SYNTHESIS HARVEST below.
+
 ---
 
 ## THE HONEST SUBSCRIPTION NUDGE
@@ -717,3 +750,189 @@ Claude's additions:
     level (1/2/3) per session in SYSTEM_EVOLUTION.md. If Level 3 every 
     session = system still in flux. 10 sessions on Level 1 = stable. 
     Empirical stability curve over time.
+
+
+---
+PRE-CLEAR SYNTHESIS HARVEST — 2026-05-09 (categorized by emoji per NO IDEA WASTED rule)
+Full idea cluster from loaded-AI synthesis window. All ideas preserved.
+Some duplicates with the flat list above — preserved per save-everything rule.
+Organized by emoji category for navigation. ⭐ flagged items also appear in shelf at top.
+---
+
+## 🏗️ Handoff Process Ideas
+
+⭐ 🏗️ Pre-handoff "weakest link" question
+Before any handoff, each AI gets: "What would break first if you weren't here next session?" Generative, not reactive. Different from candidate review (rule-shaped). 8+ hours of context = maximum system fragility visibility.
+
+⭐ 🏗️ Asymmetric question allocation per role
+Same question to all three roles wastes their different vantage points.
+- Code: "What's hidden in the file structure that would surprise a fresh Code?"
+- GPT: "What's true about how I think now that isn't in any file?"
+- Claude: "What would I push back on if I read this system clean?"
+
+🏗️ Handoff dress rehearsal
+Before /clear, Code pretends to be fresh. Reads only what a new Code would read. Tries to answer "what's next_step and why?" If gaps appear, patch BEFORE clear. Cheap dry run that catches orientation gaps nobody notices until the next session starts wrong.
+
+🏗️ Tiered clone regeneration / clone delta packets
+Level 1 = normal clear (wrap/log/commit/starter). Level 2 = targeted clone refresh (only affected sections). Level 3 = full clone regeneration (when clone substrate changed). Decision heuristic: 0-1 yes = L1, 2-3 yes = L2, 4+ yes = L3. Prevents overusing full regeneration ceremony.
+
+⭐ 🏗️ Pre-mortem before promotion
+Before ANY candidate gets promoted to LOCKED, one required round: "What's the strongest argument against this?" Today's pressure-test was ad hoc. Make it a standing ceremony step regardless of whether Claude is in the trio.
+
+🏗️ End-of-session survey — 5 standardized questions
+Every handoff, GPT and Code answer:
+1. What surprised me?
+2. What did I almost get wrong?
+3. What's the next user pain I see?
+4. What pattern emerged?
+5. What would I tell my clone in one sentence?
+Standardized = comparable across sessions. Becomes longitudinal dataset. "What would I tell my clone in one sentence" is the best one.
+
+🏗️ Role-specific last words (GPT idea)
+Each role gets one final lane before clear:
+- GPT: What continuity will future GPT lose?
+- Claude: What structure is unstable?
+- Code: What file/process truth is not obvious?
+- User: What still feels wrong?
+
+🏗️ Unknown-value sweep (GPT idea)
+At handoff, ask: "What became obvious to you that the user may not realize is valuable?" The AI notices patterns the user is too tired to name.
+
+🏗️ Harvest before compression (GPT idea)
+Before any /clear, one short final question: "Anything valuable in your current context that will be expensive to rediscover later?" Lightweight version for normal clears.
+
+🏗️ Seed idea in starter block
+Inject one generative prompt from the previous session's pre-clear synthesis window into the fresh AI's first message. Primes thinking direction without requiring full context rebuild. Starter block is currently static — should be dynamic.
+
+🏗️ Diff-as-input for GPT review
+Right now GPT gets a narrative summary. A structured diff — old value vs new value per field in the clone — would let GPT do real behavioral sanity-checking instead of narrative review. Concrete improvement to Block C.
+
+🏗️ HANDOFF_CHEATSHEET as interactive decision tree
+Not a static doc but a flowchart: "Did command meanings change? → yes → did role behavior change? → yes → full regen." The heuristic already exists — format it as something followable under pressure when tired.
+
+## 🤖 ARIA System Ideas
+
+⭐ 🤖 The "ask the loaded AI" pattern as ARIA primitive
+ARIA should eventually know when a session is ending and prompt for Pre-Clear Synthesis Window automatically. Trigger: session approaching clear, context heavy, valuable synthesis window closing. That's detectable.
+
+⭐ 🤖 "No continuity tax" as sharper ARIA pitch
+Current: "Pick up exactly where your brain left off."
+Candidate: "No continuity tax."
+Names the cost being eliminated rather than the capability being added. Psychologically more motivating.
+
+🤖 Continuity debt counter
+Track: unresolved branches, deferred decisions, staleness of active next_step. A rough estimate in handoff JSON would make health check command meaningful instead of vibes-based.
+
+🤖 Recovery fidelity is currently unmeasured
+After fresh-chat restoration, no systematic check exists for how complete the recovery was. A recovery audit checklist — run at end of restoration — would answer this instead of hoping reconstruction was complete.
+
+🤖 Clone regeneration frequency as stability signal
+Track Level 1/2/3 per session in SYSTEM_EVOLUTION.md. Frequent Level 3 = system in flux. Sustained Level 1 = stable. Empirical stability curve.
+
+⭐ 🤖 Handoff as product demo, not just infrastructure
+The demo: watch a session drop, watch it reconstruct perfectly. That's visceral. Every AI power user hits this problem within weeks. The handoff system is one of the most demonstrable ARIA differentiators.
+
+🤖 Expansion vs consolidation as explicit ARIA design principle
+Every time about to add a new file or section, ask: is this expansion (adds layers) or consolidation (reduces lookup surface)? Consolidation is almost always better. Validated today with HANDOFF_CHEATSHEET.
+
+🤖 Session closing as first-class cognitive event
+The moment before clear is uniquely valuable — maximum context, minimum future. ARIA should treat this window as a scheduled synthesis opportunity, not just a cleanup step.
+
+🤖 Receipt photo as ARIA primitive
+Every behavioral claim ("LOCKED 37 was validated") gets an attached receipt — link to conversation moment, commit, file diff. Not abstract claims, evidence. Builds trust when AIs say "I did X" — receipt is right there. Maps directly to Uncrumple → ARIA isomorphism.
+
+⭐ 🤖 High-Signal Shelf architecture
+Layer stack:
+IDEA_COMPOST.md = everything, raw, preserved
+HIGH_SIGNAL_IDEAS.md = worth rereading first
+CONNECTED_IDEAS.md = ideas that link to each other (future)
+ROADMAP.md = worth building
+CANDIDATE_ATTRIBUTES.md = worth testing as behavior
+LOCKED_ATTRIBUTES.md = proven
+Do not build files yet. Save the architecture.
+
+🤖 User's notes app = highest-signal capture
+Maintained independently, without AI prompting, without filtering. When shared, treat as gold mine. Save everything, categorize everything, flag strong items ⭐. Already passed through user's synthesis layer once. Goes to High-Signal Shelf, not raw compost.
+
+🤖 Ambient capture — buildable now with zero infrastructure
+Simple end-of-session prompt: "What's still in your head that isn't captured anywhere?" Most primitive version of ambient capture. No launcher, no OS, no new tooling required.
+
+🤖 "Future-me filter" as reusable decision lens (GPT idea)
+Will this reduce future continuity tax, or create more system to maintain? May eventually deserve locked-rule status if it keeps proving itself.
+
+🤖 "Friction-to-feature conversion" (GPT idea)
+Every time "this is annoying" — ask: is this a product feature, a workflow rule, or just fatigue? Irritation often exposes hidden coordination burden.
+
+## 🧠 Trio System Ideas
+
+🧠 The skeptic role is missing
+Right now GPT and Claude both tend toward synthesis and validation. Actively trying to break an idea is a different cognitive mode. "What would break this?" should be a formal handoff review step, not something that happens only when Claude notices something feels off.
+
+🧠 Escalation path for GPT/Claude disagreement
+When both AIs think they're right and neither is clearly wrong, it lands on the user to arbitrate. That's orchestration burden. A designated escalation path — third-party prompt structure forcing both to argue the opposing position — before user decides.
+
+🧠 Asymmetric load balancing for trio
+Some sessions are pure execution (Code heavy, planning AIs light). Some are pure architecture (planning AIs heavy, Code idle). Explicit modes that match resource allocation to session type. "Execution mode" should mean something concrete about how often GPT and Claude are consulted.
+
+## 🏗️ Continuity Infrastructure Ideas
+
+⭐ 🏗️ APP_LOG vs ARIA_LOG separation
+SESSION_LOG.md conflates two products. Today had zero app code but heavy ARIA work — goes in same log. Split into APP_LOG and ARIA_LOG or tag each entry. Can't currently ask "how many sessions has Uncrumple actually advanced this month vs ARIA?"
+
+🏗️ Deferral counter on app issues
+The keyboard issue has been deferred 4+ sessions. receipt/receiptUri longer. Track defers per known issue. After N defers, force decision: ship, kill, or escalate. Prevents permanent debt accumulation.
+
+🏗️ Dynamic starter block
+Currently static — same block every session. Should include one-line summary of active session context: what's in progress, last confirmed patch, next step. Code should never start cold when that information exists.
+
+🏗️ Coordination-overhead tax meter
+Every new rule, file, or candidate has a cost: reading time, application time, drift risk. CANDIDATE_ATTRIBUTES could include "estimated tax: low/medium/high." Forces trade-off explicit. Supports #14 candidate.
+
+🏗️ GPT generation drift tracking — empirical version
+BEHAVIORAL_FINGERPRINT.md per GPT instance. 5 standardized questions answered the same way each handoff. Compare GPT-1 to GPT-3 answers and see drift quantitatively, not subjectively. Questions need to be ambiguous enough to reveal drift, not so simple every instance answers identically.
+
+⭐ 🏗️ Anti-pattern: system explaining the system
+If docs/system/ grows faster than app/, that's a regression signal. ARIA exists to support the app. Possible CLAUDE.md rule: "If governance file count >2× shipped feature count this month, prioritize app work next session."
+
+🏗️ Uncrumple ↔ ARIA isomorphism as deliberate design tool
+Every time Uncrumple introduces a UX pattern, check if ARIA needs the equivalent. Same shape: imperfect data + cleanup flow + evidence trail. Make the cross-pollination a deliberate design method, not accidental.
+
+## 📱 Uncrumple App Ideas
+
+⭐ 📱 "All caught up" moment — emotional payoff
+When Needs Attention hits zero, nothing happens. That's a missed opportunity every time a user achieves it. Even one line: "You're all caught up." Costs maybe 10 lines of code. Should be on next prompt list.
+
+⭐ 📱 Date problem — trust issue before launch
+Transactions stored without year means tax screen is lying to users. "2026 Summary" showing 2025 data is not minor UX — it's a trust problem with the exact audience being built for. Tradespeople who find wrong tax numbers won't come back. Needs to move up before launch, not after.
+
+⭐ 📱 Undo for destructive actions — 5-second toast
+No undo exists anywhere. Delete a transaction or client = gone. Tradespeople on job sites make accidental deletes. A 5-second undo toast before delete commits would eliminate this entire class of data loss. Asymmetric: very low build cost, very high trust impact.
+
+⭐ 📱 Crumpled → flat Save button progression
+Ties brand metaphor directly to core interaction. Keeps getting deferred. Should move higher in priority after flagged flow is verified. Highest-leverage UI idea in the saved ideas list.
+
+📱 "Why was I here?" transaction history
+Show when transaction was created, when receipt was added, how many times opened, what's still missing. Smallest viable version of ARIA's reconstruction snapshot concept. Proves the principle on tiny data. Low implementation cost, high conceptual value.
+
+📱 Receipt state: attached / missing / unavailable
+The one data model gap actively blocking real user behavior. A lost receipt can never be cleared from Missing Receipts queue. Adding "unavailable" state is not as complex as it sounds — just a third state. Coordinated store change required but small.
+
+📱 Rule attribution on auto-tagged transactions
+"Applied by rule: [rule name]" on any transaction tagged by rules engine. Tradesperson who sees unexpected tag has no idea why. Makes automation transparent. Trust feature, not complexity feature.
+
+📱 Manage Merchants in Settings
+Merchant autocomplete grows forever with no pruning. After a year: dozens of typo variants and old merchants. Simple list you can delete from. Low complexity, meaningful quality-of-life improvement.
+
+## 🤖 Meta Ideas
+
+⭐ 🤖 AIs capture. User synthesizes. Never reverse this.
+The user is the synthesis layer. AIs capture everything raw. Reading one idea sparks a better idea or builds on it. Cannot know in advance which captured idea will be the connection point for the most important insight. This is both a design principle and a preservation rule.
+
+🤖 Loaded-AI window is asymmetric by direction
+Currently: extract ideas from loaded AIs before clear. Missing: inject best ideas back into fresh AI's first message. Seed idea in starter block primes thinking direction without requiring full context reconstruction.
+
+🤖 "All caught up" = recovery confidence score
+Same emotional primitive: when Needs Attention hits zero, app says something. When ARIA continuity reconstruction hits sufficient coverage, ARIA says something. Neither currently does this. Both should.
+
+🤖 Connection layer between compost and high-signal
+CONNECTED_IDEAS.md = ideas that link to each other. User's synthesis process works by linking ideas, not just ranking them. An idea that connects two other ideas is often more valuable than either alone.
