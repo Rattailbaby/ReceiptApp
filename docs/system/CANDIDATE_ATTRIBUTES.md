@@ -316,6 +316,50 @@ This prevents false failure diagnoses where repo access works correctly but GitH
 
 Candidate for future LOCKED_ATTRIBUTES if this repeats.
 
+[2026-05-09] — Trio reflection during handoff
+
+The new HANDOFF process improves the old manual clone ceremony, but one valuable part of the old process should be preserved intentionally:
+
+Before finalizing handoff, the system should include a Trio Reflection step.
+
+Purpose:
+- GPT reflects on what changed, what mattered, what should be preserved
+- Claude pressure-tests the session from systems / architecture perspective
+- Code verifies file truth, actual saved state, and repo sync
+- User makes final judgment
+
+This preserves the strongest part of the old process without restoring full manual chaos.
+
+Potential placement:
+After candidate review and before final promotion / ARIA scan.
+
+Behavior:
+- Code generates paste-ready reflection prompts for GPT and Claude
+- User brings back responses
+- Code reconciles them with file truth
+- Only then finalize candidate decisions, handoff JSON, and external sync packets
+
+Conditional verification rule:
+For governance-sensitive changes, Claude should pressure-test before final commit.
+This applies to:
+- LOCKED_ATTRIBUTES.md
+- CANDIDATE_ATTRIBUTES.md
+- SYSTEM_COMMANDS.md
+- SYSTEM_EVOLUTION.md
+- CURRENT_HANDOFF.json
+- ARIA_README.md
+- ARIA_IDEAS.md
+- project rule updates
+
+Do not require Claude verification before every normal app-code commit.
+
+Reason:
+The old process had useful cross-AI reflection but too much user burden.
+The new process reduces burden but risks losing explicit GPT/Claude judgment.
+This candidate keeps trio intelligence while avoiding constant ceremony.
+
+Candidate only until tested across at least one real handoff.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 ## Rejected
