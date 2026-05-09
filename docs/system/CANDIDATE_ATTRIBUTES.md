@@ -267,6 +267,48 @@ Future augmentations:
 Do not implement augmentations yet.
 Candidate only until tested across multiple handoffs.
 
+[2026-05-09] — GPT instance numbering / clone lineage tracking
+
+Number GPT chat instances sequentially (GPT-1, GPT-2, GPT-3...) and 
+record the instance number in CURRENT_HANDOFF.json. Each handoff 
+ceremony includes the number of the GPT generating it.
+
+Purpose:
+- Track whether successive clones are accumulating wisdom or losing it
+  across handoffs
+- Detect drift or regression — if GPT-7 produces noticeably worse 
+  clone reviews than GPT-5, that's a signal worth catching
+- Establish a lineage so future-you can ask "when did this 
+  behavioral pattern start?" and trace it back to a specific clone
+- Like git commits but for AI cognition
+
+Suggested implementation (do not build until tested):
+- Add `gpt_instance_number` and `gpt_lineage` fields to 
+  CURRENT_HANDOFF.json
+- On each new GPT chat, GPT increments the number on first message 
+  per FRESH CHAT PROTOCOL
+- Lineage records prior instance numbers + which session they wrapped
+- User-facing: each chat opens with "I'm GPT-N, picking up from GPT-(N-1)"
+
+Why Claude doesn't need this right now:
+Claude (chat) runs in a project with Project Knowledge persistence. 
+Less generation-discontinuity than GPT chats. Could be added later 
+if Claude instance-tracking becomes useful.
+
+Not for Code:
+Code instances are session-bounded by /clear and inherit cleanly via 
+CURRENT_HANDOFF.json. Numbering Code instances would be redundant 
+with git commit history.
+
+Reason this is candidate-worthy:
+Distinguishes between "the system" and "the specific instance." 
+Makes regression visible. Cheap to implement, expensive to skip if 
+clones start drifting.
+
+Candidate only — validate by tracking 3 sequential GPT chats and 
+checking whether the numbering surfaces meaningful patterns. If it 
+just adds bureaucracy with no signal, reject.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
