@@ -123,7 +123,13 @@
       "Do not stack patches — resolve current patch before starting another",
       "Workflow continuity overrides conversational recency",
       "New chat is continuation not restart — do not replan or redesign",
-      "If response does not follow structure it is invalid"
+      "If response does not follow structure it is invalid",
+      "Apply CROSS-AI PROMPT RECONCILIATION (LOCKED 37) — synthesize disagreement, hold position with reasoning when right, yield with reasoning when wrong; never silent-defer to other AIs",
+      "Apply DUAL-TRACK RULE — execution constraints and ambient capture run in parallel; structured task constraints do not suppress 🔭/🧠 markers",
+      "Apply MERGED PROMPT RULE — same-file same-goal prompts merge; preserve stricter constraints; do not duplicate edits",
+      "Apply VERIFY-BEFORE-CLAIM — read or grep before claiming a section exists or is missing; do not rely on memory of recent edits",
+      "Apply AMORTIZED GOVERNANCE — capture decisions, anti-patterns, invariants when observed mid-session, not batched at handoff",
+      "When AI tool output is truncated (GitHub fetch_file, etc), surface the constraint and propose Code-assisted alternative — do not fabricate missing content"
     ],
     "things_to_avoid": [
       "Do not redesign working systems",
@@ -135,7 +141,10 @@
       "Do not skip inspect phase",
       "Do not assume user intent without confirmation",
       "Do not change next_step based on recency",
-      "Do not tell user to paste into notes app — always give Claude Code prompt instead"
+      "Do not tell user to paste into notes app — always give Claude Code prompt instead",
+      "Do not silently defer to other AIs in cross-AI reconciliation — synthesize or principled-disagree with reasoning",
+      "Do not fabricate when tool output is truncated — surface the limit and propose safe alternative",
+      "Do not treat 'clone the AI' and 'regenerate the JSON' as the same operation — they are different concerns at different scales (tier model exists for this)"
     ],
     "how_to_push_back": "Directly reject incorrect approach with explanation of system constraints. Reference which rule is violated. Redirect to minimal safe fix without softening.",
     "how_to_keep_user_on_track": "Enforce single-thread focus, log new issues without switching context, anchor to next_step, prevent scope expansion, enforce NEXT STEP INTEGRITY RULE."
@@ -280,6 +289,41 @@
       "decision": "Create CLAUDE_CODE_STARTER.md and GPT_NEW_CHAT_STARTER.md as separate files",
       "reason": "Clear naming prevents pasting wrong starter into wrong tool",
       "rejected_alternatives": ["Single starter file", "Keeping in CLAUDE.md only"]
+    },
+    {
+      "decision": "Promote LOCKED 36 (ARIA AMBIENT NOTICING) and LOCKED 37 (CROSS-AI PROMPT RECONCILIATION) from candidates #6 and #19 (2026-05-09)",
+      "reason": "Both validated multiple times in actual use this session; trio reflection caught duplicate flag on #25 vs #19 + over-eager promotion in Category C",
+      "rejected_alternatives": ["Hold one more session", "Promote all 4 of GPT's Category C suggestions including #4 and #14"]
+    },
+    {
+      "decision": "Hold candidates #4 (handoff improvement) and #14 (coordination-overhead awareness) one more session",
+      "reason": "Claude pressure-test: promote principles not rigid ceremonies; #4 needs candidate-review-principle wording, #14 needs sharper testable trigger ('if a proposed addition requires another file to explain how it relates to existing ones, that's a signal to stop expanding')",
+      "rejected_alternatives": ["Promote with current vague wording", "Reject entirely"]
+    },
+    {
+      "decision": "Adopt tiered clone regeneration as candidate (3 levels: NORMAL CLEAR / TARGETED REFRESH / FULL REGEN), defer augmentations",
+      "reason": "Trio synthesis: GPT proposed tier framework + Clone Freshness Score, Code proposed augmentations (🧬 marker, fragments split, diff-as-input), Claude pressure-tested augmentations as premature; ship spine, validate across 3 handoffs before promoting",
+      "rejected_alternatives": ["Run full Option 3 every handoff (heavy)", "Skip JSON regen entirely (loses clone fidelity)", "Implement augmentations now (would trip held candidate #14 coordination-overhead)"]
+    },
+    {
+      "decision": "Code held position on candidate #25 vs Claude duplicate flag of #19",
+      "reason": "Different concepts: #19 (LOCKED 37) is reasoning protocol for cross-AI synthesis; #25 is workflow discipline for Code (commit+push before asking AIs to verify). Different responsibilities, different layers — per LOCKED 37 hold-with-reasoning",
+      "rejected_alternatives": ["Yield silently to Claude flag", "Retire #25 and lose commit-before-verify discipline"]
+    },
+    {
+      "decision": "Code yielded on clone augmentations after Claude pressure-test",
+      "reason": "Adding 🧬 marker / fragments split / CLONE_FRAGMENTS.md to a candidate that should test ONE thing (tier model) would trip held candidate #14 — additions need new files to explain themselves. Claude's argument was principled, not just conservative.",
+      "rejected_alternatives": ["Include augmentations in candidate", "Defer Claude's pressure-test"]
+    },
+    {
+      "decision": "Move candidate #16 (Documentation confidence system) from CANDIDATE_ATTRIBUTES to ROADMAP",
+      "reason": "Misfiled — was a product feature idea, not a behavior rule. CANDIDATE_ATTRIBUTES is for behavior rules awaiting validation only.",
+      "rejected_alternatives": ["Keep in CANDIDATE_ATTRIBUTES", "Reject entirely"]
+    },
+    {
+      "decision": "Execute Tier 3 ceremony via Tier 2 mechanics due to GitHub fetch_file truncation",
+      "reason": "GPT could not safely generate full CURRENT_HANDOFF.json from truncated fetch — would fabricate tail. Code has full local file access, GPT does clone-behavior review. This validates the natural Code-as-writer / GPT-as-reviewer split.",
+      "rejected_alternatives": ["Have user paste full JSON to GPT (defeats GitHub-as-source-of-truth)", "Skip regeneration", "Have GPT regenerate with truncated source"]
     }
   ],
 
@@ -391,20 +435,32 @@
     "Claude (chat) Layer 2 restoration via Project Knowledge tested and confirmed working — Claude can read repo files + identify validation gaps independently",
     "Cross-AI integrity rule validated in real use — GPT corrected SYSTEM_EVOLUTION wording (live → committed+pushed-only); corrections incorporated; Claude flagged per-role manifest as unvalidated in fresh-chat scenario",
     "Stabilization-phase reframings captured in ARIA_IDEAS.md — recovery is layered, repo is continuity infrastructure, governance subordinate to cognition, future-me principle as legitimacy filter",
-    "Cross-pollination synthesis: 10 specific ways Uncrumple is ARIA's design language (cleanup flow → ARIA close-session UX, txNeedsCleanup → epistemic confidence layers, receipts → ARIA continuity primitive, etc.)"
+    "Cross-pollination synthesis: 10 specific ways Uncrumple is ARIA's design language (cleanup flow → ARIA close-session UX, txNeedsCleanup → epistemic confidence layers, receipts → ARIA continuity primitive, etc.)",
+    "LOCKED_ATTRIBUTES section 36 ARIA AMBIENT NOTICING RULE promoted from candidate #6 (2026-05-09)",
+    "LOCKED_ATTRIBUTES section 37 CROSS-AI PROMPT RECONCILIATION RULE promoted from candidate #19 (2026-05-09)",
+    "CANDIDATE_ATTRIBUTES.md reorganized into Pending Review / Promoted / Moved Out / Rejected sections (2026-05-09)",
+    "Candidate #16 Documentation confidence system moved from CANDIDATE_ATTRIBUTES to docs/system/ROADMAP.md as Saved Idea — was misfiled product idea, not behavior rule",
+    "Tiered clone regeneration / Clone Delta Packet candidate added — three tiers (NORMAL CLEAR / TARGETED REFRESH / FULL REGEN), 6-question Clone Freshness Score heuristic, future augmentations (🧬 marker, diff-as-input, Living Fragments split) explicitly deferred",
+    "ARIA_IDEAS.md gained Clone Delta Packets architecture entry — 'clone the AI' vs 'regenerate JSON' separated, deferred augmentations captured",
+    "docs/system/HANDOFF_CHEATSHEET.md created — plain-English reference for clear / handoff / /clear, Level 1-2-3 clone regeneration, 10-step full handoff order, repo truth boundary, simple memory mnemonic",
+    "Trio reflection during handoff candidate validated 3+ times this ceremony in opposite directions — all correct calls (GPT over-eager promotion caught by Claude pressure-test; Code held position on #25 vs #19; Code yielded on clone augmentations under Claude pressure-test)",
+    "GitHub fetch_file truncation discovered on large JSON files — validated Code-as-writer / GPT-as-reviewer role split as natural fallback when AI tool output is truncated",
+    "Block A / Block B / Block C ceremony structure consolidated and named in HANDOFF_CHEATSHEET.md — experienced GPT generates clone artifact, fresh GPT receives finalized continuity state",
+    "Repo branch changed from master to main during session"
   ],
 
   "unresolved_threads": [
-    "Flagged transaction flow correctness under multi-filter and match mode conditions",
+    "Flagged transaction flow correctness under multi-filter and match mode conditions — preserved as next_step",
     "Client page renders behind Search transaction modal causing flash — deferred",
     "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
     "Sort not persisted via URL — local state only",
     "Extras-only navigation consistency still tied to source=explore gate",
     "14 bottom-appended rules in LOCKED_ATTRIBUTES still outside numbered fence — needs manual cleanup eventually",
-    "Before starting new GPT chat, confirm GPT has: (1) crumple-to-flat animation saved in ROADMAP as priority product identity idea, (2) CLAUDE_CODE_STARTER.md updated with 9 system/ARIA files reading list, (3) close session command is new and should become permanent in GPT project rules, (4) ARIA renamed to Ambient Reasoning and Insight Architecture - no more DevOS or AI-Resilient Infrastructure Architecture references, (5) docs/aria/ folder exists with full infrastructure.",
-    "GitHub repo now at github.com/Rattailbaby/ReceiptApp. GPT connected via Rattailbaby account. Block C no longer requires manual JSON paste — GPT reads files directly.",
-    "Block C updated for GitHub-native handoff: GPT reads github.com/Rattailbaby/ReceiptApp directly. Block A is shorter. Block B still paste-heavy for Claude. Updated Block C: Generate fresh CURRENT_HANDOFF.json, read from repo: SESSION_LOG.md, CURRENT_HANDOFF.json, LOCKED_ATTRIBUTES.md, CANDIDATE_ATTRIBUTES.md, ARIA_README.md, ARIA_IDEAS.md (focus 2026-05-08 entries). Include aria_state section: ARIA name, canonical pitch, core direction, target handoff architecture, CLEAR vs HANDOFF distinction, amortized governance, trio job-split, Uncrumple as ARIA design language, 3 ARIA-as-product directions. Preserve next_step: flagged transaction flow inspection in explore.tsx + client-detail.tsx.",
-    "Per-role reading manifest in docs/system/SYSTEM_COMMANDS.md applied this session but NOT YET VALIDATED in a real fresh-chat scenario. First fresh chat where reconstruction feels off, check whether the manifest is actually being followed by GPT and Claude. Flagged by Claude (chat) during Layer 2 verification — accuracy of all other items in 2026-05-09 SYSTEM_EVOLUTION entry confirmed against repo, but this single item is structural-only, behavioral validation pending."
+    "Per-role reading manifest in docs/system/SYSTEM_COMMANDS.md applied but NOT YET VALIDATED in a real fresh-chat scenario — first fresh chat where reconstruction feels off, check whether the manifest is actually being followed by GPT and Claude",
+    "Tiered clone regeneration candidate awaits 3 handoff exercises before promotion to LOCKED — track whether tier classification matched actual session weight",
+    "Candidate #25 (commit-before-verify) remains pending — Code held position vs Claude flag of duplicate-of-#19 (different concepts: #19 is reasoning protocol, #25 is workflow discipline). Re-evaluate next session.",
+    "Candidates #4 (handoff improvement) and #14 (coordination-overhead awareness) held one more session per Claude pressure-test — when promoted, lock principle not rigid ceremony for #4, use sharper testable trigger for #14",
+    "GitHub fetch_file truncates large JSON files — workaround is Code-as-writer / GPT-as-reviewer split. May need formal documentation if pattern recurs."
   ],
 
   "future_ideas_saved_not_built": [
@@ -499,7 +555,12 @@
       "Git is initialized — commit before risky changes",
       "Three roles: Planning AI writes prompts, Claude Code executes, User confirms",
       "Rule duplication in generator is defensive redundancy not a problem",
-      "Doc cleanup prompt is conservative by design — reports candidates but does not move if unsure"
+      "Doc cleanup prompt is conservative by design — reports candidates but does not move if unsure",
+      "Three-tier handoff classification (Level 1/2/3) determines regeneration weight; 6-question Clone Freshness Score is the heuristic",
+      "Code owns complete file truth, GPT owns clone-behavior review — natural split when GitHub fetch_file truncates large files",
+      "Cross-AI reconciliation runs both directions: hold with reasoning when right, yield with reasoning when wrong (LOCKED 37)",
+      "Repo truth boundary: AI verification only sees committed+pushed origin/main state; commit+push before asking AIs to verify",
+      "docs/system/HANDOFF_CHEATSHEET.md is the canonical ceremony reference — read it when uncertain about clear vs handoff vs /clear or which clone tier applies"
     ]
   },
 
@@ -536,12 +597,65 @@
     "Sorting by display date strings — use id as chronological proxy",
     "Jumping to deferred issues prematurely",
     "Stacking patches without confirmation",
-    "Asking what did you miss repeatedly — this produces endless rule generation loops with no bottom"
+    "Asking what did you miss repeatedly — this produces endless rule generation loops with no bottom",
+    "Treating CURRENT_HANDOFF.json regeneration and AI behavioral cloning as the same operation — they are different concerns at different scales (tier model exists to separate them)",
+    "Adding ceremony for every handoff regardless of whether substrate changed — Tier 1/2/3 model exists to prevent this",
+    "Fabricating missing fields when AI tool output is truncated — surface the limit and propose Code-assisted alternative",
+    "Silent-defer to other AIs in cross-AI reconciliation — LOCKED 37 requires synthesis or principled disagreement",
+    "Adding new files that require yet another file to explain how they relate to existing ones — coordination-overhead expansion (held candidate #14)"
   ],
 
-  "handoff_instruction_for_new_chat": "This is a state transfer not a new conversation. You are the same assistant continuing from a previous chat closed for performance reasons. Nothing has been lost. All decisions rules and context carry forward exactly as they were. Read docs/system/LOCKED_ATTRIBUTES.md then docs/system/HANDOFF_RECEIVER.md then this JSON then docs/system/ROADMAP.md in order. Continue from current_state.next_step. Do not restart. Do not replan. Do not summarize unless asked.",
+  "handoff_instruction_for_new_chat": "This is a state transfer not a new conversation. You are the same assistant continuing from a previous chat closed for performance reasons. Nothing has been lost. All decisions rules and context carry forward exactly as they were. For Code (Claude Code CLI): Read in order — (1) CLAUDE.md, (2) docs/system/HANDOFF_CHEATSHEET.md (ceremony reference), (3) docs/system/LOCKED_ATTRIBUTES.md (37 numbered sections), (4) this JSON, (5) docs/system/SYSTEM_COMMANDS.md (per-role reading manifest at end is your full reading list). For GPT/Claude (planning AIs): Read per-role reading manifest in docs/system/SYSTEM_COMMANDS.md. Continue from current_state.next_step. Do not restart. Do not replan. Do not summarize unless asked.",
 
   "execution_rule": "Start with an inspect prompt if any uncertainty exists. Do not patch first.",
+
+  "aria_state": {
+    "identity": "ARIA = Ambient Reasoning and Insight Architecture. The app-agnostic AI development operating system. Working pitch: Pick up exactly where your brain left off.",
+    "foundational_reframings_this_session": [
+      "Repo is the continuity substrate (GitHub source of truth)",
+      "CLEAR = token reset (operational), HANDOFF = trio clone ceremony (behavioral)",
+      "Per-role reading manifest replaces folder duplication",
+      "Trio reflection during handoff (GPT proposes, Claude pressure-tests, Code verifies file truth)",
+      "Repo verification requires committed+pushed state",
+      "Coordination-overhead awareness — stop expanding when additions need new files to explain themselves",
+      "Clone the AI != regenerate the JSON (separated by tier model and Clone Delta Packet concept)",
+      "Code owns complete file truth, GPT owns clone-behavior review — natural split discovered when GitHub fetch_file truncated large JSON"
+    ],
+    "active_behavioral_rules_added_this_session": [
+      "LOCKED 36 — ARIA AMBIENT NOTICING RULE",
+      "LOCKED 37 — CROSS-AI PROMPT RECONCILIATION RULE",
+      "DUAL-TRACK RULE (CLAUDE.md)",
+      "AMORTIZED GOVERNANCE RULE (CLAUDE.md)",
+      "VERIFY-BEFORE-CLAIM RULE (CLAUDE.md)",
+      "MERGED PROMPT RULE (CLAUDE.md)",
+      "DUPLICATE PROMPT RULE (CLAUDE.md)",
+      "REGRESSION RULE (CLAUDE.md)"
+    ],
+    "target_handoff_architecture": {
+      "current_steps_in_HANDOFF_COMMAND": 9,
+      "target_steps_per_ARIA_IDEAS": 14,
+      "missing_steps_to_be_named": "candidate-JSON reconciliation, ARIA state capture, decisions/anti-patterns/invariants prompts, naming scan, session summary"
+    },
+    "tier_model_now_in_effect": {
+      "tiers": ["NORMAL CLEAR (Level 1)", "TARGETED CLONE REFRESH / Behavioral Delta (Level 2)", "FULL CLONE REGENERATION (Level 3)"],
+      "decision_heuristic": "6-question Clone Freshness Score (0-1 / 2-3 / 4+ yes)",
+      "this_session_classification": "Tier 3 (6/6 yes) — but executed via Tier 2 mechanics due to GPT GitHub fetch_file truncation",
+      "future_default": "Most sessions should be Tier 1 or 2; Tier 3 reserved for clone substrate changes",
+      "deferred_augmentations": [
+        "🧬 ambient marker (do not implement yet)",
+        "Diff-as-input for Targeted Refresh (do not implement yet)",
+        "Living Fragments split — STATE.json / BEHAVIOR.md / KNOWLEDGE.md (do not split yet)"
+      ]
+    },
+    "validated_patterns_this_session": [
+      "Trio reflection during handoff — exercised 3+ times this ceremony, opposite directions, all correct calls",
+      "LOCKED 37 cross-AI reconciliation — exercised both directions (held position on #25 vs #19, yielded on clone augmentations)",
+      "Heuristic defaults for candidate review — cut review from 15min to 2min",
+      "Code-as-writer / GPT-as-reviewer split — emerged from GitHub truncation constraint, validates Tier 2 mechanics for substrate sessions"
+    ],
+    "repo_truth_boundary": "AI repo verification only sees committed+pushed origin/main state. Code must commit+push before asking GPT/Claude to verify. AI tool output may also truncate on large files — surface constraint and propose Code-assisted alternative rather than fabricating missing content.",
+    "ceremony_choreography_reference": "docs/system/HANDOFF_CHEATSHEET.md is the canonical reference for clear vs handoff vs /clear, the three tiers, the 10-step full handoff order, and the experienced-vs-fresh GPT distinction. All three trio roles read from this file."
+  },
 
   "file_updates_needed": {
     "locked_attributes": [],
