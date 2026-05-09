@@ -1454,6 +1454,14 @@ needed. Pairs with Save button color progression idea.
 The bar communicates "there's more you could add" without 
 blocking or nagging.
 
+📱 Documentation confidence system as signature UX — a 
+future product feature where the app teaches better 
+documentation habits passively rather than forcing 
+compliance. Could become one of Uncrumple's signature UX 
+patterns. (Moved from CANDIDATE_ATTRIBUTES.md 2026-05-09 
+per Claude pressure-test — was misfiled as a behavior rule 
+when it's a product idea.)
+
 📱 "Why was I here?" transaction history — open a 
 transaction from weeks ago and see: when it was created, 
 when receipt was added, how many times opened, what's 

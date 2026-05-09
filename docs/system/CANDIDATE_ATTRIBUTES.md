@@ -30,10 +30,6 @@ Rules:
 
 ## Pending Review
 
-[2026-05-06] — Add sheet footer investigation
-- Avoid flex:1 inside min/max-height Android modal sheets.
-  Use flexShrink:1 instead.
-
 [2026-05-06] — Tool suggestion timing
 - Suggest relevant UI tools (v0.dev, NativeWind, Tamagui) before
   UI-heavy roadmap features begin, not mid-build.
@@ -47,46 +43,10 @@ Rules:
   clone JSON is finalized. GPT surfaces patterns it noticed even
   if user didn't explicitly name them.
 
-[2026-05-06] — New shorthand
-- Sidequest = brief intentional interruption to sync info or handle
-  small related task before returning to main task.
-
-[2026-05-06] — ARIA ambient noticing rule
-Claude and GPT should continuously scan for ARIA insights 
-mid-session and flag them with 🔭 ARIA: [one sentence] 
-without interrupting flow. Code saves anything starting 
-with 🔭 to docs/aria/ARIA_IDEAS.md automatically.
-This should become a permanent behavior rule once proven.
-
-[2026-05-06] — Flow state collaboration rule
-During high-inspiration architecture exploration, preserve 
-and expand strong system-level ideas before redirecting 
-to execution. Distinguish between dopamine brainstorm 
-noise and emergent structural insight. Current thread 
-is the second type.
-
-[2026-05-06] — Inspiration flow capture rule
-During high-inspiration architecture exploration, preserve and expand strong system-level ideas before redirecting back to execution.
-
-Capture unresolved structure ideas into the correct system or ARIA files so momentum and insight are not lost.
-
-Distinguish:
-- dopamine brainstorm noise
-- procrastination
-- genuine emergent structural insight
-
-If the user is clearly synthesizing architecture, do not prematurely force return to the main task.
-
-[2026-05-06] — Sidequest context preservation
-When a sidequest begins, preserve the base task clearly so the user does not have to mentally guard it.
-
-The AI should track:
-- current base task
-- active sidequest topic
-- what needs to be resumed later
-
-At the end, say:
-“Sidequest complete. Back to [base task].”
+HELD 2026-05-09 (per Claude pressure-test): one more session before
+promotion. When promoted, lock the principle ("candidate review
+happens during handoff before final continuity reconstruction") NOT
+a rigid ceremony — per GPT's wording refinement.
 
 [2026-05-06] — Future project rules architecture direction
 Current project rules are mixing multiple responsibility layers:
@@ -107,42 +67,6 @@ Possible future layers:
 Do not implement yet. Let the system prove which layers are 
 real through repeated use before formalizing them.
 
-[2026-05-06] — ARIA epistemic confidence layers
-Observations need filtration tiers before becoming permanent:
-🔭 ARIA flag → possible insight detected
-ARIA_IDEAS → worth preserving  
-CANDIDATE_ATTRIBUTES → might affect system behavior
-LOCKED_ATTRIBUTES → proven and permanent
-
-Auto-saving everything collapses these tiers into noise.
-The flag is ambient noticing. The review is intentional.
-
-[2026-05-06] — Base task continuity reassurance
-When sidequests, synthesis flow, or deferred capture occurs,
-maintain awareness of the suspended base task. Short
-reassurance phrases like "Base task still held." or
-"Deferred queue preserved." reduce cognitive anxiety and
-improve exploratory freedom by making continuity visible.
-
-Candidate for CLAUDE.md promotion if it consistently proves
-valuable across multiple sessions.
-
-[2026-05-06] — Automatic high-value architecture capture
-When a discussion reveals a potentially foundational ARIA or system concept, GPT should not only discuss the idea but also proactively provide:
-- preservation classification
-- suggested file destination
-- save prompt generation
-
-Especially when phrases like:
-- “this may become a core ARIA concept”
-- “this feels foundational”
-- “this changes the architecture”
-- “this explains the real problem”
-appear during synthesis.
-
-Reason:
-High-value architectural emergence should not depend on the user remembering to manually request preservation prompts.
-
 [2026-05-06] — Coordination-overhead awareness
 Advanced systems often fail not because individual components 
 are weak, but because coordination overhead grows faster than 
@@ -155,112 +79,12 @@ another file to explain how it relates to existing ones, that
 is a signal the system is approaching coordination-overhead 
 saturation and stabilization should precede expansion.
 
-[2026-05-06] — Multi-source prompt convergence
-The user may send multiple prompts from different AI planners 
-(GPT + Claude) for the same task before Code responds.
-
-Observed behavior:
-Code successfully merged overlapping intent from two nearly 
-identical footer-fix prompts into one clean surgical patch.
-
-Potential workflow rule:
-When multiple prompts clearly target the same file and same 
-goal, prefer:
-- merging overlapping intent
-- preserving stricter constraints
-- avoiding duplicate edits
-- synthesizing the clearest execution path
-
-Do NOT:
-- stack conflicting implementations
-- apply both patches independently
-- duplicate edits
-- widen scope silently
-
-If prompts conflict:
-- stop and ask for clarification.
-
-Reason:
-The multi-role system may intentionally use parallel reasoning 
-to improve architecture quality before execution.
-
-Candidate only until tested across more sessions.
-
-[2026-05-07] — Documentation confidence system as signature UX
-📱 A future "documentation confidence system" could become 
-one of Uncrumple's signature UX ideas because it teaches 
-better habits passively instead of forcing compliance.
-
-[2026-05-07] — Formal session closing process
-The session closing process has grown significantly and 
-needs to become a formalized rule. Current steps that 
-should happen every session close:
-
-1. y confirmation logs final patch
-2. clear triggers wrap/commit/doc cleanup/starter block
-3. CANDIDATE_ATTRIBUTES review — GPT presents each 
-   pending candidate: keep, promote, or discard
-4. Promoted candidates move to LOCKED_ATTRIBUTES via 
-   Code prompt
-5. ARIA scan — GPT checks session for unsaved 🔭 moments
-6. Handoff JSON generated capturing both Uncrumple state 
-   AND ARIA state separately
-7. New chat with starter block + handoff JSON
-
-Missing infrastructure:
-- No ARIA state section in handoff JSON schema
-- No automated candidate review prompt
-- No session closing checklist command in CLAUDE.md
-- Handoff process not documented as a formal checklist
-
-Candidate for promotion: add ## SESSION CLOSING CHECKLIST 
-command to CLAUDE.md that runs all steps automatically 
-when user says "close session."
-
-[2026-05-07] — "Close session" as a single automated command
-GPT should respond to "close session" by running the full 
-closing sequence automatically: candidate review → ARIA scan 
-→ handoff generation → starter block. GPT should also 
-proactively suggest closing when context shows signs of 
-degradation (shorter responses, losing recent decisions, 
-slower reasoning). This prevents session entropy from 
-accumulating silently.
-
-[2026-05-08] — Cross-AI prompt reconciliation / role integrity under cross-validation
-
-When GPT and Claude both produce prompts, recommendations, 
-or reviews for the same task, they must not simply defer to 
-each other ("use theirs").
-
-Required behavior:
-- identify what is stronger in own version
-- identify what is stronger in the other AI's version
-- merge non-conflicting strengths into one combined output
-- drop weaker or duplicate parts
-- if the other AI covers something yours missed, generate a 
-  merged version including both
-- if there is genuine conflict: state disagreement clearly 
-  with reasoning and hold position
-- if truly equivalent: say so and let Code merge via the 
-  MERGED PROMPT RULE
-- never make the user manually assemble the answer from 
-  two partial responses
-
-If the prompts conflict in goal, file scope, or implementation 
-strategy:
-- stop and ask the user to decide
-
-Reason:
-The user should not have to mentally arbitrate between 
-overlapping AI prompts during fast workflow. The trio 
-system should reduce coordination burden, not increase it.
-The correct behavior is synthesis or principled disagreement —
-not mutual deference.
-
-This applies to both GPT and Claude roles.
-
-Candidate for future LOCKED_ATTRIBUTES or CLAUDE.md promotion 
-if repeatedly useful.
+HELD 2026-05-09 (per Claude pressure-test): one more session
+before promotion. When eventually promoted, use sharper testable
+trigger:
+"If a proposed addition requires another file to explain how it
+relates to existing ones, that's a signal to stop expanding."
+Not the current vague "weigh coordination cost" wording.
 
 [2026-05-08] — Heuristic defaults for candidate review
 During handoff candidate review, Code suggests a default 
@@ -284,6 +108,12 @@ suggest clear during architecture/ARIA exploration.
 User can say "execution mode" to resume normal 
 clear cadence. Gives explicit control over the 
 synthesis-vs-token tradeoff.
+
+TENSION FLAG 2026-05-09 (per Claude pressure-test): interaction
+with CLEAR USAGE RULE is undefined. Code currently suggests clear
+based on its own judgment. Synthesis mode would let user override.
+What happens when Code thinks it should suggest clear and user is
+in synthesis mode? Resolve before promotion.
 
 [2026-05-08] — Memory-file paste blocks for GPT/Claude
 During handoff, Code surfaces project_aria.md and 
@@ -316,6 +146,8 @@ This prevents false failure diagnoses where repo access works correctly but GitH
 
 Candidate for future LOCKED_ATTRIBUTES if this repeats.
 
+NOTE 2026-05-09: Claude (chat) initially flagged this as duplicate of cross-AI prompt reconciliation candidate during handoff trio reflection. Code disagreed per CROSS-AI PROMPT RECONCILIATION RULE (LOCKED 37) — these are different concepts. #19/cross-AI is about how planning AIs synthesize. This candidate is about Code's commit/push discipline before AI verification. Held position with reasoning per the rule.
+
 [2026-05-09] — Trio reflection during handoff
 
 The new HANDOFF process improves the old manual clone ceremony, but one valuable part of the old process should be preserved intentionally:
@@ -339,19 +171,22 @@ Behavior:
 - Code reconciles them with file truth
 - Only then finalize candidate decisions, handoff JSON, and external sync packets
 
-Conditional verification rule:
-For governance-sensitive changes, Claude should pressure-test before final commit.
-This applies to:
+Conditional verification rule (refined per Claude 2026-05-09):
+For commits that touch behavioral rules or system architecture files specifically:
 - LOCKED_ATTRIBUTES.md
-- CANDIDATE_ATTRIBUTES.md
+- CLAUDE.md
+- HANDOFF_GENERATOR.md
+- HANDOFF_RECEIVER.md
 - SYSTEM_COMMANDS.md
 - SYSTEM_EVOLUTION.md
 - CURRENT_HANDOFF.json
 - ARIA_README.md
 - ARIA_IDEAS.md
-- project rule updates
+- project rule updates (GPT custom instructions, Claude project rules)
 
-Do not require Claude verification before every normal app-code commit.
+Claude should pressure-test before final commit on these specific files.
+
+Do NOT require Claude verification before normal app-code commits (component fixes, style tweaks, transaction-flow logic, etc.). App code changes don't need cross-AI sign-off and never should — keeps governance subordinate to execution.
 
 Reason:
 The old process had useful cross-AI reflection but too much user burden.
@@ -360,6 +195,45 @@ This candidate keeps trio intelligence while avoiding constant ceremony.
 
 Candidate only until tested across at least one real handoff.
 
+VALIDATED 2026-05-09: This very handoff exercised the pattern. GPT identified Category C (4 promotes), Claude pressure-tested and reduced to 2 (#6, #19), Code reconciled and applied Claude's conservative read. The pattern caught a real over-eager promotion. Repeats once more before LOCKED.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
+[2026-05-06] — Add sheet footer investigation — RESOLVED
+Footer fix shipped on device via absolute positioning approach (commit history visible in SESSION_LOG.md).
+
+[2026-05-06] — New shorthand (Sidequest) — PROMOTED → LOCKED 13b SIDEQUEST RULE
+
+[2026-05-06] — ARIA ambient noticing rule — PROMOTED → LOCKED 36 ARIA AMBIENT NOTICING RULE (2026-05-09)
+
+[2026-05-06] — Flow state collaboration rule — PROMOTED → LOCKED 35 INSPIRATION FLOW CAPTURE RULE
+
+[2026-05-06] — Inspiration flow capture rule — PROMOTED → LOCKED 35 INSPIRATION FLOW CAPTURE RULE (functional duplicate of Flow state collaboration rule)
+
+[2026-05-06] — Sidequest context preservation — PROMOTED → LOCKED 32 SIDEQUEST CONTEXT PRESERVATION RULE
+
+[2026-05-06] — ARIA epistemic confidence layers — PROMOTED → LOCKED 34 ARIA EPISTEMIC CONFIDENCE LAYERS RULE
+
+[2026-05-06] — Base task continuity reassurance — PROMOTED → LOCKED 31 BASE TASK CONTINUITY REASSURANCE RULE + LOCKED 13c CONTINUITY REASSURANCE RULE
+
+[2026-05-06] — Automatic high-value architecture capture — PROMOTED → LOCKED 33 AUTOMATIC HIGH-VALUE ARCHITECTURE CAPTURE RULE
+
+[2026-05-06] — Multi-source prompt convergence — RESOLVED
+Implemented in CLAUDE.md as MERGED PROMPT RULE (Code execution layer). Planning-AI side covered by LOCKED 37 CROSS-AI PROMPT RECONCILIATION RULE.
+
+[2026-05-07] — Formal session closing process — RESOLVED
+Implemented as ## HANDOFF COMMAND in CLAUDE.md (9 steps; target architecture is 14 steps per ARIA_IDEAS.md).
+
+[2026-05-07] — "Close session" as a single automated command — RESOLVED
+Implemented as HANDOFF COMMAND. "close session" alias was dropped — only "handoff" triggers the ceremony.
+
+[2026-05-08] — Cross-AI prompt reconciliation / role integrity — PROMOTED → LOCKED 37 CROSS-AI PROMPT RECONCILIATION RULE (2026-05-09)
+
+## Moved Out
+
+[2026-05-07] — Documentation confidence system as signature UX — MOVED to docs/system/ROADMAP.md (2026-05-09)
+This was a product feature idea, not a system rule. Per Claude pressure-test, it doesn't belong in CANDIDATE_ATTRIBUTES which is for behavior rules awaiting validation. Saved Ideas — Transaction Management category.
+
 ## Rejected
+
+(none)
