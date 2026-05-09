@@ -2653,3 +2653,150 @@ Names the cost being eliminated rather than the capability being added. Psycholo
 [2026-05-09] — Clone regeneration frequency as empirical stability metric
 
 Track Level 1/2/3 regeneration per session in SYSTEM_EVOLUTION.md. Frequent Level 3 = system in flux. Sustained Level 1 = stable. This turns a subjective feeling into a measurable stability curve.
+
+
+[2026-05-09] — Pre-clear synthesis harvest: full idea list (Claude)
+
+Saved per user instruction. Preserve full idea clusters even when only one or two are immediately actionable. Reading saved ideas later sparks better ideas. Risk is not saving too many — risk is promoting too many.
+
+HANDOFF / PROCESS IDEAS:
+
+Ask Claude before clear / Pre-Clear Synthesis Window
+Standing question: "What would you flag, fix, or build given everything you've seen this session?" Highest-leverage moment to extract architectural ideas — context loaded, future minimum.
+
+Diff-as-input for GPT clone review
+Right now GPT gets a narrative summary. A structured diff showing exactly what changed in the clone — old value vs new value per field — would let GPT do real behavioral sanity-checking instead of narrative review.
+
+Interactive HANDOFF_CHEATSHEET decision tree
+Eventually evolve the static doc into a decision tree. "Did command meanings change? → yes → did role behavior change? → yes → full regen." The heuristic we already have, formatted as something you can actually follow under pressure when tired.
+
+ARIA IDEAS:
+
+Ask-the-loaded-AI as ARIA primitive
+ARIA should know when a session is ending and prompt for synthesis automatically — not wait for the user to remember. Trigger: session approaching clear, context heavy, valuable synthesis window closing. That's detectable.
+
+Expansion vs consolidation design principle
+Every time about to add a new file or section, ask: is this expansion or consolidation? Expansion adds layers. Consolidation reduces lookup surface. Consolidation is almost always better.
+
+Session closing as first-class cognitive event
+Right now clear is mostly mechanical. The moment before clear is uniquely valuable — maximum context, minimum future. ARIA should treat this window as a scheduled synthesis opportunity, not just a cleanup step.
+
+Skeptic role / "what would break this?"
+Three-role system has a missing role: the skeptic. GPT and Claude both tend toward synthesis and validation. The most useful thing an AI can do sometimes is actively try to break an idea — find the failure mode before it's built. Different cognitive mode than verification. Should be a standing question.
+
+Disagreement escalation path
+No mechanism for escalating disagreement between GPT and Claude. Current design says "synthesize or principled-disagree" — but what happens when both think they're right? Lands on user to arbitrate = orchestration burden. Designated escalation path needed: maybe a third-party prompt structure that forces both to argue the opposing position before user decides.
+
+Asymmetric load balancing by session mode
+All three roles currently run roughly the same cadence. But some sessions are pure execution (Code heavy, planning AIs light), some pure architecture (planning AIs heavy, Code idle). Explicit modes that match resource allocation to session type. "We're in execution mode" should mean something concrete about consultation frequency.
+
+Continuity debt counter
+Continuity debt is real but unmeasured. You feel when a session is heavy. But there's no actual tracking: how many unresolved branches, how many deferred decisions, how stale the active next_step. Simple counter — even rough estimate in handoff JSON — would make health check actually meaningful instead of vibes-based.
+
+Dynamic starter block
+Currently static — same block every session. Should include one-line summary of active session context: what's in progress, last confirmed patch, next step. Code should never start cold when that information exists.
+
+Recovery fidelity audit
+You recovered the system today but don't actually know how complete the recovery was. What % of behavioral weighting came back correctly? What % of governance priorities? Found one gap (manifest verification) — how many others didn't you find? Recovery audit checklist run at end of fresh-chat restoration would answer this systematically.
+
+Primitive ambient capture question
+The ambient cognition layer keeps getting framed as future. There's a version buildable right now with zero new infrastructure: simple end-of-session prompt asking "what's still in your head that isn't captured anywhere?" Most primitive version of ambient capture — just a standing question before clear.
+
+"No continuity tax" pitch
+Current pitch: "Pick up exactly where your brain left off." Real problem being solved: reducing the tax on interrupted thought. Every interruption has cost — reloading context, remembering where you were, rebuilding momentum. ARIA's real value is reducing that tax. Cleaner pitch: "No continuity tax."
+
+Handoff as product/demo
+The handoff system is genuinely novel. If ARIA becomes a product, the handoff system is one of the most demonstrable differentiators — solves a problem every AI power user hits within weeks. Demo: watch a session drop, watch it reconstruct perfectly. Visceral. That's the product pitch.
+
+UNCRUMPLE IDEAS:
+
+Crumpled-to-flat Save button / transaction completeness progression
+Highest-leverage UI idea in the saved ideas list — ties brand metaphor directly to core interaction. Every session it gets deferred. Should move higher in priority after flagged flow is verified.
+
+"Why was I here?" transaction history
+Show when transaction was created, when receipt was added, how many times it was opened. Smallest viable version of ARIA's reconstruction snapshot concept running inside Uncrumple. Proves the principle on tiny data. Low cost, high conceptual value.
+
+Receipt state: attached / missing / unavailable
+The one data model gap actively blocking real user behavior. Lost receipts can never be cleared from Missing Receipts queue. Daily friction for target user. Needs coordinated store change but not as complex as it sounds — just adding a third state.
+
+"All caught up" empty-state payoff
+Emotional payoff of the entire app. When Needs Attention hits zero, nothing happens. Missed opportunity every single time. Even one-line "You're all caught up." would be meaningful. Maybe 10 lines of code.
+
+Date/year trust issue
+Most quietly damaging thing in the app. Transactions stored without year means tax screen lies. "2026 Summary" showing 2025 data is not minor UX — it's a trust problem with the exact audience you're building trust with. Tradespeople who find numbers wrong won't come back. Move up in priority before launch, not after.
+
+Undo toast for destructive actions
+No undo currently. Delete a transaction, gone. Delete a client, gone. For tradespeople making fast decisions on job sites, accidental deletes are inevitable. 5-second undo toast — brief window before delete commits — would eliminate this entire class of data loss. Asymmetric: very low build cost, very high trust impact.
+
+Manage Merchants cleanup screen
+Merchant autocomplete grows forever with no pruning. After a year, dozens of typo variants and old merchants. Simple "Manage Merchants" option in Settings — list you can delete from. Low complexity, meaningful quality-of-life.
+
+META PRINCIPLE TO PRESERVE:
+
+"Preserve full idea clusters even when only one or two are actionable now. The user often reads old saved ideas later and uses them as sparks for better ideas. The risk is not saving too many ideas; the risk is promoting too many ideas into rules. Keep idea preservation and governance promotion separate."
+
+
+[2026-05-09] — Idea Compost layer
+
+Concept:
+For this user, saved raw ideas are valuable even when not immediately actionable because rereading old ideas often sparks better ideas later.
+
+Principle:
+Idea preservation is not governance promotion.
+Raw ideas are compost, not commitments.
+
+Potential future file:
+docs/aria/IDEA_COMPOST.md
+
+Purpose:
+A place to preserve full raw idea clusters without turning them into candidates, rules, or roadmap commitments too early.
+
+Workflow:
+- Save full idea clusters to IDEA_COMPOST.md or ARIA_IDEAS.md while the layer is still informal
+- Route strongest ARIA/product ideas to ARIA_IDEAS.md
+- Route behavior-rule candidates to CANDIDATE_ATTRIBUTES.md
+- Route buildable app ideas to ROADMAP.md
+- Promote nothing unless proven
+
+Do not create IDEA_COMPOST.md yet.
+
+
+[2026-05-09] — The user is the synthesis layer (foundational design principle for ARIA + Uncrumple)
+
+Core insight:
+
+The user doesn't need AIs to curate ideas before saving them. The user needs AIs to capture everything raw, because the user is the one who connects ideas in ways no AI would predict. Curation happens in the user's head when they read, not before.
+
+The current system is slightly backwards. AIs have been implicitly filtering — deciding what's worth surfacing, what's worth flagging, what's worth saving. But the user explicitly said: don't filter. Save everything. I'll read it.
+
+The real design principle:
+
+AIs capture. User synthesizes. Never reverse this.
+
+Concrete implications:
+
+For ARIA pre-clear synthesis window:
+The window shouldn't just be "ask the AI generative questions." It should also include a RAW DUMP — everything the AI noticed but didn't say because it seemed too small, too obvious, or too uncertain. The filtered-out stuff. Because the user might connect it to something the AI couldn't see.
+
+For Uncrumple:
+The "quick capture" flow — add a transaction with just merchant and amount, no tags, no receipt, no note — exists because capture first, organize later is the right model for field work. The app trusts the user to clean it up. ARIA should trust the user the same way. Capture everything, let the user be the cleanup flow.
+
+The unified philosophy across both products:
+
+Reduce the cost of capturing.
+Trust the human to synthesize.
+
+That's the same principle running through:
+- Uncrumple's quick-capture transaction flow
+- Uncrumple's cleanup queue (Missing Receipts, Untagged, Flagged)
+- ARIA's NO IDEA GETS WASTED RULE
+- ARIA's Idea Compost concept
+- ARIA's pre-clear synthesis window
+- ARIA's Generative Harvest pattern
+
+Worth saving explicitly as a design principle for both products. May eventually deserve LOCKED-rule status as the ARIA equivalent of Uncrumple's quick-capture model.
+
+Watch criteria for promotion:
+- Used as decision lens in 3+ subsequent design choices
+- Catches cases where an AI was about to filter before capturing
+- Confirmed by user as their actual mental model
