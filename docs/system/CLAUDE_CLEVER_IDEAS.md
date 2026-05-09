@@ -13,6 +13,45 @@ If not yet, leave it here.
 
 ---
 
+## ⭐ You Should Really Look At These
+
+Purpose: Ideas flagged as especially strong during any session.
+Every item here also lives in its normal category below.
+These are not the only good ideas — they are the ones an AI 
+thought were strong enough to flag explicitly.
+
+⭐ AIs capture. User synthesizes. Never reverse this. (2026-05-09)
+The user is the synthesis layer. AIs capture everything raw. The 
+user reads everything. Reading one idea sparks a better idea or 
+builds on it. Filter at promotion time, not capture time. Full 
+entry: docs/aria/ARIA_IDEAS.md (2026-05-09 dated section).
+This is the foundational principle behind NO IDEA GETS WASTED 
+RULE in LOCKED_ATTRIBUTES.md. It unifies Uncrumple's quick-capture 
+flow and ARIA's idea preservation: reduce the cost of capturing, 
+trust the human to synthesize.
+
+⭐ Crumpled-to-flat Save button / transaction completeness 
+progression (2026-05-09)
+The brand metaphor tied directly to core interaction. Highest-
+leverage UI idea in the saved ideas list. Keeps getting deferred. 
+Should move higher in priority after flagged flow is verified. 
+Full entry: PRE-CLEAR SYNTHESIS SESSION dated 2026-05-09 below.
+
+⭐ Date/year trust issue (2026-05-09)
+Most quietly damaging thing in the app. Tax screen shows wrong 
+year because transactions stored without year. Trust problem with 
+exact audience you're building trust with. Move up before launch, 
+not after. Full entry: PRE-CLEAR SYNTHESIS SESSION dated 2026-05-09 
+below.
+
+⭐ Receipt state: attached / missing / unavailable (2026-05-09)
+The one data model gap actively blocking real user behavior. Lost 
+receipts can never be cleared from Missing Receipts queue. Daily 
+friction for target user. Full entry: PRE-CLEAR SYNTHESIS SESSION 
+dated 2026-05-09 below.
+
+---
+
 ## THE HONEST SUBSCRIPTION NUDGE
 
 If a subscribed user hasn't opened the app in 30+ days, send one 

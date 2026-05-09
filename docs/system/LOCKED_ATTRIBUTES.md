@@ -1114,10 +1114,61 @@ Reason:
 This preserves behavior, direction, and execution rules across sessions and prevents system drift.
 
 
-NO IDEA GETS WASTED RULE
+NO IDEA GETS WASTED RULE — FOUNDATIONAL ARIA PRINCIPLE
 
-Save all ideas from pre-clear synthesis sessions and any SOC capture.
-The user reads everything. Reading one idea sparks a better idea or 
-builds on it. Never filter ideas before saving — capture first, curate 
-later. Ideas belong in CLAUDE_CLEVER_IDEAS.md (app + system ideas) or 
-ARIA_IDEAS.md (ARIA product ideas). When in doubt, save to both.
+Every idea captured during pre-clear synthesis, SOC, or any session 
+must be saved completely. No filtering before saving. No idea left out.
+No idea ignored. The user reads everything.
+
+Why this matters:
+Reading one idea sparks a better idea or builds on it. The user is the 
+synthesis layer. AIs capture. User synthesizes. Never reverse this.
+A filtered idea that gets discarded might have been the connection point 
+for the most important insight. You cannot know in advance which one it is.
+
+Capture rules:
+- All ideas must be categorized using the emoji system already established
+- Ideas are NOT filtered or curated before saving — capture everything raw
+- If an AI thinks an idea is especially strong, flag it with ⭐
+- Ideas that seem half-formed or obvious still get saved — the user decides
+- When in doubt, save to both CLAUDE_CLEVER_IDEAS.md AND ARIA_IDEAS.md
+- A raw dump of things noticed but not said is as valuable as polished ideas
+
+Routing:
+💡 ⭐ 🪟 📝 🔧 ⚛️ 🤖 📱 🏗️ 🎯 → docs/DID_YOU_KNOW.md
+🧠 workflow/system ideas → docs/WORKFLOW_IDEAS.md
+📱 app features → docs/system/CLAUDE_CLEVER_IDEAS.md
+🔭 ARIA insights → docs/aria/ARIA_IDEAS.md
+⭐ flagged as especially strong → also add to ## You Should Really Look At These section in CLAUDE_CLEVER_IDEAS.md (items go in BOTH the ⭐ section AND their normal category — never only one place)
+
+User notes app:
+The user maintains a separate notes list that AIs have not seen.
+When the user shares it, treat it as highest priority capture —
+save everything, categorize everything, flag anything strong with ⭐.
+Do not wait to be asked. Do not summarize. Save raw then categorize.
+
+Categorized preservation rule:
+When ideas are generated with emoji/category tags, preserve every idea 
+under an appropriate category. The AI may reorganize, group, clean up 
+wording, and highlight the strongest ideas, but must not silently omit 
+weaker or less-ready ideas. If an idea seems especially important, 
+duplicate or reference it in the ⭐ section rather than deleting the 
+rest. Filtering belongs at promotion/build time, not capture time.
+
+Layer distinction:
+- Idea Compost / raw idea bank = preserved creative material
+- ARIA_IDEAS = architecture/product concepts
+- CLAUDE_CLEVER_IDEAS = app + system ideas (with ⭐ shelf at top)
+- CANDIDATE_ATTRIBUTES = possible behavior rules
+- LOCKED_ATTRIBUTES = proven system laws
+- ROADMAP = buildable app/product ideas
+
+Operating principle:
+Save ideas generously.
+Promote selectively.
+Build intentionally.
+
+This is a foundational ARIA staple. It affects how everything is built 
+because a single captured idea can change a good product into a brilliant 
+one. The synthesis happens in the user's mind when reading. The AI's job 
+is to make sure nothing is missing when they do.

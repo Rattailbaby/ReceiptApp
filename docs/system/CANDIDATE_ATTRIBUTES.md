@@ -357,6 +357,9 @@ Rules:
 Save-everything rule (per user 2026-05-09):
 Do not aggressively filter ideas during harvest. The user reads every idea. Reading one idea often sparks a better one or builds on it. Filtering at capture time loses signal. Filtering happens at promotion time, not capture time.
 
+Categorized preservation rule:
+When ideas are generated with emoji/category tags, preserve every idea under an appropriate category. The AI may reorganize, group, clean up wording, and highlight the strongest ideas, but must not silently omit weaker or less-ready ideas. If an idea seems especially important, duplicate or reference it in a high-value / revisit section (## ⭐ You Should Really Look At These in CLAUDE_CLEVER_IDEAS.md) rather than deleting the rest. Filtering belongs at promotion/build time, not capture time.
+
 Reason:
 Some of the best ARIA and Uncrumple ideas emerge late in long sessions after the AIs have absorbed the user's reasoning style and project direction. Handoff should harvest that context before clearing, without turning every clear into heavy ceremony.
 

@@ -2761,7 +2761,7 @@ Workflow:
 Do not create IDEA_COMPOST.md yet.
 
 
-[2026-05-09] — The user is the synthesis layer (foundational design principle for ARIA + Uncrumple)
+[2026-05-09] — ⭐ AIs capture. User synthesizes. Never reverse this. (FOUNDATIONAL ARIA DESIGN PRINCIPLE)
 
 Core insight:
 
