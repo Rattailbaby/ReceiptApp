@@ -2800,3 +2800,51 @@ Watch criteria for promotion:
 - Used as decision lens in 3+ subsequent design choices
 - Catches cases where an AI was about to filter before capturing
 - Confirmed by user as their actual mental model
+
+
+[2026-05-09] — ⭐ Idea Compost + High-Signal Shelf architecture
+
+Core principle:
+Save ideas generously.
+Promote selectively.
+Build intentionally.
+
+Layer stack:
+IDEA_COMPOST.md = everything, raw, preserved
+HIGH_SIGNAL_IDEAS.md = worth rereading first (the shelf)
+CONNECTED_IDEAS.md = ideas that link to each other (future — connection layer)
+ROADMAP.md = worth building
+CANDIDATE_ATTRIBUTES.md = worth testing as behavior
+LOCKED_ATTRIBUTES.md = proven system laws
+
+Why the connection layer matters:
+The user's synthesis process works by linking ideas, not just ranking them. An idea that connects two other ideas is often more valuable than either alone. The High-Signal Shelf shows the best individual ideas. A connection index would show clusters. Both are needed.
+
+The connection layer is what's actually missing between IDEA_COMPOST and HIGH_SIGNAL_IDEAS. Compost preserves abundance. Shelf surfaces strength. Connection reveals structure. Three different cuts of the same material.
+
+Uncrumple parallel:
+IDEA_COMPOST = full transaction list
+HIGH_SIGNAL_IDEAS = Needs Attention section on home screen
+Cleanup flow = how the user processes the shelf
+Same architecture. Different domain.
+
+The Needs Attention section is already a working High-Signal Shelf in production — it doesn't show all transactions, it surfaces the ones that actually need something. The compost is the full list. The shelf is Needs Attention. The cleanup flow is how you process the shelf. ARIA's idea-management layer should mirror this exactly.
+
+User's notes app:
+Independent capture without AI prompting = purest High-Signal content. When shared, goes directly to High-Signal Shelf, not compost. Already passed through user's synthesis layer once. The user has been running their own ambient capture system in parallel to ARIA this whole time. When that list gets shared, treat it as a gold mine, not a task. Every item on it represents something the user thought was worth preserving before any AI prompted them to. That's the highest-signal capture possible.
+
+Rules:
+- AI may categorize, group, clean up wording, flag strong ideas with ⭐
+- AI must not silently drop any idea
+- AI must not filter at capture time
+- Filtering happens at promotion/build time only
+- Every ⭐ idea also appears in its normal category (never only in one place)
+
+Build status:
+Do not create IDEA_COMPOST.md yet.
+Do not create HIGH_SIGNAL_IDEAS.md yet.
+Do not create CONNECTED_IDEAS.md yet.
+The current files (CLAUDE_CLEVER_IDEAS.md with ⭐ shelf at top, ARIA_IDEAS.md, CANDIDATE_ATTRIBUTES.md, LOCKED_ATTRIBUTES.md, ROADMAP.md) already serve the function in informal form. Split into dedicated files only when the informal layout becomes too crowded. Save the architecture. Build later when explicitly requested.
+
+Foundational principle worth carrying forward:
+The High-Signal Shelf solves the exact tension between "save everything" and "find the good stuff fast" without sacrificing either side. Most idea-management systems force a trade-off between abundance (compost) and accessibility (shelf). The shelf-on-top-of-compost design preserves both — and the connection layer adds a third dimension (structure) that single-file lists can't reveal.
