@@ -1112,3 +1112,12 @@ Before ending any session, the system must:
 
 Reason:
 This preserves behavior, direction, and execution rules across sessions and prevents system drift.
+
+
+NO IDEA GETS WASTED RULE
+
+Save all ideas from pre-clear synthesis sessions and any SOC capture.
+The user reads everything. Reading one idea sparks a better idea or 
+builds on it. Never filter ideas before saving — capture first, curate 
+later. Ideas belong in CLAUDE_CLEVER_IDEAS.md (app + system ideas) or 
+ARIA_IDEAS.md (ARIA product ideas). When in doubt, save to both.

@@ -594,3 +594,62 @@ Build order:
 Do not build DevOS yet. Uncrumple ships first.
 This entry exists so the idea is fully preserved when the 
 time comes.
+
+
+PRE-CLEAR SYNTHESIS SESSION — 2026-05-09
+
+META-RULE: No idea gets wasted. Reading one idea sparks a better idea or 
+builds on it. Save everything. The user will read all of it.
+
+GPT's 12 ideas (strongest first):
+1. Pre-handoff "weakest link" question — before handoff, each AI gets: 
+   "What would break first if you weren't here next session?" Generative, 
+   not reactive.
+2. Asymmetric question allocation per role — Code: "What's hidden in the 
+   file structure that would surprise a fresh Code?" GPT: "What's true about 
+   how I think now that isn't in any file?" Claude: "What would I push back 
+   on if I read this system clean?"
+3. Coordination-overhead tax meter — each candidate gets "estimated tax: 
+   low/medium/high" to make the trade-off explicit.
+4. APP_LOG vs ARIA_LOG — split SESSION_LOG.md so app progress and ARIA 
+   evolution are separately trackable.
+5. Deferral counter on app issues — track how many sessions each known issue 
+   got deferred. After N defers, force a decision: ship, kill, or escalate.
+6. Handoff dress rehearsal — before /clear, Code pretends to be fresh, reads 
+   only what a new Code would read, tries to answer "what's next_step and 
+   why?" Catches gaps before they matter.
+7. Uncrumple ↔ ARIA isomorphism as deliberate design tool — every time 
+   Uncrumple introduces a UX pattern, check if ARIA needs the equivalent. 
+   Same shape: field work with imperfect data → cleanup flow → evidence trail.
+8. GPT generation drift tracking — BEHAVIORAL_FINGERPRINT.md with 5 
+   standardized questions answered each handoff. Compare across GPT instances 
+   to see drift quantitatively.
+9. Anti-pattern: system explaining the system — if docs/system grows faster 
+   than app features, that's a regression signal. Possible CLAUDE.md rule: 
+   governance file count >2× shipped feature count = prioritize app next session.
+10. End-of-session survey — every handoff, GPT and Code answer: (1) What 
+    surprised me? (2) What did I almost get wrong? (3) What's the next user 
+    pain I see? (4) What pattern emerged? (5) What would I tell my clone in 
+    one sentence?
+11. Pre-mortem before promotion — before ANY candidate gets promoted to 
+    LOCKED, one required round of: "What's the strongest argument against 
+    this?" Make the ad-hoc pressure-test a standing ceremony step.
+12. Receipt photo as ARIA primitive — every behavioral claim gets an attached 
+    "receipt" (conversation moment, commit, diff). Not abstract validation, 
+    evidence. Builds trust when AIs say "I did X" — the receipt is right there.
+
+Claude's additions:
+13. Seed idea in starter block — inject one generative prompt from the 
+    previous session's pre-clear synthesis window into the fresh AI's first 
+    message. Primes thinking direction without requiring full context rebuild.
+14. "All caught up" = recovery confidence score — when Uncrumple Needs 
+    Attention hits zero, app should say something. When ARIA continuity 
+    reconstruction hits sufficient coverage, ARIA should say something. Same 
+    emotional primitive. Neither currently does this.
+15. Rule attribution on auto-tagged transactions — "applied by rule: [rule 
+    name]" on any transaction tagged by the rules engine. Makes automation 
+    transparent. Trust feature, not complexity feature.
+16. Clone regeneration frequency as stability signal — track regeneration 
+    level (1/2/3) per session in SYSTEM_EVOLUTION.md. If Level 3 every 
+    session = system still in flux. 10 sessions on Level 1 = stable. 
+    Empirical stability curve over time.

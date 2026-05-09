@@ -2628,3 +2628,28 @@ Generative Harvest is the umbrella. These five are sub-primitives within it, eac
 - Future-me filter → decision lens that prevents over-capture
 
 Together: a continuity capture system that's proportional to context value, not to ceremony weight.
+
+
+[2026-05-09] — Pre-Clear Synthesis Window as named ceremony step
+
+The moment before a session clear is uniquely high-value: maximum context load, minimum future recovery cost. Asking loaded AIs generative questions at this moment extracts architectural insight that wouldn't survive the clear.
+
+Should be a named, standing handoff step with asymmetric role-specific questions:
+- Code: "What's hidden in the file structure that would surprise a fresh Code?"
+- GPT: "What's true about how I think now that isn't in any file?"
+- Claude: "What would I push back on if I read this system clean?"
+
+The user reads all captured ideas. No idea gets wasted — reading one sparks a better idea or builds on it. This is both a design principle and a preservation rule.
+
+
+[2026-05-09] — "No continuity tax" as sharper ARIA pitch
+
+Current: "Pick up exactly where your brain left off."
+Candidate: "No continuity tax."
+
+Names the cost being eliminated rather than the capability being added. Psychologically more motivating. Worth testing in positioning.
+
+
+[2026-05-09] — Clone regeneration frequency as empirical stability metric
+
+Track Level 1/2/3 regeneration per session in SYSTEM_EVOLUTION.md. Frequent Level 3 = system in flux. Sustained Level 1 = stable. This turns a subjective feeling into a measurable stability curve.
