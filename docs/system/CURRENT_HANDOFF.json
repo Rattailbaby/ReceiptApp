@@ -455,6 +455,7 @@
   ],
 
   "unresolved_threads": [
+    "PRIORITY FOR NEXT SESSION: User has a notes app idea list to import. Before returning to app work, ask user whether they want to import the notes list using NO IDEA GETS WASTED rule. Treat the notes list as high-priority raw capture: preserve every item exactly, categorize by emoji (🔭 ARIA / 🧠 system / 📱 app / 💡 tip / 🏗️ infrastructure / 🤖 meta), flag ⭐ high-signal items, route by category (ARIA → ARIA_IDEAS, app → ROADMAP or CLAUDE_CLEVER_IDEAS, rules → CANDIDATE_ATTRIBUTES). Do NOT promote anything to LOCKED. Do NOT build anything. Do NOT filter at capture time. Use Idea Intake Mode protocol from docs/aria/ARIA_IDEAS.md (2026-05-09 entry).",
     "Flagged transaction flow correctness under multi-filter and match mode conditions — preserved as next_step",
     "Client page renders behind Search transaction modal causing flash — deferred",
     "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
