@@ -2307,3 +2307,120 @@ operationally real, you need to be able to see its
 health at a glance, not just feel it.
 
 Future layer. Not now. Stabilize first.
+
+---
+## Trio Repo Symmetry (2026-05-09)
+
+For the first time, all three trio roles can independently verify repo state:
+- GPT: GitHub connected — direct read access
+- Claude chat: GitHub Integration connected — direct read access  
+- Code: local file access — always had full read
+
+Cross-role reconciliation is now structurally possible without user acting as relay.
+This changes handoff cost shape: Block B becomes lighter, Layer 2 restoration 
+becomes a fetch instead of a paste, and AI-to-AI verification no longer depends 
+on trusting each other's reports.
+
+Preservation: ARIA_IDEAS
+Classification: Architectural insight — trio coordination
+---
+
+[2026-05-09] — 🔭 The architecture is converging toward 
+role-weighted continuity routing rather than duplicated 
+role-specific knowledge stores, preserving single-source 
+truth while enabling differentiated reconstruction behavior.
+
+[2026-05-09] — Role-weighted continuity routing (vs role-specific folders)
+
+Decision point reached: when an AI role needs different 
+context than another, the wrong move is duplicating content 
+into role-specific folders (docs/claude/, docs/gpt/). The 
+right move is per-role MANIFESTS pointing to a single source 
+of truth.
+
+The manifest evolution (GPT's improvement on Code's initial 
+proposal):
+- Initial: list which files each role reads
+- Better: list which files each role reads AND WHY 
+  (cognitive function each file serves for that role)
+
+Example structure:
+GPT
+- CURRENT_HANDOFF.json → continuity reconstruction
+- SESSION_LOG.md → execution lineage
+- LOCKED_ATTRIBUTES.md → governance behavior
+- ARIA_IDEAS.md → synthesis continuity
+
+Claude
+- LOCKED_ATTRIBUTES.md → constitutional behavior
+- ARIA_README.md → architecture direction
+- CANDIDATE_ATTRIBUTES.md → governance evolution
+- CURRENT_HANDOFF.json → operational continuity
+
+Code
+- entire docs/system/ → execution governance
+- entire docs/aria/ → continuity infrastructure state
+
+Why this matters: role weighting matters as much as file 
+access. Same file serves different cognitive functions in 
+different roles. The manifest captures both vectors.
+
+Long-term direction: continuity-oriented knowledge routing 
+(stable as roles/tools/models change) instead of AI-specific 
+folders (couples knowledge to current AI lineup).
+
+Coordination-overhead check: this preserves single source of 
+truth, no duplication, no sync drift. Adds one section to 
+SYSTEM_COMMANDS.md instead of adding two folders.
+
+Implementation: pending — apply after current Claude Project 
+Knowledge test confirms working.
+
+[2026-05-09] — Claude's stabilization-phase reframings 
+(post-Layer-2-restoration insights)
+
+After full repo grounding restored via Project Knowledge, 
+Claude surfaced these clarifications about where the system 
+is:
+
+1. STABILIZATION PHASE not expansion phase
+   The goal now is testing continuity durability, reducing 
+   orchestration burden, validating recovery quality — NOT 
+   building more governance nightly. Resist the urge to add 
+   more files / rules / layers.
+
+2. Recovery is layered (multi-tier ARIA architecture):
+   - Behavioral layer (project rules / custom instructions)
+   - Governance layer (LOCKED_ATTRIBUTES, CLAUDE.md)
+   - Repo grounding layer (CURRENT_HANDOFF, SESSION_LOG, ARIA_IDEAS)
+   - Operational layer (commands, routing, capture rules)
+   - Active-state layer (held base task, current next_step, 
+     in-flight work)
+   This is now FOUNDATIONAL ARCHITECTURE not a workaround.
+
+3. Repo = continuity infrastructure, not just code storage.
+   This is the real breakthrough: continuity now COMPOUNDS 
+   instead of resetting every session. The repo is a 
+   persistent cognitive substrate.
+
+4. Coordination-overhead awareness is a critical stabilizer.
+   It's preventing: governance sludge, structure addiction, 
+   symbolic complexity, organizational inflation. Protect 
+   this principle heavily — without it the system would 
+   already have collapsed into "beautifully organized 
+   unusable complexity."
+
+5. Governance must remain subordinate to cognition.
+   Never interrupt valuable synthesis to preserve process. 
+   The system exists to serve thinking, not the reverse.
+
+6. Future-me principle as the legitimacy filter:
+   Does this reduce future continuity tax, or just create 
+   more governance to maintain? If it doesn't reduce 
+   recurring burden, it's bureaucracy not infrastructure.
+
+7. The healthy loop:
+   real friction appears → solve it once → future-you 
+   benefits forever.
+   This is the test for whether a proposed addition is 
+   genuine architecture or theatrical complexity.

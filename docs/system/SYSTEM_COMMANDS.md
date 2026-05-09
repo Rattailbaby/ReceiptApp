@@ -140,3 +140,39 @@ expander, second opinion alongside GPT
 Cross-AI behavior: synthesize or principled-disagree, never 
 silent-defer between roles. See LOCKED_ATTRIBUTES section 29 
 THREE ROLE SYSTEM and the cross-AI reconciliation candidate.
+
+## Per-Role Reading Manifest
+
+When restoring continuity for any role, this is which files 
+each role weighs and the cognitive function each file serves.
+Single source of truth (no folder duplication) — different 
+weighting per role.
+
+GPT (planner / continuity engine)
+- docs/system/CURRENT_HANDOFF.json → continuity reconstruction
+- docs/SESSION_LOG.md → execution lineage
+- docs/system/LOCKED_ATTRIBUTES.md → governance behavior
+- docs/system/CANDIDATE_ATTRIBUTES.md → pending behavioral evolution
+- docs/aria/ARIA_IDEAS.md → synthesis continuity (focus most recent dated entries)
+- docs/aria/ARIA_README.md → identity / canonical pitch
+
+Claude (chat) (verifier / second opinion / systems thinker)
+- CLAUDE.md → execution rules + commands awareness
+- docs/system/LOCKED_ATTRIBUTES.md → constitutional behavior
+- docs/system/CANDIDATE_ATTRIBUTES.md → governance evolution
+- docs/system/CURRENT_HANDOFF.json → operational continuity
+- docs/aria/ARIA_README.md → architecture direction
+- docs/aria/ARIA_IDEAS.md → architecture exploration history
+
+Code (executor)
+- CLAUDE.md → auto-loads at session start
+- docs/system/* → entire system layer (per SYSTEM FILES READING RULE)
+- docs/aria/* → entire ARIA layer (per SYSTEM FILES READING RULE)
+- Live local file access for everything else (no fetch needed)
+
+User (director)
+- Reads nothing directly; receives synthesis from AIs.
+
+Long-term direction: continuity-oriented knowledge routing 
+(stable as roles/tools/models change) instead of role-specific 
+folders (couples knowledge to current AI lineup).
