@@ -50,6 +50,31 @@ receipts can never be cleared from Missing Receipts queue. Daily
 friction for target user. Full entry: PRE-CLEAR SYNTHESIS SESSION 
 dated 2026-05-09 below.
 
+⭐ 🔭 Notes app pre-import sweep (2026-05-09)
+When user shares their independently-maintained notes app list, 
+run an Unknown-Value Sweep on the list itself BEFORE saving. 
+Question: "What pattern emerges from looking at all of these 
+together?" The user's own list might have themes they haven't 
+consciously named. Treat as corpus to analyze, not just items 
+to file. Highest immediate value — user is about to share the 
+list. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Code's 
+pre-clear extras section.
+
+⭐ 🧠 "What did you almost not save?" meta-question (2026-05-09)
+The most valuable saves are often the ones that almost got 
+filtered. Asking AIs "what did you almost not say because it 
+seemed too small or too obvious" is higher-signal than "what 
+would you save." Pulls the bottom of the filter. Should become 
+standing pre-clear question. Full entry: docs/aria/ARIA_IDEAS.md 
+2026-05-09 Code's pre-clear extras section.
+
+⭐ 🔭 Idea provenance tracking (2026-05-09)
+When a new idea sparks from rereading an old one, link them. 
+Build a tree. Personal idea-evolution map. Reveals when the same 
+root idea has produced multiple evolved versions = signal of a 
+deep pattern. Long-term compounding value. Full entry: 
+docs/aria/ARIA_IDEAS.md 2026-05-09 Code's pre-clear extras section.
+
 ---
 
 ## THE HONEST SUBSCRIPTION NUDGE

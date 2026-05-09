@@ -2848,3 +2848,43 @@ The current files (CLAUDE_CLEVER_IDEAS.md with ⭐ shelf at top, ARIA_IDEAS.md, 
 
 Foundational principle worth carrying forward:
 The High-Signal Shelf solves the exact tension between "save everything" and "find the good stuff fast" without sacrificing either side. Most idea-management systems force a trade-off between abundance (compost) and accessibility (shelf). The shelf-on-top-of-compost design preserves both — and the connection layer adds a third dimension (structure) that single-file lists can't reveal.
+
+
+[2026-05-09] — Code's pre-clear extras (additional clever ideas)
+
+User invited additional clever ideas late in the session. Capturing 10 here. Some may overlap with existing entries — preserved per save-everything rule, will dedupe at promotion time not capture time.
+
+🔭 Notes app pre-import sweep
+When user shares their independently-maintained notes app list, run an Unknown-Value Sweep on the list itself BEFORE saving. Question: "What pattern emerges from looking at all of these together?" The user's own list might have themes the user hasn't consciously named. AI surfaces clusters. Treats the notes list as a corpus to analyze, not just items to file.
+
+🧠 Idea-merge detector
+After ~5 ideas saved in a session, AI scans for merge opportunities. Two ideas pointing at the same problem from different angles often combine into a stronger third idea. Surface the candidate-merge without auto-merging — let user decide if the merge is real or coincidental.
+
+🔭 Idea aging / "still relevant?" check
+Old saved ideas need periodic relevance checks. After ~3 months in compost without being acted on, AI flags: "this idea was saved 2025-XX-XX — is the context still valid?" Sometimes ideas die (assumption invalidated). Sometimes they're suddenly more relevant (the world caught up). Aging surfaces both cases. Prevents idea bank from becoming a graveyard while preserving the compost principle.
+
+🧠 "What did you almost not save?" meta-question
+The most valuable saves are often the ones that almost got filtered. Asking AIs "what did you almost not say because it seemed too small or too obvious" is higher-signal than "what would you save." Pulls the bottom of the filter. Should be part of pre-clear synthesis window.
+
+🔭 Cross-product idea fingerprinting
+When an idea spans Uncrumple AND ARIA (like receipt-as-evidence), tag with both. Currently cross-product ideas get filed in one place. Tagging surfaces design isomorphisms automatically. Over time you can ask: "show me everything that's true in both products" — that's a sharper view of what makes the unified design coherent.
+
+🧠 The "five-out-of-context" test
+For any idea, would it still make sense to a fresh AI 5 sessions from now? If yes, save polished. If no, save raw WITH the context that gives it meaning. Forces decision about what context an idea needs to survive its own preservation. Prevents the "I saved this but now have no idea why I thought it mattered" failure mode.
+
+🧠 Save the "no" reasons
+When an idea gets rejected (pre-mortem, candidate review, "no thanks"), save WHY it was rejected. Not just "rejected" status. The reasoning is itself idea material. Sometimes "we rejected X because of Y" reveals that Y is the actual core problem worth working on. The "no" reasoning often becomes the seed of a better "yes."
+
+🔭 Idea provenance tracking
+When a new idea sparks from rereading an old one, link them. Build a tree. Personal idea-evolution map. Helps user understand their own thinking patterns over time. Also makes it visible when the same root idea has produced 5 different evolved versions — that's a signal it's a deep pattern, not a passing thought.
+
+🧠 The "obvious in hindsight" detector
+Every session, ask: "What did we figure out that seems obvious now but wasn't at the start?" Those are the highest-density learnings — usually missed in capture because they feel trivial post-hoc. Specifically asking surfaces them. Becomes a session-by-session list of "things I now consider obvious that I didn't before" — that IS the learning curve, made visible.
+
+🤖 Idea-to-experiment converter
+For ideas that could be tested cheaply, AI generates a one-prompt experiment that would validate or invalidate them. Lowers activation energy from "save and forget" to "save and test if curious." Most ideas don't need this — but for promising ones, having the experiment pre-staged means the user can validate when energy is high without rebuilding the test design.
+
+⭐ flag candidates from this batch:
+- Notes app pre-import sweep (highest immediate value — user is about to share the list)
+- "What did you almost not save?" meta-question (could become standing pre-clear question)
+- Idea provenance tracking (long-term compounding value)
