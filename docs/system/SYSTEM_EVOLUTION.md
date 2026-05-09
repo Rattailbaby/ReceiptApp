@@ -120,10 +120,13 @@ Changes made:
 
 6. GitHub as source of truth
    - Repo made public at github.com/Rattailbaby/ReceiptApp
-   - GPT reads files directly via GitHub connector
+   - GPT reads files via GitHub connector — but only 
+     committed + pushed origin/main state is visible.
+     Local working tree changes are invisible until Code 
+     commits and pushes.
    - Claude reads via Project Knowledge (snapshot, refreshed at
      handoff)
-   - Code reads locally
+   - Code reads locally (sees uncommitted state too)
    - Replaced manual paste-blocks with repo references
 
 7. External sync packets for HANDOFF
@@ -145,11 +148,20 @@ Changes made:
    - Same pattern available for Claude when project rules
      near limit
 
-10. Repo verification gap captured
-    - "Repo only reflects committed+pushed state" — local working
-      tree invisible to AI verification
-    - Caught during GPT GitHub access verification
-    - Captured as candidate in CANDIDATE_ATTRIBUTES
+10. Repo truth boundary clarified
+    - GitHub is the source of truth ONLY for committed + 
+      pushed state. Local working tree changes are 
+      invisible to AI verification.
+    - Discovered during GPT GitHub access verification — 
+      GPT correctly fetched ARIA_IDEAS.md but couldn't 
+      find an entry that existed locally but hadn't been 
+      pushed.
+    - Workflow implication: before asking GPT or Claude 
+      to verify repo state, Code must check git status, 
+      commit relevant changes, push to origin/main, then 
+      ask AI to verify.
+    - Captured as candidate in CANDIDATE_ATTRIBUTES.md 
+      pending repeat validation across sessions.
 
 11. ARIA naming finalized
     - "Ambient Reasoning and Insight Architecture"
