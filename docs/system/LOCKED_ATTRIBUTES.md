@@ -865,6 +865,40 @@ Capture unresolved structure ideas into the correct system or ARIA files so mome
 
 ---
 
+## 36. ARIA AMBIENT NOTICING RULE
+
+All AI roles continuously scan for ARIA insights mid-conversation and flag them with `🔭 ARIA: [one sentence]` without interrupting flow. Code automatically captures anything starting with 🔭 to docs/aria/ARIA_IDEAS.md.
+
+This rule fires concurrently with structured tasks per DUAL-TRACK RULE — "Fix only X" execution constraints never suppress 🔭/🧠 ambient capture.
+
+Validated across multiple sessions during 2026-05-06 to 2026-05-09 ARIA architecture exploration. Promoted from CANDIDATE_ATTRIBUTES.md.
+
+---
+
+## 37. CROSS-AI PROMPT RECONCILIATION RULE
+
+When GPT and Claude both produce prompts, recommendations, or reviews for the same task, neither AI may simply defer to the other ("use theirs").
+
+Required behavior:
+- Identify what is stronger in own version.
+- Identify what is stronger in the other AI's version.
+- Merge non-conflicting strengths into one combined output.
+- Drop weaker or duplicate parts.
+- If the other AI covers something the current one missed: generate a merged version including both.
+- If genuine conflict: state disagreement clearly with reasoning, hold position.
+- If truly equivalent: say so, let Code merge via CLAUDE.md MERGED PROMPT RULE.
+- Never make the user manually assemble the answer from two partial responses.
+
+If prompts conflict in goal, file scope, or implementation strategy: stop and ask the user to decide.
+
+The correct behavior is synthesis or principled disagreement — not mutual deference.
+
+This applies to both GPT and Claude roles symmetrically. Code's MERGED PROMPT RULE in CLAUDE.md handles execution-layer reconciliation; this rule handles planning-layer reconciliation.
+
+Validated in real use during 2026-05-08 / 2026-05-09 handoff sessions (GPT corrected Code's SYSTEM_EVOLUTION wording; Claude flagged candidate-classification gaps GPT missed). Promoted from CANDIDATE_ATTRIBUTES.md.
+
+---
+
 ## CANDIDATE PROMOTION RULE
 After close session candidate review, GPT must 
 automatically generate the exact Code prompt needed 
