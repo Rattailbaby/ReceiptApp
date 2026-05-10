@@ -183,6 +183,9 @@ Capture / voice / auto-categorize / compost / ⭐ shelf / Resume Cards / markdow
 ⭐ 🏗️ ARIA notes-app importer — build path 15 (2026-05-09)
 Paste messy notes → preserve raw → categorize by emoji → ⭐ flag → route to files → generate top rereads. User's own pain point. Would immediately help. Connects to Idea Intake Mode protocol. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
 
+⭐ 🏗️ ARIA_STARTER_KIT — continuity operating kit (2026-05-09)
+Not one app — a kit that generates personalized continuity infrastructure based on cognitive mode (solo builder / writer / developer / contractor / student / researcher / ADHD). Defensible, customizable, supports many cognitive styles from one foundation. Might be ARIA's actual product shape. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 ARIA_STARTER_KIT section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

@@ -59,6 +59,35 @@ Moving to new feature without saying y
 wn = "what's next" — verify next_step in CURRENT_HANDOFF
 soc = stream of consciousness — raw idea capture
 sidequest = brief intentional detour with explicit return
+idea intake = batch import saved idea clusters using NO IDEA GETS WASTED rule
+
+## idea intake
+
+Trigger:
+User says "idea intake" or shares a saved notes-app idea list.
+
+Meaning:
+Batch-import saved ideas using the NO IDEA GETS WASTED rule.
+
+Behavior:
+- Preserve the raw list.
+- Categorize every idea by emoji/category.
+- Do not drop, ignore, or silently omit any idea.
+- Clean up wording only if meaning is preserved.
+- Flag especially strong ideas with ⭐.
+- Add strongest items to "You Should Really Look At These" if available.
+- Route ideas to the correct file:
+  - 🔭 ARIA insights → docs/aria/ARIA_IDEAS.md
+  - 🧠 workflow/system ideas → docs/WORKFLOW_IDEAS.md or docs/system/WORKFLOW_IDEAS.md depending on scope
+  - 📱 app/product ideas → docs/system/ROADMAP.md or docs/system/CLAUDE_CLEVER_IDEAS.md if available
+  - behavior-rule ideas → docs/system/CANDIDATE_ATTRIBUTES.md
+  - tips / did-you-know items → docs/DID_YOU_KNOW.md
+- Preserve weak or half-formed ideas too. Filtering happens later at promotion/build time.
+
+Reminder — shorthand family:
+- soc = raw stream-of-consciousness capture
+- sidequest = brief intentional detour with explicit return
+- idea intake = batch import and categorize saved idea clusters
 
 ## Implicit/Conditional Triggers
 

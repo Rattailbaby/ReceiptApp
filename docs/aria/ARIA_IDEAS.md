@@ -3547,3 +3547,50 @@ Connection to existing entries:
 - ARIA handoff generator app (build path 14 — "first sellable product")
 - ARIA notes-app importer (build path 15 — solves current pain)
 - ARIA Intake (simplest first product — build tomorrow)
+
+
+[2026-05-09] — ⭐ ARIA_STARTER_KIT — continuity operating kit, not one app
+
+Concept:
+Eventually package ARIA as a starter kit that generates the system structure for any user, not as a single application. Different mode templates serve different cognitive types.
+
+Generated structure:
+- /docs/system
+- /docs/aria
+- /ideas
+- /roadmap
+- /current_handoff.json
+- /candidate_attributes.md
+- /locked_attributes.md
+- /handoff_cheatsheet.md
+
+User picks a mode at setup time:
+- solo builder
+- writer
+- developer
+- contractor
+- student
+- researcher
+- ADHD capture system
+- (more as patterns emerge)
+
+Each mode pre-loads:
+- relevant emoji categories
+- mode-appropriate file structure
+- starter LOCKED rules
+- starter candidates
+- example flows
+
+Why this matters:
+ARIA isn't one product — it's an operating kit for cognitive continuity. Different cognitive styles need different starting structures. A solo builder needs different defaults than a researcher. A contractor needs different defaults than a writer. The starter kit recognizes this.
+
+Connects to:
+- "ARIA is mostly already built" — current repo IS the dev mode template
+- ARIA Intake — could be one tool inside the starter kit
+- Repo companion CLI — could be the kit's CLI
+- ARIA as protocol (Model 3) — kit is the practical onboarding for the protocol
+
+Ship status:
+Do not build tonight. Save the concept. Once the protocol is stable and the dev-mode reference impl is shipped, the starter kit becomes the go-to-market vehicle for non-developer users.
+
+⭐ flag: this might be ARIA's actual product shape. Not "an app" — a kit that generates personalized continuity infrastructure. Defensible, customizable, supports many cognitive styles from one foundation.
