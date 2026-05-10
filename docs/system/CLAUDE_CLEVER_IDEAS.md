@@ -240,6 +240,36 @@ Wearable isn't feature idea — it's product identity clarification. ARIA is amb
 ⭐ 🧠 Multi-pass harvesting for Level 3 handoff (2026-05-10)
 Single harvest pass under-extracts. Asking GPT/Claude/Code for ideas a SECOND or THIRD time reliably produces deeper material. For Level 3 (full clone regen) this is DEFAULT, not optional. Pass 1: ideas about X. Pass 2: what else — small/obvious/half-formed. Pass 3: what did you almost not say. Stop when AI repeats itself. Also: GPT visibly slowing alone justifies Level 3. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 multi-pass harvesting section.
 
+⭐ 🤖 GPT Memory feature (separate from custom instructions) (2026-05-10)
+Persists across ALL ChatGPT chats, not one. Could store "I'm part of ARIA trio, repo at github.com/Rattailbaby/ReceiptApp, follow FRESH CHAT PROTOCOL." Every new chat starts oriented without pasting. Solves the paste-Block-A-every-time problem. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🤖 ChatGPT Projects (GPT equivalent of Claude Projects) (2026-05-10)
+Group chats with shared file uploads + custom instructions. Create Uncrumple/ARIA project, upload key repo files, new chats inherit. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🤖 Claude Project Knowledge (persistent uploads) (2026-05-10)
+File uploads per project, persistent, don't count against context. Permanently load LOCKED_ATTRIBUTES + ARIA_README + HANDOFF_CHEATSHEET for instant access. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🤖 MCP servers (both Claude Desktop and Code) (2026-05-10)
+Custom ARIA MCP server gives structured tools: read_handoff / append_idea / search_compost / promote_candidate. Trio orchestration becomes MCP integration. Protocol-ready today. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🏗️ Custom slash commands in Code (2026-05-10)
+/idea-intake, /handoff, /clear-with-wrap, /harvest-pass-3. Shorthand family becomes literal commands. Reduces friction. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🏗️ Code hooks beyond clipboard (2026-05-10)
+Currently only Stop hook used. Could add: PostToolUse on Edit → auto-commit, PreToolUse on Write → check NO IDEA WASTED, UserPromptSubmit → auto-route emoji-tagged, SessionStart → handoff dress rehearsal. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🏗️ User-level CLAUDE.md at ~/.claude/CLAUDE.md (2026-05-10)
+Cross-project rules apply to ALL Code sessions. Put ARIA principles there — every project inherits. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🏗️ GitHub Actions on push (2026-05-10)
+Automation triggered by every commit. Auto-validate JSON, auto-update SESSION_TEXTURE, auto-publish summary to Pages, auto-tag releases. Existing tooling, not new infrastructure. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🤖 Apple Shortcuts for voice capture (2026-05-10)
+iOS/watchOS Shortcut: voice → emoji format → append to iCloud → syncs to repo. Wearable capture layer with zero custom dev. Buildable today. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
+⭐ 🧠 "Rate your confidence 1-10" prompt pattern (2026-05-10)
+Surfaces AI uncertainty cheaply. Treating AI responses as equally weighted misses signal. Confidence scoring changes decisions. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

@@ -3920,6 +3920,159 @@ The original ARIA handoff motivation was "GPT slowed down, must clone." That tri
 ⭐ flag candidate: Multi-pass harvesting may eventually move from Generative Harvest refinement to its own LOCKED rule once validated across more handoffs. For now, lives as refinement clause inside Generative Harvest candidate.
 
 
+[2026-05-10] — Underused capabilities across GPT / Claude / Code / GitHub / external (~33 ideas)
+
+User asked before break what surfaces we haven't been utilizing — GPT memory, shortcuts, tips, connectors, other repos, skills, etc. Saving all per NO IDEA WASTED rule.
+
+═══════════════════════════════════════════════
+🤖 GPT-SPECIFIC CAPABILITIES
+═══════════════════════════════════════════════
+
+⭐ GPT Memory feature
+Separate from custom instructions. Persists across ALL ChatGPT conversations. Could store "I'm part of the ARIA trio, repo at github.com/Rattailbaby/ReceiptApp, follow FRESH CHAT PROTOCOL." Every new chat starts oriented without pasting anything. Massive unlock — solves the "paste Block A every time" problem.
+
+⭐ ChatGPT Projects
+Group chats with shared file uploads + custom instructions per project. Create "Uncrumple/ARIA" project. Upload key repo files. New chats inherit context. GPT equivalent of Claude Projects.
+
+Custom GPTs (GPT Builder)
+Build "ARIA-GPT" with permanent instructions + knowledge files + tools. Distributable. Could be the first ARIA product (zero infrastructure required).
+
+GPT Canvas mode
+Collaborative document editing in-chat. Draft new specs/README/marketing copy together rather than describing what to put in them.
+
+GPT image generation
+Uncrumple UI mockups, brand assets, demo screenshots, "crumpled paper → flat" animation prototypes.
+
+GPT voice mode
+Walking/driving brainstorms hands-free, transcripts route to repo. Solves the mobile-cognition capture moment.
+
+═══════════════════════════════════════════════
+🤖 CLAUDE-SPECIFIC CAPABILITIES
+═══════════════════════════════════════════════
+
+⭐ Claude Project Knowledge
+File uploads per project, persistent, don't count against context window. Could permanently load LOCKED_ATTRIBUTES + ARIA_README + HANDOFF_CHEATSHEET for instant access without re-reading from repo each session.
+
+⭐ MCP (Model Context Protocol) servers
+Claude Desktop supports these. Custom ARIA MCP server gives Claude structured tools: read_handoff / append_idea / search_compost / promote_candidate. Trio orchestration becomes MCP integration.
+
+Claude Artifacts
+Interactive documents Claude creates in-chat. Live ARIA dashboard, idea-graph viewer, session-texture chart — all without real frontend.
+
+Claude tool use API
+Function calling, code execution, external service access. Same orchestration capability as MCP but via API.
+
+═══════════════════════════════════════════════
+🏗️ CODE (CLAUDE CODE) CAPABILITIES
+═══════════════════════════════════════════════
+
+⭐ Custom slash commands
+/idea-intake, /handoff, /clear-with-wrap, /harvest-pass-3. Shorthand family becomes literal commands instead of conversation patterns. Reduces friction further.
+
+⭐ Hooks beyond clipboard (currently only Stop hook used)
+- PostToolUse on Edit → auto-commit (zero-effort version control)
+- PreToolUse on Write → check NO IDEA WASTED rule wasn't violated
+- UserPromptSubmit → auto-route emoji-tagged messages to right files
+- SessionStart → run handoff dress rehearsal automatically
+
+Subagents (Explore, Plan, etc.)
+Already available, mostly unused. Delegate "search ARIA_IDEAS for everything tagged ⭐" to Explore to save main-context window.
+
+⭐ User-level CLAUDE.md at ~/.claude/CLAUDE.md
+Cross-project rules applying to ALL Code sessions. Put ARIA principles there so every project Code touches inherits them.
+
+/agents command
+Manage custom agents per project. Could build "aria-curator" agent that ONLY does idea routing.
+
+Background tasks
+Code can monitor processes. Watch git for commits, auto-update SYSTEM_EVOLUTION.md, run scheduled health checks.
+
+═══════════════════════════════════════════════
+🏗️ GITHUB CAPABILITIES
+═══════════════════════════════════════════════
+
+⭐ GitHub Actions on push
+Automation triggered by every commit. Auto-validate JSON, auto-update SESSION_TEXTURE.md from log analysis, auto-publish summary to Pages site, auto-tag releases.
+
+GitHub Issues as deferral counter
+Every deferred app issue (keyboard fix, receipt state, date problem) becomes an Issue with a label. Issue age = deferral counter automatically. Solves the deferral-counter idea with existing tooling.
+
+GitHub Discussions
+If ARIA goes public, idea-cluster discussions live there. Compost moves from private repo to community space.
+
+GitHub Pages for ARIA docs
+Host HANDOFF_CHEATSHEET as public page. ARIA's documentation IS the demo.
+
+GitHub Gist for snippets
+Quick-share scripts (eventual aria.py 3-command CLI) without committing to main repo.
+
+GitHub Codespaces
+Temporary dev env without local install. ARIA ships as Codespaces template — open in browser, protocol immediately running. Lowest possible installation friction.
+
+═══════════════════════════════════════════════
+🧠 OTHER TOOLS / INTEGRATIONS
+═══════════════════════════════════════════════
+
+⭐ Apple Shortcuts (iOS/watchOS)
+Voice capture from anywhere without an app. Shortcut: voice input → format with emoji → append to iCloud Drive file → syncs to repo via git. Wearable capture layer with zero custom development. Buildable today.
+
+Raycast / Alfred / PowerToys
+Launcher integrations. Cmd+Space → "aria capture <idea>" from any app, anywhere on the system.
+
+Obsidian
+Graph view over current markdown files. Connection layer (CONNECTED_IDEAS.md) works in Obsidian graph for free. No custom UI needed.
+
+═══════════════════════════════════════════════
+🧠 PROMPT PATTERNS / SKILLS
+═══════════════════════════════════════════════
+
+⭐ "Rate your confidence 1-10"
+Surfaces AI uncertainty cheaply. Currently treating AI responses as equally weighted; confidence scoring would change that. Cheap to add, big signal value.
+
+"Steelman the opposite"
+Instant pre-mortem. Saves having to invoke Claude separately for pressure-test on small decisions.
+
+"What questions should I be asking?"
+Surfaces blind spots. Different from "what are we missing" — this is meta about the inquiry itself, not the topic.
+
+"Explain this to a tradesperson"
+Forces clarity, matches Uncrumple target user. Good jargon-detector for ARIA writing.
+
+"If you only had one sentence"
+Forces compression. Used implicitly today when reframing pitches; should be explicit technique.
+
+═══════════════════════════════════════════════
+🧠 EXTERNAL RESOURCES / KNOWLEDGE
+═══════════════════════════════════════════════
+
+MCP protocol spec
+Anthropic's open standard. Formal spec for the integration layer that would let any AI plug into ARIA. Worth reading if pursuing protocol-first build (Model 3).
+
+Anthropic + OpenAI documentation on memory/continuity patterns
+Competitive intelligence on how model providers themselves think about this problem.
+
+ARIA's own git log as teaching corpus
+Every commit message in this repo is a small lesson. Reading the log chronologically tells the story of the system's evolution. Could become onboarding material for users or future Code instances. Self-documenting growth.
+
+═══════════════════════════════════════════════
+⭐ STRONGEST PICKS — most underused, highest-leverage:
+═══════════════════════════════════════════════
+
+1. GPT Memory feature — solves the paste-Block-A-every-time problem
+2. ChatGPT Projects — GPT version of Claude Projects
+3. Claude Project Knowledge — permanent foundational uploads
+4. MCP servers (both Claude Desktop and Code) — protocol integration ready today
+5. Custom slash commands in Code — /idea-intake / /handoff / /clear-with-wrap
+6. Code hooks beyond clipboard — auto-commit, auto-route, auto-validate
+7. User-level CLAUDE.md — cross-project ARIA inheritance
+8. GitHub Actions on push — automation triggered by every commit
+9. Apple Shortcuts — wearable capture today, zero infrastructure
+10. "Rate your confidence 1-10" — cheap uncertainty signal
+
+Cross-cutting observation:
+Most of these aren't NEW capabilities — they're existing features of the tools we already use that we haven't activated yet. The packaging from "current manual workflow" to "first ARIA prototype" might mostly be turning these on, not building anything new.
+
+
 ⭐ promoted to shelf:
 - ARIA as a product is "build the layer between user and existing AI" (cleanest position)
 - ARIA as thin orchestration layer, not fat platform
