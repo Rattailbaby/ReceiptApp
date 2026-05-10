@@ -3075,3 +3075,112 @@ Connection to existing principles:
 - The "what's the texture of this session?" question is a natural addition to the Generative Harvest pattern's role-specific questions
 
 This is one of the broader reframings of the session. It changes ARIA from "idea capture infrastructure" to "experience capture infrastructure where ideas are one signal among several."
+
+
+[2026-05-09] — Productization brainstorm: ARIA as real product (post-break compost dump)
+
+User asked for clever ideas about how ARIA actually gets built reliably. Saved per NO IDEA WASTED rule. Some are practical, some are structural, some are business-model, some are wild. Filter at promotion time, not capture time.
+
+Architecture / protocol ideas:
+
+⭐ 🔭 ARIA as a protocol, not an app
+The actual moat is the spec, not the implementation. Define the file shapes (compost / shelf / candidates / locked / state / ceremony) as a markdown-based open standard like CommonMark. Anyone implements. Reference impl is the current repo. Plugins/wrappers handle the rest.
+
+⭐ 🔭 ARIA-compatible badge
+Apps that follow the protocol get a badge: "Works with ARIA continuity." Like "Made for iCloud." Pulls AI tools into the standard rather than fragmenting.
+
+🧠 Continuity port (universal handoff format)
+Spec a JSON/YAML/markdown blob that any AI can import or export. ARIA is the format, not the agent. Switch from GPT to Claude to local llama mid-session — the port carries the state across.
+
+🧠 LLM-agnostic seed prompt
+When switching AIs, ARIA auto-generates a "you are now picking up session X with state Y" prompt. Primes any model identically. Same continuity, different brain.
+
+🧠 AI-agnostic capture format
+Browser extension that captures from ChatGPT, Claude, Perplexity, Gemini — any chat. Routes to unified compost. Solves the "my ideas live in 5 different AI silos" problem.
+
+Device / wearable ideas:
+
+⭐ 📱 Phone-first reality check
+Wearables are right intuition but wrong starting point. Phone has: always-on, notes app, voice-to-text, cameras, runs LLMs, social acceptance. Capture friction is already minimum. Build ARIA-on-phone first. Wearables extend.
+
+📱 Watch's actual job — taps, not screens
+Pulse-tap capture: 1 tap = idea, 2 taps = friction-marker, 3 taps = excitement. No screen needed. Captures texture-of-moment without interrupting flow. Phone reconciles later.
+
+📱 Glasses' actual job — attention timestamps
+Hold gaze on something for 2+ seconds, ARIA timestamps "user attended to this." Connects attention patterns to subsequent ideas. ("You spent 4 seconds looking at this paragraph before that idea hit.") Visual signal stream.
+
+📱 ARIA as Obsidian plugin
+Start where the user-base already lives — synthesizers using markdown vaults. Lower acquisition cost than building a new app. Lets you validate the protocol before building polish.
+
+📱 ARIA-as-CLI
+`aria capture`, `aria harvest`, `aria intake`. Works on any terminal. Scriptable. Power users adopt first, prove the value, then UI follows.
+
+Capture / signal ideas:
+
+⭐ 🧠 Friction heat map
+Every time user expresses friction, ARIA logs: moment, feature/file, timestamp. Build it up over time. After 100 sessions you have a literal heat map of where the system hurts. That's a feature backlog generated empirically, not by guessing.
+
+🧠 Idea half-life tracking
+Track how long ideas sit in compost before they spark something. Some die fast. Some compound for years. Visible aging surfaces both: dead ideas to prune, slow-burning ideas that got better with time.
+
+🧠 Sleep-cycle harvest
+For users with active minds at night, ARIA prompts "what's still on your mind?" before sleep. Captures the half-formed pre-sleep thoughts that usually evaporate. Voice-only mode ideal — eyes closed, talk into watch.
+
+🧠 Texture-of-session as biometric integration
+If wearables already track HRV / heart rate during cognitive work, correlate with self-reported texture. After enough sessions you can detect "this session felt heavy" before the user names it. ARIA knows you're tired before you do.
+
+🧠 Idea graph visualization
+Show compost as a literal graph — nodes are ideas, edges are connections (manually drawn or AI-suggested). Reveals clusters. The connection layer (CONNECTED_IDEAS.md from earlier today) made visible.
+
+Business / strategy ideas:
+
+⭐ 💰 Sell to AI companies, not users
+Anthropic / OpenAI / Google all face the same problem: their models get smarter, but users' continuity dies every session. They have no answer. ARIA solves it. License the protocol to them. They make models sticky; you provide the stickiness.
+
+⭐ 💰 The "AI forgot what we were working on" wedge
+Every AI user hits this within weeks. ARIA's pitch: "AI doesn't have to remember if the system around it does." Targets AI skeptics, not enthusiasts. Larger market.
+
+💰 Open-source the protocol, sell the polish
+Linux model. Spec is free, reference apps free, premium experience (multi-device sync, AI integrations, glasses support) is paid. Protocol adoption funds the polish business.
+
+💰 Generative-as-a-service
+The harvest prompts (Clone Freshness Score's 6 questions, texture-of-session, "what would break first," etc.) become a paid API. Any AI tool can plug in to get standing ARIA-grade synthesis questions. Lightweight monetization that doesn't require apps.
+
+💰 The killer demo
+Two laptops side by side. Drop the session on one (close app, kill chat, simulate full context loss). Reconstruct on the other. Watch continuity rebuild from zero. Different model, same state. THAT's the wow. Visceral. Demonstrable. Sells itself.
+
+💰 Trade-off framing in the pitch
+"Your AI gets smarter every year. Your continuity dies every session. ARIA fixes the second problem so the first one matters." One sentence positioning. Names the asymmetry.
+
+Meta / philosophical ideas:
+
+⭐ 🤖 The user's notes app IS proto-ARIA
+User has been running their own ambient capture system for years before any of this. ARIA isn't being invented — it's being formalized. The user is the proof of concept. The ideas have already been validated by being saved manually. Now we're just building the infrastructure.
+
+🤖 Self-capture / ARIA observes itself
+ARIA tracks ITS OWN texture across sessions. Meta. If ARIA's own session texture drifts heavy, that's a signal ARIA itself needs simplification. Self-correcting. The system uses its own rules on itself.
+
+🤖 The "two-week negative space test"
+After 2 weeks of using ARIA, if you forget you were using it, that's the sign it works. Good infrastructure becomes invisible. Measure success by absence of friction, not presence of features.
+
+🤖 Compost queries as personal archeology
+"Show me everything tagged 📱 from 2025 that I never built." "Show me ideas I starred but didn't promote." "Show me the ones I forgot existed." Personal idea archeology. Different cut of the same compost reveals different patterns.
+
+🤖 Seasonal review prompt
+Every 3 months, ARIA prompts: "review compost from this quarter — anything ready to promote?" Forces synthesis at slow tempo, not just per-session. Some ideas need seasons, not sessions.
+
+🤖 Deferral counter as life metric, not just app metric
+Track decisions deferred — in life, not just code. After N defers, ARIA prompts "kill or commit?" Same anti-pattern protection that today's session built for app issues, applied to anything user lets ARIA see.
+
+🤖 ARIA's actual contribution to the AI space
+Most AI products optimize the model. ARIA optimizes the surrounding system. That's a different category. The bet: as models commoditize (which they will — open source catches up, costs drop), the value moves to the connective tissue. ARIA is positioned for that shift.
+
+⭐ flags from this batch (worth shelf-promoting):
+- ARIA as a protocol, not an app
+- ARIA-compatible badge
+- Phone-first reality check
+- Friction heat map
+- Sell to AI companies, not users
+- "AI forgot what we were working on" wedge
+- The user's notes app IS proto-ARIA
+- The killer demo (continuity reconstruction across machines)
