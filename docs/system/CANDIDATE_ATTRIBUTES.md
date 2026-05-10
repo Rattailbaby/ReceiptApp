@@ -373,9 +373,18 @@ For LEVEL 3 (FULL CLONE REGENERATION) specifically:
 Multi-pass harvesting is not optional — it should be the default. Level 3 means the loaded AI is about to be replaced. This is the last chance to extract knowledge before context dies. Single-pass misses too much.
 
 Suggested protocol for Level 3 harvest:
-- Pass 1: "Give me ideas about [X]"
+- Pass 1: "Give me ideas about [X]" (or whatever the substantive question is)
 - Pass 2: "What else? More ideas, especially the ones that seemed too small or obvious"
-- Pass 3: "What did you almost not say? What's the texture of your thinking right now that isn't in the ideas list?"
+- Pass 3 (clone-self-awareness — Level 3 specific):
+  "Is there anything you left out about how you GREW this session and the way you OPERATE that you would want the clone to know?"
+
+Pass 3 is specifically about behavioral evolution + working patterns the dying instance has developed. This produces clone-substrate material that fresh AI cannot reconstruct from repo files alone. It's the pass that reliably surfaces "gems" — things the AI noticed about its own way of working that wouldn't be volunteered without the explicit ask.
+
+Pass 3 user workflow:
+1. User pastes Pass 3 question to current GPT
+2. GPT outputs growth/operation observations
+3. User pastes GPT's response back to Code
+4. Code routes the response into appropriate files (assistant_behavior_clone in CURRENT_HANDOFF.json, decision_log, persistent_attributes, or ARIA_IDEAS depending on content)
 
 Each pass is shorter than the last. Stop when the AI starts repeating itself or visibly straining.
 

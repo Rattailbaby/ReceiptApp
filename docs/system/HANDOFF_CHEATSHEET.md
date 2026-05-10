@@ -44,7 +44,10 @@ Use when clone substrate changed:
 Single pass under-extracts. When the loaded AI is about to be replaced, ask 2-3 times:
 - Pass 1: "Give me ideas about [X]"
 - Pass 2: "What else? More ideas, especially ones that seemed too small or obvious"
-- Pass 3: "What did you almost not say?"
+- Pass 3 (clone-self-awareness): "Is there anything you left out about how you GREW this session and the way you OPERATE that you would want the clone to know?"
+
+Pass 3 is the gem-producer — surfaces behavioral evolution the dying AI noticed about itself. User pastes the response back to Code, who routes it into assistant_behavior_clone / decision_log / persistent_attributes.
+
 Each pass shorter than the last. Stop when AI repeats itself or strains.
 
 ## Correct full handoff order
