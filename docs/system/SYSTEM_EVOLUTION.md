@@ -221,3 +221,63 @@ What still needs building:
 - Synthesis-mode signal (explicit user override of clear cadence)
 - The 5 missing handoff steps (work toward 14-step target)
 - "Continuity observability" / handoff confidence score
+
+
+===
+
+2026-05-09 (afternoon/evening) — Idea preservation layer + ARIA architecture clarification
+
+Continuation of the morning's handoff procedure overhaul. Where the morning settled the CEREMONY, the afternoon settled the IDEA-PRESERVATION model and clarified ARIA's actual architecture as a product.
+
+What changed in the system this afternoon:
+
+1. Ceremony validated end-to-end via real Tier 3 execution
+   The morning's tiered clone regeneration candidate got tested in production. Block C truncation (GPT's GitHub fetch_file truncated CURRENT_HANDOFF.json) produced a real failure that became a durable architecture pattern: Code owns full file truth, GPT owns clone-behavior review. Now embedded in CURRENT_HANDOFF.json aria_state and HANDOFF_CHEATSHEET.md.
+
+2. Idea preservation layer locked
+   - LOCKED rule: NO IDEA GETS WASTED RULE (foundational ARIA principle)
+   - ⭐ shelf created at top of CLAUDE_CLEVER_IDEAS.md (high-signal items live there AND in normal category)
+   - Idea Compost layer concept saved (raw ideas as compost, not commitments)
+   - High-Signal Shelf architecture saved (6-layer stack: compost / shelf / connections-future / roadmap / candidates / locked)
+   - Idea Intake Mode protocol saved (for processing notes app batch imports)
+   - Categorized preservation rule (preserve every idea, never silently omit, ⭐ flag standouts, filter at promotion not capture)
+
+3. Foundational ARIA principles surfaced
+   - "AIs capture, user synthesizes. Never reverse this." (locked as ⭐ ARIA design principle)
+   - "Everything is a tool / experience as signal stream" (reframes ARIA from idea-capture to experience-capture infrastructure)
+   - "Save generously, promote selectively, build intentionally" (operating principle)
+   - "Idea preservation is not governance promotion" (layer distinction)
+
+4. ARIA architecture clarified as a product
+   - Three primary build models: unified LLM (rejected as wrong layer) / multi-agent role specialization / protocol-first (strongest pick)
+   - Wearable substrate analysis: phone-first / glasses / watch with ranked reasoning
+   - 17 extended build approaches captured (CLI, browser extension, MCP server, Obsidian plugin, IDE plugin, voice-only, email-based, append-only event log, etc.)
+   - "ARIA is mostly already built" insight: this repo IS the architecture (files as state, git as event log, markdown as protocol, Claude Code as runtime). Gap from "this repo" to "ARIA the product" is packaging, not foundational building.
+   - "Form factor tells you what ARIA really is": desktop is the BACKEND. Frontend (voice / glasses / watch) hasn't been built yet. Flips mental model 180°.
+
+5. Strategic position settled
+   "ARIA = build the layer between the user and existing AI that makes continuity, coordination, and signal capture automatic. NOT build better AI." Rules out custom-LLM rabbit hole permanently.
+
+6. New shorthand added to user command surface
+   `idea intake` joins `soc` and `sidequest` as third user shorthand. Behavior spec full in SYSTEM_COMMANDS.md.
+
+7. ARIA_STARTER_KIT concept saved
+   ARIA as a continuity operating KIT (not one app) that generates personalized continuity infrastructure based on cognitive mode. Defensible go-to-market shape — packaging the protocol for non-developer users.
+
+Numbers:
+- ~150 distinct ideas captured this session
+- ~50 ⭐ items on the High-Signal Shelf
+- 4 commits expanding ARIA_IDEAS.md substantially (~600+ lines added)
+- 0 app code changes (this was governance/architecture only)
+
+Bigger realization:
+The morning settled HOW continuity gets transferred. The afternoon settled WHAT continuity actually is — and what ARIA fundamentally is as a product. ARIA is not "a memory layer for AIs." ARIA is "frictionless re-entry into previous cognition." The user is the synthesis layer; AIs capture; the system reduces friction around the user.
+
+The session also validated the Pre-Clear Synthesis Window pattern empirically: most of the afternoon's deepest architectural reframings emerged from open-ended generative exchange when AIs were heavy with context, not from checklist work. Saved as Generative Harvest candidate.
+
+What still needs building (afternoon additions to morning's list):
+- 3-command CLI (aria start / aria capture / aria clear) — most actionable v1 build
+- Browser extension for chat-interface context injection
+- Comparison view feature (parallel API calls to GPT + Claude with diff highlighting)
+- Passive signal capture (auto-generate session texture from existing logs)
+- Notes app idea intake tooling (concrete implementation of Idea Intake Mode protocol)
