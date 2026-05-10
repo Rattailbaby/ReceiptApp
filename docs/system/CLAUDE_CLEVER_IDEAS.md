@@ -186,6 +186,57 @@ Paste messy notes → preserve raw → categorize by emoji → ⭐ flag → rout
 ⭐ 🏗️ ARIA_STARTER_KIT — continuity operating kit (2026-05-09)
 Not one app — a kit that generates personalized continuity infrastructure based on cognitive mode (solo builder / writer / developer / contractor / student / researcher / ADHD). Defensible, customizable, supports many cognitive styles from one foundation. Might be ARIA's actual product shape. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 ARIA_STARTER_KIT section.
 
+⭐ 🧠 ARIA = build the layer between user and existing AI (cleanest strategic position) (2026-05-09)
+Not "build better AI." It's "build the layer that makes continuity, coordination, and signal capture automatic." Rules out custom-LLM rabbit hole permanently. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section A.
+
+⭐ 📱 Session START matters more than session END (2026-05-09)
+Everyone focuses on handoff/clear. Most painful moment is starting fresh chat cold. ARIA's first product feature should be auto-context-injection on new chat open. Reframes priority. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section B.
+
+⭐ 🤖 Comparison view as ARIA's killer feature (2026-05-09)
+GPT vs Claude side-by-side, differences highlighted. Automates trio reflection (LOCKED 37) as a UI feature. ~100 lines of Python. Build before any other UI. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section B.
+
+⭐ 🧠 The handoff system is the moat (2026-05-09)
+Custom LLMs have no moat. Continuity system that gets smarter the longer used = real switching cost. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section B.
+
+⭐ 🤖 Cheapest ARIA v0.1 = folder + 3 API keys (2026-05-09)
+Repo + CURRENT_HANDOFF.json + context injection script + parallel API calls. Buildable in a weekend. Already more useful than anything on market for AI continuity. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section B.
+
+⭐ 🏗️ Start with CLI, not an app (2026-05-09)
+`aria start` / `aria clear` / `aria capture "idea"`. No UI, no DB, no hosting. Day to build. Useful immediately. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ The repo IS the database — don't replace it (2026-05-09)
+Markdown + git = queryable, versionable, human-readable database. Most important architectural commitment. Build tooling AROUND it, not replacing it. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ Browser extension for chat injection (2026-05-09)
+Auto-inject starter block when opening Claude/GPT chat. Reads local CURRENT_HANDOFF.json via local API server. Highest-leverage build. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ Three build paths (Power user / Consumer / API-platform) (2026-05-09)
+Path A (CLI + VS Code) → Path B (Electron/web) → Path C (protocol/SDK). Start with A. Let it tell you if B or C is worth building. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ Parallel API calls as first real ARIA feature (2026-05-09)
+Same prompt to Claude+GPT simultaneously, both responses, differences highlighted. ~100 lines of Python. Build before anything with UI. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ Smallest ARIA v1 worth sharing — 3-command CLI (2026-05-09)
+One file. `aria start` / `aria capture` / `aria clear`. MIT license. GitHub. Days of work. Most actionable item in the harvest. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🏗️ Build it so Uncrumple users could use it (2026-05-09)
+Tradespeople have same problem at simpler scale. Simplified ARIA — just continuity layer, no AI coord — could be in Uncrumple itself. "Why was I here?" feature IS simplified ARIA. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section C.
+
+⭐ 🤖 Wearables are right hardware for ambient cognition (2026-05-09)
+ARIA's promise is ambient. Phone requires pickup. Watch/glasses always on body. Hardware matches philosophy. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
+
+⭐ 🧠 Watch as capture primitive, not display (2026-05-09)
+Tap → voice → transcribe → route. Heavy processing on phone/desktop. Watch is input layer only. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
+
+⭐ 🤖 Glasses as the display layer ARIA is missing (2026-05-09)
+Ambient overlay — current next_step, debt level, active branch — without breaking flow. Glance, know, continue. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
+
+⭐ 🧠 "Hey ARIA" as product moment (2026-05-09)
+Wake word + voice commands = ARIA becomes consumer product. Tradesperson + Uncrumple + watch = the moment ARIA becomes invisible infrastructure. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
+
+⭐ 🧠 Form factor tells you what ARIA really is (2026-05-09)
+Wearable isn't feature idea — it's product identity clarification. ARIA is ambient cognition layer that happens to have desktop interface. Desktop = backend. Voice + glasses + watch = frontend. Flips mental model 180°. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

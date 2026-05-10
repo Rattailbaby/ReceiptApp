@@ -3594,3 +3594,314 @@ Ship status:
 Do not build tonight. Save the concept. Once the protocol is stable and the dev-mode reference impl is shipped, the starter kit becomes the go-to-market vehicle for non-developer users.
 
 ⭐ flag: this might be ARIA's actual product shape. Not "an app" — a kit that generates personalized continuity infrastructure. Defensible, customizable, supports many cognitive styles from one foundation.
+
+
+[2026-05-09] — Claude pre-clear harvest #2: orchestration/build/wearable batch (with Code annotations)
+
+User shared four sequential Claude responses on (1) why custom LLMs are wrong layer, (2) clever orchestration ideas, (3) concrete build paths, (4) wearable form factor. ~70 items total. Saving everything per NO IDEA WASTED rule. Code adds [Code addition] brackets where there's a genuine extension to contribute, not on every item.
+
+═══════════════════════════════════════════════
+SECTION A — Why not custom LLMs (architecture argument)
+═══════════════════════════════════════════════
+
+🤖 The real problem isn't the AI — it's the context
+GPT, Claude, Code are already good enough. The gap is they lose context between sessions, can't communicate directly, lack persistent memory of how you work. Infrastructure problem, not model problem.
+
+[Code addition: This validates Model 3 (protocol-first) from the build-architecture brainstorm. The reason Model 3 wins is exactly this — solving the bottleneck where it actually exists.]
+
+🏗️ Layer 1 — Persistent context store (already built)
+Database (or markdown folder) any AI can read/write. Repo IS this layer.
+
+🏗️ Layer 2 — Session orchestration
+Auto-feed the right context to the right AI at session start. Currently manual paste; could be a lightweight script.
+
+🏗️ Layer 3 — Signal capture
+Session texture logged automatically. Length, clear count, rephrase count, friction moments. Measurable signals with no custom AI needed.
+
+[Code addition: Connects to the "signal capture layer could be passive" idea below — passive measurement is more honest than self-report. Friction count + clear count + session length together produce a coordination-overhead metric without asking the user anything.]
+
+🏗️ Layer 4 — API orchestration
+Call GPT/Claude/Code via API instead of chat interfaces. Auto-route, parallel query, surface disagreements without manual copy-paste.
+
+🏗️ Phase 1-5 build path
+Phase 1 (now) repo as substrate ✓
+Phase 2 (near) automated context injection — weekend project
+Phase 3 (medium) API orchestration layer — weeks
+Phase 4 (later) signal capture — month
+Phase 5 (ARIA as product) package it — sellable
+
+🤖 Why not custom LLMs
+Custom training: hundreds of thousands of dollars, ages fast. Fine-tuning small open models cheaper but you'd be tuning on what — conversation style? Not the bottleneck. Bottleneck is context and coordination.
+
+⭐ 🧠 ARIA as a product is not "build better AI"
+It's "build the layer between the user and existing AI that makes continuity, coordination, and signal capture automatic." Fundamentally different and much more achievable product direction.
+
+[Code addition: This is the cleanest one-line strategic position of the whole session. Pin this. It rules out the model-training rabbit hole permanently.]
+
+═══════════════════════════════════════════════
+SECTION B — Orchestration / clever ideas (~21 items)
+═══════════════════════════════════════════════
+
+⭐ 🤖 ARIA as thin orchestration layer, not fat platform
+Resist temptation to make ARIA heavyweight. Ask of every feature: does this require building something new, or just connecting things that already exist?
+
+⭐ 🧠 Context injection script as highest-leverage first build
+Automate the one thing you do manually every session: building starter block + pasting context. Save 5-10 minutes per session × 5 sessions/week = 40+ hours/year. Build this first.
+
+[Code addition: This is the cheapest demonstrable win. A single script. Could be a Python file someone runs, or a Claude Code slash command, or both. Concrete next-action shape: build/aria-start.py reads CURRENT_HANDOFF.json, formats based on per-role manifest in SYSTEM_COMMANDS.md, copies to clipboard. Maybe 80 lines of code.]
+
+⭐ 📱 ARIA's first real product feature is the session START, not the session END
+Everyone focuses on handoff and clear. Most painful moment is starting fresh chat cold. ARIA's first feature: open new chat, ARIA injects context automatically, never paste manually again. That's the demo. That's the hook.
+
+[Code addition: This reframes the priority order. The current handoff ceremony optimizes the END of sessions. The bigger pain (and bigger product wedge) is the START. The starter block we just spent hours perfecting is more valuable than the wrap ceremony — but it's still manually pasted. Auto-inject = the actual unlock.]
+
+🤖 The trio as an API call, not a conversation
+Same prompt to both Claude and GPT API simultaneously, both responses returned, disagreements highlighted. Maybe 200 lines of code.
+
+🧠 Session texture as queryable dataset over time
+Log every handoff. After 6 months: which sessions produce most good ideas? Which produce most drift? Which correlate with best Uncrumple progress?
+
+⭐ 🤖 The comparison view is ARIA's killer feature
+GPT vs Claude side-by-side, differences highlighted. Makes disagreement visible and synthesis easier. Would make ARIA obviously valuable to any AI power user immediately.
+
+[Code addition: Today caught real over-eager promotes via trio reflection that were hard to surface manually. Comparison view automates the surface. The pressure-test pattern (LOCKED 37) becomes a UI feature, not a process.]
+
+🧠 Open source orchestration, sell continuity substrate
+Free orchestration script = community + credibility. Continuity substrate = proprietary value. People use the free layer, pay for what makes it persistent.
+
+📱 ARIA mobile companion
+Session texture question capturable from phone in 10 seconds. Quick capture interface, logs to repo. Like Uncrumple's quick-capture for session data.
+
+🤖 Role manifests as API routing rules
+Per-role reading manifest in SYSTEM_COMMANDS.md becomes literal API routing rules. Architecture prompt → Claude. Planning → GPT. Execution → Code. Logic exists; API just automates it.
+
+[Code addition: The manifest was already designed this way. Treating it as routing rules rather than reading lists is a small reframe with big implementation implications. The rules ARE the routing config.]
+
+⭐ 🧠 The handoff system is the moat
+Custom LLMs have no moat — anyone with money trains one. Continuity system that gets smarter the longer you use it = real switching cost. The longer used, the more valuable. Genuine moat.
+
+🧠 ARIA could version your thinking, not just your code
+Git versions code. ARIA versions reasoning. Every session = snapshot of believed/decided/deferred. Over time = complete history of how project's thinking evolved. Why decisions were made, what was rejected, what changed.
+
+[Code addition: This is what the decision_log array in CURRENT_HANDOFF.json is doing already, just informally. Formalize it: every decision gets logged with reasoning + rejected_alternatives. Today's session added 8 decisions to that array. After 100 sessions you have a real reasoning history.]
+
+🤖 The fresh chat problem is universal
+Every serious AI user hits it within weeks. Writers, researchers, PMs, founders — anyone with complex long-running AI projects hits the wall. Market is every serious AI user, not just developers.
+
+⭐ 📱 Uncrumple IS the ARIA prototype
+Cleanup flow, Needs Attention section, receipt as evidence, tag system = ARIA primitives in a specific domain. Every Uncrumple feature, ask: what's the ARIA equivalent? Cross-pollination should be deliberate. Uncrumple is where ARIA's UI language gets proven.
+
+🧠 The signal capture layer could be passive
+Don't ask "what was the texture?" Infer it. Number of clears = friction. Session length = depth. Ideas generated = synthesis. Deferred issues = debt. All already in system. Simple analyzer reads SESSION_LOG + CURRENT_HANDOFF, generates texture automatically.
+
+[Code addition: This eliminates the texture-of-session question entirely (or makes it confirmation rather than survey). Build SESSION_TEXTURE.md as auto-generated from existing files. User reads it; doesn't have to fill it out. Reduces capture friction further.]
+
+🤖 ARIA's business model might be B2B before B2C
+Small dev teams, research teams, product teams — same problem at larger scale. Multiple people, multiple AI sessions, no shared continuity. Team continuity layer might be easier first sale than individual.
+
+⭐ 🧠 The demo writes itself
+Show session dropping. Show reconstruction in real time. Show fresh AI picking up exactly. Visceral. Anyone who lost AI context understands instantly.
+
+📱 ARIA health score visible at all times
+Continuity debt level. Unresolved branches. Days since last clear. next_step staleness. Single number/color = system health at glance. Battery indicator for cognitive continuity. Green/yellow/red.
+
+🧠 The notes app list is proto-ARIA (already saved separately, repeated for completeness)
+
+⭐ 🤖 Cheapest version of ARIA = well-structured folder + three API keys
+Repo + CURRENT_HANDOFF.json + context injection script + parallel API calls = ARIA v0.1. Buildable in a weekend. Already more useful than anything currently on market for AI continuity. Start there.
+
+🧠 ARIA could eventually negotiate between AIs without user involvement
+Right now you're the relay. Orchestration layer where AIs communicate through structured messages — user as director, not relay — eliminates most mechanical coordination burden.
+
+[Code addition: This is the natural evolution of comparison view. Phase 1: see both responses side-by-side (manual synthesis). Phase 2: AIs see each other's responses and refine (assisted synthesis). Phase 3: AIs converge or escalate disagreement to user (delegated synthesis). User intervenes only when AIs can't resolve.]
+
+🤖 Open protocol, not proprietary system
+File structure + handoff protocol = open standard like git. Anyone builds tools on top. ARIA the company maintains reference impl. Others build compatible tools. Protocol is moat, not product.
+
+═══════════════════════════════════════════════
+SECTION C — Concrete build paths (~22 items)
+═══════════════════════════════════════════════
+
+⭐ 🏗️ Start with a CLI, not an app
+`aria start` reads CURRENT_HANDOFF.json, outputs context block. `aria clear` runs wrap. `aria capture "idea"` appends to right file. No UI, no DB, no hosting. Buildable in a day. Useful immediately.
+
+⭐ 🏗️ The repo IS the database — don't replace it
+Markdown files in git = queryable, versionable, human-readable database. Anyone can read it (human or AI). Switch to real DB and lose that. Keep repo as substrate, build tooling AROUND it.
+
+[Code addition: This is the core architectural commitment. Every time someone proposes "let's add a database" the answer should be: "what does that buy that grep + git log + a script doesn't?" If the answer is just speed, add a SQLite cache layer over files. Files stay source of truth.]
+
+🏗️ Electron app for desktop
+Sits in taskbar. Open: see current session state. Buttons: inject context, log capture, run clear. No cloud, reads local repo. ~2 weeks of work.
+
+🏗️ VS Code extension
+ARIA state in sidebar — current next_step, continuity debt, recent captures. Commands in palette: Start Session, Capture Idea, Run Clear. Most natural home given current workflow.
+
+⭐ 🏗️ Browser extension for chat interface injection
+Auto-inject starter block when opening Claude/GPT chat. Read local CURRENT_HANDOFF.json, build context, paste into first message automatically. Zero manual effort. Highest-leverage build.
+
+[Code addition: Combine with the local API server idea below — extension calls localhost endpoint, gets context block, injects. Solves the security barrier (extension can't read local files directly) while keeping everything local. Could ship as ARIA Chat Connector.]
+
+🧠 Local API server that extension talks to
+Extension can't read local filesystem (browser security). Tiny local server on port 3000 can. Extension calls localhost:3000/context, server reads repo, returns block, extension injects. No cloud needed.
+
+🏗️ GitHub Actions as automation layer
+Already have GitHub. Actions run on push. Workflow updates CURRENT_HANDOFF.json with session metadata, checks for drift, runs consistency checks. CI/CD becomes part of continuity system.
+
+[Code addition: Could also auto-publish a SESSION_TEXTURE.md derived from commit metadata + SESSION_LOG analysis on every push. The signal capture layer running as a GitHub Action would cost zero infrastructure.]
+
+⭐ 🧠 Three build paths, three different products
+Path A — Power user tool (CLI + VS Code extension): smallest market, highest signal, easiest to build
+Path B — Consumer app (Electron/web): broader market, more build, needs onboarding
+Path C — API/platform: longest path, biggest potential, requires Path A first
+Start with Path A. Let it tell you if B or C is worth building.
+
+[Code addition: This maps cleanly to the three primary models from earlier. Path A is "ARIA is mostly already built" + tooling. Path B is Model 1 or 2 packaged. Path C is Model 3 (protocol-first). Path A first gives you proof; protocol later gives you category leadership.]
+
+🏗️ Raycast or Alfred plugin
+Cmd+Space → "aria capture" → text field → idea saved to right file. Frictionless capture from any context.
+
+🧠 Three sub-problems of context injection
+What to inject (which files/sections) / When to inject (fresh chat, post-clear, post-pause) / How to inject (clipboard, extension, API). Independent problems. Solve separately. Don't couple before knowing which matter.
+
+⭐ 🏗️ Parallel API calls is the first real ARIA feature
+Same prompt to Claude API + GPT API simultaneously, both responses, differences highlighted. ~100 lines of Python. Build this before anything else with UI.
+
+🧠 Webhook from GitHub to trigger context refresh
+Every push fires webhook → script rebuilds context block → puts somewhere accessible (file, clipboard, draft message). Fresh context always available without manual steps.
+
+🏗️ Plain text protocol means any tool can participate
+Markdown + JSON substrate = Obsidian, Notion, Bear, Apple Notes can all read it. Any AI with file access participates. Any script in any language writes to it. Most important architectural decision; already correct.
+
+⭐ 🧠 The smallest possible ARIA v1 worth sharing
+One script. `aria.py` or `aria.js`. Three commands:
+- `aria start` — reads CURRENT_HANDOFF.json, copies context to clipboard
+- `aria capture "idea"` — appends to CLAUDE_CLEVER_IDEAS.md with timestamp + emoji
+- `aria clear` — runs wrap, commits, pushes, outputs starter block
+
+That's ARIA v1. Anyone installs in 5 minutes. Immediately useful to any AI power user. Build this. Put on GitHub. See what happens.
+
+[Code addition: This is the single most actionable item in the entire harvest. Three commands, one file, days of work. Ship under MIT license. Doesn't require "deciding what ARIA is" — just packages what already works for the user. Validation comes from how others use it.]
+
+🏗️ Mobile shortcut via iOS/Android Shortcuts app
+Shortcuts automation: text input → format with right emoji → append to file in iCloud Drive/Dropbox synced to repo folder. No app needed. Mobile capture without custom dev.
+
+🧠 Obsidian as the ARIA frontend
+Already reads markdown, supports graph view for connections, has mobile app, plugins, git sync. Use as reading/navigation interface while keeping repo as write substrate. Connection layer (CONNECTED_IDEAS.md) particularly powerful in graph view.
+
+⭐ 🏗️ The integration that matters most right now
+Not a full app. Not a custom LLM. Just: a script that reads your repo and builds the perfect starter block for whichever AI you're about to use. Claude version, GPT version, Code version (each per role manifest). Copy to clipboard with one command. Saves more time than anything else right now.
+
+🧠 Version the context injection, not just the files
+Log every context injection — timestamp, files included, sections, total token count. Now you can debug reconstruction failures. "The session that drifted had a 40%-smaller-than-normal context block."
+
+[Code addition: Add CONTEXT_INJECTIONS.md as append-only log. Every starter block ever pasted gets a row. Debugging tool for the future.]
+
+🏗️ Discord or Slack bot as capture interface
+Bot listens in private channel. "idea: rule attribution on transactions" → parses emoji → determines category → appends to right file → commits → confirms. Capture from anywhere with Discord/Slack.
+
+🧠 The architecture that scales to a team
+One shared repo. Each member has their own role. Continuity substrate shared. Context injection personalized per role. Scales by adding role manifests + contributors. No new architecture.
+
+⭐ 🧠 Build it so Uncrumple users could use it
+Tradespeople have same problem at simpler scale — lose track of jobs, forget clients, lose context between sessions. Simplified ARIA — just continuity layer, no AI coordination — could be in Uncrumple itself. "Why was I here?" feature IS simplified ARIA. Two products inform each other at architecture level.
+
+═══════════════════════════════════════════════
+SECTION D — Wearable / form factor (~14 items)
+═══════════════════════════════════════════════
+
+⭐ 🤖 Wearables are the right hardware for ambient cognition
+ARIA's promise is ambient — always present, never intrusive. Phone requires pickup. Watch/glasses already on body. Capture moment is frictionless on wearable in a way it never is on phone. Hardware matches philosophy.
+
+⭐ 🧠 Watch as capture primitive, not display
+Watch doesn't need to show ARIA state — just receive it. Tap twice → voice capture starts → idea transcribed and routed. That's it. Heavy processing on phone/computer. Watch = input layer.
+
+[Code addition: This is the right read. Earlier I had watch as "sensor + nudge layer" — capture primitive is sharper. Same idea, better wording. Adopt.]
+
+⭐ 🤖 Glasses are the display layer ARIA is missing
+Currently no ambient display. Have to open file or run command to see state. Glasses could show subtle overlay — current next_step, debt level, active branch — without breaking flow. Glance, know, continue. Ambient cognition made physical.
+
+🧠 The lite system is the right instinct
+ARIA on wearables = two primitives:
+1. Capture (watch mic → transcribe → route)
+2. Ambient display (glasses overlay → state → glance)
+Everything else stays on desktop. Wearable = sensory layer.
+
+🏗️ Apple Watch app buildable today
+WatchOS supports microphone, Siri Shortcuts, API calls. ARIA Watch app: double tap → voice capture → Whisper API → classify → append to file via local API server. ~1 month for someone who knows Swift.
+
+🧠 Glasses partnership angle is smart
+Don't build glasses. Ray-Ban Meta has mic + companion app. Snap Spectacles have camera + display. If ARIA's protocol is open, glasses companies integrate it. Or build unofficial integration on existing APIs. Platform strategy > hardware strategy.
+
+🏗️ Always-on microphone is the unlock
+Wake word — "Hey ARIA, capture idea" — makes capture truly frictionless. Changes economics of what gets saved. Low-capture-friction = more saved = more compounding.
+
+⭐ 🧠 "Hey ARIA" as the product moment
+Tradesperson on job site thinks of something. "Hey ARIA, add receipt unavailable to washer job." Routes to client, marks state, logs. No phone, no typing. ARIA becomes consumer product, not just developer tool. Wake word = product.
+
+[Code addition: This is the moment Uncrumple and ARIA fully converge as products. The tradesperson doesn't know they're using ARIA — they just talk to their watch and the right thing happens. ARIA becomes invisible infrastructure. That's the success state.]
+
+🧠 Wearable data is the most honest signal
+Self-reported texture filtered. Wearable-captured texture (HRV during heavy sessions, voice tone during frustration, capture frequency during excitement) unfiltered. Could make "everything is a tool" principle quantitative instead of qualitative.
+
+📱 Uncrumple + ARIA on watch makes sense for tradespeople
+Dirty hands can't type. On a ladder can't look at phone. Can talk to watch. "Hey ARIA, log $45 Shell fuel Savita's job" → transaction created, tagged, client assigned. Voice on wearables solves the exact friction making Uncrumple hard in the field. Direct extension of what's being built.
+
+🏗️ Minimum viable wearable ARIA
+Step 1: Siri Shortcut on Apple Watch captures voice, sends to ARIA local server
+Step 2: Local server transcribes, classifies, routes to repo
+Step 3: Confirmation haptic on watch
+Wearable ARIA v0. Buildable this week with no new hardware.
+
+⭐ 🧠 Form factor tells you what ARIA really is
+"Wearable" isn't a feature idea — it's a product identity clarification. ARIA isn't desktop tool with wearable extensions. ARIA is ambient cognition layer that happens to have a desktop interface. Wearable IS the primary interface. Desktop is the processing layer.
+
+[Code addition: This flips the mental model 180°. The repo we're working in right now is the BACKEND of ARIA. The frontend hasn't been built yet, and when it is, it'll probably be voice + glasses + watch — not screens. The desktop interface is for power users (developers, writers, architects) who think AT desktops. Most people think while moving.]
+
+🧠 Glasses partnership = distribution strategy
+Don't sell ARIA directly. Partner with Ray-Ban Meta / Snap / whoever wins glasses form factor. ARIA becomes continuity layer in their platform. They get differentiating feature; you get distribution to millions. B2B for hardware companies, not enterprises.
+
+🔭 ARIA wearable architecture (Claude's summary)
+Ambient, always-on, never intrusive. Desktop is where ARIA thinks. Wearable is where ARIA listens and whispers back. Right architecture.
+
+⭐ 🧠 "We'll know when we make more of it" is exactly right
+Don't over-specify wearable direction now. Principle is sound — ambient capture, ambient display, frictionless input. Specific form factor becomes obvious as core builds out and friction reveals itself. Architectural ideas worth saving now: wearable as input/display layer, desktop as processing, open protocol so any hardware participates.
+
+[Code addition: This is good discipline. The temptation when an idea connects this cleanly is to start designing for it. Resist. Build the desktop layer until it actively hurts not having a wearable. THEN add the wearable. The pain tells you the right form factor. Premature wearable design = ceremony before substance.]
+
+═══════════════════════════════════════════════
+TOP CROSS-CUTTING INSIGHTS FROM THIS HARVEST
+═══════════════════════════════════════════════
+
+1. The bottleneck is context and coordination, not model capability
+2. Session START matters more than session END (auto-injection > handoff)
+3. Repo as DB is the architectural commitment; never replace it
+4. Three-command CLI (start / capture / clear) is the minimum viable shippable ARIA
+5. Wearable form factor clarifies what ARIA actually is (ambient cognition layer)
+6. Open protocol > proprietary system
+7. The user is the synthesis layer (already locked); ARIA reduces friction around them
+8. Comparison view automates trio reflection (LOCKED 37 becomes UI feature)
+9. Passive signal capture > self-reported texture
+10. "Hey ARIA" wake word + Uncrumple voice commands = consumer product moment
+
+⭐ promoted to shelf:
+- ARIA as a product is "build the layer between user and existing AI" (cleanest position)
+- ARIA as thin orchestration layer, not fat platform
+- Context injection script as highest-leverage first build
+- Session START as ARIA's first real product feature
+- The comparison view is ARIA's killer feature
+- The handoff system is the moat
+- The cheapest version of ARIA = folder + 3 API keys
+- Start with CLI, not app
+- The repo IS the database, don't replace
+- Browser extension for chat interface injection
+- Three build paths, three different products
+- Parallel API calls as first real ARIA feature
+- The smallest possible ARIA v1 worth sharing (3-command CLI)
+- The integration that matters most right now (per-AI starter block builder)
+- Build it so Uncrumple users could use it
+- Wearables are right hardware for ambient cognition
+- Watch as capture primitive, not display
+- Glasses as display layer ARIA is missing
+- "Hey ARIA" as product moment
+- Form factor tells you what ARIA really is
+- "We'll know when we make more of it" discipline
