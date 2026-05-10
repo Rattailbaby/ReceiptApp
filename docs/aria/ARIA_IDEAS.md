@@ -3883,6 +3883,43 @@ TOP CROSS-CUTTING INSIGHTS FROM THIS HARVEST
 9. Passive signal capture > self-reported texture
 10. "Hey ARIA" wake word + Uncrumple voice commands = consumer product moment
 
+[2026-05-10] — ⭐ Multi-pass harvesting (empirical pattern, refines Generative Harvest)
+
+User observation across multiple sessions:
+A single harvest pass under-extracts. Asking GPT/Claude/Code for ideas a SECOND time (and sometimes a third) reliably produces MORE ideas, often deeper ones than the first pass. Today's session demonstrated this multiple times — each subsequent ask produced fresh material rather than repetition.
+
+Why it works:
+- Pass 1 surfaces the obvious + most-recently-thought items
+- Pass 2 forces the AI past easy answers, reaches mid-depth ideas
+- Pass 3 surfaces what was almost-not-said — the bottom of the filter
+- Each pass triggers a different cognitive register
+
+Tier-specific application:
+- LEVEL 1 (normal clear): single pass sufficient. Multi-pass = overhead without proportional value.
+- LEVEL 2 (targeted refresh): single pass OK. Optional second pass if the refresh touches new ground.
+- LEVEL 3 (full clone regen): multi-pass is DEFAULT, not optional. Loaded AI is about to be replaced. Last chance. Single-pass misses too much.
+
+Suggested Level 3 multi-pass prompts:
+- Pass 1: "Give me ideas about [X]"
+- Pass 2: "What else? More ideas — especially ones that seemed too small, too obvious, or half-formed"  
+- Pass 3: "What did you almost not say? What's the texture of your thinking right now that isn't in the ideas list?"
+
+Stopping condition:
+Each pass should be shorter than the last. Stop when the AI starts repeating itself or visibly straining for new material. That's the floor of useful extraction.
+
+Connection to existing principles:
+- Refines Generative Harvest candidate
+- Implements "what did you almost not save?" meta-question as the final pass
+- Honors NO IDEA WASTED rule by extracting more before loss
+- Validates the user-as-synthesis-layer principle (more captured = more raw material for user synthesis later)
+- Specifically addresses the "GPT got slow, must clone" workflow that motivated the original handoff system
+
+GPT-slow trigger:
+The original ARIA handoff motivation was "GPT slowed down, must clone." That trigger is implicit in Clone Freshness Score question 6 ("did GPT/Claude feel behaviorally different by end") but should be explicit: visible slowdown (longer response times, repeating itself, losing thread) alone justifies Level 3 even without other substrate changes.
+
+⭐ flag candidate: Multi-pass harvesting may eventually move from Generative Harvest refinement to its own LOCKED rule once validated across more handoffs. For now, lives as refinement clause inside Generative Harvest candidate.
+
+
 ⭐ promoted to shelf:
 - ARIA as a product is "build the layer between user and existing AI" (cleanest position)
 - ARIA as thin orchestration layer, not fat platform

@@ -38,6 +38,14 @@ Use when clone substrate changed:
 - repo/handoff structure changed
 - assistant_behavior_clone is stale
 - fresh-chat fidelity is uncertain
+- **GPT or Claude is visibly slowing/degrading** (instance about to be replaced — this trigger alone justifies Level 3)
+
+**Level 3 multi-pass harvesting (default, not optional):**
+Single pass under-extracts. When the loaded AI is about to be replaced, ask 2-3 times:
+- Pass 1: "Give me ideas about [X]"
+- Pass 2: "What else? More ideas, especially ones that seemed too small or obvious"
+- Pass 3: "What did you almost not say?"
+Each pass shorter than the last. Stop when AI repeats itself or strains.
 
 ## Correct full handoff order
 

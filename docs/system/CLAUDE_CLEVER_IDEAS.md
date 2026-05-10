@@ -237,6 +237,9 @@ Wake word + voice commands = ARIA becomes consumer product. Tradesperson + Uncru
 ⭐ 🧠 Form factor tells you what ARIA really is (2026-05-09)
 Wearable isn't feature idea — it's product identity clarification. ARIA is ambient cognition layer that happens to have desktop interface. Desktop = backend. Voice + glasses + watch = frontend. Flips mental model 180°. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 Claude harvest #2 Section D.
 
+⭐ 🧠 Multi-pass harvesting for Level 3 handoff (2026-05-10)
+Single harvest pass under-extracts. Asking GPT/Claude/Code for ideas a SECOND or THIRD time reliably produces deeper material. For Level 3 (full clone regen) this is DEFAULT, not optional. Pass 1: ideas about X. Pass 2: what else — small/obvious/half-formed. Pass 3: what did you almost not say. Stop when AI repeats itself. Also: GPT visibly slowing alone justifies Level 3. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 multi-pass harvesting section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

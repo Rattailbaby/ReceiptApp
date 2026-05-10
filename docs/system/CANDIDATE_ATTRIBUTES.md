@@ -363,6 +363,28 @@ When ideas are generated with emoji/category tags, preserve every idea under an 
 User's notes app list:
 When shared, treat as highest-priority capture. It has already passed through the user's synthesis layer once. Save everything, categorize everything, flag strong items with ⭐. Goes to High-Signal Shelf, not raw compost. Do not summarize in a way that loses items. Do not wait to be asked to preserve it.
 
+Multi-pass harvesting refinement (added 2026-05-10):
+A single harvest pass under-extracts. The user observed this empirically across multiple sessions: asking GPT/Claude/Code for ideas a SECOND time (and sometimes a third) reliably produces more ideas, often deeper ones. The pattern works because:
+- First pass surfaces the obvious + most-recently-thought items
+- Second pass forces the AI past the easy answers
+- Third pass surfaces "what did you almost not say"
+
+For LEVEL 3 (FULL CLONE REGENERATION) specifically:
+Multi-pass harvesting is not optional — it should be the default. Level 3 means the loaded AI is about to be replaced. This is the last chance to extract knowledge before context dies. Single-pass misses too much.
+
+Suggested protocol for Level 3 harvest:
+- Pass 1: "Give me ideas about [X]"
+- Pass 2: "What else? More ideas, especially the ones that seemed too small or obvious"
+- Pass 3: "What did you almost not say? What's the texture of your thinking right now that isn't in the ideas list?"
+
+Each pass is shorter than the last. Stop when the AI starts repeating itself or visibly straining.
+
+For LEVEL 1 / LEVEL 2:
+Single pass is usually sufficient. Multi-pass becomes overhead without proportional value.
+
+GPT-slow as Level 3 trigger:
+The Clone Freshness Score question 6 ("Did current GPT/Claude feel behaviorally different by the end?") implicitly covers GPT slowdown. Make it explicit: when GPT is visibly slowing (longer response times, repeating itself, losing thread of conversation), that alone justifies Level 3 even if no other substrate changed. The instance is degrading; full regeneration captures everything before loss.
+
 
 [2026-05-09] — No Idea Gets Wasted / categorized idea preservation (dedicated candidate)
 
