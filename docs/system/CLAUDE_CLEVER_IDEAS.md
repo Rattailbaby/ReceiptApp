@@ -153,6 +153,36 @@ ARIA underneath is just an event log. Replay the log = reconstruct state. Never 
 ⭐ 🏗️ "ARIA is mostly already built" (2026-05-09)
 Current repo IS the architecture. Files as state. Git as event log. Markdown as protocol. Claude Code as runtime. 90% there. The "build" might be mostly packaging what exists into something distributable. Don't underestimate this shipping path. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
 
+⭐ 🏗️ ARIA Intake — the simplest first product (2026-05-09)
+User's own pick as most realistic immediate build. Paste messy ideas → raw preserved + categorized + ⭐ shelf + roadmap ideas + ARIA ideas + candidate rules + next actions + markdown files. Hours not weeks. Implements already-locked Idea Intake Mode protocol. Solves the notes app pain immediately. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA repo companion CLI — most immediately useful (2026-05-09)
+Reads CURRENT_HANDOFF.json + CANDIDATE_ATTRIBUTES.md + ARIA_IDEAS.md + SESSION_LOG.md. Outputs what changed / stale / needs capture / what to ask GPT/Claude/Code. User's own assessment: "probably the most immediately useful." Build path 5. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA browser extension — could be huge (2026-05-09)
+Captures across ChatGPT/Claude/GitHub/Reddit/docs. User's reaction: "this could become huge." Single product hits all major AI tool surfaces at once. Build path 4. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA handoff generator app — first sellable product (2026-05-09)
+Focused product: connect ChatGPT/Claude/GitHub → read repo files → ask harvest questions → generate handoff packet → update markdown/json. User's own assessment: "might be the first sellable ARIA product." Build path 14. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA context receipt system — Uncrumple isomorphism (2026-05-09)
+Every saved insight gets proof: idea / source / date / why it mattered / linked commit/chat/file. Maps perfectly to Uncrumple's receipt metaphor. Cross-product isomorphism made literal. Build path 11. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🧠 ARIA's sharpest framing: "frictionless re-entry into previous cognition" (2026-05-09)
+Not memory storage. Re-entry. The system's value is returning user smoothly to where they were thinking, not in storing what they thought. Cleaner positioning than current pitches. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🧠 Interruptions are not failures (2026-05-09)
+They are the normal operating environment. ARIA exists to preserve continuity across interruption. Single sentence might be cleanest ARIA elevator pitch yet. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🧠 Save points for cognition (2026-05-09)
+Game-design metaphor applied to thinking. Save anywhere. Resume anywhere. User shouldn't have to "find the right place to stop" — any stopping point is a valid save point. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA Lite phone app — build path 1 (2026-05-09)
+Capture / voice / auto-categorize / compost / ⭐ shelf / Resume Cards / markdown export. Proves the system without wearables or custom models. Realistic starting product. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
+⭐ 🏗️ ARIA notes-app importer — build path 15 (2026-05-09)
+Paste messy notes → preserve raw → categorize by emoji → ⭐ flag → route to files → generate top rereads. User's own pain point. Would immediately help. Connects to Idea Intake Mode protocol. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 massive idea dump section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

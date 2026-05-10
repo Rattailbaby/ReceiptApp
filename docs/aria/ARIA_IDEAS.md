@@ -3336,3 +3336,214 @@ Connection to existing entries:
 - This extends "ARIA as a protocol, not an app" from earlier productization brainstorm
 - Together with NO IDEA WASTED RULE, the protocol design principles section forms the spec outline
 - The MCP server angle connects to the user's instinct about "selling to AI companies"
+
+
+[2026-05-09] — Massive idea dump (cognition primitives + practical build paths)
+
+User dropped a large batch combining ARIA cognition concepts and concrete build paths. Saving everything per NO IDEA WASTED rule, with user's own emoji categorization preserved.
+
+PART 1 — COGNITIVE / CONCEPTUAL PRIMITIVES
+
+🧠 Interruptions as save points, not failures
+ARIA should treat interruptions like save points in a game. Most productivity systems assume continuous focus. Real people work in fragments. Interruptions are the normal operating environment, not the exception.
+
+🧠 Resume Cards instead of notifications
+A card says: "You stopped while solving X because Y was unresolved." One tap resumes the exact chain. Replaces the dead "you have X notifications" pattern with actionable continuity.
+
+📱 Watch complication: "What was I doing?"
+Tap surfaces:
+- last task
+- unresolved branch
+- last idea
+- next action
+Single screen, no navigation needed.
+
+🤖 Cognitive drift detection
+Example: user opens 7 unrelated things in 10 minutes. ARIA quietly asks: "Are you exploring or lost?" Distinguishes productive wandering from avoidance wandering — that distinction is huge.
+
+🔭 ARIA primitive: "Last meaningful state"
+Not just app state. Mental state. What was the user thinking about, not just what window was open.
+
+🧠 Continuity breadcrumbs
+Tiny one-line thought anchors automatically generated during long sessions. Example: "Main tension: clone regeneration too heavy." Auto-summarized at natural pauses, becomes navigation aid for returning to the session.
+
+📱 Contractor mode
+ARIA notices repeated interruptions on job sites and automatically switches to: ultra-fast capture / voice-first / deferred organization. Mode-switches based on environment without user telling it to. Direct Uncrumple-target-user fit.
+
+🤖 "Future-you messages" (not reminders)
+Messages written specifically for your future context. Example: "You thought this was important because…" Different from reminders — they capture the WHY, not just the WHAT.
+
+🧠 Idea evolution tree
+Old ideas visually branch into newer ideas they inspired. Notebooks don't show lineage. ARIA could. Connects directly to the connection-layer / CONNECTED_IDEAS.md concept from earlier.
+
+🔭 Track "ideas that keep returning"
+Recurring thoughts are usually signal. If the same idea bubbles up across 5 sessions, that's stronger evidence than one excited mention. Auto-elevate by repetition.
+
+📱 One-button panic capture
+Hold watch button: "Save everything I'm thinking right now." Voice dump → compost → categorized later. Pure capture, zero friction. The ultimate quick-capture interface.
+
+🤖 Cognitive temperature estimation
+ARIA estimates: focused / overloaded / exploratory / looping / exhausted. Then changes behavior accordingly. Connects to texture-of-session — same data, applied in the moment instead of post-hoc.
+
+🧠 "Context shadows"
+When switching tasks, ARIA stores a tiny shadow: what mattered / what felt unresolved / why you switched. Resume later by reading the shadow. Lower cost than full state preservation.
+
+📱 Wearable haptic continuity cue
+Tiny buzz hours later: "You never finished the thought about X." Returns the user's attention to a hanging thread without screen-checking. Ambient continuity.
+
+🔭 Productive vs avoidance wandering distinction
+ARIA should know the difference. Productive wandering = exploration that produces signal. Avoidance wandering = procrastination. Same surface behavior, opposite meaning. Detecting the difference is hard but valuable.
+
+🧠 Multi-AI disagreement visualizer
+Instead of hiding disagreement, ARIA maps:
+- GPT says X
+- Claude says Y  
+- Code says Z
+- unresolved tension = here
+Makes the trio reflection visible. Caught real over-eager promotes today — making the disagreement structure visible would catch more.
+
+🤖 "Why did this matter?" stored with ideas
+ARIA stores importance explanations with ideas. Future-you often forgets why something felt important. Capturing the WHY at moment of capture protects against later "why did I save this" confusion.
+
+📱 Ambient field notes
+Quick captures tied to: location / weather / time / active project / people nearby. Context envelope around each capture. Could become powerful later — recall by context not just content.
+
+🧠 Continuity debt meter
+Too many unresolved branches = mental friction. ARIA helps collapse or archive them safely. Different from coordination overhead — this is user-side, not system-side. The user's mental load needs metering too.
+
+🔭 "Safe abandonment"
+Not every unfinished thought needs completion. Some just need preservation. ARIA should support graceful abandonment: "this thread is done, but preserve it" without forcing closure. Reduces guilt of incomplete branches.
+
+🧠 Thinking modes
+build / explore / recover / harvest / organize / pressure-test / drift / exhausted-insight. ARIA behavior changes based on mode. Different from session texture — these are intentional modes the user can declare or that ARIA can detect.
+
+📱 Voice-to-compost while driving
+User already thinks heavily while moving/driving. Not edge-case behavior — primary cognition time. ARIA voice capture optimized for that environment is essential, not optional.
+
+🤖 "Thought gravity"
+Ideas with repeated emotional pull slowly rise toward the ⭐ shelf automatically. Promotion by pattern, not by single-moment decision. Connects to "ideas that keep returning."
+
+⭐ 🧠 ARIA's sharpest framing: "frictionless re-entry into previous cognition"
+Not memory storage. Re-entry. The system's value is in returning the user smoothly to where they were thinking, not in storing what they thought.
+
+⭐ 🧠 Interruptions are not failures
+They are the normal operating environment. ARIA exists to preserve continuity across interruption. That single sentence might be the cleanest ARIA elevator pitch yet.
+
+⭐ 🧠 Save points for cognition
+Game-design metaphor applied to thinking. Save anywhere. Resume anywhere. The user shouldn't have to "find the right place to stop" — any stopping point is a valid save point.
+
+🔭 ARIA's deeper value claim:
+The system may become most valuable not when helping people think harder, but when helping them reliably return to thoughts that would normally evaporate.
+
+
+PART 2 — PRACTICAL BUILD PATHS (15 concrete options + build order + simplest first product)
+
+⭐ 🏗️ ARIA Lite phone app (Build path 1)
+Start here. Capture button / voice note / auto-categorize / idea compost / ⭐ shelf / Resume Cards / export to markdown. Proves the system without needing wearables or custom models.
+
+🏗️ ARIA as launcher overlay (Build path 2)
+Not full phone OS. Home screen layer with categories: ACTIVE / SUSPENDED / WAITING / IDEAS / RESUME. Apps become tools under the current thought stack.
+
+🏗️ ARIA desktop tray app (Build path 3)
+Small Windows app in system tray. Global hotkey capture / current task card / copy latest handoff / resume last branch / send to GPT/Claude/Code. Might be easier than mobile-first.
+
+⭐ 🏗️ ARIA browser extension (Build path 4)
+Works across ChatGPT, Claude, GitHub, Reddit, docs. Captures: current page / selected text / user note / which project it belongs to / why it mattered. "This could become huge." Hits all the AI tool surfaces at once.
+
+⭐ 🏗️ ARIA repo companion CLI (Build path 5)
+For current workflow. Reads CURRENT_HANDOFF.json / CANDIDATE_ATTRIBUTES.md / ARIA_IDEAS.md / SESSION_LOG.md. Outputs: what changed / what's stale / what needs capture / what to ask GPT/Claude/Code. "Probably the most immediately useful."
+
+🏗️ ARIA watch shortcut (Build path 6)
+Wearable stays dumb. Button only does: record voice / tag as idea/task/reminder / send to phone. Phone does the sorting. Watch is sensor + nudge layer, not synthesis layer (consistent with earlier wearable analysis).
+
+🏗️ ARIA "resume me" widget (Build path 7)
+Android widget: Resume last task / Capture idea / Show active branch / Show next action. Very buildable — small surface area, immediate value.
+
+🏗️ ARIA voice inbox (Build path 8)
+Voice-first capture queue. Every note becomes: raw transcript / category / project / importance / possible next action. No fancy UI needed.
+
+⭐ 🏗️ ARIA MCP server (Build path 9)
+Local MCP server giving GPT/Claude tools like:
+- read_current_handoff
+- append_aria_idea
+- append_candidate
+- search_idea_compost
+- create_clone_delta
+Makes the repo workflow much smoother. Connects to "fastest path with current AI infra" from earlier build-architecture entry.
+
+🏗️ ARIA as Obsidian-style vault (Build path 10)
+Markdown-first. Folders: ideas/ tasks/ handoffs/ decisions/ compost/ high-signal/ projects/. App is just nicer interface over the vault. Connects to existing "ARIA as Obsidian plugin" entry.
+
+⭐ 🏗️ ARIA "context receipt" system (Build path 11)
+Every saved insight gets proof: idea / source / date / why it mattered / linked commit/chat/file. Maps perfectly to Uncrumple's receipt metaphor. Direct cross-product isomorphism — the receipt IS the proof, in both products.
+
+🏗️ ARIA local-first SQLite database (Build path 12)
+SQLite tables: captures / ideas / branches / tasks / handoffs / evidence / tags / sessions. Sync later. Files-as-source-of-truth + DB index pattern from earlier build-architecture entry.
+
+🏗️ ARIA model-router (Build path 13)
+Don't make your own LLM. Make a router:
+- cheap local model = classify
+- GPT = synthesize
+- Claude = pressure-test
+- Code = execute
+Models are swappable. Connects to Model 2 (multi-agent specialization) but using existing models, not custom-trained.
+
+⭐ 🏗️ ARIA handoff generator app (Build path 14)
+Focused product: Connect ChatGPT/Claude/GitHub / Read repo files / Ask harvest questions / Generate handoff packet / Update markdown/json. "Might be the first sellable ARIA product." Solves a real pain users hit immediately.
+
+⭐ 🏗️ ARIA notes-app importer (Build path 15)
+For the current notes list user mentioned. Paste messy notes / preserve raw / categorize by emoji / flag ⭐ / route to files / generate top rereads. "Would immediately help you." Connects to Idea Intake Mode protocol from earlier this session.
+
+USER'S BEST BUILD ORDER (preserved verbatim):
+1. Notes-app importer
+2. Repo companion CLI
+3. Resume cards
+4. Voice capture inbox
+5. Android widget
+6. Browser extension
+7. MCP server
+8. Watch shortcut
+
+⭐ SIMPLEST FIRST PRODUCT — "ARIA Intake"
+
+User's own pick as the simplest, most realistic first product.
+
+User pastes messy ideas. System outputs:
+- Raw preserved list
+- Categorized list
+- ⭐ high-signal list
+- Roadmap ideas
+- ARIA ideas
+- Candidate rules
+- Next actions
+- Markdown files
+
+"That is very realistic and directly useful tomorrow."
+
+This is the strongest immediate-build candidate from the entire batch. It:
+- Uses existing files as state (matches "ARIA is mostly already built")
+- Implements the Idea Intake Mode protocol locked earlier today
+- Solves a real user pain (notes app list waiting to be imported)
+- Doesn't require new infrastructure
+- Could be a CLI, a script, a webpage, or just a structured prompt template
+- Would likely take hours, not weeks
+
+Connection to existing entries:
+- ARIA Intake = the practical implementation of the Idea Intake Mode protocol
+- Repo companion CLI = the practical implementation of the file-truth-as-state pattern
+- MCP server = the practical implementation of "ARIA as a protocol, not an app"
+- Context receipt system = the cross-product isomorphism (Uncrumple → ARIA)
+- Browser extension = the AI-agnostic capture pattern from earlier productization brainstorm
+
+⭐ flags from this batch (worth shelf-promoting):
+- "Frictionless re-entry into previous cognition" framing
+- Interruptions are not failures
+- Save points for cognition
+- ARIA Lite phone app (build path 1)
+- ARIA browser extension (build path 4 — "could be huge")
+- ARIA repo companion CLI (build path 5 — "most immediately useful")
+- ARIA MCP server (build path 9 — fastest current-infra integration)
+- ARIA context receipt system (build path 11 — Uncrumple isomorphism)
+- ARIA handoff generator app (build path 14 — "first sellable product")
+- ARIA notes-app importer (build path 15 — solves current pain)
+- ARIA Intake (simplest first product — build tomorrow)
