@@ -3184,3 +3184,155 @@ Most AI products optimize the model. ARIA optimizes the surrounding system. That
 - "AI forgot what we were working on" wedge
 - The user's notes app IS proto-ARIA
 - The killer demo (continuity reconstruction across machines)
+
+
+[2026-05-09] — How ARIA actually gets built: architecture models + extended approaches
+
+User asked specifically about HOW to build ARIA in different ways — not productization, not features, but actual build architecture. Saving the three-model framework explicitly + 15+ extended approaches.
+
+THE THREE PRIMARY MODELS:
+
+Model 1 — Single unified LLM
+Take the GPT/Claude/Code roles, merge into one custom-trained model, train on the LOCKED rules + idea routing + capture protocols. One agent does capture, synthesis, execution, validation.
+
+Pros: simpler. No orchestration overhead. Lower coordination tax (the thing held candidate #14 worries about). Single API, single billing, single deployment.
+
+Cons: loses the asymmetric pressure-test that caught real over-eager promotes today. Single point of cognitive bias. The trio works because each role has a different vantage — collapsing them might collapse what makes ARIA work. Also: training a custom model is expensive and ages fast as base models improve.
+
+When this works: small, focused use cases where bias risk is low and orchestration overhead would dominate.
+
+Model 2 — Multi-agent with role specialization
+Same trio shape but with custom-trained smaller models instead of GPT/Claude/Code. Each role fine-tuned on its differentiated job (capture / synthesize / pressure-test / execute).
+
+Pros: keeps trio reflection. Can run cheaper smaller models per role. Familiar architecture — just productize what already works. Each model can be replaced independently as base models improve.
+
+Cons: still needs orchestration. More moving parts. Hardware dependency multiplies. Inter-model latency adds up. Custom training across multiple models is multiplied cost.
+
+When this works: when role-specific tuning produces meaningfully better outputs than general-purpose models would, and orchestration overhead is acceptable.
+
+⭐ Model 3 — Protocol-first ARIA (the strongest pick)
+ARIA isn't an AI. ARIA is the continuity infrastructure that AIs plug into.
+
+The product isn't the trio — the product is the principles. Look at what's actually generalizable from this repo:
+- CONTINUITY_STATE — current state object
+- IDEA_COMPOST — append-only preservation
+- HIGH_SIGNAL_SHELF — promoted-but-not-built
+- SESSION_LOG — confirmed work
+- CEREMONY_PROTOCOL — clear/handoff/regen tier model
+- SIGNAL_CAPTURE — experience stream (texture, friction-as-signal)
+
+Those are data structures + protocols. Model-agnostic. Device-agnostic. Storage-agnostic.
+
+Build that as the spec. Then any LLM (GPT-5, Claude-9, local llama, whatever's hot in 2027) can be a client. AIs become swappable. Principles survive model changes.
+
+Pros: zero model risk. Survives every base-model upgrade. Defensible (protocols outlast apps). Lower operational cost (you're not running inference). Open-source friendly.
+
+Cons: longer time to user value (need clients to implement). Harder to monetize directly. Requires standards-body discipline.
+
+When this works: long-term thinking, when you believe the model layer commoditizes and value moves to connective tissue.
+
+WEARABLE / SUBSTRATE ANALYSIS:
+
+The device is the wrong question first. But ranked by realism today:
+
+Phone (best near-term)
+Already has: always-on, notes app, voice-to-text, cameras, runs LLMs, social acceptance, app distribution channels. Capture friction is already minimum. ARIA on phone = an app that listens to the principles, routes to compost/shelf/candidates, prompts texture-of-session at natural pauses.
+
+Glasses (interesting, hard)
+Good for contextual capture ("what was I looking at when I had this thought"). Bad: heavy, expensive, social-acceptance issues, privacy tradeoffs, battery. Works as ARIA-extender — phone does synthesis, glasses do contextual signal injection.
+
+Watch (best for triggers, worst for synthesis)
+Good for ambient pings ("texture check?"), idea jot-downs, friction-marking. Bad for harvest or deep reasoning. Watch is a sensor + nudge layer, not a synthesis layer.
+
+The honest path: build ARIA-as-protocol first, then implement on phone, then extend to wearables when the protocol is stable. Start where capture friction is already lowest. Add devices to extend the signal stream, not to bootstrap it.
+
+
+EXTENDED BUILD APPROACHES (additional to the three primary models):
+
+🏗️ Hybrid trio + unified spine
+Keep GPT/Claude/Code as user-facing roles, but route their outputs through a unified ARIA "spine" service that handles synthesis, deduplication, routing. Best of trio (asymmetric review) + best of unified (single state). Spine is the actual ARIA product; the LLMs are interchangeable.
+
+⭐ 🏗️ Local-first ARIA
+Runs entirely on user's device. No cloud. Privacy by architecture. Smaller LLMs locally handle capture and routing; cloud LLMs called only when explicitly needed for heavy synthesis. Solves "I don't want my private thoughts in someone else's data center" problem. Aligns with where local LLMs are heading anyway.
+
+⭐ 🏗️ ARIA as a kernel
+Like an OS kernel for cognition. Tiny core (state + protocol + event log). Everything else is plugin. Apps register as capture sources, synthesis engines, output channels. Solves over-engineering risk by enforcing minimalism at the core.
+
+🏗️ Federated ARIA
+Your continuity state lives on your device. AI services authorized by you can query it. Read access is the asset. AI companies could pay (directly or via better service) for that read access. Inverts the data economy — you own the state, AIs rent.
+
+⭐ 🏗️ ARIA as MCP server / sub-agent
+Implements Anthropic's Model Context Protocol (or similar). Any LLM that supports MCP can use ARIA as memory layer without code changes. This is the lowest-friction integration path with current AI infrastructure. Probably the FASTEST path to working product.
+
+🏗️ ARIA as middleware between AI tools and user
+Sits between user and ChatGPT/Claude/Cursor/etc. Intercepts conversations. Extracts signal. Routes to compost. Invisible to the AI but persistent for user. Browser extension or proxy server. Works with everything immediately, no API integration needed.
+
+🏗️ ARIA as IDE plugin (VS Code, Cursor, JetBrains)
+Most heavy AI users already work in these. Capture happens during coding sessions automatically. Reuses the file-as-state model that's already working today (this repo IS this approach). Lowest activation energy for the technical early-adopter market.
+
+⭐ 🏗️ ARIA as Obsidian plugin
+Targets the synthesis-layer-already-active user base. People who already maintain markdown vaults are the proven early customers. Adds the protocol on top of an existing trusted file system. Faster validation than building a new app.
+
+🏗️ Voice-only ARIA
+Mobile app where entire interaction is voice. Capture by talking. Harvest by talking. No screen UI required for power users. Removes the "had to stop and type" friction. Speech-to-text + small local LLM for routing. Good for runners, drivers, walkers, sleepers.
+
+🏗️ Email-based ARIA
+For users who don't want apps. ARIA works via email — send "capture: this thought" to your ARIA address, get weekly digest emails of compost. Lowest possible friction. Works in literally any environment with email.
+
+⭐ 🏗️ Append-only event log architecture
+ARIA underneath is just an event log. Every capture, every harvest, every promotion is an event. Replay the log = reconstruct state. Never delete. Git for cognition. Provides audit trail, time travel, and natural conflict resolution. Computer science fundamentals applied to memory.
+
+🏗️ Distributed ARIA across devices
+Watch holds last 24 hours. Phone holds last month. Cloud or laptop holds everything. Each tier optimizes for its hardware constraints. Sync happens opportunistically. Matches how human memory actually layers (working / short-term / long-term).
+
+🏗️ ARIA as visual subway map
+UI where ideas are stops on lines, lines are themes, connections are transfers. More spatial than list-based. Matches user's stated synthesis pattern: linking ideas, not just ranking. Visual layer over the underlying graph.
+
+🏗️ Hybrid file + DB
+Current repo is files (great for git, transparency, AI-readable). Add a query layer on top (SQLite views over the files) for fast queries without losing file-truth. Files remain the source of truth; DB is just an index.
+
+🏗️ Browser-based ARIA
+Entire system runs in a web app. State syncs to user's chosen storage (iCloud, Dropbox, Google Drive, custom). Zero install. Works on any device with a browser. Trade-off: harder to integrate with desktop apps and IDEs.
+
+🏗️ Quantum bookmarking
+Mark a moment in any conversation as "I might want to come back to this" without committing to full capture. Half-step before full preservation. Reduces capture friction even further than current low. Browser extension that lets you click any AI message and tag it as "maybe."
+
+🏗️ Read-only ARIA for collaborators
+Eventually share parts of your compost with collaborators (read-only). Idea collaborator feature. Privacy-respecting since you choose what's shared. Could grow into team-ARIA where shared-ish ideas have a separate compost from personal ones.
+
+🏗️ Personal LLM + ARIA = personalization layer
+As models get small enough to run locally personalized, ARIA becomes the "personalization layer" that turns a generic LLM into your specific assistant. The model learns from your compost over time. Different from training — more like long-context loading from your verified state.
+
+⭐ 🏗️ "ARIA is mostly already built"
+The current repo IS Code's actual architecture. Files as primary state. Git as event log. Markdown as protocol. Claude Code as the AI runtime. We're already 90% of the way there. The "build" might be mostly packaging what exists into something distributable. Don't underestimate this — it's a reasonable shipping path.
+
+PROTOCOL DESIGN PRINCIPLES (extracted from this session):
+
+If we go with Model 3 (protocol-first), the spec needs:
+
+1. State object format (JSON or YAML — JSON is more universal, YAML more readable)
+2. Compost / shelf / candidates / locked / roadmap file conventions
+3. Ceremony protocol (clear vs handoff vs full regen tiers)
+4. Capture event schema (timestamp, source, signal type, content, category)
+5. Routing rules (emoji-based)
+6. Promotion ceremony (what makes a candidate become locked)
+7. Cross-AI handoff format (the "continuity port")
+8. Texture-of-session schema (signal stream)
+9. ⭐ flagging convention
+10. NO IDEA WASTED enforcement (protocol-level guarantee that capture is preserved)
+
+That's the actual deliverable for Model 3. Maybe 50-100 pages of spec, like RFC documents. A reference implementation in one language (probably TypeScript or Python). Then evangelism.
+
+⭐ flags from this build-architecture batch (shelf-worthy):
+- Model 3 — Protocol-first ARIA
+- Local-first ARIA (privacy by architecture)
+- ARIA as a kernel (minimalism at core)
+- ARIA as MCP server / sub-agent (fastest path to working integration)
+- ARIA as Obsidian plugin (proven user base)
+- Append-only event log architecture (computer science fundamentals)
+- "ARIA is mostly already built" (shipping path realism)
+
+Connection to existing entries:
+- This extends "ARIA as a protocol, not an app" from earlier productization brainstorm
+- Together with NO IDEA WASTED RULE, the protocol design principles section forms the spec outline
+- The MCP server angle connects to the user's instinct about "selling to AI companies"

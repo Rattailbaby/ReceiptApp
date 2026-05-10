@@ -132,6 +132,27 @@ User has been running their own ambient capture system manually for years. ARIA 
 ⭐ 💰 The killer demo (2026-05-09)
 Two laptops. Drop session on one (full context loss). Reconstruct on the other. Different model, same state. Visceral. That's the pitch. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 productization brainstorm.
 
+⭐ 🏗️ Three primary build models — unified LLM / multi-agent / protocol-first (2026-05-09)
+Three honest paths: (1) merge trio into custom unified model, (2) keep trio shape with custom specialized models, (3) protocol-first ARIA where AIs are clients of the spec. Model 3 is strongest pick — defensible, model-agnostic, survives every base-model upgrade. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ Local-first ARIA (2026-05-09)
+Runs entirely on user device. No cloud. Privacy by architecture not policy. Smaller LLMs locally for capture/routing; cloud only when explicitly needed. Aligns with where local LLMs are heading. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ ARIA as a kernel — tiny core, plugin everything (2026-05-09)
+Like an OS kernel for cognition. Tiny core (state + protocol + event log). Apps register as capture sources, synthesis engines, output channels. Enforces minimalism at the core, prevents over-engineering. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ ARIA as MCP server / sub-agent (2026-05-09)
+Implements Model Context Protocol. Any LLM that supports MCP can use ARIA as memory layer with no code changes. Probably FASTEST path to working product with current AI infrastructure. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ ARIA as Obsidian plugin (2026-05-09)
+Targets the synthesis-layer-already-active user base. People already maintaining markdown vaults are proven early customers. Lower acquisition cost than building a new app. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ Append-only event log architecture (2026-05-09)
+ARIA underneath is just an event log. Replay the log = reconstruct state. Never delete. Git for cognition. Audit trail, time travel, conflict resolution all come for free. Computer science fundamentals applied to memory. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
+⭐ 🏗️ "ARIA is mostly already built" (2026-05-09)
+Current repo IS the architecture. Files as state. Git as event log. Markdown as protocol. Claude Code as runtime. 90% there. The "build" might be mostly packaging what exists into something distributable. Don't underestimate this shipping path. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-09 build architecture section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 
