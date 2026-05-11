@@ -128,7 +128,7 @@ Run through this before `/clear`:
 These exist as designs in `docs/aria/ARIA_IDEAS.md` and candidates in `CANDIDATE_ATTRIBUTES.md` but aren't built:
 
 - `docs/user/HOW_TO_USE_ARIA.md` — command reference organized by intent
-- `docs/user/WHAT_EXISTS.md` — capability index with status badges [BUILT][USABLE][CANDIDATE][DESIGNED][FUTURE][DEFERRED]
+- `docs/user/EXAMPLES.md` — real worked examples (GPT's addition)
 - `docs/trio_rounds/_TEMPLATE/` — Blind Trio Round folder template
 - `aria` CLI commands (`aria start` / `aria capture` / `aria handoff` / `aria status` / `aria notepad` / `aria ideate`)
 - Browser extension for context injection
