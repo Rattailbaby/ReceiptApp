@@ -4604,3 +4604,105 @@ The "frictionless re-entry" pitch needs a companion: "frictionless productive si
 [Code addition: This idea is itself a perfect example of pre-clear-only content. User couldn't have generated this question after /clear — it depends on the full arc of what happened across this session being loaded in their mind AND in mine. Save it now. The synthesis I just provided wouldn't be reproducible from repo files alone after clear. Exhibit B for the Mid-Session Orientation Snapshot primitive in the preceding entry.]
 
 ⭐ flag: this might be the deepest single insight of the session about how ARIA should treat user behavior. Worth shelf-promoting.
+
+
+[2026-05-11] — ⭐ Follow the spark. Hold the thread. Save the door. Capture after the wave. Return when ready.
+
+The full system for handling inspiration detours without killing them or losing the original task.
+
+Five-phrase principle (the guiding phrase):
+- Follow the spark: permission to detour completely without guilt
+- Hold the thread: preserve the base task and return point always
+- Save the door: record the question or friction that opened the detour
+- Capture after the wave: never document mid-flow
+- Return when ready: no forced timeline, no guilt about the pause
+
+The door vs path distinction:
+Default behavior: track the DOOR, not the full path.
+The door is the question or friction that started everything.
+The path is too heavy to document mid-flow without killing the flow.
+
+For major breakthroughs only: add a short Discovery Trail AFTER the wave, never during. Discovery Trail fields:
+- Trigger question or friction
+- Major outputs produced
+- Files changed
+- Reusable pattern discovered
+- Return point
+
+Door List — the most useful long-term artifact:
+A running list of questions that opened big things. Not the paths. Just the doors. When you want to generate, read the door list and see which one pulls you.
+
+Examples of doors from this session:
+- "How do we make the handoff better?"
+- "Why should fresh GPT generate the clone?"
+- "How do we save all ideas without making rules out of everything?"
+- "What tools are we underusing?"
+- "What if ARIA lived on a wearable?"
+- "What if everything is a tool including discomfort?"
+- "Is this annoyance actually hidden coordination burden?"
+- "Should we track the path or go with the flow?"
+
+Why the door matters more than the path:
+A detailed process map can interrupt the very flow it tries to preserve. A list of doors gives future sessions a way to re-enter generative thinking without over-systematizing inspiration.
+
+The PERMISSION matters more than the PATH.
+
+Detour Legitimacy Test — any ONE of these qualifies:
+- Produced reusable infrastructure
+- Produced product insight
+- Reduced future continuity tax
+- Shifted perspective (even if no files changed)
+
+Today's detour through this lens:
+Door: "How do we make the handoff better?"
+Produced: tiered clone regeneration, HANDOFF_CHEATSHEET, Pre-Clear Synthesis Window, Idea Compost, role split, 40-item tooling list, wearable direction, door/path distinction
+Return point: inspect flagged transaction flow in explore.tsx + client-detail.tsx
+Verdict: clearly worth it.
+
+Conditions that opened today's breakthrough (reproducible):
+- Deep real work on a real problem
+- Genuine frustration or confusion
+- A question bigger than the immediate task
+- Permission to follow it
+- Context-loaded AIs
+- Return point preserved
+
+Self-recognition principle (long-term value):
+After enough Discovery Trails, you start recognizing your own breakthrough pattern WHILE it's happening. Not to replicate it mechanically — but to know "this is a real one, don't interrupt it." That self-recognition is more valuable than any individual trail.
+
+Uncrumple principle:
+Uncrumple is the proving ground that reveals ARIA primitives.
+Building Uncrumple is NOT separate from building ARIA.
+Every app-building frustration can become an ARIA feature if captured.
+The detour from Uncrumple to ARIA was not a failure of focus.
+It was the system working correctly.
+
+ARIA should eventually distinguish between:
+- "nothing happened" (session produced no captures)
+- "app work paused but produced nothing" (sidetrack without harvest)
+- "everything shifted" (detour was the harvest)
+
+The third state is invisible to most productivity systems. ARIA should make it visible.
+
+[Code addition: Three-way convergence — Code's earlier "tier the answer" synthesis + Claude's "permission, not path" angle + GPT's "Discovery Trail" framing all collapsed into the same five-phrase principle. Strong signal per LOCKED 37. The convergence itself is the validation. The five phrases are short enough to remember, specific enough to act on, and structurally honest about the tension (capture vs flow). This might be the cleanest single-paragraph ARIA principle of the entire session.]
+
+═══════════════════════════════════════════════
+DOOR LIST (running, append-only)
+═══════════════════════════════════════════════
+
+Each door = a question or friction that opened meaningful work.
+Add doors as they appear across sessions. Don't document paths.
+
+Doors from 2026-05-09 to 2026-05-11:
+- How do we make the handoff better?
+- Why should fresh GPT generate the clone? (caught experienced-vs-fresh distinction)
+- How do we save all ideas without making rules out of everything?
+- What tools are we underusing? (became tool sweep shorthand)
+- What if ARIA lived on a wearable? (flipped form-factor mental model)
+- What if everything is a tool including discomfort?
+- Is this annoyance actually hidden coordination burden?
+- Should we track the path or go with the flow? (this entry)
+- How do we know it's a clone that should behave specifically? (foundational protocol question)
+- Anything you left out about how you grew this session? (multi-pass Pass 3 question)
+
+[Code addition: notice these doors are mostly USER's questions, not AI's. The doors are user-generated friction points. This is consistent with "AIs capture, user synthesizes" — the user is the synthesis layer; the doors come from the user's intuition that something is off. ARIA's job is to honor those doors when they appear, not generate them.]

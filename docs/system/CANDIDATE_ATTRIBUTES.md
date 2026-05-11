@@ -501,6 +501,51 @@ If the pattern catches real signals without feeling invasive, promote.
 
 Do not promote to LOCKED yet. Validate across multiple sessions first.
 
+[2026-05-11] — Follow the spark / Track doors not paths / Discovery Trail
+
+Proposed behavior rule:
+When inspiration causes a major detour, let it run completely. Do not redirect back to base task mid-flow. Preserve the return point silently. After the wave, save the door and the harvest.
+
+Default behavior:
+Save the DOOR — the question or friction that opened the detour.
+Do not try to document the full path mid-flow.
+
+For major breakthroughs only:
+Add a short Discovery Trail at handoff, not mid-session.
+Fields: trigger / outputs / files changed / reusable pattern / return point.
+
+Guiding phrase:
+Follow the spark.
+Hold the thread.
+Save the door.
+Capture after the wave.
+Return when ready.
+
+Detour Legitimacy Test — any one qualifies:
+- Reusable infrastructure produced
+- Product insight produced
+- Future continuity tax reduced
+- Perspective shifted (even with no file changes)
+
+Rules:
+- Never interrupt active flow to document inspiration mid-wave
+- Always preserve base task return point before detour deepens
+- Capture after the wave at handoff, not during
+- Do not turn every sidequest into a formal Discovery Trail
+- Use Discovery Trail only for major productive detours
+- The DOOR LIST is the primary artifact, not the full trail
+
+Door List lives in ARIA_IDEAS.md as running append-only section.
+Add doors after major breakthrough sessions.
+
+Connection to existing rules:
+- Refines but does not replace SIDEQUEST RULE (LOCKED 13b) — sidequest is brief intentional detour; this is for major inspiration waves
+- Compatible with CONTINUITY REASSURANCE RULE (LOCKED 13c) — base task is held silently throughout
+- Honors NO IDEA WASTED RULE — captures harvest, doesn't filter
+- Implements user-side of "AIs capture, user synthesizes" — user's doors get preserved
+
+Candidate only. Test across multiple inspiration detours before promoting to LOCKED.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
