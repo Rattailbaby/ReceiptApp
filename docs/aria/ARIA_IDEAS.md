@@ -5602,3 +5602,124 @@ This is a candidate refinement to LOCKED 37. Strong because:
 - Forces each AI to articulate its position before deferring — prevents the "use theirs" pattern that bypasses real synthesis.
 
 Save as candidate-attribute refinement to LOCKED 37. Validate across handoffs before promotion to update the locked rule.
+
+
+[2026-05-11] — ⭐ Deferred Build Protection (extends Loaded Witness Rule)
+
+User raised a specific failure scenario that the existing safeguards partially-but-not-fully cover:
+
+"I tried to make the trio idea helper. The LLMs convinced me to 'build it tomorrow.' All the LLMs cleared. Then in the next session the LLMs gaslit me or took the idea in a different direction."
+
+This is the gap. Existing safeguards (Loaded Witness, DO_NOT_REVISIT, Fragile Intent List, USER_DASHBOARD) help but don't fully protect the SPEC of a deferred build from drift. Fresh AIs are agreeable + simplifiers — they can reinterpret deferred designs without realizing they're drifting.
+
+Four protections to add:
+
+═══════════════════════════════════════════════
+1. DEFERRED BUILD MANIFEST
+═══════════════════════════════════════════════
+
+File: docs/system/DEFERRED_BUILDS.md (create when first deferred build needs protection)
+
+Per deferred build:
+- Build name + status
+- What gets built (exact spec, copy-paste ready)
+- What was REJECTED in design (with reasons — protects against fresh AI proposing rejected paths as novel)
+- User's specific intent in their own words
+- Verification step required before building
+- Decision audit (arguments considered, almost-won arguments, reasoning chain, "unless" clause)
+
+This is the build-spec analog of the Witness Statement. Protects the build itself, not just surrounding context.
+
+═══════════════════════════════════════════════
+2. VERIFY-BEFORE-BUILD FIRST-ACTION PROTOCOL
+═══════════════════════════════════════════════
+
+When deferred work is queued, fresh AI's mandatory first action:
+
+"I see this build was deferred from [date]. Per Verify-Before-Build:
+- My understanding of the spec: [restate in own words]
+- Confirm this is what you meant before I start
+- If anything seems different than what you remember, that's a witness moment — tell me what was decided differently"
+
+Effect:
+- "Agreeable fresh AI" pattern becomes impossible
+- AI surfaces its interpretation FIRST, then waits for confirmation
+- User catches drift BEFORE it happens, not after a build is wrong
+
+═══════════════════════════════════════════════
+3. "WHAT CHANGED?" CHALLENGE
+═══════════════════════════════════════════════
+
+Before any deferred work begins, fresh AI asks:
+
+"What changed since [decision date] that would justify revisiting this design? If nothing, I build exactly as saved. If something, surface it now."
+
+Two outcomes:
+- Nothing changed → build EXACTLY as specified, zero drift
+- Something changed → user explicitly states what changed → goes into Decision Log with new context → fresh AI uses NEW spec, not its own reinterpretation
+
+Forces explicit acknowledgment of any deviation from saved spec. Eliminates the silent-drift pattern.
+
+═══════════════════════════════════════════════
+4. DECISION ARCHAEOLOGY (embedded in Deferred Build Manifest)
+═══════════════════════════════════════════════
+
+Every deferred build entry preserves:
+- Arguments considered and rejected (with why)
+- Arguments that almost won but didn't (the close calls)
+- The reasoning chain that produced the decision
+- The "unless" clause — what would justify revisiting
+
+Effect:
+Fresh AI proposing a "better approach" must engage with rejected arguments, not propose them fresh as novel insights. Forces real reasoning instead of fresh-take pattern.
+
+═══════════════════════════════════════════════
+APPLIED TO TONIGHT'S DEFERRED BUILDS
+═══════════════════════════════════════════════
+
+Examples that should get manifest entries when DEFERRED_BUILDS.md is created next session:
+
+Build: docs/trio_rounds/_TEMPLATE/ (Blind Trio Round folders)
+What gets built: 10-file numbered structure 00_QUESTION through 09_IDEAS_TO_SAVE, plus _TEMPLATE/ for the aria ideate CLI to copy from
+Rejected: single-file version (Code Phase 1) — too compressed, loses ordered-reading flow
+Rejected: docs/trio-ideation/ folder name — chose trio_rounds to match command language
+User intent: ideas from 3 AIs, blind first, then cross-read, with controlled divergence
+Decision archaeology: three-way convergence Code/GPT/Claude. Code yielded on numbering to GPT after Phase 2 review. Numbered prefixes won because reading order top-to-bottom walks the protocol.
+Unless clause: don't build until user explicitly invokes `blind round` for first real test
+
+Build: docs/user/HOW_TO_USE_ARIA.md + docs/user/WHAT_EXISTS.md
+What gets built: HOW_TO_USE_ARIA (organized by intent), WHAT_EXISTS (capability index with [BUILT][USABLE][CANDIDATE][DESIGNED][FUTURE][DEFERRED] status badges + per-entry 9-field format)
+Rejected: building all three docs/user files tonight — context-dependent USER_DASHBOARD built, reference files deferred
+Rejected: building in docs/system/ — separation of concerns: docs/system = AI governance, docs/user = human-facing
+User intent: legible system map so user can see what was built and how to use it
+Decision archaeology: GPT and Claude initially recommended save-only; user pushed back with "context heavy now" argument; Code revised yield decision; trio converged on "build USER_DASHBOARD only, defer reference docs"
+Unless clause: if next session user asks "what did we build" and the answer takes >2 minutes to assemble, that's the trigger to build WHAT_EXISTS.md
+
+═══════════════════════════════════════════════
+COMBINED PROTECTION LAYER STACK
+═══════════════════════════════════════════════
+
+Tonight's session produced six layers of protection against drift:
+
+1. **File-level state** — CURRENT_HANDOFF.json next_step (existing — protects work direction)
+2. **Decision-level** — DO_NOT_REVISIT flags in DECISIONS.md (protects rejected decisions)
+3. **Intent-level** — Fragile Intent List (protects easily-distorted meanings)
+4. **Build-spec level** — Deferred Build Manifest (this — protects deferred build specs)
+5. **Session boundary** — Loaded Witness Rule with staggered clears (protects across sessions)
+6. **User-facing** — USER_DASHBOARD.md (protects user's own running context)
+
+Each layer addresses a different failure mode. Together they make drift architecturally hard, not just discouraged.
+
+═══════════════════════════════════════════════
+WHY THIS PARTICULARLY MATTERS FOR THE USER'S SCENARIO
+═══════════════════════════════════════════════
+
+For Blind Trio Round specifically:
+- WITHOUT protections: fresh Code reads ARIA_IDEAS, sees design, builds "their interpretation" (might choose single file because "simpler") — drift
+- WITH protections: fresh Code reads Deferred Build Manifest, sees 8-file structure was three-AI convergence with explicit rejection of single-file. Verify-before-build forces restate-and-confirm. "What changed?" challenge surfaces any deviation explicitly. Decision archaeology blocks rejected arguments from being re-proposed as novel.
+
+The drift becomes architecturally hard, not just discouraged.
+
+⭐ flag: this is the missing protection layer the user's scenario exposed. Save as candidate. Build DEFERRED_BUILDS.md only when first real deferred build needs protection. Test pattern before locking.
+
+[Code annotation: the user's scenario is exactly the kind of "what would break this?" question the missing skeptic role would have asked earlier in the session. Worth noting that the user themselves played skeptic role here — which validates the user-as-fourth-witness-role insight from the Loaded Witness rule itself.]

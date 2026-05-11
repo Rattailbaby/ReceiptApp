@@ -777,6 +777,47 @@ Connection to existing rules:
 
 Candidate only. Build the list across actual sessions, don't pre-populate.
 
+[2026-05-11] — Deferred Build Protection (4-part protocol extending Loaded Witness)
+
+User scenario that exposed gap:
+"I tried to make the trio idea helper. The LLMs convinced me to 'build it tomorrow.' All the LLMs cleared. Then in the next session the LLMs gaslit me or took the idea in a different direction."
+
+Four protections to add when first deferred build needs protection:
+
+1. DEFERRED BUILD MANIFEST
+File: docs/system/DEFERRED_BUILDS.md (create on first need)
+Per entry: build name, status, exact spec, rejected paths with reasons, user's intent in own words, verification step, decision archaeology, unless clause
+
+2. VERIFY-BEFORE-BUILD FIRST-ACTION PROTOCOL
+Fresh AI's mandatory first action when deferred work is queued:
+"I see this build was deferred from [date]. My understanding of the spec: [restate]. Confirm before I start. If different from your memory, that's a witness moment — tell me what was decided differently."
+
+3. "WHAT CHANGED?" CHALLENGE
+Before any deferred work: fresh AI asks "what changed since [date] that justifies revisiting?"
+- Nothing changed → build exactly as saved
+- Something changed → surface explicitly → goes into Decision Log → use new spec
+
+4. DECISION ARCHAEOLOGY (embedded in manifest)
+- Arguments considered + rejected (with why)
+- Arguments that almost won but didn't
+- Reasoning chain that produced decision
+- "Unless" clause for revisiting
+
+Combined protection stack (after this session):
+- File-level: CURRENT_HANDOFF.json next_step
+- Decision-level: DO_NOT_REVISIT flags
+- Intent-level: Fragile Intent List
+- Build-spec level: Deferred Build Manifest (this)
+- Session boundary: Loaded Witness Rule + staggered clears
+- User-facing: USER_DASHBOARD.md
+
+Each layer addresses different failure mode. Together, drift becomes architecturally hard.
+
+Build status:
+Don't create DEFERRED_BUILDS.md tonight. Create when first deferred build needs protection. Test pattern across 2-3 deferred builds before locking.
+
+Candidate only.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
