@@ -4420,3 +4420,104 @@ Full cluster preserved at:
 "The next leverage point is not more rules but better surfaces — commands, shortcuts, issue tracking, repo checks, and intake tools that make the continuity system easier to operate."
 
 [Code addition: tool sweep solves a meta-problem — when the system has been adding rules + capturing ideas for long enough, the natural next move is "what can we DO faster" rather than "what could we add." Tool sweep is the formal name for that turn. It's the mode-switch from architecture-thinking to surface-thinking. Worth naming because the switch needs to happen periodically — not just once.]
+
+
+[2026-05-11] — ⭐ Mid-Session Orientation Snapshot as preservable artifact
+
+Discovery context:
+User asked Code mid-session to remind them where things stood. Code generated a compressed, context-aware orientation: shorthand family, what got LOCKED, new files, key principles, tier model, numbers, what's pending, texture check.
+
+User then said: "here is the first idea and you'll see why I needed to paste it before clear" — and pasted the orientation back. The orientation itself IS the idea. It's an example of content that CANNOT be reconstructed from repo files alone after /clear. Fresh Code would have to do the synthesis from scratch, losing both speed and the moment-of-compression quality.
+
+The primitive being named:
+
+⭐ Mid-Session Orientation Snapshot = compressed synthesis of current session state, generated while context is loaded, preserved as an artifact for resumption or fresh-AI handoff.
+
+Properties:
+- Generated on demand (user asks "where are we?")
+- Compresses many threads into scannable structure
+- References specific commits, files, decisions
+- Tone-matched to user's current state (tired / fresh / mid-flow)
+- Disposable but worth saving when it captures a real turning point
+
+When to save vs discard:
+- SAVE: when the orientation summarizes major architectural reframings, multi-day arcs, or moments user is likely to want to revisit
+- DISCARD: routine "what's next" reminders, trivial state checks
+
+Connection to existing primitives (all pointing at the same shape):
+- Resume Cards (Claude's batch): "You stopped while solving X because Y was unresolved"
+- "What was I doing?" watch complication (Claude's batch)
+- Dynamic starter block (Claude's batch): one-line context summary in fresh-Code starter
+- "Frictionless re-entry into previous cognition" (ARIA pitch reframe)
+- Continuity breadcrumbs: tiny thought-anchors auto-generated during long sessions
+
+All five are the same primitive at different scales:
+- Smallest: continuity breadcrumb (one line)
+- Small: Resume Card (3-5 lines, one task)
+- Medium: dynamic starter block addition (paragraph, session context)
+- Large: Mid-Session Orientation Snapshot (multi-section, full state)
+- Largest: Tier 3 Full Clone Regen JSON
+
+The unifying name could be "Continuity Snapshot" — all five are continuity snapshots at different compression ratios. Worth thinking about as ONE primitive with size variants.
+
+Future tooling implications:
+- `aria status` CLI command should output a Mid-Session Orientation Snapshot
+- A snapshot could be one of the things `aria handoff` produces (alongside CURRENT_HANDOFF.json updates)
+- The snapshot format could become the standard "human-readable handoff" — different from JSON which is for machines
+
+[Code addition: the orientation I generated mid-session is preserved here as exhibit A. The fact that the user said "you'll see why I needed to paste it before clear" is the key signal — context-aware synthesis is a perishable artifact that should be captured at moments of value, not regenerated from scratch later. This is a working prototype of the primitive, not just a description of it.]
+
+═══════════════════════════════════════════════
+EXHIBIT A — the actual snapshot (2026-05-11, HEAD 9e9e722)
+═══════════════════════════════════════════════
+
+Where we are: Mid-session — capture mode. Multi-day session that started as handoff ceremony, evolved into idea-capture marathon.
+
+Current shorthand family:
+- soc = raw stream-of-consciousness capture
+- sidequest = brief intentional detour with explicit return
+- idea intake = batch import saved idea clusters using NO IDEA GETS WASTED
+- tool sweep = harvest underused capabilities
+
+What got LOCKED this session:
+- LOCKED 36 — ARIA AMBIENT NOTICING RULE
+- LOCKED 37 — CROSS-AI PROMPT RECONCILIATION
+- NO IDEA GETS WASTED RULE (foundational ARIA principle)
+
+New files created:
+- docs/system/HANDOFF_CHEATSHEET.md
+- ## ⭐ You Should Really Look At These section at top of CLAUDE_CLEVER_IDEAS.md (~30 starred items)
+
+Key principles surfaced:
+- AIs capture. User synthesizes. Never reverse this.
+- Save generously, promote selectively, build intentionally.
+- Everything is a tool / experience as signal stream
+- ARIA = build the layer between user and existing AI (NOT custom LLMs)
+- Idea preservation ≠ governance promotion (compost layer)
+- Form factor tells you what ARIA really is (desktop = backend, voice/wearable = frontend)
+- Frictionless re-entry into previous cognition (sharper ARIA pitch)
+- Multi-pass harvesting for Level 3 (Pass 3 = how did you grow + how do you operate)
+
+Tier model (in HANDOFF_CHEATSHEET.md):
+- Level 1 Normal Clear — routine, no JSON regen
+- Level 2 Targeted Refresh — small changes, patch affected sections
+- Level 3 Full Clone Regen — substrate changed or GPT visibly slowing. Multi-pass DEFAULT.
+
+Numbers at snapshot moment:
+- ~180 distinct ideas saved
+- ~50 ⭐ items on shelf
+- HEAD: 9e9e722
+- All committed and pushed
+
+What's pending before close:
+1. More ideas user said they have
+2. Pre-clear idea sharing (depend on Code's current context)
+3. Paste GPT's current custom instructions for slim Block A
+4. Multi-pass Pass 3 on Code: "is there anything you left out about how you GREW and how you OPERATE?"
+5. Close sequence: Block A → Block B → starter → /clear
+
+Texture check: session has gotten dense enough for unaided recall to fail. That's signal, not failure.
+
+═══════════════════════════════════════════════
+END EXHIBIT A
+═══════════════════════════════════════════════
