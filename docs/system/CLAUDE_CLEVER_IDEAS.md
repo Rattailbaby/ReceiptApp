@@ -321,6 +321,9 @@ User's idea, refined via trio review (Code + GPT + Claude). Phase 1 = blind inde
 ⭐ 🔭 "The folder IS the protocol" architectural insight (2026-05-11)
 Claude's contribution to Blind Trio Round design. File system structure itself enforces the rule — you can't do Phase 2 until Phase 1 files exist. Zero infrastructure, zero automation, immediate value. Maps to "ARIA is mostly already built" — repo + markdown + Code = enough to ship today. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Blind Trio Round refinements section.
 
+⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
+User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
+
 ⭐ 🔭 Five future ARIA product features (from Blind Trio Round design) (2026-05-11)
 1. Divergence Lock — hide all responses until ALL submitted (the differentiator)
 2. Consensus Map — visualize what all 3 agree on / what only 1 saw / conflicts / outliers

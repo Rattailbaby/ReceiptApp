@@ -5119,3 +5119,130 @@ This is the strongest validation pattern LOCKED 37 produces: two AIs, multiple r
 The Blind Trio Round candidate has been refined via its own intended workflow THREE times now (Code initial, GPT+Claude review 1, GPT+Claude review 2). That's effectively two complete trio cycles of self-validation. The protocol genuinely seems to work for the case of designing itself.
 
 Status: still CANDIDATE. Still don't build folders tonight. Two real validation tests still needed (per the candidate's own validation criteria) — using BTR on a question that isn't BTR itself.
+
+
+[2026-05-11] — ⭐ Living Notepad / User-Facing Scratch Surface (soc capture, raw)
+
+User's raw description (soc — preserved verbatim, not refined yet):
+
+"What about when I do something like I did with all the ideas and stuff and I kept overlapping and being all over the place. Claude has a way to make a notepad file and save and delete things, like when I say 'hold that thought,' or if it thinks I'm about to go on a long sidequest it would save the thing we were talking about before to a notepad as maybe as well a duplicate folder. So in the notepad — that's like my CLAUDE.md or instructions, side note — yeah what if notepad had my instructions and things I need to remember to look at, and key words like soc, no idea wasted, and everything I would need to know and focus on, just like CLAUDE.md and GPT instructions etc, but also with updates so I'll know the context of things that I might forget about. Hard to explain — could be refined, needs to be refined. soc"
+
+═══════════════════════════════════════════════
+[Code addition] — Refinement attempt
+═══════════════════════════════════════════════
+
+What's missing from current system:
+We have AI-facing instruction files (CLAUDE.md / GPT custom instructions / Claude project rules / LOCKED_ATTRIBUTES). We have AI-facing state (CURRENT_HANDOFF.json). We have AI-facing ceremony reference (HANDOFF_CHEATSHEET.md).
+
+We DON'T have a user-facing live document that updates dynamically across the session and acts as the user's own running context — their shorthand reminders, their parked thoughts, their "what was I just doing," their active threads.
+
+The user-facing equivalents we have are scattered:
+- ⭐ shelf in CLAUDE_CLEVER_IDEAS.md (user-readable, but static text)
+- Mid-Session Orientation Snapshot (generated on demand, not always-live)
+- The starter block (one-shot at session start)
+
+Nothing is "the user's running scratch surface."
+
+What the user is describing:
+
+A USER_NOTEPAD.md (or similar) that:
+1. Lives at the top of the repo or in docs/system/
+2. Always reflects current session state at-a-glance
+3. Contains user-facing reminders:
+   - Active shorthand family (soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round)
+   - Key principles (NO IDEA WASTED, AIs capture user synthesizes, Follow the spark)
+   - Current next_step
+   - "Hold that thought" parked threads
+   - Recent inflection points
+4. Updates dynamically — Code edits it as session evolves
+5. Auto-captures parked thoughts when user signals sidequest
+
+Connection to existing primitives:
+- Continuity breadcrumbs (auto-summary) — similar but more granular
+- Resume Cards — same shape, different scope
+- Mid-Session Orientation Snapshot — same primitive at session-pause scale
+- Dynamic starter block — same primitive at session-start scale
+- "Hold that thought" / sidequest — already a behavior; this idea is the FILE that catches the thought
+
+Living Notepad is the persistent always-on version of the Mid-Session Orientation Snapshot. The snapshot is one-shot; the notepad is continuous.
+
+Connection to Claude's actual feature:
+Claude.ai and Claude Desktop have a project notepad feature where Claude can create persistent notes that stay between conversations. The user is asking: can we build the repo equivalent? YES — it's just a markdown file Code maintains across sessions.
+
+The "hold that thought" mechanic specifically:
+When user signals a sidequest is starting (verbal cue, or AI detects topic shift), Code auto-appends to USER_NOTEPAD.md:
+"[2026-05-11 4:32pm] HOLD: was discussing [topic]. Return point: [last position]."
+
+When the user returns: read the notepad, find the HOLD entry, resume.
+
+Implementation possibilities:
+
+NOW (zero code):
+- Create docs/system/USER_NOTEPAD.md
+- Sections: Active shorthands / Key principles / Current next_step / Parked threads / Recent inflection points
+- Code updates it when user signals "save this" or "hold that thought"
+- User can read it any time to re-orient
+
+NEXT (minor automation):
+- Code auto-updates the "Active shorthands" and "Key principles" sections from SYSTEM_COMMANDS.md and LOCKED_ATTRIBUTES.md on demand (`aria notepad refresh`)
+- Code auto-appends to parked threads when user says "hold that thought"
+
+LATER:
+- ARIA product UI showing the notepad as always-visible pane
+- Voice trigger: "ARIA, hold that thought" → appends to notepad
+- Auto-detect sidequest start (user's tone/topic shifts) and propose capturing
+
+Possible structure (single file, easy to start):
+
+```
+# USER NOTEPAD
+Last updated: YYYY-MM-DD HH:MM
+
+## Active shorthands
+- soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round
+  (see SYSTEM_COMMANDS.md for full behavior)
+
+## Key principles
+- NO IDEA WASTED — save everything, filter at promotion not capture
+- AIs capture, user synthesizes
+- Follow the spark, hold the thread, save the door, capture after the wave, return when ready
+- Everything is a tool (including discomfort)
+
+## Current next_step
+[Auto-synced from CURRENT_HANDOFF.json]
+
+## Parked threads (HOLD entries)
+[Append-only — user says "hold that thought" → entry added here]
+
+## Recent inflection points (this session)
+[Last 3-5 inflection points from current session]
+
+## Quick reminders
+[User-added notes that don't fit elsewhere]
+```
+
+Why this is genuinely useful:
+The user said this session went all over the place. They came up with 200+ ideas across many topics. They forget the shorthand names. They lose track of which thread they're on. They need a reference they can glance at without asking Code "where are we?"
+
+USER_NOTEPAD.md is the answer. It's lightweight, append-only, glanceable, and Code maintains it without the user having to ask.
+
+What this is NOT:
+- Not a replacement for CLAUDE.md (that's Code's rules)
+- Not a replacement for CURRENT_HANDOFF.json (that's machine state)
+- Not a replacement for ARIA_IDEAS (that's the idea compost)
+- Not a replacement for the shelf (that's flagged-strongest sorting)
+
+It's specifically the USER's running scratch surface. The thing the user looks at when they're tired and want to remember what's going on without re-reading everything.
+
+Refinement still needed (per user's own note):
+- Exact section structure
+- Update frequency (every commit? on demand? auto-detected?)
+- Single file vs folder with duplicates (user mentioned "maybe a duplicate folder")
+- Whether to integrate with HANDOFF_CHEATSHEET (which already serves some of this purpose)
+- Whether ⭐ shelf and USER_NOTEPAD should merge (they overlap)
+
+Status: CANDIDATE concept, not yet refined enough to lock. Save raw + Code's refinement attempt. User confirms or redirects next session.
+
+⭐ flag: this addresses a real gap the user explicitly named — there's no user-facing live document right now. Worth shelf-promoting as a placeholder until refined.
+
+[Code observation: This idea required Code's loaded context to surface usefully because the gap is only visible if you know what files EXIST and what they're for. Fresh Code reading the repo would see USER_NOTEPAD.md as just another file; current Code sees it as the missing primitive. Exhibit D for Mid-Session Orientation Snapshot's "context-dependent capture" pattern.]
