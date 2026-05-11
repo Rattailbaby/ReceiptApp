@@ -5246,3 +5246,177 @@ Status: CANDIDATE concept, not yet refined enough to lock. Save raw + Code's ref
 ⭐ flag: this addresses a real gap the user explicitly named — there's no user-facing live document right now. Worth shelf-promoting as a placeholder until refined.
 
 [Code observation: This idea required Code's loaded context to surface usefully because the gap is only visible if you know what files EXIST and what they're for. Fresh Code reading the repo would see USER_NOTEPAD.md as just another file; current Code sees it as the missing primitive. Exhibit D for Mid-Session Orientation Snapshot's "context-dependent capture" pattern.]
+
+
+[2026-05-11] — ⭐ User-facing interface layer: docs/user/ folder (final refined design)
+
+GPT and Claude reviewed Code's USER_NOTEPAD refinement and converged on the missing human interface layer. Code yielded to GPT's (a) recommendation: save design, don't build tonight. Honors user's stated next step (explanation pass → close) and avoids end-of-session bloat.
+
+═══════════════════════════════════════════════
+CONVERGENCE — both AIs and Code agreed
+═══════════════════════════════════════════════
+
+- User-facing layer is the missing primitive in current system
+- CURRENT_HANDOFF.json = machine continuity; user dashboard = human continuity
+- Three reading modes (orientation / vocabulary / capability) deserve three files OR one file with three sections to start
+- Anti-bloat rules are critical
+- "Hold that thought" lifecycle (write mid-session → merge at handoff → clear for next)
+- Git history is the snapshot system, no duplicate folder needed
+- "system map" command shorthand
+
+═══════════════════════════════════════════════
+FINAL REFINED DESIGN
+═══════════════════════════════════════════════
+
+FOLDER (GPT's contribution — separation of concerns):
+
+docs/user/                    ← NEW folder, human-facing only
+docs/system/                  ← AI/system governance (existing)
+docs/aria/                    ← product architecture (existing)
+
+FILES (three when eventually split):
+
+docs/user/USER_DASHBOARD.md   ← live cockpit (where am I right now)
+docs/user/HOW_TO_USE_ARIA.md  ← command/shorthand reference
+docs/user/WHAT_EXISTS.md      ← capability index (what's built and how)
+
+START SIMPLER (GPT's "start with one, split later"):
+- Begin with USER_DASHBOARD.md alone
+- Three sections inside: Reminders / Live State / Quick Captures
+- Split into 3 files only when the single file proves unwieldy
+
+═══════════════════════════════════════════════
+USER_DASHBOARD.md structure (three sections)
+═══════════════════════════════════════════════
+
+## 🔖 Reminders (rewritten when changed, not appended)
+- Active shorthand family (soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round / system map / hold that thought)
+- Key principles (NO IDEA WASTED / AIs capture user synthesizes / Follow the spark / Everything is a tool)
+- Active LOCKED rules numbered references
+
+## 📍 Live State (always current, no history)
+- Current base task
+- Active sidequest (if any)
+- Return point
+- Next action when you return
+
+## 📝 Quick Captures (max 10, oldest auto-route to compost)
+- Append-only by user or "hold that thought"
+- Pinned 📌 items exempt from auto-clean
+
+═══════════════════════════════════════════════
+WHAT_EXISTS.md per-item entry format (GPT's contribution)
+═══════════════════════════════════════════════
+
+### [Item Name]
+**Status:** [BUILT] / [USABLE] / [CANDIDATE] / [DESIGNED] / [FUTURE] / [DEFERRED]
+**How to use:** what to say or do
+**Why it exists:** what problem it solved
+**Files involved:** paths
+**What to try next:** concrete next action
+**Related shorthand:** the trigger word
+**Do not confuse with:** mixup prevention (when relevant)
+**Last touched:** YYYY-MM-DD
+
+═══════════════════════════════════════════════
+HOW_TO_USE_ARIA.md organization (Claude's contribution)
+═══════════════════════════════════════════════
+
+Organized by INTENT not by feature:
+"When you want to ___ → say ___"
+
+Plus a flat keyword list at top for 20-second skim.
+
+═══════════════════════════════════════════════
+COMMAND BEHAVIORS
+═══════════════════════════════════════════════
+
+### `hold that thought`
+1. User says it mid-conversation
+2. Code captures last 1-2 messages of context
+3. Appends timestamped HOLD entry to Live State section of USER_DASHBOARD.md:
+   ```
+   [2026-05-11 4:32 PM] HOLD: User was discussing X. Reached point Y. Return: continue with Z.
+   ```
+4. Optionally commits silently or batches with next commit
+5. One-line confirm: "Held."
+
+### `what were we doing` / `back to thread`
+1. Code reads USER_DASHBOARD.md Live State section
+2. Surfaces base task + active sidequest + most recent HOLD
+3. User picks one to resume
+
+### `back to base`
+1. Marks active sidequest as ✓ resolved
+2. Clears most recent HOLD (or archives it)
+3. Returns focus to base task
+
+### `system map`
+1. Code reads WHAT_EXISTS.md
+2. Filters by status if requested ("usable now" / "candidate" / "future")
+3. Returns categorized list
+
+═══════════════════════════════════════════════
+ANTI-BLOAT RULES (preserved from Code Phase 1, validated by both AIs)
+═══════════════════════════════════════════════
+
+1. Reminders section is REWRITTEN from source files, not appended
+2. Live State has no history — git log IS the history
+3. Quick Captures max 10 entries, oldest auto-route to ARIA_IDEAS or compost
+4. Pinned 📌 items exempt from auto-cleanup
+5. Parked Threads auto-clear when user signals "back to base"
+6. No section may exceed 30 lines (Code lints, alerts, proposes cleanup)
+7. References other files, never duplicates them
+8. Git provides time-travel — do NOT create parallel snapshot folders
+
+═══════════════════════════════════════════════
+THE ARCHITECTURAL CHANGE — DEFERRED PENDING VALIDATION
+═══════════════════════════════════════════════
+
+Code Phase 1 proposed: USER_DASHBOARD becomes the FIRST file fresh Code reads on session start.
+
+GPT pushed back gently: test this via use before locking. Fresh Code reading USER_DASHBOARD first could be powerful — but only if the file is well-populated. Bad notepad as first read = worse than current order.
+
+Safe middle path (GPT's): Fresh Code reads USER_DASHBOARD EARLY in the sequence, but not necessarily first. Specifically: read CLAUDE.md → USER_DASHBOARD → HANDOFF_CHEATSHEET → CURRENT_HANDOFF → SYSTEM_COMMANDS → LOCKED_ATTRIBUTES.
+
+Promote to "first file" only after USER_DASHBOARD proves itself across 2-3 sessions.
+
+═══════════════════════════════════════════════
+WHAT TO DO RIGHT NOW
+═══════════════════════════════════════════════
+
+DO NOT BUILD TONIGHT. Save this refined design only.
+
+Reasons:
+1. User's stated next step is explanation pass → close
+2. End-of-session bloat risk (per held #14 coordination overhead candidate)
+3. Anti-bloat rules need real-session validation, not theoretical commitment
+4. "First file fresh Code reads" needs test before lock
+5. Three-file split should emerge from one-file friction, not be assumed
+
+When to actually build:
+Next session, when user says "build the dashboard" or after the next /clear when user wants the immediate-value win.
+
+═══════════════════════════════════════════════
+NEW SHORTHAND COMMANDS (added to family, behaviors specified above)
+═══════════════════════════════════════════════
+
+- `hold that thought` = append HOLD to Live State
+- `what were we doing` / `back to thread` = read Live State HOLDs
+- `back to base` = resolve sidequest, return to base task
+- `system map` = surface WHAT_EXISTS index
+
+These join: soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round
+
+═══════════════════════════════════════════════
+[Code addition] — Trio reconciliation note
+═══════════════════════════════════════════════
+
+This was the second real test of Blind Trio Round (after BTR's own design). The disagreement was real: Claude wanted to build now, GPT wanted to defer. Code reconciled by yielding to GPT with reasoning (user's stated direction, anti-inspiration-wave principle, anti-bloat candidate alignment).
+
+Both AIs added non-duplicate value:
+- GPT: docs/user/ folder separation, status badges, per-entry format, "do not confuse with" line, "start with one file" pragmatism, "read first mode tested before lock"
+- Claude: HOW_TO_USE_ARIA third file, organized-by-intent structure, "what were we doing" lifecycle detail, the "asymmetric value, build now" advocacy (good argument even though not adopted)
+- Code: anti-bloat rules, three-section single-file structure, "first file fresh reads" architectural proposal, git-as-snapshot pushback
+
+The protocol working again. Convergence on spine + distinct value from each = strong validation. BTR has now validated itself twice (its own design + this question). One more before promotion criteria met.

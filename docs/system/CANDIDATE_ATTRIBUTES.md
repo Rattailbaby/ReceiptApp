@@ -630,6 +630,48 @@ Failure modes to prevent:
 
 Candidate only. Test across at least 3 different question types before promotion (architectural decision / trade-off resolution / foundational principle).
 
+[2026-05-11] — User-facing interface layer / docs/user/ folder
+
+When ARIA accumulates many implemented ideas, shorthands, candidates, ARIA principles, and workflows, maintain a human-facing layer that makes the system legible and usable to its own creator.
+
+Proposed folder: docs/user/
+
+Three files (eventually — start with one):
+- docs/user/USER_DASHBOARD.md (live cockpit)
+- docs/user/HOW_TO_USE_ARIA.md (command reference)
+- docs/user/WHAT_EXISTS.md (capability index)
+
+Start simpler: USER_DASHBOARD.md alone with three sections (Reminders / Live State / Quick Captures). Split into 3 files only when single file proves unwieldy.
+
+New shorthand commands:
+- hold that thought = append HOLD entry to USER_DASHBOARD Live State
+- what were we doing / back to thread = read Live State HOLDs
+- back to base = resolve sidequest, return to base task
+- system map = surface WHAT_EXISTS capability index
+
+Status badges for WHAT_EXISTS entries:
+[BUILT] / [USABLE] / [CANDIDATE] / [DESIGNED] / [FUTURE] / [DEFERRED]
+
+Per-entry format for WHAT_EXISTS:
+Name / Status / How to use / Why it exists / Files involved / What to try next / Related shorthand / Do not confuse with / Last touched
+
+Anti-bloat rules:
+- Reminders REWRITTEN not appended
+- Live State has no history (git is history)
+- Quick Captures max 10, oldest auto-route to compost
+- Pinned 📌 items exempt from auto-cleanup
+- Parked Threads auto-clear on "back to base"
+- No section exceeds 30 lines
+- References files, never duplicates
+- Git provides time-travel; no parallel snapshot folders
+
+Architectural proposal (deferred pending validation):
+USER_DASHBOARD becomes the FIRST file fresh Code reads on session start. Test 2-3 sessions before locking. Safe middle path: read early but not first.
+
+Status: Don't build files tonight. Save the design. Build when user explicitly requests OR next session when value would be immediate.
+
+Validation criteria: Test the dashboard concept across 3 real sessions before promoting any of the file structure or behavior rules to LOCKED.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

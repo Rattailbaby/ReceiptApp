@@ -324,6 +324,9 @@ Claude's contribution to Blind Trio Round design. File system structure itself e
 ⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
 User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
 
+⭐ 🔭 docs/user/ folder — final refined design (2026-05-11)
+Trio-refined: GPT proposed folder separation (docs/user/ for human-facing layer, distinct from docs/system/ AI governance). Three files (eventually): USER_DASHBOARD.md (live cockpit) / HOW_TO_USE_ARIA.md (command reference) / WHAT_EXISTS.md (capability index). Status badges [BUILT] [USABLE] [CANDIDATE] [DESIGNED] [FUTURE] [DEFERRED]. Four new shorthand commands (hold that thought / what were we doing / back to base / system map). Start with ONE file (USER_DASHBOARD), three sections (Reminders / Live State / Quick Captures), split later. Don't build tonight per Code's yield to GPT — honor user's stated next step (explanation pass → close). Anti-bloat rules locked in design. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 docs/user/ folder section.
+
 ⭐ 🔭 Five future ARIA product features (from Blind Trio Round design) (2026-05-11)
 1. Divergence Lock — hide all responses until ALL submitted (the differentiator)
 2. Consensus Map — visualize what all 3 agree on / what only 1 saw / conflicts / outliers
