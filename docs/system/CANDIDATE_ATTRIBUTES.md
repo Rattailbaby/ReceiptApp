@@ -716,6 +716,67 @@ Failure modes:
 
 Candidate only. Test across multiple session boundaries before promotion.
 
+[2026-05-11] — Cross-AI Reconciliation Refinement (extends LOCKED 37)
+
+GPT proposed refinement to LOCKED 37 (CROSS-AI PROMPT RECONCILIATION). The current rule says "synthesize or principled-disagree, never silent-defer." This refinement makes the process more concrete.
+
+Six-step protocol when comparing another AI's answer:
+
+1. State what is STRONGEST in your OWN answer
+2. State what you ACCEPT from the other AI's answer
+3. State what you REJECT, MODIFY, or would QUALIFY
+4. MERGE compatible strengths into one cleaner answer
+5. Principled-disagree when needed (existing LOCKED 37 behavior)
+6. PRESERVE THE USER'S ORIGINAL INTENT above AI consensus
+
+Key principle (the new addition):
+"AI convergence is useful signal, not final authority.
+The user remains the synthesis layer.
+User intent wins the tiebreak."
+
+Why this refinement matters:
+Tonight's USER_DASHBOARD build decision exposed a failure mode where Code and GPT both initially yielded against the user's instinct. The user's "why wouldn't we build this tonight" challenge corrected both AIs. The 6-step protocol would have caught this earlier — each AI would have had to state what's strongest in its own position before yielding, exposing the gaps.
+
+Specifically, the "preserve user intent above AI consensus" line is critical. Two AIs converging is not authoritative if they're both missing what the user actually needs.
+
+When this fires:
+- Whenever an AI's response is essentially "the other AI said it better"
+- Whenever two AIs converge on a recommendation that contradicts user's stated direction
+- Whenever an AI is tempted to silent-defer
+- Whenever a synthesis is being produced that might lose original intent
+
+Candidate refinement to LOCKED 37. Validate across handoffs before promotion to update the locked rule itself.
+
+
+[2026-05-11] — Fragile Intent List (protection layer for distortable meanings)
+
+Distinct from DO_NOT_REVISIT (protects rejected decisions). Fragile Intent List protects IDEAS-EASILY-DISTORTED — meanings a fresh AI might oversimplify or rewire.
+
+Format per fragile entry:
+- What it is (the actual idea)
+- What a fresh AI might wrongly simplify it into (the predictable distortion)
+- What it actually means (the protected meaning)
+- Where it is protected (the file/section storing canonical version)
+
+Why this matters:
+Fresh AIs are agreeable. Combined with their tendency to simplify when reconstructing, they can convert nuanced principles into their bland approximations. The Fragile Intent List preserves the nuance against this drift.
+
+Examples from this session worth protecting:
+- "NO IDEA WASTED" — predictable distortion: "save more aggressively." Actual meaning: "filter at promotion not capture."
+- "Follow the spark" — predictable distortion: "always pursue tangents." Actual meaning: "follow when harvest produces artifacts."
+- "AIs capture, user synthesizes" — predictable distortion: "always defer to user." Actual meaning: "preserve raw without filtering."
+- "Don't perpetuate the inspiration wave" — predictable distortion: "block all tangents." Actual meaning: "fresh sessions don't default to detour mode."
+
+Implementation:
+Live as section in docs/aria/ARIA_IDEAS.md when populated enough. Could become own file later if it grows. Update at handoff when fragile concepts are added.
+
+Connection to existing rules:
+- Complements Loaded Witness Rule (witness PROTECTS the fragile meaning across clears)
+- Complements DO_NOT_REVISIT (rejected vs distortable are different protection needs)
+- Honors AIs-capture-user-synthesizes (the user remains source of original meaning)
+
+Candidate only. Build the list across actual sessions, don't pre-populate.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

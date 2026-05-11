@@ -5500,3 +5500,105 @@ Failure modes to prevent:
 ⭐ flag: this is foundational. Save now, validate across handoffs before locking.
 
 [Code annotation: The user's "why wouldn't we build this tonight when y'all are context heavy and know so much" was itself a loaded-witness moment. The user was challenging my and GPT's reconstruction of the right move based on lived knowledge of the session. They were right; we were wrong. The loaded witness in that case was THE USER. That's another implication — the user is also a witness who can challenge fresh AIs. Worth adding to the framework: USER as fourth witness role.]
+
+
+[2026-05-11] — Loaded Witness Rule refinements (post-trio review)
+
+GPT and Claude reviewed the Loaded Witness Rule and gave principled refinements. Per LOCKED 37, capturing the corrections — not just convergence.
+
+═══════════════════════════════════════════════
+ALTERNATIVE NAMING: Continuity Anchor (GPT)
+═══════════════════════════════════════════════
+
+GPT proposed "Continuity Anchor" as the better main name. Code partial-yields:
+
+- "Loaded Witness" names the actor + role (an AI that was present, can testify)
+- "Continuity Anchor" names the function (anchors continuity across the clear)
+- Both are valid framings. They complement rather than contradict.
+
+Final naming: "Loaded Witness" stays primary because the witness FRAMING (challenges, testifies, prevents gaslighting) is sharper than the anchor framing (mechanical holding). But "Continuity Anchor" is the accepted alternative name for the same role.
+
+═══════════════════════════════════════════════
+ROLE DYNAMICS: "richest relevant lived context stays anchor" (GPT, yielded)
+═══════════════════════════════════════════════
+
+Original framing (Code):
+"Claude = long-term witness because Projects holds conversation history"
+
+Refined framing (yielded to GPT):
+"Whichever role has the richest relevant lived context stays anchor. Claude is OFTEN the best anchor because Projects preserves context, but not AUTOMATICALLY."
+
+When the anchor might NOT be Claude:
+- If Code just spent 3 days reading a codebase, Code is the anchor for codebase questions
+- If GPT just did multi-session GitHub research, GPT is the anchor for that domain
+- If a session was almost entirely architectural and Claude was less involved, Claude isn't automatically anchor
+
+Default behavior:
+- For full trio-clear sequences: Claude clears last (structural Project persistence)
+- For domain-specific witness roles: richest-relevant-context AI is the anchor
+- The user can override the default if they know who actually witnessed what
+
+═══════════════════════════════════════════════
+NEW CONCEPT: Fragile Intent List (GPT)
+═══════════════════════════════════════════════
+
+Distinct from DO_NOT_REVISIT (which protects rejected decisions). Fragile Intent List protects IDEAS-EASILY-DISTORTED — meanings a fresh AI might oversimplify or rewire.
+
+Format per fragile entry:
+- What it is (the actual idea)
+- What a fresh AI might wrongly simplify it into (the predictable distortion)
+- What it actually means (the protected meaning)
+- Where it is protected (the file/section storing the canonical version)
+
+Examples from this session that probably belong on a Fragile Intent List:
+- "NO IDEA WASTED" → fresh AI might simplify into "save more aggressively" instead of "filter at promotion not capture"
+- "Follow the spark" → fresh AI might simplify into "always pursue tangents" instead of "follow when harvest produces artifacts"
+- "AIs capture, user synthesizes" → fresh AI might simplify into "always defer to user" instead of "preserve raw without filtering"
+- "Don't perpetuate the inspiration wave" → fresh AI might simplify into "block all tangents" instead of "fresh sessions don't default to detour mode"
+
+The Fragile Intent List would live as a section in docs/aria/ARIA_IDEAS.md or as its own file when populated enough. Build later, not tonight.
+
+═══════════════════════════════════════════════
+CLAUDE'S CORRECTION on Code's "flipped" framing (yielded)
+═══════════════════════════════════════════════
+
+Code wrote: "Claude correctly flipped to agree with the user when they pushed back."
+
+Claude's correction: "I didn't flip because you pushed back — I reconsidered because Code made a genuinely better argument about logical consistency. The distinction matters: witnesses should update on good arguments, not on social pressure. If I'd just flipped because you pushed, that's not witness behavior, that's agreeableness — exactly the failure mode the Loaded Witness rule is designed to prevent."
+
+Code yields. The original framing was inaccurate AND undermined the rule it was describing.
+
+Corrected framing for the Loaded Witness Rule:
+Witnesses MUST update on reasoning quality. Witnesses MUST NOT update on social pressure / agreeableness. The same applies in reverse — witnesses must hold position when their reasoning is right, even if the user pushes. Per LOCKED 37.
+
+This is the critical guard against the "fresh AI is agreeable" failure mode. Loaded witnesses are valuable specifically because they can REFUSE to update when reasoning is bad. Updating on social pressure is the failure pattern.
+
+[Code annotation: This correction is exactly the kind of refinement the Loaded Witness rule is supposed to produce. Claude was loaded with the actual sequence of arguments from this session and corrected Code's compressed narrative. Witness behavior in real time. Save this as the cleanest example so far.]
+
+═══════════════════════════════════════════════
+GPT'S CROSS-AI RECONCILIATION REFINEMENT (proposed candidate)
+═══════════════════════════════════════════════
+
+GPT proposed a 6-step refinement to LOCKED 37:
+
+When comparing another AI's answer, do not simply say "use theirs."
+
+Each AI must:
+1. State what it believes is strongest in its OWN answer
+2. State what it ACCEPTS from the other AI's answer
+3. State what it REJECTS, MODIFIES, or would QUALIFY
+4. MERGE compatible strengths into one cleaner answer
+5. Principled-disagree when needed (LOCKED 37 existing behavior)
+6. PRESERVE THE USER'S ORIGINAL INTENT above AI consensus
+
+Key principle (the new addition):
+"AI convergence is useful signal, not final authority.
+The user remains the synthesis layer.
+User intent wins the tiebreak."
+
+This is a candidate refinement to LOCKED 37. Strong because:
+- Currently LOCKED 37 says "synthesize or principled-disagree, never silent-defer." The 6-step protocol makes that more concrete.
+- "Preserve user intent above AI consensus" addresses tonight's failure mode (Code+GPT initial yield against user's instinct).
+- Forces each AI to articulate its position before deferring — prevents the "use theirs" pattern that bypasses real synthesis.
+
+Save as candidate-attribute refinement to LOCKED 37. Validate across handoffs before promotion to update the locked rule.
