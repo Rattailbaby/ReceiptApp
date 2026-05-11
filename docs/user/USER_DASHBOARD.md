@@ -162,4 +162,4 @@ Anti-bloat rules:
 
 ---
 
-*This file is the human-facing continuity cockpit. The AI-facing equivalent is `CURRENT_HANDOFF.json`. The ceremony reference is `docs/system/HANDOFF_CHEATSHEET.md`. Together they cover machine continuity + human continuity + ceremony choreography.*
+*This file is the human-facing continuity cockpit. The AI-facing equivalent is `CURRENT_HANDOFF.json`. The ceremony reference is `docs/system/HANDOFF_CHEATSHEET.md`. The mobile workflow stack is `docs/user/APPS_TO_USE.md`. Together they cover machine continuity + human continuity + ceremony choreography + away-from-desk workflow.*

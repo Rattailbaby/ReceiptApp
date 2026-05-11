@@ -59,6 +59,14 @@ These exist in the repo. You can use them today.
 **What to try next:** Use this file as your reference when you forget what's available.
 **Do not confuse with:** USER_DASHBOARD (which is live state) vs WHAT_EXISTS (which is capability index).
 
+### [BUILT] APPS_TO_USE.md — Mobile ARIA stack
+**What it is:** Away-from-desk workflow stack. Apps and tools categorized by job (capture / read / AI / automate / wearable). Samsung/Android-first since that's your hardware.
+**Why it exists:** Your "what apps for mobile" question — but reframed by job, not by app category. Phone catches sparks, desktop builds systems.
+**How to use it:** Open when you're away from desk and need to remember what app does what. Top picks at top — 5 things to do this week.
+**Files:** `docs/user/APPS_TO_USE.md`
+**What to try next:** Do the 5 practical first actions at the bottom of the file. Day 1 = seed GPT Memory + install GitHub mobile + pin Keep ARIA INBOX.
+**Do not confuse with:** USER_DASHBOARD (live state) vs WHAT_EXISTS (capability index) vs APPS_TO_USE (mobile stack only).
+
 ---
 
 ## 🟢 BUILT — Behavior Rules (LOCKED)
