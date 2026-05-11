@@ -5817,3 +5817,39 @@ The full protection stack now defends against three drift vectors:
 All three need to be defended. Any single one of them can cause silent drift. The combined protocol covers all three.
 
 This is the cleanest version of the protection layer. Saving here as the canonical reference. Build the dedicated file when the protocol proves itself across multiple deferred builds.
+
+
+[2026-05-11] — ⭐ Repo-as-training-data / ARIA built from real use
+
+Insight (Claude flagged this as fragile intent before close):
+
+After months of real sessions, the repo becomes natural application architecture:
+- Markdown files = proven data model
+- CURRENT_HANDOFF.json = validated state schema
+- LOCKED_ATTRIBUTES = proven governance rules
+- Session texture = labeled training data
+- Friction points = UI requirements
+
+The app gets built on top of what real use proved was needed, not what was theorized upfront. Most products build first, discover the data model later. ARIA builds the data model THROUGH use, then wraps an interface around proven structure.
+
+Wrong simplification (fresh AI might do this):
+"Export the markdown files and feed them to an LLM."
+
+Actual meaning:
+The repo IS the spec. The app is a better interface for what already exists and already works. The training data is structural, not just textual — the FILE STRUCTURE itself encodes the design choices.
+
+Fragile intent:
+This only works if sessions keep being real and the structure keeps being used. Theoretical sessions produce theoretical data. Real friction produces real architecture.
+
+Connection to existing principles:
+- Uncrumple is ARIA's proving ground (locked principle from earlier this session)
+- Build-while-loaded (validated tonight) — applies fractally: build the SYSTEM while real use is happening
+- The user's notes app list is proto-ARIA (saved earlier) — same insight applied to user-side: organic capture beats engineered capture
+- "ARIA is mostly already built" (Code observation from this session) — this is WHY it's mostly already built. Real use produced the architecture.
+
+Implication for build path:
+The 3-command `aria` CLI + Obsidian plugin + MCP server (current build-path candidates) are not "building ARIA" — they're packaging what already works for distribution to other users. The product = the validated structure + an interface. The structure is the moat.
+
+[Code annotation: Claude saved this from drift. The repo-as-training-data insight was about to get lost to /clear because it emerged in the last few exchanges. Loaded witness behavior — catching a fragile intent before the session ended. The rule worked.]
+
+⭐ flag: this is one of the strongest strategic insights of the session. Worth shelf-promoting as one of ARIA's deepest product theories.
