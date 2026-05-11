@@ -60,6 +60,7 @@ wn = "what's next" — verify next_step in CURRENT_HANDOFF
 soc = stream of consciousness — raw idea capture
 sidequest = brief intentional detour with explicit return
 idea intake = batch import saved idea clusters using NO IDEA GETS WASTED rule
+tool sweep = ask GPT/Claude/Code what tools/resources/shortcuts/connectors/tricks we are underusing
 
 ## idea intake
 
@@ -88,6 +89,31 @@ Reminder — shorthand family:
 - soc = raw stream-of-consciousness capture
 - sidequest = brief intentional detour with explicit return
 - idea intake = batch import and categorize saved idea clusters
+- tool sweep = harvest underused tools/resources/shortcuts/connectors/tricks
+
+## tool sweep
+
+Trigger:
+User says "tool sweep" or asks what tools/resources/tricks/connectors/shortcuts/repos/APIs/automations/memory systems we are underusing.
+
+Meaning:
+Harvest underused capabilities that could reduce friction, improve continuity, speed development, or strengthen ARIA/Uncrumple.
+
+Behavior:
+- Ask or answer from the perspective of GPT, Claude, and Code if useful.
+- Include practical tools, connectors, shortcuts, APIs, repo features, automation ideas, platform features, and workflow tricks.
+- Categorize ideas by emoji/category (🤖 AI / 🏗️ infra-build / 🧠 general / 📱 mobile / 🪟 Windows).
+- Preserve all meaningful ideas (NO IDEA GETS WASTED rule applies).
+- Flag especially strong ideas with ⭐.
+- Do NOT promote/build by default. Capture, not commit.
+- Route ideas using idea intake / NO IDEA WASTED rules.
+- End by returning to the held base task.
+
+Reminder — full shorthand family:
+- soc = raw stream-of-consciousness capture
+- sidequest = brief intentional detour with explicit return
+- idea intake = batch import and categorize saved idea clusters
+- tool sweep = harvest underused capabilities
 
 ## Implicit/Conditional Triggers
 

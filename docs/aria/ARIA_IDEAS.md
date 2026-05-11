@@ -4378,3 +4378,45 @@ GPT'S TOP 5 (if forced to pick five):
 - Android share target (#36) — Samsung-specific capture
 - Weekly ARIA review (#39) — adds cadence layer
 - Anti-bloat rule with metric (#40) — concrete trigger for governance-vs-app balance
+
+
+[2026-05-11] — ⭐ Tool Sweep: cluster name + shorthand established
+
+The Claude (25) + GPT (40) underused-capability harvests from 2026-05-10 and 2026-05-11 collectively form what's now named **Tool Sweep** — a reusable harvest mode for discovering underused capabilities before building new systems from scratch.
+
+`tool sweep` added to user shorthand family in SYSTEM_COMMANDS.md alongside soc / sidequest / idea intake.
+
+Trigger:
+"tool sweep" or asks what tools/resources/tricks/connectors/shortcuts/repos/APIs/automations/memory systems we are underusing.
+
+Pattern observed across two harvests:
+Most "what should we build" answers turn into "what could we activate that we're not using yet." The category exists between idea capture (open-ended) and feature roadmap (committed). It's specifically about surfacing latent capacity in tools the user already has access to.
+
+This is structurally different from:
+- soc (raw thought capture, no structure)
+- sidequest (intentional brief detour)
+- idea intake (batch import of saved external ideas)
+- candidate review (rule-shaped evaluation)
+- Generative Harvest (pre-clear open-ended)
+
+Tool sweep is specifically: "what capacity is sitting unused right now."
+
+User-flagged top 7 (highest friction reduction):
+1. GitHub Actions / repo health check
+2. Git hooks for JSON validation before commit
+3. MCP server for ARIA repo tools
+4. Idea Intake Mode (formalized capture pipeline)
+5. Whisper or phone voice capture
+6. GitHub Issues/labels for deferred app work
+7. Custom GPT as first shareable ARIA demo
+
+Full cluster preserved at:
+- 2026-05-10 underused capabilities audit (33 items, Code's first pass)
+- 2026-05-11 Claude's underused capabilities harvest (25 items)
+- 2026-05-11 GPT's tooling/resources harvest (40 items)
+- ⭐ shelf at top of CLAUDE_CLEVER_IDEAS.md (~30 starred items from these batches)
+
+🔭 ARIA framing (from GPT's harvest):
+"The next leverage point is not more rules but better surfaces — commands, shortcuts, issue tracking, repo checks, and intake tools that make the continuity system easier to operate."
+
+[Code addition: tool sweep solves a meta-problem — when the system has been adding rules + capturing ideas for long enough, the natural next move is "what can we DO faster" rather than "what could we add." Tool sweep is the formal name for that turn. It's the mode-switch from architecture-thinking to surface-thinking. Worth naming because the switch needs to happen periodically — not just once.]
