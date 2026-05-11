@@ -61,6 +61,9 @@ soc = stream of consciousness — raw idea capture
 sidequest = brief intentional detour with explicit return
 idea intake = batch import saved idea clusters using NO IDEA GETS WASTED rule
 tool sweep = ask GPT/Claude/Code what tools/resources/shortcuts/connectors/tricks we are underusing
+blind round = start Blind Trio Round (independent ideation Phase 1)
+phase two = release Phase 1 files to other AIs, trigger cross-read
+synthesize round = create final synthesis preserving originals + disagreements + clever extras
 
 ## idea intake
 
@@ -114,6 +117,49 @@ Reminder — full shorthand family:
 - sidequest = brief intentional detour with explicit return
 - idea intake = batch import and categorize saved idea clusters
 - tool sweep = harvest underused capabilities
+- blind round / phase two / synthesize round = Blind Trio Round protocol
+
+## blind round / phase two / synthesize round (Blind Trio Round protocol)
+
+Trigger: user says "blind round" or asks for ideas from all 3 AIs on architecturally significant question.
+
+Three-phase protocol:
+
+PHASE 1 — `blind round`
+- Create folder: docs/trio_rounds/YYYY-MM-DD-topic-slug/
+- Generate template files: 00_QUESTION.md + empty Phase 1 + Phase 2 + synthesis files
+- User pastes same question to GPT, Claude, Code SEPARATELY
+- Each AI answers WITHOUT seeing others
+- Each response gets saved to its file (01_GPT_BLIND.md, 02_CLAUDE_BLIND.md, 03_CODE_BLIND.md)
+- No AI reads others until Phase 2
+
+PHASE 2 — `phase two`
+- User says "phase two"
+- Each AI reads the other two Phase 1 files
+- Each AI writes Phase 2 response (04_GPT_CROSSREAD.md, 05_CLAUDE_CROSSREAD.md, 06_CODE_CROSSREAD.md)
+- Per LOCKED 37: agree / merge / hold position with reasoning. Never silent defer.
+
+PHASE 3 — `synthesize round`
+- Generate 07_SYNTHESIS.md with sections:
+  - Original question
+  - All 3 blind takes (cross-reference)
+  - All 3 cross-read responses (cross-reference)
+  - Convergence points
+  - Disagreements (mandatory — value is here)
+  - Best merged answer
+  - High-signal ⭐ ideas
+  - "Does this defeat the purpose?" check (user fills in)
+  - User verdict layer (user fills in)
+- ORIGINAL_IDEAS.md preserves all 3 Phase 1 takes side-by-side (auto-generated)
+- 08_IDEAS_TO_SAVE.md captures anything worth routing to ARIA_IDEAS / ROADMAP / CANDIDATES
+
+Critical rule:
+Do not let Phase 2 overwrite Phase 1. Independent first takes are valuable BECAUSE they are uncontaminated.
+
+When to invoke:
+NOT every question. Only architecturally significant decisions / ambiguous trade-offs / foundational principles.
+
+Full design: docs/aria/ARIA_IDEAS.md 2026-05-11 Blind Trio Round entries.
 
 ## Implicit/Conditional Triggers
 

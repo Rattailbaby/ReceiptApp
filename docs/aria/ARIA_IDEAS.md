@@ -4833,3 +4833,198 @@ Could join: soc / sidequest / idea intake / tool sweep / trio sync
 ⭐ flag: this is a candidate-worthy structural idea. Save now, don't build tonight, validate as candidate first.
 
 This idea required Code's loaded context to synthesize because the protocol formalizes the manual workflow we've been doing all session — fresh Code wouldn't recognize what's being formalized. Exhibit C for Mid-Session Orientation Snapshot primitive.
+
+
+[2026-05-11] — ⭐ Blind Trio Round: GPT + Claude refinements to Trio Synthesis Protocol
+
+Both planning AIs reviewed the Trio Synthesis Protocol (from earlier this same date) and converged on:
+- The 3-phase structure (independent / cross-read / synthesis)
+- Folder-as-substrate approach
+- Mandatory user verification
+- "Defeats the purpose" check
+
+They also independently added meaningful new material. Per LOCKED 37, capturing the additions rather than re-saving the spine.
+
+═══════════════════════════════════════════════
+NAMING — yielding to "Blind Trio Round"
+═══════════════════════════════════════════════
+
+GPT's name "Blind Trio Round" / "Independent Trio Ideation" is sharper than Code's "Structured Trio Synthesis Protocol" because it names the CRITICAL CONSTRAINT (blindness in Phase 1) rather than the structure. The blind part is what prevents premature convergence.
+
+Code yields on naming per LOCKED 37 — "Blind Trio Round" is the better label.
+
+Internal name from here forward: **Blind Trio Round** (BTR)
+
+═══════════════════════════════════════════════
+"THE FOLDER IS THE PROTOCOL" — Claude's most important insight
+═══════════════════════════════════════════════
+
+Claude: "The structure enforces the sequence without any code. That's the most important implementation insight — start there, let real usage reveal what needs automating."
+
+Why this is profound:
+The folder structure itself IS the constraint. You can't do Phase 2 until Phase 1 files exist. The file system enforces the rule without needing software. This is the cheapest possible protocol — zero infrastructure, zero automation, immediate value.
+
+Maps directly to "ARIA is mostly already built" — repo + markdown + Code = enough to ship this today.
+
+═══════════════════════════════════════════════
+PHASE 0 — Question design (Claude's addition)
+═══════════════════════════════════════════════
+
+Before sending to all three AIs, there should be a brief question design step.
+
+- Is the question open enough to produce genuinely different answers?
+- Is it specific enough to be answerable?
+- A bad question produces convergent mediocre ideas from all three.
+
+The question is the most important input. Worth dedicated phase before Phase 1 fires.
+
+Implementation: 00_QUESTION.md file gets reviewed (optionally with Code's help) before pasting to the trio.
+
+Versioning the question: if refined mid-session, save both versions. The original question often captures something the refined one loses.
+
+═══════════════════════════════════════════════
+FOLDER STRUCTURE — converged version with numbered prefixes
+═══════════════════════════════════════════════
+
+docs/trio_rounds/YYYY-MM-DD-topic-slug/
+  00_QUESTION.md
+  01_GPT_BLIND.md
+  02_CLAUDE_BLIND.md
+  03_CODE_BLIND.md
+  04_GPT_CROSSREAD.md
+  05_CLAUDE_CROSSREAD.md
+  06_CODE_CROSSREAD.md
+  07_SYNTHESIS.md
+  08_IDEAS_TO_SAVE.md
+  ORIGINAL_IDEAS.md  (auto-generated: all 3 Phase 1s side by side)
+
+The ORIGINAL_IDEAS.md file is critical (Claude's emphasis):
+"Having all three phase 1 responses side by side — before any collaboration — is genuinely valuable. You can see where AIs independently converge (strong signal) and where they diverge (interesting signal). Convergence without communication means something is probably true. Divergence means the question is genuinely open."
+
+═══════════════════════════════════════════════
+NEW SHORTHAND COMMANDS (extending the family)
+═══════════════════════════════════════════════
+
+Adding to soc / sidequest / idea intake / tool sweep:
+
+- `blind round` = start independent trio ideation, create folder + 00_QUESTION.md
+- `phase two` = release Phase 1 files to other AIs, trigger cross-read
+- `synthesize round` = create final 07_SYNTHESIS.md preserving originals + reconciliation + disagreements + clever extras
+
+These three commands together drive the Blind Trio Round protocol.
+
+═══════════════════════════════════════════════
+GPT'S 5 CLEVER PRODUCT FEATURES (for future ARIA)
+═══════════════════════════════════════════════
+
+⭐ Divergence Lock
+Nobody sees anyone else's idea until ALL first takes are submitted. This is the product differentiator. Most AI systems rush to one answer; ARIA intentionally preserves independent thought first. Enforces the "blind" in Blind Trio Round.
+
+⭐ Consensus Map
+After Phase 2, ARIA visualizes:
+- All 3 agree:
+- GPT only:
+- Claude only:
+- Code only:
+- Conflict:
+- High-value outliers:
+
+The "outliers" matter — sometimes the best idea is the one only one AI saw.
+
+⭐ Outlier Shelf
+Ideas that only one AI suggested but seem strong go to a dedicated Outlier Shelf. Fits NO IDEA GETS WASTED. Sometimes the weird one wins.
+
+⭐ Argument Swap
+When GPT and Claude disagree, ARIA asks: "Now argue the OTHER AI's position better than they did." Forces real pressure-testing before user decides. Honors LOCKED 37 (cross-AI reconciliation) by making the steelman explicit.
+
+⭐ User Verdict Layer
+After synthesis, ARIA asks user:
+- What feels right?
+- What feels wrong?
+- What sparked a better idea?
+- What did they miss?
+
+User is the synthesis layer. Final answer isn't done until user reaction is captured.
+
+═══════════════════════════════════════════════
+CLAUDE'S ADDITIONS
+═══════════════════════════════════════════════
+
+⭐ Question quality matters as much as AI quality
+The same question asked differently produces dramatically different independent ideas. Phase 0 design pays off compound interest.
+
+⭐ Synthesis must show DISAGREEMENTS, not just agreements
+The most valuable part of three independent ideas isn't where they agree — it's where they disagree and why. SYNTHESIS.md must have explicit section: "Where we disagreed and why it matters."
+
+⭐ "Does this defeat the purpose?" check is the most important feature
+Every synthesis needs sanity-check against original problem. Not automated. Human judgment. But made EXPLICIT and REQUIRED. Without it, the system produces technically correct answers that miss the point.
+
+Implementation: standing question at top of SYNTHESIS.md:
+- Original problem: [what user was actually trying to solve]
+- Does the synthesis solve it? [human fills in]
+
+⭐ Controlled cross-pollination as general ARIA primitive
+What this describes — independent formation, controlled sharing, synthesis with preserved originals — applies BEYOND ideas. Code review. Architecture decisions. Candidate promotion. Any time you want genuine independent perspectives before collaboration. Worth naming and reusing.
+
+═══════════════════════════════════════════════
+BUILD ORDER (Claude's specific path)
+═══════════════════════════════════════════════
+
+NOW (zero code):
+- Create docs/trio_rounds/ folder with template
+- Manual paste workflow
+- "The folder IS the protocol"
+
+NEXT (2 hours):
+- `aria ideate "question"` CLI command — creates folder + numbered template files
+
+SOON (1 weekend):
+- `aria ideate-send "question"` — parallel API calls to GPT + Claude, writes Phase 1 files automatically
+- Code generates own Phase 1 locally
+
+LATER:
+- Phase 2 automation: build cross-pollination context block for each AI, send, write Phase 2 files
+- Synthesis draft generation via fourth API call: "synthesize these while preserving disagreements"
+- ORIGINAL_IDEAS.md auto-generation via embeddings (semantic similarity detection)
+- Convergence/divergence scoring
+
+FINISHED PRODUCT (months):
+- Divergence Lock UI
+- Consensus Map visualization
+- Outlier Shelf
+- Argument Swap
+- User Verdict Layer
+- Routing buttons to ARIA_IDEAS / ROADMAP / CANDIDATE_ATTRIBUTES / HIGH_SIGNAL_SHELF / GitHub Issues
+
+═══════════════════════════════════════════════
+LONGITUDINAL VALUE (Claude)
+═══════════════════════════════════════════════
+
+Over time, ideation sessions become a queryable dataset:
+- "Show me all sessions where Claude and GPT disagreed"
+- "What topics produced the most convergence?"
+- "Which questions opened the biggest ideas?"
+
+The folder structure with metadata enables this without designing a database upfront. Just markdown files with consistent shape.
+
+═══════════════════════════════════════════════
+[Code addition] — Convergence assessment
+═══════════════════════════════════════════════
+
+GPT and Claude both arrived at very similar protocols independently. Per LOCKED 37, when two AIs converge AND both add meaningful new material (not just redundant restating), that's the strongest possible validation.
+
+What converged:
+- 3-phase structure (independent / cross-read / synthesis)
+- Folder-as-substrate
+- Mandatory user verification
+- Phase 1 blindness as critical constraint
+
+What each added that the other didn't (genuine value, not duplicate):
+- GPT: 5 specific product features (Divergence Lock, Consensus Map, Outlier Shelf, Argument Swap, User Verdict Layer)
+- Claude: Phase 0 question design, "folder IS the protocol" insight, ORIGINAL_IDEAS side-by-side preservation, question-quality emphasis, disagreement section in synthesis, "defeats the purpose" check formalization, controlled cross-pollination as general primitive, specific CLI build order, longitudinal dataset value
+
+Both takes complement each other. The merged version is stronger than either alone — which is exactly what Blind Trio Round is designed to produce. The protocol validated itself by being designed via near-blind-trio reasoning.
+
+Status: still CANDIDATE. Don't build folder structure tonight. Test in at least 2 real Blind Trio Rounds before promoting any of this to LOCKED. The product features (Divergence Lock, etc.) are even further out — those are for ARIA product, not current workflow.
+
+The thing to do FIRST: nothing. Save the design. Let it sit for a few sessions. The next time user wants ideas from all three AIs, RUN the protocol manually (zero code) and see if the friction is real. If yes, build `aria ideate` next. If no, the simpler version stays.

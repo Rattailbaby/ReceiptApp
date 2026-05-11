@@ -546,7 +546,26 @@ Connection to existing rules:
 
 Candidate only. Test across multiple inspiration detours before promoting to LOCKED.
 
-[2026-05-11] — Structured Trio Synthesis Protocol (Phase 1 / Phase 2 / User-verified)
+[2026-05-11] — Blind Trio Round / Independent Trio Ideation (formerly: Structured Trio Synthesis)
+
+Name updated per GPT's sharper framing — "blind" names the critical constraint (Phase 1 must be uncontaminated by other AIs' responses).
+
+Additional refinements added during trio review of this candidate:
+- Phase 0 question design step (Claude)
+- "Folder IS the protocol" — file system enforces sequence without code (Claude)
+- ORIGINAL_IDEAS.md auto-generated side-by-side preservation of all 3 Phase 1s (Claude)
+- "Does this defeat the purpose?" check formalized as mandatory section in synthesis (Claude)
+- Synthesis must show DISAGREEMENTS explicitly, not just convergence (Claude)
+- 5 future ARIA product features (GPT): Divergence Lock, Consensus Map, Outlier Shelf, Argument Swap, User Verdict Layer
+- Shorthand commands added to SYSTEM_COMMANDS.md: blind round / phase two / synthesize round
+- Numbered file prefixes for ordered reading: 00_QUESTION.md through 08_IDEAS_TO_SAVE.md
+
+See: docs/aria/ARIA_IDEAS.md 2026-05-11 entries for full design.
+See: docs/system/SYSTEM_COMMANDS.md for shorthand protocol behavior.
+
+Original candidate spec preserved below for reference:
+
+[2026-05-11] — Structured Trio Synthesis Protocol (Phase 1 / Phase 2 / User-verified) — superseded by Blind Trio Round naming
 
 Proposed protocol for when user wants ideas from all 3 AIs on a single architecturally-significant question:
 

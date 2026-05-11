@@ -315,8 +315,20 @@ Resolution: TIER not CHOICE. Level 1 in-flow = don't track. Level 2 after-flow =
 ⭐ 🧠 Sidetrack as second-order harvest, not failure (2026-05-11)
 "Aria came about because of building Uncrumple." The sidetrack from primary work to meta-work was the harvest. Future-you should distinguish harvest moments (produce artifacts) from distractions (don't) and let harvest moments run. Inflection points of this session: Block C truncation, user's "doesn't make sense" moments, pre-clear pressure rounds, wearable question, notes app mention. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Path-vs-Flow tension section.
 
-⭐ 🔭 Structured Trio Synthesis Protocol (2026-05-11)
-User's idea — formalizes the manual AI-relay workflow into repo-mediated protocol. Phase 1 = independent thinking (3 AIs answer separately, write to their folder). Phase 2 = cross-review (each AI reads others, agrees/merges/holds with reasoning per LOCKED 37). Final = synthesis + clever extras + mandatory user verification. Critical guard: user verification prevents synthesis from losing original intent (user's "defeats the purpose" example). Possible shorthand: "trio sync." Save as candidate, don't build tonight. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Structured Trio Synthesis Protocol section.
+⭐ 🔭 Blind Trio Round / Independent Trio Ideation (2026-05-11)
+User's idea, refined via trio review (Code + GPT + Claude). Phase 1 = blind independent thinking (3 AIs answer separately, no AI sees others). Phase 2 = cross-read after user says "phase two" (each AI reads others, agrees/merges/holds with reasoning per LOCKED 37). Phase 3 = synthesis preserving originals + disagreements + clever extras + mandatory user "defeats the purpose" check. The folder IS the protocol — file system enforces sequence without code. Shorthands: blind round / phase two / synthesize round. Future product features: Divergence Lock, Consensus Map, Outlier Shelf, Argument Swap, User Verdict Layer. Don't build tonight. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Blind Trio Round sections.
+
+⭐ 🔭 "The folder IS the protocol" architectural insight (2026-05-11)
+Claude's contribution to Blind Trio Round design. File system structure itself enforces the rule — you can't do Phase 2 until Phase 1 files exist. Zero infrastructure, zero automation, immediate value. Maps to "ARIA is mostly already built" — repo + markdown + Code = enough to ship today. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Blind Trio Round refinements section.
+
+⭐ 🔭 Five future ARIA product features (from Blind Trio Round design) (2026-05-11)
+1. Divergence Lock — hide all responses until ALL submitted (the differentiator)
+2. Consensus Map — visualize what all 3 agree on / what only 1 saw / conflicts / outliers
+3. Outlier Shelf — preserve strong non-consensus ideas (sometimes the weird one wins)
+4. Argument Swap — when AIs disagree, each argues the OTHER's position better
+5. User Verdict Layer — final answer not done until user reaction captured
+
+These come from GPT's contribution to the BTR design. All five are about preserving useful disagreement and protecting the user's role as synthesis layer. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Blind Trio Round refinements section.
 
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
