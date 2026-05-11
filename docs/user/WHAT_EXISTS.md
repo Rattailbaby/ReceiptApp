@@ -51,6 +51,14 @@ These exist in the repo. You can use them today.
 **Files:** Top of `docs/system/CLAUDE_CLEVER_IDEAS.md`
 **What to try next:** Skim it next time you want to know what to build.
 
+### [BUILT] WHAT_EXISTS.md (this file)
+**What it is:** The file you're reading. Capability index with status badges for everything you built.
+**Why it exists:** You explicitly asked for "a folder where I can see all the changes made so I know what's going on." This is that.
+**How to use it:** Open and skim by status section. Update entries when you build deferred items.
+**Files:** `docs/user/WHAT_EXISTS.md`
+**What to try next:** Use this file as your reference when you forget what's available.
+**Do not confuse with:** USER_DASHBOARD (which is live state) vs WHAT_EXISTS (which is capability index).
+
 ---
 
 ## 🟢 BUILT — Behavior Rules (LOCKED)
@@ -115,6 +123,36 @@ These are words you say to trigger specific behaviors.
 ### [BUILT] `health check`
 **What it is:** Diagnostic prompt before big decisions.
 **When to say it:** When you're about to make a meaningful change and want a quick state-of-things first.
+
+### [BUILT] `hold that thought`
+**What it is:** Park the current thread so you don't lose it when going on a sidequest.
+**When to say it:** Mid-sidequest, when you feel yourself about to forget what you were doing.
+**What happens:** Code appends a timestamped HOLD entry to USER_DASHBOARD.md Live State so you can return later.
+**Files:** `docs/user/USER_DASHBOARD.md` Parked Threads section
+
+### [BUILT] `what were we doing` / `back to thread`
+**What it is:** Recover the current thread / read Live State HOLDs.
+**When to say it:** When you've returned from a sidequest and forgot where you were.
+**What happens:** Code reads USER_DASHBOARD.md Live State and surfaces base task + active sidequest + most recent HOLD.
+
+### [BUILT] `back to base`
+**What it is:** Resolve sidequest, return to base task.
+**When to say it:** When the sidequest is done and you want to return focus to the main work.
+**What happens:** Code marks active sidequest as ✓ resolved, clears most recent HOLD, returns focus.
+
+### [BUILT] `system map`
+**What it is:** Surface WHAT_EXISTS capability index — "what tools/rules/workflows exist and how to use them."
+**When to say it:** When you forget what you've built.
+**What happens:** Code reads WHAT_EXISTS.md and surfaces the capability index filtered by status if requested.
+
+### [USABLE] `blind round` / `phase two` / `synthesize round`
+**What they are:** The three-command Blind Trio Round protocol (independent / cross-read / synthesis).
+**Status:** Shorthands are documented and ready to use, but the folder template (`docs/trio_rounds/_TEMPLATE/`) hasn't been built yet. Workflow runs manually for now.
+**When to say `blind round`:** When you want 3 independent AI takes on an architecturally significant question.
+**When to say `phase two`:** When all three Phase 1 takes are saved and you want AIs to read each other.
+**When to say `synthesize round`:** When you want the final merged answer preserving disagreements.
+**Files:** `docs/system/SYSTEM_COMMANDS.md` documents the protocol; full design in `docs/aria/ARIA_IDEAS.md`
+**What to try next:** Use it on one real architectural question — manual paste workflow before automation.
 
 ---
 
