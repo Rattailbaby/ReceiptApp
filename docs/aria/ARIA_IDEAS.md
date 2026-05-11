@@ -5723,3 +5723,97 @@ The drift becomes architecturally hard, not just discouraged.
 ⭐ flag: this is the missing protection layer the user's scenario exposed. Save as candidate. Build DEFERRED_BUILDS.md only when first real deferred build needs protection. Test pattern before locking.
 
 [Code annotation: the user's scenario is exactly the kind of "what would break this?" question the missing skeptic role would have asked earlier in the session. Worth noting that the user themselves played skeptic role here — which validates the user-as-fourth-witness-role insight from the Loaded Witness rule itself.]
+
+
+[2026-05-11] — Deferred Build Protection refinements (post-trio review)
+
+Both planning AIs reviewed the 4-part protocol and added refinements:
+
+═══════════════════════════════════════════════
+CLAUDE'S ADDITION: User's verbatim words is REQUIRED not optional
+═══════════════════════════════════════════════
+
+The Deferred Build Manifest currently lists "User's specific intent (their own words)" as a field. Claude pointed out this should be REQUIRED, not optional.
+
+Why:
+"Here's the failure mode that still exists: fresh AI reads the spec accurately, restates it correctly, user confirms — but the user's memory has also drifted slightly. The user says 'yes that's right' when it's actually 80% right. The user's own words from the session are the check against user-memory drift, not just AI drift."
+
+This is a third drift vector beyond AI-drift and file-drift: USER-memory-drift.
+
+Updated manifest format:
+The "User's verbatim words" field is now MANDATORY in every Deferred Build entry. Not paraphrase. Not summary. Actual quoted language from the session.
+
+When verbatim isn't captured at decision time, the manifest entry should explicitly say "user words not captured verbatim — high risk for memory drift, verify carefully." That marks the entry as lower-confidence.
+
+═══════════════════════════════════════════════
+GPT'S ADDITION: Don't create DEFERRED_BUILDS.md yet
+═══════════════════════════════════════════════
+
+GPT's pushback: don't create a new file until 2-3 deferred builds actually need protection. Avoid premature file creation.
+
+For now:
+- Deferred Build Protection lives as a section in existing files (CANDIDATE_ATTRIBUTES + ARIA_IDEAS)
+- USER_DASHBOARD can reference it as reminder
+- DECISIONS.md can hold per-decision entries with archaeology
+- Create DEFERRED_BUILDS.md only when:
+  - 2-3 active deferred builds exist that need separate protection, OR
+  - Existing files become unwieldy holding the protections inline
+
+Code yields. The protocol can be applied without dedicated file. Premature file creation is exactly held #14 (coordination overhead).
+
+═══════════════════════════════════════════════
+GPT'S CRYSTALLIZATION: 6-step Fresh-AI-Must-Verify-Before-Build
+═══════════════════════════════════════════════
+
+Combining Verify-Before-Build + What-Changed + Decision Archaeology into one explicit 6-step sequence:
+
+When a fresh AI is about to start a deferred build, it MUST:
+
+1. **Read the saved spec** (from wherever it lives — CANDIDATE_ATTRIBUTES, ARIA_IDEAS, or eventual DEFERRED_BUILDS.md)
+2. **Restate intended build** in own words back to user
+3. **Identify what would defeat the purpose** (the failure mode that's worse than not building at all)
+4. **Ask what changed** since the original decision was made
+5. **Wait for user confirmation** — DO NOT proceed without explicit "yes, build that"
+6. **Build only the verified version** — no AI-side improvements without explicit user approval
+
+This is more concrete than the original four-part split. Steps 1-2 are the verification. Step 3 is the "defeats the purpose" check (from Blind Trio Round synthesis). Steps 4-5 are the what-changed challenge. Step 6 is the architectural commitment to no-silent-drift.
+
+═══════════════════════════════════════════════
+COMBINED REFINED PROTOCOL
+═══════════════════════════════════════════════
+
+**The Fresh-AI-Must-Verify-Before-Build Protocol:**
+
+1. Read saved spec
+2. Restate intended build in own words
+3. Identify what would defeat the purpose
+4. Ask "what changed since [date]?"
+5. Wait for user confirmation
+6. Build only the verified version
+
+**The verbatim-words requirement (Claude addition):**
+
+Every deferred build entry MUST include user's exact words about what they wanted, captured at decision time. Marked as "verbatim not captured" if missed at the time — that's a signal to verify carefully.
+
+**File strategy (GPT addition):**
+
+Don't create DEFERRED_BUILDS.md tonight. Use existing CANDIDATE_ATTRIBUTES.md / ARIA_IDEAS.md / DECISIONS.md for protection. Promote to dedicated file when 2-3 active deferred builds need separate protection or existing files become unwieldy.
+
+═══════════════════════════════════════════════
+[Code annotation] — Three-vector drift defense
+═══════════════════════════════════════════════
+
+The full protection stack now defends against three drift vectors:
+
+1. **AI drift** — fresh AI reinterprets the spec
+   Defense: Verify-Before-Build steps 1-3
+
+2. **File drift** — spec was incomplete or misleading
+   Defense: Decision archaeology + rejected paths captured
+
+3. **User-memory drift** (Claude's addition) — user's recollection has shifted
+   Defense: Verbatim words from decision time as the check
+
+All three need to be defended. Any single one of them can cause silent drift. The combined protocol covers all three.
+
+This is the cleanest version of the protection layer. Saving here as the canonical reference. Build the dedicated file when the protocol proves itself across multiple deferred builds.
