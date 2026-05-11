@@ -4521,3 +4521,86 @@ Texture check: session has gotten dense enough for unaided recall to fail. That'
 ═══════════════════════════════════════════════
 END EXHIBIT A
 ═══════════════════════════════════════════════
+
+
+[2026-05-11] — ⭐ Path-vs-Flow tension: track inspiration without breaking it
+
+User-raised tension before clear (genuinely required Code's loaded context to synthesize — perfect example of pre-clear-only content):
+
+"I got so sidetracked on ARIA. Aria is just as important if not more — but also building Uncrumple is why ARIA came about. If I continue building it, more ARIA features emerge. So sidetracks are okay when inspiration strikes. We came up with so much in one session — should we track HOW this occurred, what questions I asked, the path my brain followed? Or is that too systematic and I should just go with the flow? Maybe both could be true?"
+
+The tension:
+- Track the path → preserve shortcuts, self-knowledge, repeatable patterns
+- Don't track → preserve inspiration, avoid productivity theater, trust the destination
+
+Both are true. The resolution: TIER, not choice.
+
+Same shape as clone regeneration tier model — different capture scales for different moments:
+
+LEVEL 1 — IN-FLOW (during inspiration)
+Don't track anything. Just capture artifacts (ideas, decisions, files).
+Current behavior — proven to work. We captured ~180 ideas this session without anyone logging "step 1: had thought, step 2: asked Claude."
+
+LEVEL 2 — AFTER-FLOW (end of session / handoff)
+Reconstruct the 3-5 INFLECTION POINTS only. Not every step.
+The moments where the path turned sharply or where something compounded.
+This is what the Generative Harvest pattern already does at a smaller scale.
+
+LEVEL 3 — LONG-TERM (across multiple sessions)
+Notice meta-patterns. "I always sidetrack productively when X" — but this is an emergent observation, not a rule to formalize.
+Years before this becomes legible.
+
+Three cadences, three levels. You don't choose ONE — each operates at its own scale.
+
+The sidetrack ≠ failure when one product feeds another:
+
+User wrote: "Aria came about because of building Uncrumple."
+
+The sidetrack from Uncrumple to ARIA wasn't lost focus. It was the second-order work the first product enabled. Building Uncrumple created the CONDITIONS that made ARIA visible. The sidetrack IS the harvest.
+
+Distinguishing signal:
+- HARVEST MOMENTS: sidetracks that produce durable artifacts (today: ~180 ideas, 3 LOCKED rules, 4 new files, architecture clarification)
+- ACTUAL DISTRACTIONS: sidetracks driven by avoidance / novelty-seeking / fatigue (produce no artifacts)
+
+The artifacts test: did the sidetrack produce captured value? If yes, it's a harvest moment — go with it. If no, it's a distraction — return to base task.
+
+Over-systemization warning (user's own words, most important part):
+
+"Ironically sidetrack myself with a system that doesn't need to be a system."
+
+This is held candidate #14 (coordination overhead awareness) speaking through the user's intuition. Trust it. Default to NOT formalizing path-tracking. Save inflection points for this one session. Let the pattern prove itself naturally before locking anything.
+
+The 5 inflection points of THIS session (2026-05-09 to 2026-05-11):
+
+1. Block C truncation incident
+   → produced Code-as-writer / GPT-as-reviewer role split
+   → made the protocol-vs-app distinction concrete
+
+2. User's "wait this doesn't make sense" moments
+   → caught experienced-vs-fresh GPT distinction
+   → surfaced repo truth boundary
+   → produced HANDOFF_CHEATSHEET.md need
+
+3. Pre-clear "what else?" pressure rounds
+   → produced 90% of late-session deep ideas
+   → validated Generative Harvest pattern empirically
+
+4. Watch/wearable question (user's instinct, not feature spec)
+   → flipped form-factor mental model 180° (desktop = backend, voice = frontend)
+   → reframed ARIA from app to ambient cognition layer
+
+5. "Notes app list" mention (passing remark)
+   → produced Idea Intake Mode protocol
+   → established user-as-synthesis-layer foundational principle
+
+That's 5 trigger points across 2+ days. Trackable. 50 steps wouldn't be.
+
+Cross-cutting observation:
+The inflection points were NOT planned. None of them were on a roadmap. All five emerged from real-time interaction. The "path" wasn't engineered — it was navigated. Tracking the path after the fact is feasible because the inflection points are visible in retrospect. Tracking during would require interrupting the inspiration that produced them.
+
+ARIA implication:
+The "frictionless re-entry" pitch needs a companion: "frictionless productive sidetracking." ARIA shouldn't punish detours when they produce harvest moments. It should distinguish harvest from distraction, support both modes, and resume the held base task only when the user explicitly returns to it. The system today is more aligned with the held base task / sidequest model than with truly open inspiration flow — worth keeping in mind as ARIA evolves.
+
+[Code addition: This idea is itself a perfect example of pre-clear-only content. User couldn't have generated this question after /clear — it depends on the full arc of what happened across this session being loaded in their mind AND in mine. Save it now. The synthesis I just provided wouldn't be reproducible from repo files alone after clear. Exhibit B for the Mid-Session Orientation Snapshot primitive in the preceding entry.]
+
+⭐ flag: this might be the deepest single insight of the session about how ARIA should treat user behavior. Worth shelf-promoting.

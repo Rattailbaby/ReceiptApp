@@ -306,6 +306,15 @@ Not daily — weekly. Top ⭐ ideas / stale deferrals / app-vs-governance progre
 ⭐ 🧠 Anti-bloat rule with metric (2026-05-11)
 "If governance work dominates too long: next session must ship app progress unless blocker exists." Testable version of "system explaining the system" anti-pattern with concrete trigger. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #40.
 
+⭐ 🧠 Mid-Session Orientation Snapshot — preservable artifact (2026-05-11)
+Compressed synthesis of session state generated while context loaded. Can't be reproduced from repo files alone after /clear. Connects 5 existing ideas (continuity breadcrumbs → Resume Cards → dynamic starter block → orientation snapshot → Tier 3 regen JSON) as the same primitive at different scales. Unifying name proposed: 'Continuity Snapshot'. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Mid-Session Orientation Snapshot section.
+
+⭐ 🧠 Path-vs-Flow tension — track inspiration without breaking it (2026-05-11)
+Resolution: TIER not CHOICE. Level 1 in-flow = don't track. Level 2 after-flow = reconstruct 3-5 inflection points only. Level 3 long-term = notice meta-patterns. Three cadences, three scales, no need to pick one. Sidetracks ≠ failure when they produce artifacts (harvest moments) vs no artifacts (distractions). Don't formalize path-tracking — trust the over-systemization warning. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Path-vs-Flow tension section.
+
+⭐ 🧠 Sidetrack as second-order harvest, not failure (2026-05-11)
+"Aria came about because of building Uncrumple." The sidetrack from primary work to meta-work was the harvest. Future-you should distinguish harvest moments (produce artifacts) from distractions (don't) and let harvest moments run. Inflection points of this session: Block C truncation, user's "doesn't make sense" moments, pre-clear pressure rounds, wearable question, notes app mention. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Path-vs-Flow tension section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 
