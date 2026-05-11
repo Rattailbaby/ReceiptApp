@@ -546,6 +546,71 @@ Connection to existing rules:
 
 Candidate only. Test across multiple inspiration detours before promoting to LOCKED.
 
+[2026-05-11] — Structured Trio Synthesis Protocol (Phase 1 / Phase 2 / User-verified)
+
+Proposed protocol for when user wants ideas from all 3 AIs on a single architecturally-significant question:
+
+PHASE 1 — Independent thinking
+- User pastes same question to GPT, Claude, Code SEPARATELY
+- Each AI generates own response without seeing others
+- Each AI writes response to their own section/folder in repo
+- Preserves divergent thinking (3 different angles)
+- NO collaboration allowed in this phase
+
+PHASE 2 — Cross-review
+- User says "phase 2" (or shorthand trigger)
+- Each AI reads the other two's Phase 1 responses
+- Each AI either: agrees / merges / holds position with reasoning
+- Per LOCKED 37 (CROSS-AI PROMPT RECONCILIATION) — never silent-defer
+- Each AI writes Phase 2 response stating what changed and why
+
+SYNTHESIS — Final
+- All 3 original ideas preserved
+- All 3 cross-review responses preserved
+- Combined synthesis section
+- Clever extras section for items that didn't fit
+- MANDATORY: user reads end result to verify it didn't drift from original intent
+
+Critical guard (the "defeats the purpose" check):
+User's failure-mode example: "if I wanted to remember something and AI said 'paste it after sidequest' — that defeats the purpose." Final synthesis can lose sight of original intent. User-verification step is NON-NEGOTIABLE.
+
+When to invoke:
+NOT every question. Only architecturally significant decisions, ambiguous trade-offs, foundational principles. Routine work doesn't need three-AI parallel processing.
+
+Storage:
+Single file per question: docs/system/synthesis/YYYY-MM-DD-question-slug.md
+Sections: Question / Phase 1 (per AI) / Phase 2 (per AI) / Synthesis / Clever extras / User verification
+
+Possible shorthand: "trio sync" or "phased synthesis"
+Could join shorthand family: soc / sidequest / idea intake / tool sweep / trio sync
+
+Automation paths:
+PARTIAL (feasible today):
+- Phase 1 trigger script: parallel API calls to GPT + Claude, Code generates locally
+- All responses written to phase1 sections
+- User reviews, says "phase 2"
+- Phase 2 script feeds each AI the others' responses, writes responses
+- Code generates synthesis draft
+- User verifies + adds notes
+
+FULL (later):
+- Single "trio synthesize <question>" command
+- Pauses for user verification at synthesis step
+
+Connection to existing rules:
+- LOCKED 37 (CROSS-AI PROMPT RECONCILIATION) is the BEHAVIORAL rule. This protocol is the STRUCTURAL implementation.
+- Trio reflection during handoff candidate (existing) is the subset that runs during /handoff
+- Code-as-writer / GPT-as-reviewer maps to: Code writes synthesis file, GPT/Claude review their own and others' content
+
+Failure modes to prevent:
+1. Premature convergence in Phase 2 (silent defer) — LOCKED 37 prevents if honored
+2. Synthesis losing original intent — user verification step prevents
+3. Slow-GPT bias — note: use this protocol especially in Tier 3 sessions because GPT capacity varies
+4. Over-formalization — keep as CANDIDATE not LOCKED, use only when warranted
+5. Cost/time — reserve for architecturally significant decisions, not routine work
+
+Candidate only. Test across at least 3 different question types before promotion (architectural decision / trade-off resolution / foundational principle).
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

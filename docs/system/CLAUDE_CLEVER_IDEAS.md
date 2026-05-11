@@ -315,6 +315,9 @@ Resolution: TIER not CHOICE. Level 1 in-flow = don't track. Level 2 after-flow =
 ⭐ 🧠 Sidetrack as second-order harvest, not failure (2026-05-11)
 "Aria came about because of building Uncrumple." The sidetrack from primary work to meta-work was the harvest. Future-you should distinguish harvest moments (produce artifacts) from distractions (don't) and let harvest moments run. Inflection points of this session: Block C truncation, user's "doesn't make sense" moments, pre-clear pressure rounds, wearable question, notes app mention. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Path-vs-Flow tension section.
 
+⭐ 🔭 Structured Trio Synthesis Protocol (2026-05-11)
+User's idea — formalizes the manual AI-relay workflow into repo-mediated protocol. Phase 1 = independent thinking (3 AIs answer separately, write to their folder). Phase 2 = cross-review (each AI reads others, agrees/merges/holds with reasoning per LOCKED 37). Final = synthesis + clever extras + mandatory user verification. Critical guard: user verification prevents synthesis from losing original intent (user's "defeats the purpose" example). Possible shorthand: "trio sync." Save as candidate, don't build tonight. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Structured Trio Synthesis Protocol section.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

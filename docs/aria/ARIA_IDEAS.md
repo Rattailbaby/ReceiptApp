@@ -4706,3 +4706,130 @@ Doors from 2026-05-09 to 2026-05-11:
 - Anything you left out about how you grew this session? (multi-pass Pass 3 question)
 
 [Code addition: notice these doors are mostly USER's questions, not AI's. The doors are user-generated friction points. This is consistent with "AIs capture, user synthesizes" — the user is the synthesis layer; the doors come from the user's intuition that something is off. ARIA's job is to honor those doors when they appear, not generate them.]
+
+
+[2026-05-11] — ⭐ Structured Trio Synthesis Protocol (soc capture — user idea, raw preserved)
+
+User's raw description (soc-captured verbatim):
+
+"Maybe when I want ideas from all 3 llms there can be a folder in the repo where they take turns. Right now I ask the 3 separately as to come up with different takes and ideas. That's important. Then for instance I'll send one llm what the other 2 said, for each llm, they'll agree (not supposed to let it override their idea if theirs is better) or merge the two.
+
+So the system in the repo for when I want to share ideas could be something like I paste the question to each llm, the llms give me a response and put their responses in their folder, I then say okay now you can look at what the other lmms suggested. Or say phase 2 or something I'll remember. And then after you have given me your idea and put it in a folder accessible to the other llms, the others would do the same, and then when I say phase two, all 3 go and look at what the other llms suggested or their take on it.
+
+Sort of like a controlled conversation and sharing idea. I don't want yall to come up with the idea together — I want you to form your own ideas separately so we have 3 ideas because it'd be stronger that way. And then you're allowed to see what the other two said and collaborate to find the best solution.
+
+Idk how the system would work or if we could automate part of it if not all of it in a structured way to get it done faster.
+
+Then there would be a folder I would look at where you state your original ideas, so there would be 3 original ideas and then a section about where you read the others and what you liked or what about yours that you think was stronger. And so it'd be like I could then just see how the 3 llms came to the best conclusion, along with any clever ideas of course at the bottom.
+
+Pretty much you would explain my idea back to me at the end or that's how it would read as a better more refined idea. I would have to read it to make sure it's right because sometimes the end idea doesn't make sense or would give me a better idea.
+
+For instance if I wanted to remember something and told you and you said 'okay the best way to do that is for you to paste what you want to remember after you are done with the sidequest' — something like that defeats the purpose you know. Maybe that's a bad example but you get it."
+
+═══════════════════════════════════════════════
+[Code addition] — Synthesis and design
+═══════════════════════════════════════════════
+
+This is one of the strongest ideas of the session. It formalizes what we've been doing MANUALLY all session — user as relay, paste responses between AI tabs — into a structured repo-mediated protocol.
+
+The core design:
+
+PHASE 1 — Independent thinking
+- User pastes same question to GPT, Claude, Code separately
+- Each AI generates own response WITHOUT seeing others
+- Each AI writes response to their own folder in repo
+- Preserves divergent thinking (3 different angles, not premature convergence)
+
+PHASE 2 — Cross-review (triggered by user saying "phase 2")
+- Each AI reads the other two's Phase 1 responses
+- Each AI either: agrees, merges, or holds position with reasoning
+- Per LOCKED 37 cross-AI reconciliation — never silent-defer
+- Each AI writes Phase 2 response (what they kept, what they yielded on, what they merged)
+
+FINAL — Synthesis
+- All 3 original ideas preserved
+- All 3 review responses preserved
+- A combined synthesis section
+- A "clever extras" section for things that didn't fit
+- User reads end result to verify it didn't drift from original intent
+
+CRITICAL USER REQUIREMENT (the "defeats the purpose" check):
+The user's failure-mode example: if user wants to remember something and AI synthesis says "paste it after sidequest" — that defeats the purpose. Final synthesis can lose sight of original intent. User-verification step is non-negotiable.
+
+Proposed folder structure (single file, simpler):
+
+docs/system/synthesis/YYYY-MM-DD-question-slug.md
+
+With sections:
+## Question
+## Phase 1 — Independent
+### GPT
+### Claude
+### Code
+## Phase 2 — Cross-review
+### GPT (after reading others)
+### Claude (after reading others)
+### Code (after reading others)
+## Synthesis
+## Clever extras
+## User verification notes
+
+Alternative folder structure (more separated):
+
+docs/system/synthesis/YYYY-MM-DD-question-slug/
+  question.md
+  phase1/{gpt,claude,code}.md
+  phase2/{gpt,claude,code}.md
+  synthesis.md
+  clever-extras.md
+
+The single-file version is probably better — easier to read, less folder nesting, fits the repo-as-substrate principle.
+
+Automation possibilities:
+
+PARTIAL AUTOMATION (today, feasible):
+- Phase 1 trigger: script sends same prompt to GPT API + Claude API in parallel
+- Writes responses to phase1 sections of the file
+- Code generates its own Phase 1 response locally
+- User reviews, then says "phase 2"
+- Phase 2 script feeds each AI the other two's responses
+- Writes Phase 2 responses
+- Code generates synthesis draft from all 6 inputs
+- User reviews + verifies + adds notes
+
+FULL AUTOMATION (later):
+- Single "trio synthesize" command invokes both phases automatically
+- Pauses for user verification at synthesis step (mandatory)
+- Returns final document
+
+When to invoke this protocol:
+NOT every question. Only when the question is architecturally significant — major decisions, ambiguous trade-offs, foundational principles. Routine work doesn't need three-AI parallel processing.
+
+Connection to existing rules:
+- LOCKED 37 (CROSS-AI PROMPT RECONCILIATION) is the BEHAVIORAL rule. This protocol is the STRUCTURAL implementation.
+- Trio reflection during handoff candidate (also captured 2026-05-09) is the SUBSET of this protocol that runs during /handoff.
+- Code-as-writer / GPT-as-reviewer (Block C truncation lesson) maps to: Code can write the synthesis file, GPT/Claude review their own and others' content.
+
+Failure modes to flag:
+1. Premature convergence in Phase 2 (silent defer) — LOCKED 37 prevents this if honored
+2. Synthesis losing original intent (user's "defeats the purpose" example) — mandatory user verification step prevents this
+3. Slow-GPT bias — if GPT is degrading, Phase 1 from GPT is weaker. Note: "use this protocol especially in Tier 3 sessions because GPT capacity varies"
+4. Over-formalization — could become heavy ritual. Mark as candidate, NOT LOCKED. Use only when question warrants three-AI processing.
+5. Cost/time — running for every question is excessive. Reserve for architecturally significant decisions.
+
+Why this is strong:
+- Matches the user's explicit workflow today (manual relay) — formalizes what's already proven
+- Preserves divergent thinking (3 independent first) AND convergent thinking (collaborative second)
+- Uses the repo as natural substrate (consistent with "ARIA is mostly already built")
+- Honors LOCKED 37 by design (not just by convention)
+- User verification step keeps human as synthesis layer
+- Automatable in phases — partial today, fuller later
+
+Possible name for the protocol: "Trio Synthesis" or "3-Phase Independent-Then-Collaborative" or "Phase 1 / Phase 2 Sync"
+
+User-facing shorthand candidate: "trio sync" or "phased synthesis"
+Could join: soc / sidequest / idea intake / tool sweep / trio sync
+
+⭐ flag: this is a candidate-worthy structural idea. Save now, don't build tonight, validate as candidate first.
+
+This idea required Code's loaded context to synthesize because the protocol formalizes the manual workflow we've been doing all session — fresh Code wouldn't recognize what's being formalized. Exhibit C for Mid-Session Orientation Snapshot primitive.
