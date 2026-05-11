@@ -270,6 +270,42 @@ iOS/watchOS Shortcut: voice → emoji format → append to iCloud → syncs to r
 ⭐ 🧠 "Rate your confidence 1-10" prompt pattern (2026-05-10)
 Surfaces AI uncertainty cheaply. Treating AI responses as equally weighted misses signal. Confidence scoring changes decisions. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-10 underused capabilities section.
 
+⭐ 🏗️ Whisper API for voice capture on desktop (2026-05-11)
+OpenAI's Whisper — best speech-to-text, costs almost nothing. Script: hotkey → record → Whisper → transcription → route to right file. Voice capture layer that works on desktop TODAY without buying hardware. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Claude's harvest.
+
+⭐ 🏗️ GitHub labels as routing categories (2026-05-11)
+Labels: aria / uncrumple / bug / governance / idea-compost / high-signal / candidate-rule / blocked. Queryable taxonomy on issues. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #2.
+
+⭐ 🏗️ GitHub release tags for stable system states (2026-05-11)
+aria-handoff-v1, uncrumple-cleanup-v1. Time-travel capability — "go back to system before X changed." Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #6.
+
+⭐ 🏗️ Repo health check script (2026-05-11)
+One command reports: branch / dirty files / latest commit / JSON valid / handoff present / candidate count / unresolved threads. Single-command system status. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #10.
+
+⭐ 🏗️ Diff-review packet generator (2026-05-11)
+Structured diffs instead of long summaries: field changed / old value / new value / why / risk. Formalizes Tier 2 review pattern. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #15.
+
+⭐ 🏗️ Prompt library folder (docs/prompts/) (2026-05-11)
+Reusable prompts: candidate review / pre-clear harvest / clone self-awareness / issue intake / pressure-test / synthesis. Solves prompt-retyping problem. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #16.
+
+⭐ 🏗️ Recovery test prompt (2026-05-11)
+Standardized "prove you recovered": what is next_step / what is deferred / what must you not do / what changed last session. Automates handoff verification. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #18.
+
+⭐ 🏗️ Session mode switch commands (2026-05-11)
+execution mode / synthesis mode / harvest mode / recovery mode / idea intake. Each changes behavior. Extends shorthand family. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #20.
+
+⭐ 🏗️ Logi mouse + Huion pad as ARIA input layer (2026-05-11)
+Hardware user ALREADY OWNS becomes prompt-template launcher and AI-toggle interface. Map mouse buttons to GPT/Claude/Code toggles. Map Huion keys to common prompt templates ("Fix only...", "Inspect only..."). Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest items #27, #29.
+
+⭐ 🧠 Vector search over compost (2026-05-11)
+Embeddings over ARIA_IDEAS, compost, roadmap, handoffs, decisions. Ask "where did we talk about continuity tax?" → semantic search across all files. Adds query capability without restructuring. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #33.
+
+⭐ 🧠 Weekly ARIA review cadence (2026-05-11)
+Not daily — weekly. Top ⭐ ideas / stale deferrals / app-vs-governance progress / next 3 build steps. Adds cadence layer above per-session work. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #39.
+
+⭐ 🧠 Anti-bloat rule with metric (2026-05-11)
+"If governance work dominates too long: next session must ship app progress unless blocker exists." Testable version of "system explaining the system" anti-pattern with concrete trigger. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 GPT's harvest item #40.
+
 ⭐ 🧠 Everything is a tool — including discomfort (2026-05-09)
 Nothing is just a problem. Everything is information.
 

@@ -4095,3 +4095,286 @@ Most of these aren't NEW capabilities — they're existing features of the tools
 - "Hey ARIA" as product moment
 - Form factor tells you what ARIA really is
 - "We'll know when we make more of it" discipline
+
+
+[2026-05-11] — Claude's underused capabilities harvest (25 ideas, with user-flagged ⭐ items)
+
+Per Idea Intake Mode protocol: preserved verbatim with Claude's emoji categorization. Some overlap with 2026-05-10 underused capabilities audit — preserved per NO IDEA WASTED rule. Marked [OVERLAPS] where applicable.
+
+═══════════════════════════════════════════════
+🤖 AI CAPABILITIES
+═══════════════════════════════════════════════
+
+⭐ 🤖 GPT Memory (separate from instructions) [OVERLAPS]
+GPT has persistent memory completely separate from project instructions. Tell it "remember that I prefer X" — carries across ALL chats. Underutilized. Could seed GPT memory with ARIA principles, working style, Uncrumple context. Second continuity layer that survives even if project instructions get wiped.
+
+⭐ 🤖 Claude Projects with uploaded files [OVERLAPS]
+You're in a Claude Project but may not be using file upload to full potential. Upload PDFs, docs, files directly into Project knowledge base. CURRENT_HANDOFF.json, LOCKED_ATTRIBUTES, ARIA_README could all live there as uploaded files — searchable and always available without pasting.
+
+⭐ 🤖 GPT browses the web in real time
+Could research competitors, find React Native libraries, check Expo SDK release notes, Play Store policy changes — without leaving conversation. Underutilized for keeping Uncrumple technically current.
+
+🤖 Claude analyzes images and screenshots
+Paste screenshots into Claude. App screenshots, error messages, design mockups, competitor apps, hand-drawn wireframes — all analyzable. Photograph a UI sketch, get React Native implementation description.
+
+🤖 GPT's data analysis mode
+Analyzes uploaded CSV files, runs calculations, generates charts. Export SESSION_LOG as CSV → GPT visualizes session patterns, idea frequency over time, drift detection. Real data analysis without writing code.
+
+⭐ 🤖 Claude's ability to write and run code via artifacts
+Claude writes complete runnable scripts as artifacts. Context injection script, session analyzer, parallel API caller — get back complete working code, not descriptions. Underutilized for building ARIA tooling itself.
+
+⭐ 🤖 GPT custom GPTs [OVERLAPS]
+Build custom GPT trained on specific instructions + files. "ARIA Assistant" custom GPT with LOCKED_ATTRIBUTES, SYSTEM_COMMANDS, ARIA_README baked in — accessible via link. Could be first shareable ARIA product.
+
+🤖 Claude's extended thinking mode
+Extended thinking for complex problems. Architecture decisions (ARIA build path, Uncrumple data model changes) — deeper analysis than default. Worth using for hard decisions, not routine ones.
+
+⭐ 🤖 GPT's DALL-E for UI mockups
+Generates images. Describe UI concept in text → DALL-E renders rough mockup before writing code. Good enough to know if direction worth pursuing. Useful for crumpled-to-flat Save animation, ARIA health score display, wearable interface.
+
+⭐ 🤖 Anthropic API for Claude with system prompts
+Call Claude via API not chat interface — set system prompt persisting entire conversation. System prompt containing LOCKED_ATTRIBUTES + role manifest, injected automatically = Claude always in right mode without manual pasting. API version of browser extension idea.
+
+═══════════════════════════════════════════════
+🏗️ DEV / BUILD INFRASTRUCTURE
+═══════════════════════════════════════════════
+
+⭐ 🏗️ GitHub Actions for automated repo maintenance [OVERLAPS]
+Workflow on every push: validate CURRENT_HANDOFF.json, check next_step isn't empty, count deferred issues, auto-generate session summary, notify on drift. Free, automatic, no extra tooling.
+
+⭐ 🏗️ GitHub Copilot alongside Claude Code
+Copilot inline suggestions while typing. Claude Code whole-file patches. Not mutually exclusive. Copilot for small things during manual editing. Claude Code for larger structured changes. Reduces friction on small edits that don't warrant a full Code prompt.
+
+⭐ 🏗️ Git hooks for local automation
+Distinct from Code hooks — these are git-level. Pre-commit hook: validate JSON, warn if CURRENT_HANDOFF.json hasn't been updated. Post-commit hook: copy starter block to clipboard automatically. Local, no services, invisible when working.
+
+🏗️ Zapier or Make for no-code automation
+Zap: new commit → extracts SESSION_LOG entry → sends to Notion database → Slack notification. All automation without code. Free tier probably enough.
+
+⭐ 🏗️ Whisper API for voice capture
+OpenAI's Whisper = best speech-to-text, costs almost nothing. Script: hotkey → record → Whisper → transcription → route to right file. Voice capture layer for wearable idea but works on DESKTOP RIGHT NOW. No hardware required.
+
+🏗️ Replit or CodeSandbox for prototypes
+Build and host small web apps free. Parallel API comparison view, context injection interface, ARIA dashboard — all hostable without DevOps. Fast prototyping environment, sharable with a link.
+
+⭐ 🏗️ A second GitHub repo for ARIA itself
+ARIA lives inside Uncrumple repo currently. As it grows into own product, should have own repo. System files, CLI tool, protocol docs — separate from app code. Makes ARIA shareable and open-sourceable without exposing Uncrumple's app code.
+
+🏗️ VS Code workspace settings for project-specific behavior
+Workspace-level settings override global per project. Uncrumple workspace: auto-save on focus loss, highlight TODO/DEFERRED keywords, word count for markdown, custom task on save. QoL improvements that compound.
+
+═══════════════════════════════════════════════
+🧠 OTHER TOOLS / RESOURCES
+═══════════════════════════════════════════════
+
+🧠 Perplexity for research
+Better than GPT web browsing for deep research — cites sources, broader, synthesizes better. For "what do tradespeople actually complain about" or "current state of React Native performance" — Perplexity beats Claude/GPT. Fourth specialized tool.
+
+🧠 Notion as parallel idea database
+Proper database with filtering, sorting, views. CLAUDE_CLEVER_IDEAS.md is flat text — hard to query. Notion database mirroring ideas with tags/priority/status = navigable library. Sync via script or Zapier.
+
+🧠 Linear or GitHub Issues for deferral tracking [OVERLAPS]
+Deferral counter needs a home. GitHub Issues already connected. Every deferred issue = Issue with "times deferred" label, updated per session. Free, integrated, AI-visible.
+
+⭐ 🧠 Shortcuts app for ARIA capture
+[CORRECTION: original Claude entry assumed Apple Shortcuts; user has Samsung Watch. Android equivalents: Bixby Routines, Google Assistant Routines, Tasker. Same principle: voice → transcribe → format with emoji → append to cloud-synced file → routes to repo. Zero custom code. Works today.]
+
+🧠 Readwise or Matter for saving research
+Highlight and save passages from articles about tradespeople, expense tracking, wearables, AI products — syncs to Notion or Obsidian. Research layer feeding ARIA's idea system. Currently research lives in head or browser bookmarks.
+
+🏗️ GitHub Discussions for idea capture [OVERLAPS]
+Lightweight idea board — post as discussions, comment, close when built or rejected. Searchable, integrated, mobile-accessible. Middle ground between flat markdown and full database.
+
+⭐ 🧠 Other public repos as learning resources
+MemGPT (AI memory), AutoGPT (AI agents), LangChain (AI orchestration). Don't need to use them but reading their architectures gives concrete implementation ideas for ARIA. MemGPT's approach to external memory directly relevant.
+
+═══════════════════════════════════════════════
+[Code addition] — Top 3 most-immediate moves from this batch:
+
+1. GPT Memory seeding — 5 minutes, eliminates biggest recurring friction (paste-Block-A-every-time). Open ChatGPT → paste 4-line "I'm part of ARIA trio, repo at github.com/Rattailbaby/ReceiptApp, follow FRESH CHAT PROTOCOL" → done forever.
+
+2. Claude Project file uploads — 10 minutes, makes core files always available without paste cost. Upload LOCKED_ATTRIBUTES, CURRENT_HANDOFF.json, ARIA_README, HANDOFF_CHEATSHEET to Claude Project knowledge base.
+
+3. Whisper API + hotkey desktop script — afternoon project, gives voice capture on desktop TODAY without buying any hardware. This is the "wearable capture" idea that doesn't need a wearable. Press hotkey → speak → transcript appears in clipboard formatted with detected emoji category.
+
+Held back: "Second GitHub repo for ARIA" — right long-term move but premature now. Extracting before protocol stable creates coordination overhead (held #14 candidate). Wait until 3-command CLI ships, then extract.
+
+
+[2026-05-11] — GPT's tooling/resources harvest (40 ideas + top-5 picks)
+
+Per Idea Intake Mode protocol. GPT noted upfront: "GitHub repository-list tool returned no repositories, even though file fetch by exact path works. Keep using direct repo/file access for now." [Code addition: tooling observation worth tracking. Could be temporary GitHub API issue or specific to the integration GPT uses. Watch if it persists.]
+
+GPT's closing 🔭 ARIA framing: "The next leverage point is not more rules, but better surfaces: commands, shortcuts, issue tracking, repo checks, and intake tools that make the continuity system easier to operate." [Code addition: this is sharp. After 2 days of locking rules and capturing principles, the next 2 days should ship TOOLS that USE those rules. Stop adding governance; start adding surfaces.]
+
+═══════════════════════════════════════════════
+HIGH-VALUE THINGS TO USE SOON (GitHub workflow)
+═══════════════════════════════════════════════
+
+🏗️ 1. GitHub Issues as ARIA task buckets [OVERLAPS]
+Issues for bigger unresolved threads (receipt state model, date/year trust, Idea Intake Mode). Better than burying in markdown.
+
+⭐ 🏗️ 2. GitHub labels as routing categories
+`aria`, `uncrumple`, `bug`, `governance`, `idea-compost`, `high-signal`, `candidate-rule`, `blocked`. Labels become a queryable taxonomy. NEW idea — extends Issues usage.
+
+⭐ 🏗️ 3. GitHub milestones for phases
+`Pre-alpha cleanup`, `ARIA starter kit`, `Receipt trust fixes`, `Launch readiness`. Roadmap visualization built into GitHub. NEW.
+
+🏗️ 4. GitHub Projects board
+Visual board: Inbox → Captured → Candidate → Ready → Building → Done → Deferred. Kanban for ideas + tasks in one view.
+
+🏗️ 5. GitHub Discussions [OVERLAPS]
+Long-form architecture debates without polluting code issues.
+
+⭐ 🏗️ 6. Release tags for stable system states
+`aria-handoff-v1`, `uncrumple-cleanup-v1`. So future-you can say "go back to the system before we changed X." NEW — adds time-travel capability to repo.
+
+🏗️ 7. Branch naming convention
+`feature/flagged-flow-inspection`, `aria/idea-intake-mode`, `governance/handoff-cheatsheet`. Self-documenting branch names.
+
+⭐ 🏗️ 8. GitHub Actions for checks [OVERLAPS]
+Auto-check: JSON validity, markdown links, no duplicate headings, required files exist, CURRENT_HANDOFF.json parses.
+
+⭐ 🏗️ 9. Pre-commit hook
+Validate JSON, check markdown headings, search for TODO/FIXME. Local automation distinct from Code hooks.
+
+⭐ 🏗️ 10. Repo health check script
+One command reports: current branch, dirty files, latest commit, JSON valid, handoff file present, candidate count, unresolved thread count. NEW — single-command system status.
+
+═══════════════════════════════════════════════
+AI WORKFLOW UPGRADES
+═══════════════════════════════════════════════
+
+⭐ 🏗️ 11. MCP server for the repo [OVERLAPS]
+Expose tools: append_aria_idea, append_candidate, read_handoff, create_idea_intake, search_high_signal. "Probably one of the strongest ARIA product paths." Agreement with Code's earlier read.
+
+⭐ 🏗️ 12. Custom local CLI: `aria` command [OVERLAPS]
+`aria status`, `aria intake notes.txt`, `aria handoff`, `aria harvest`, `aria health`, `aria next`. Extends earlier 3-command CLI to fuller surface area.
+
+⭐ 🏗️ 13. Idea Intake command [OVERLAPS]
+Real command for messy notes → raw preserved + categorized + ⭐ shelf + roadmap candidates + rule candidates. Implementation of locked Idea Intake Mode protocol.
+
+⭐ 🏗️ 14. Handoff dry-run command
+Fresh-Code simulation: "Read only starter files. Tell me next_step and what not to do." [OVERLAPS with handoff dress rehearsal from earlier.]
+
+⭐ 🏗️ 15. Diff-review packet generator
+Instead of long summaries, structured diffs: field changed / old value / new value / why changed / risk. NEW — formalizes the Tier 2 diff review pattern.
+
+⭐ 🏗️ 16. Prompt library folder
+`docs/prompts/` with reusable prompts: candidate review, pre-clear harvest, clone self-awareness, issue intake, Claude pressure-test, GPT synthesis. NEW — solves "I keep retyping the same prompt" problem.
+
+🏗️ 17. Model role cards
+`GPT_ROLE.md`, `CLAUDE_ROLE.md`, `CODE_ROLE.md`, `USER_ROLE.md`. Maybe not needed now, but useful if project rules get crowded. NEW.
+
+⭐ 🏗️ 18. Recovery test prompt
+Standardized "prove you recovered" prompt: What is next_step? What is deferred? What must you not do? What changed last session? NEW — automates handoff verification.
+
+🏗️ 19. Behavior fingerprint [OVERLAPS]
+Five repeated questions per GPT instance. Track drift over time.
+
+⭐ 🏗️ 20. Session mode switch commands
+`execution mode`, `synthesis mode`, `harvest mode`, `recovery mode`, `idea intake`. Each changes behavior. Extends shorthand family idea.
+
+═══════════════════════════════════════════════
+PERSONAL MEMORY + CHATGPT FEATURES
+═══════════════════════════════════════════════
+
+⭐ 🤖 21. Memory for durable user preferences [OVERLAPS]
+Things that should survive outside repo: direct-answer preference, idea preservation principle, `idea intake` meaning, Uncrumple/ARIA identity, "future me would be thankful" filter.
+
+⭐ 🤖 22. Custom instructions stay slim [OVERLAPS]
+Bootloader only: role, repo path, fresh chat protocol, must-read-repo, core behavior. Repo holds heavy rules. Validates the slim-instructions approach Code already designed.
+
+🤖 23. Saved prompt snippets
+Copyable blocks outside chat: starter block, Block A, Block B, idea intake, handoff recovery. NEW — relates to prompt library but for user's quick-paste rather than Code-internal.
+
+🤖 24. ChatGPT Projects / Claude Projects [OVERLAPS]
+Project knowledge for stable files, but repo remains authority. Avoid pasting stale docs manually.
+
+🤖 25. Connectors
+GitHub, Google Drive for invoices/docs, Gmail for receipts/vendor emails, Calendar for project timelines, maybe Notion/Obsidian later. NEW — broader integration surface than what's been considered.
+
+═══════════════════════════════════════════════
+DEVICE + AUTOMATION
+═══════════════════════════════════════════════
+
+🏗️ 26. AutoHotkey shortcuts (Windows — user already has)
+Hotkeys for: open GPT, open Claude, open Code, paste starter block, copy last response, open repo folder. NEW — user-specific automation user already runs.
+
+⭐ 🏗️ 27. Logi mouse buttons (user has Logitech mouse)
+Map buttons to: GPT toggle, Claude toggle, VS Code toggle, capture selected text, paste common prompt. NEW — hardware user already owns becomes ARIA input layer.
+
+🏗️ 28. Tasker on Android [OVERLAPS — Samsung-correct alternative to Apple Shortcuts]
+Voice idea capture, append to notes file, share selected text to idea intake, floating "save idea" button, daily dump to repo later. This is the correct Android equivalent for the user's Samsung setup.
+
+⭐ 🏗️ 29. Huion shortcut pad (user has Huion device)
+Map keys to: copy, paste, open terminal, run npm, toggle GPT, toggle Claude, insert Code prompt template, insert "Fix only…", insert "Do not edit, inspect only". NEW — hardware user already owns becomes prompt template launcher.
+
+🏗️ 30. Clipboard manager (Ditto or Windows clipboard history)
+Helps with blocks. Avoid storing secrets/tokens. NEW.
+
+═══════════════════════════════════════════════
+REPO / PRODUCT RESOURCES
+═══════════════════════════════════════════════
+
+🧠 31. Obsidian vault mirror [OVERLAPS]
+Markdown system as Obsidian vault. Graph view for idea clusters.
+
+🧠 32. SQLite later [OVERLAPS]
+If ARIA becomes app-like: SQLite + markdown export. Don't rush this — current files as DB is working.
+
+⭐ 🧠 33. Vector search
+Embeddings over ARIA_IDEAS, compost, roadmap, handoffs, decisions. Ask "where did we talk about continuity tax?" and get semantic search hits across all files. NEW — adds query capability without restructuring.
+
+🧠 34. Local-first sync
+ARIA should be local-first. Trust matters. Sync later. Aligns with earlier local-first build path.
+
+⭐ 🏗️ 35. Browser extension [OVERLAPS]
+Capture from ChatGPT, Claude, GitHub, Reddit, docs into ARIA.
+
+⭐ 🏗️ 36. Android share target
+Share text/images/links directly into ARIA Intake. NEW — Samsung-specific capture pattern.
+
+🏗️ 37. Watch/wearable quick capture [OVERLAPS]
+Not heavy AI. Just: record thought, tag as idea, send to phone.
+
+⭐ 🧠 38. "Receipts for reasoning" [OVERLAPS — strongly captured already]
+Every claim like "validated" gets commit hash, file path, line/section, chat moment. Fits Uncrumple perfectly.
+
+⭐ 🧠 39. Weekly ARIA review
+Not daily. Weekly: top ⭐ ideas, stale deferrals, app vs governance progress, next 3 actual build steps. NEW — adds cadence layer above per-session work.
+
+⭐ 🧠 40. Anti-bloat rule with metric
+"If governance work dominates too long: next session must ship app progress unless blocker exists." NEW — testable version of "system explaining the system" anti-pattern with concrete trigger.
+
+═══════════════════════════════════════════════
+GPT'S TOP 5 (if forced to pick five):
+═══════════════════════════════════════════════
+
+1. `aria` CLI command
+2. Idea Intake Mode
+3. GitHub Issues/labels
+4. Handoff dry-run
+5. Repo health check script
+
+"Those would reduce the most repeated friction."
+
+[Code addition: GPT's top 5 are very close to my own assessment from yesterday — convergent thinking across instances is a good sign these are real signal, not just one AI's bias. The order is even right: aria CLI is the foundation, intake gives it immediate value, GitHub Issues makes deferrals visible, dry-run protects fresh sessions, health check makes drift detectable. These five together = ARIA v1 alpha.]
+
+═══════════════════════════════════════════════
+⭐ NEW STARRED ITEMS WORTH SHELF-PROMOTING (not in earlier batches):
+═══════════════════════════════════════════════
+
+- GitHub labels as routing categories (#2)
+- GitHub milestones for phases (#3)
+- Release tags for stable system states (#6) — adds time-travel
+- Repo health check script (#10) — single-command status
+- Diff-review packet generator (#15) — formalizes Tier 2 review
+- Prompt library folder (#16) — solves prompt re-typing
+- Recovery test prompt (#18) — automates handoff verification
+- Session mode switch commands (#20) — extends shorthand family
+- Logi mouse buttons (#27) — user already owns hardware
+- Huion shortcut pad (#29) — same — user already owns hardware
+- Vector search (#33) — semantic query over compost
+- Android share target (#36) — Samsung-specific capture
+- Weekly ARIA review (#39) — adds cadence layer
+- Anti-bloat rule with metric (#40) — concrete trigger for governance-vs-app balance
