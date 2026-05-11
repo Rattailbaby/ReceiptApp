@@ -5028,3 +5028,94 @@ Both takes complement each other. The merged version is stronger than either alo
 Status: still CANDIDATE. Don't build folder structure tonight. Test in at least 2 real Blind Trio Rounds before promoting any of this to LOCKED. The product features (Divergence Lock, etc.) are even further out — those are for ARIA product, not current workflow.
 
 The thing to do FIRST: nothing. Save the design. Let it sit for a few sessions. The next time user wants ideas from all three AIs, RUN the protocol manually (zero code) and see if the friction is real. If yes, build `aria ideate` next. If no, the simpler version stays.
+
+
+[2026-05-11] — ⭐ Blind Trio Round: final refinements (post-second trio review)
+
+GPT and Claude reviewed the spec from earlier this same date and converged on additional refinements. Per LOCKED 37, capturing only the new material.
+
+═══════════════════════════════════════════════
+UPDATED FOLDER STRUCTURE (yielded to GPT/Claude)
+═══════════════════════════════════════════════
+
+Both planning AIs independently arrived at this ordering. Code yields — their structure is better because ORIGINAL_IDEAS belongs IN SEQUENCE between Phase 1 and Phase 2, not as a side file.
+
+docs/trio_rounds/YYYY-MM-DD-topic-slug/
+  00_QUESTION.md
+  01_GPT_BLIND.md
+  02_CLAUDE_BLIND.md
+  03_CODE_BLIND.md
+  04_ORIGINAL_IDEAS.md       ← NEW position (was side file)
+  05_GPT_CROSSREAD.md
+  06_CLAUDE_CROSSREAD.md
+  07_CODE_CROSSREAD.md
+  08_SYNTHESIS.md
+  09_IDEAS_TO_SAVE.md
+
+The shift: ORIGINAL_IDEAS gets generated AFTER all three blind takes are saved, BEFORE Phase 2 starts. It's the natural reading order. Open the folder, files numbered 00-09 walk you through the entire protocol top to bottom.
+
+Plus: docs/trio_rounds/_TEMPLATE/ folder holds blank versions for `aria ideate` CLI command to copy from when creating a new round.
+
+═══════════════════════════════════════════════
+PHASE 0 — FOUR-SECTION QUESTION DESIGN
+═══════════════════════════════════════════════
+
+00_QUESTION.md should include FOUR specific sections (not just the question text):
+
+```
+Original question:
+[what you typed first]
+
+Actual problem user is trying to solve:
+[the deeper need underneath the question]
+
+What would count as a good answer:
+[success criteria — answerable, useful, actionable]
+
+What would defeat the purpose:
+[failure mode — technically correct but practically wrong]
+```
+
+The fourth section is the critical one. It pre-loads the "defeats the purpose" check before any AI sees the question. When synthesis happens, this section can be referenced directly: "does the synthesis avoid what would defeat the purpose?"
+
+Why this works:
+The question is the most important input. Bad questions produce convergent mediocre answers from all three AIs. Pre-thinking the failure mode protects against that.
+
+If question is refined mid-session, preserve BOTH versions (original + refined). The original often captures something the refined version loses.
+
+═══════════════════════════════════════════════
+DIVERGENCE SCORE (GPT's addition)
+═══════════════════════════════════════════════
+
+A simple 0-3 metric for each completed round:
+
+0 = all three said basically the same thing
+1 = small differences
+2 = meaningful differences
+3 = major disagreement / high outlier value
+
+Stored at top of 08_SYNTHESIS.md as a single line:
+"Divergence: 2"
+
+Interpretation:
+- HIGH divergence (2-3) = topic deserves human attention, multiple valid framings exist
+- LOW divergence (0-1) = topic may be safer to move faster, possibly already settled
+
+Over time, divergence scores become longitudinal signal:
+- "What topics produce highest divergence?" = where ARIA's value is highest
+- "What topics produce lowest divergence?" = where consensus is real
+- Trend over months: are we getting better at asking divergent questions?
+
+This metric is ARIA-shaped — it makes a fuzzy quality (how much do the AIs disagree) into a trackable number without over-engineering.
+
+═══════════════════════════════════════════════
+[Code addition] — Convergence assessment, second pass
+═══════════════════════════════════════════════
+
+GPT and Claude reviewed the spec twice now (once in original capture, once in this round). On both passes they converged independently with non-duplicate additions.
+
+This is the strongest validation pattern LOCKED 37 produces: two AIs, multiple review rounds, sustained convergence on spine, distinct additions each round.
+
+The Blind Trio Round candidate has been refined via its own intended workflow THREE times now (Code initial, GPT+Claude review 1, GPT+Claude review 2). That's effectively two complete trio cycles of self-validation. The protocol genuinely seems to work for the case of designing itself.
+
+Status: still CANDIDATE. Still don't build folders tonight. Two real validation tests still needed (per the candidate's own validation criteria) — using BTR on a question that isn't BTR itself.
