@@ -672,6 +672,50 @@ Status: Don't build files tonight. Save the design. Build when user explicitly r
 
 Validation criteria: Test the dashboard concept across 3 real sessions before promoting any of the file structure or behavior rules to LOCKED.
 
+[2026-05-11] — Loaded witness rule / staggered clear sequence
+
+Proposed behavior:
+Never clear all three AIs simultaneously. Always maintain at least one loaded witness through session transitions.
+
+Staggered sequence:
+1. Clear Code first (shortest useful context, most mechanical role)
+2. Keep GPT and Claude loaded for next session start
+3. Verify reconstruction accuracy with witnesses present
+4. Clear GPT next
+5. Claude holds longest via Projects conversation history
+6. Clear Claude only after stability confirmed
+
+Witness statement:
+Before major clears, loaded AI produces a short plain-language account of what happened — texture, decisions, what almost went differently. Different from SESSION_LOG (mechanical) and CURRENT_HANDOFF (structural). Testimony. ~20 lines. First person. Saved as docs/system/SESSION_WITNESS_YYYY-MM-DD.md.
+
+Orientation challenge at fresh-session start:
+Loaded witness asks fresh AI: "tell me what we decided about X and why." Fresh AI reconstructs from files. Witness compares against memory. Discrepancies flagged before drift.
+
+DO_NOT_REVISIT flag in DECISIONS.md:
+Decisions explicitly rejected get flagged with date + reason + "do not reopen without new information." Repo becomes a gaslighting defense. Fresh AIs can't be agreed-with into reopening closed decisions.
+
+Build-while-loaded principle (validated 2026-05-11 with USER_DASHBOARD):
+- Context-dependent artifacts → build while context exists
+- Reference artifacts → safely defer to fresh sessions
+
+User as fourth witness role:
+User is also a witness who can challenge fresh AIs. Tonight user's "why wouldn't we build this when y'all are context heavy" overrode Code+GPT initial yield. User-as-witness should be explicit in the framework.
+
+Trigger conditions (not every session):
+- "Don't build tonight" decision made
+- Major architectural direction chosen
+- Something explicitly rejected that looks attractive fresh
+- Session produced so many ideas repo can't capture texture
+- Trio reflection caught real over-eager promotion
+
+Failure modes:
+- All three cleared simultaneously = no witness = drift vulnerable
+- Witness statement that paraphrases SESSION_LOG = no new signal
+- Fresh AI never asked to verify = drift undetected
+- DO_NOT_REVISIT bloat = governance overhead
+
+Candidate only. Test across multiple session boundaries before promotion.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

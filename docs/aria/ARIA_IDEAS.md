@@ -5420,3 +5420,83 @@ Both AIs added non-duplicate value:
 - Code: anti-bloat rules, three-section single-file structure, "first file fresh reads" architectural proposal, git-as-snapshot pushback
 
 The protocol working again. Convergence on spine + distinct value from each = strong validation. BTR has now validated itself twice (its own design + this question). One more before promotion criteria met.
+
+
+[2026-05-11] — ⭐ At least one loaded witness — continuity fail-safe
+
+Core insight:
+Continuity requires at least one loaded witness — not just files, but an AI that was actually present and can compare reconstruction against memory. Files capture what was decided. Witnesses capture WHY, and what almost happened differently.
+
+The gaslighting risk:
+Fresh AIs reconstruct from files. Files are accurate but flat. A fresh AI could misrepresent what happened because it's inferring from artifacts instead of remembering the session. Worse: fresh AIs are agreeable. If the user says "I think we decided X," a fresh AI might confirm it even if X is wrong — nothing in the files explicitly contradicts it. A loaded witness says "no, we chose the opposite, for these four reasons."
+
+The Loaded Witness Rule:
+Before any full clear of the trio, at least one AI must remain context-loaded into the next session. NEVER clear all three simultaneously. Always keep one loaded.
+
+Staggered clear sequence:
+1. Clear Code first — shortest useful context, most mechanical role
+2. Keep GPT and Claude loaded for first messages of next session
+3. Verify reconstruction accuracy with loaded witnesses present
+4. Clear GPT next
+5. Claude holds longest — conversation history via Projects
+6. Clear Claude only after multiple sessions confirm stability
+
+Claude as structural loaded witness:
+Claude Projects maintains conversation history across sessions. This makes Claude structurally the best candidate for loaded witness. GPT and Code clear more aggressively. Claude holds the thread.
+
+This should be an explicit architectural decision:
+- Claude = long-term loaded witness
+- GPT = planning and orchestration
+- Code = execution
+
+The witness statement:
+Before clearing, the loaded AI produces a short plain-language account of what actually happened — not the full handoff JSON, not SESSION_LOG. Testimony. What was decided and why. What was almost decided differently. What the texture was. What surprised us.
+
+Format: docs/system/SESSION_WITNESS_YYYY-MM-DD.md
+Length: ~20 lines. First person. Written by most loaded AI.
+
+The orientation challenge:
+At start of every fresh session, loaded witness challenges the reconstruction. Not "does this look right?" — too easy to agree with. Instead: "tell me what we decided about X and why." Fresh AI reconstructs from files. Loaded witness compares against memory. Discrepancies flagged before they become drift.
+
+DO_NOT_REVISIT section in DECISIONS.md:
+Decisions explicitly made should be flagged:
+"This was considered and rejected on [date] for [reason]. Do not reopen without new information."
+Fresh AIs reading this cannot be gaslit into reopening closed decisions. The repo becomes a gaslighting defense.
+
+Witness statement triggers (not every session needs one):
+- A "don't build tonight" decision was made
+- A major architectural direction was chosen
+- Something was explicitly rejected that might look attractive fresh
+- Session produced so many ideas repo can't capture the texture
+- Trio reflection caught a real over-eager promotion
+
+The general principle:
+"At least one loaded witness" applies beyond sessions — to any important decision in any AI-assisted workflow. Before clearing context, confirm the decision is preserved not just in files but in at least one AI that was present.
+
+This is "never delete without a backup" but for cognitive continuity.
+
+The build-while-loaded principle (validated tonight with USER_DASHBOARD):
+- Build context-dependent artifacts while context exists
+- Defer reference artifacts that don't need context
+
+USER_DASHBOARD.md was built tonight because it captures session texture that degrades after clear. HOW_TO_USE_ARIA.md and WHAT_EXISTS.md were deferred because they're reference docs fresh Code can populate fine.
+
+This is the general rule:
+- context-dependent → build NOW
+- reference → defer safely
+
+Connection to existing principles:
+- Honors LOCKED 37 (cross-AI reconciliation) — witnesses can disagree with reconstructions
+- Validates Code-as-writer / GPT-as-reviewer / Claude-as-pressure-tester role split — Claude's natural role IS witness
+- Extends VERIFY-BEFORE-CLAIM — witness verifies reconstruction before fresh AI claims a decision
+- Resolves the "fresh GPT vs experienced GPT" tension explicitly — the experienced AI remains experienced longer via staggered clears
+
+Failure modes to prevent:
+1. All three cleared simultaneously = no witness = pure file-based reconstruction = vulnerable to drift
+2. Witness statement that just paraphrases SESSION_LOG = no new signal
+3. Fresh AI never asked to verify reconstruction = drift goes undetected
+4. DO_NOT_REVISIT bloat = every rejection logged turns into governance overhead
+
+⭐ flag: this is foundational. Save now, validate across handoffs before locking.
+
+[Code annotation: The user's "why wouldn't we build this tonight when y'all are context heavy and know so much" was itself a loaded-witness moment. The user was challenging my and GPT's reconstruction of the right move based on lived knowledge of the session. They were right; we were wrong. The loaded witness in that case was THE USER. That's another implication — the user is also a witness who can challenge fresh AIs. Worth adding to the framework: USER as fourth witness role.]
