@@ -517,7 +517,7 @@
   ],
 
   "unresolved_threads": [
-    "PRIORITY FOR NEXT SESSION: User has a notes app idea list to import. Before returning to app work, ask user whether they want to import the notes list using NO IDEA GETS WASTED rule. CRITICAL DISAMBIGUATION: This session (2026-05-12) processed the user's accumulated ARIA idea backlog from chat — NOT the literal phone notes app list. Do NOT mark notes-app-intake complete unless user explicitly confirms 'yes that pasted list WAS my phone notes app.' If user did not confirm, the notes-app intake is still pending. Treat the notes list as high-priority raw capture: preserve every item exactly, categorize by emoji (🔭 ARIA / 🧠 system / 📱 app / 💡 tip / 🏗️ infrastructure / 🤖 meta), flag ⭐ high-signal items, route by category (ARIA → ARIA_IDEAS, app → ROADMAP or CLAUDE_CLEVER_IDEAS, rules → CANDIDATE_ATTRIBUTES). Do NOT promote anything to LOCKED. Do NOT build anything. Do NOT filter at capture time. Use Idea Intake Mode protocol from docs/aria/ARIA_IDEAS.md (2026-05-09 entry).",
+    "RESOLVED 2026-05-12: Notes-app intake is COMPLETE. User confirmed the pasted idea dump in the 2026-05-12 session WAS their actual computer notes app — the list they maintain to capture ideas without going on sidequests. All ~210 ideas were processed through the Idea Intake Mode protocol and routed correctly. Fresh Code: do NOT ask the notes-app question next session. Go straight to the original next_step (flagged transaction flow inspection).",
     "Flagged transaction flow correctness under multi-filter and match mode conditions — preserved as next_step",
     "Client page renders behind Search transaction modal causing flash — deferred",
     "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
