@@ -4,7 +4,7 @@ You are Code (Claude Code CLI) continuing the Uncrumple + ARIA project. This is 
 
 REPO: github.com/Rattailbaby/ReceiptApp
 BRANCH: main
-EXPECTED HEAD: 1048bc2 or later
+EXPECTED HEAD: post-2026-05-12-final-harvest (will be set after final commit; previous: 68f3406)
 
 READ IN ORDER BEFORE RESPONDING:
 1. C:\Users\caleb\ReceiptApp\CLAUDE.md
@@ -71,8 +71,14 @@ After orientation, ASK USER: "Do you want to import the notes app idea list befo
 - If yes → run Idea Intake Mode protocol (preserve raw, categorize by emoji, drop nothing, ⭐ flag standouts, route by category, NEVER auto-promote to LOCKED)
 - If no → proceed to flagged transaction flow inspection
 
-LAST SESSION WAS GOVERNANCE, NOT APP WORK:
-Multi-day Tier 3 session (2026-05-09 to 2026-05-11). LOCKED 36+37 promoted, NO IDEA WASTED rule locked, HANDOFF_CHEATSHEET created, USER_DASHBOARD built, WHAT_EXISTS built, ~200 ideas captured, ~60 ⭐ items on shelf, Blind Trio Round protocol designed (folder template not yet built), Idea Intake Mode protocol locked, Loaded Witness Rule + Deferred Build Protection candidates, "Everything is a tool" principle, "Follow the spark / Hold the thread / Save the door / Capture after the wave / Return when ready", Pass 3 self-reflection embedded in CURRENT_HANDOFF.json. No app code changed.
+LAST SESSION WAS GOVERNANCE + IDEA HARVEST, NOT APP WORK:
+Multi-day Tier 3 session (2026-05-09 to 2026-05-12). LOCKED 36+37 promoted, NO IDEA WASTED rule locked, HANDOFF_CHEATSHEET created, USER_DASHBOARD built, WHAT_EXISTS built, APPS_TO_USE built, ~210+ ideas captured, ~85 ⭐ items on shelf, Blind Trio Round protocol designed + validated at the generative layer 2026-05-12 (folder template not yet built), Idea Intake Mode protocol locked, Loaded Witness Rule + Deferred Build Protection candidates, "Everything is a tool" principle, "Follow the spark / Hold the thread / Save the door / Capture after the wave / Return when ready", Pass 3 self-reflection embedded in CURRENT_HANDOFF.json, final_harvest_2026_05_12 section captures last day's deltas. No app code changed.
+
+COOK MODE OPERATIONS (corrected framing, not a tier ladder):
+Read-only audit (inventory), DIGEST (synthesis), and Build are PARALLEL operations for different moments. Read-only is not a weaker Digest. Pick based on need, not graduated trust.
+
+NOTES-APP INTAKE STATUS:
+The 2026-05-12 idea harvest processed the user's ARIA-related backlog from chat. This was NOT confirmed to be the literal phone notes app list. Do NOT mark notes-app-intake complete unless user explicitly says "yes the pasted list was my phone notes."
 
 Do NOT perpetuate the inspiration wave — let user direct. Fresh sessions don't default to detour mode.
 

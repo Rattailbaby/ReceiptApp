@@ -517,7 +517,7 @@
   ],
 
   "unresolved_threads": [
-    "PRIORITY FOR NEXT SESSION: User has a notes app idea list to import. Before returning to app work, ask user whether they want to import the notes list using NO IDEA GETS WASTED rule. Treat the notes list as high-priority raw capture: preserve every item exactly, categorize by emoji (🔭 ARIA / 🧠 system / 📱 app / 💡 tip / 🏗️ infrastructure / 🤖 meta), flag ⭐ high-signal items, route by category (ARIA → ARIA_IDEAS, app → ROADMAP or CLAUDE_CLEVER_IDEAS, rules → CANDIDATE_ATTRIBUTES). Do NOT promote anything to LOCKED. Do NOT build anything. Do NOT filter at capture time. Use Idea Intake Mode protocol from docs/aria/ARIA_IDEAS.md (2026-05-09 entry).",
+    "PRIORITY FOR NEXT SESSION: User has a notes app idea list to import. Before returning to app work, ask user whether they want to import the notes list using NO IDEA GETS WASTED rule. CRITICAL DISAMBIGUATION: This session (2026-05-12) processed the user's accumulated ARIA idea backlog from chat — NOT the literal phone notes app list. Do NOT mark notes-app-intake complete unless user explicitly confirms 'yes that pasted list WAS my phone notes app.' If user did not confirm, the notes-app intake is still pending. Treat the notes list as high-priority raw capture: preserve every item exactly, categorize by emoji (🔭 ARIA / 🧠 system / 📱 app / 💡 tip / 🏗️ infrastructure / 🤖 meta), flag ⭐ high-signal items, route by category (ARIA → ARIA_IDEAS, app → ROADMAP or CLAUDE_CLEVER_IDEAS, rules → CANDIDATE_ATTRIBUTES). Do NOT promote anything to LOCKED. Do NOT build anything. Do NOT filter at capture time. Use Idea Intake Mode protocol from docs/aria/ARIA_IDEAS.md (2026-05-09 entry).",
     "Flagged transaction flow correctness under multi-filter and match mode conditions — preserved as next_step",
     "Client page renders behind Search transaction modal causing flash — deferred",
     "Cleanup logic partially duplicated between inline checks and txNeedsCleanup",
@@ -734,5 +734,54 @@
     "claude_md": [],
     "roadmap": [],
     "session_log": []
+  },
+
+  "final_harvest_2026_05_12": {
+    "context": "End-of-session loaded-context harvest. Code+Claude+GPT three-way generative synthesis on 'what new ideas does this spark?' Each AI produced independently, reviewed others, held positions or merged. First true validation of Blind Trio Round at the generative layer (not preservation/refinement).",
+    "session_arc": "Continuation of 3-day multi-session ARIA architecture marathon (2026-05-09 through 2026-05-12). Today's portion focused on idea harvest, USER_DASHBOARD build, cross-AI generative comparison, and pre-clear synthesis.",
+    "major_ideas_captured_today": [
+      "ARIA preserves MEANING, not memory (GPT) — 4-layer Positioning Stack",
+      "'This defeats the purpose' detector (GPT) — universal quality check",
+      "Modes not just commands (GPT) — 8 modes vs 15+ shorthands architectural reframe",
+      "Skeptic + Champion paired-precise (user + Code + Claude + GPT merge)",
+      "Convergence Trap (Claude) — easy consensus suspect, hard-won = signal",
+      "Sync Gap Detector + Sync Packet (GPT) — lagging-AI problem solver",
+      "Working Memory Layer (Claude + Code merge) — 5-item active surface",
+      "Mind-Change Receipt (GPT) — decision archaeology artifact",
+      "Idea Garden Review + Idea Half-Life (Claude + GPT) — corpus-scale review with decay",
+      "Cook Mode parallel operations (Read-only / Digest / Build) — NOT a tier ladder",
+      "Self-defense first rule (Code) — state holdings before evaluating others",
+      "Incomplete confidence rule (Code) — hold position with reasoning even when wrong",
+      "Session Energy Signal (Claude) — ARIA aware of user state not just inputs",
+      "ARIA = Uncrumple structurally (multi-AI merge) — both route messy evidence",
+      "Park-this shorthand (proposed next-session first build)",
+      "Mobile ARIA stack documented in docs/user/APPS_TO_USE.md (Samsung/WearOS focus)"
+    ],
+    "files_built_today": [
+      "docs/user/USER_DASHBOARD.md (165 lines, human-facing cockpit)",
+      "docs/user/WHAT_EXISTS.md (367 lines, capability index)",
+      "docs/user/APPS_TO_USE.md (340+ lines, mobile workflow stack)",
+      "docs/system/HANDOFF_CHEATSHEET.md (80 lines, clear/handoff/clone ceremony reference)"
+    ],
+    "corrections_after_review": [
+      "Tier ladder framing corrected to Cook Mode parallel operations (Claude's pushback)",
+      "notes-app-intake stays queued in unresolved_threads (GPT's 'defeats the purpose' catch)",
+      "3-way synthesis saved as worked example / validation event in ARIA_IDEAS.md"
+    ],
+    "rules_validated_today": [
+      "LOCKED 37 cross-AI reconciliation — fired at every step of 3-way synthesis",
+      "Self-defense first — Code stated holdings before evaluating others, didn't yield prematurely",
+      "Convergence Trap — fired recursively (Code caught itself almost yielding twice)",
+      "This-defeats-the-purpose detector — Claude applied to tier ladder; GPT applied to close decision",
+      "Mind-Change Receipt — Code's tier ladder framing changed after Claude pushback (real evidence of rule working)"
+    ],
+    "deferred_to_next_session": [
+      "park-this shorthand (smallest+useful first build per Claude+GPT consensus)",
+      "HOW_TO_USE_ARIA.md (tutorial layer)",
+      "Skeptic Pass prompt template",
+      "Sync Packet shorthand",
+      "Blind Trio Round folder template (docs/trio_rounds/_TEMPLATE/)"
+    ],
+    "what_fresh_clone_most_needs_to_know": "Today's session was idea harvest + cross-AI synthesis, NOT app work. Original next_step (flagged transaction flow inspection) is preserved verbatim. Before app work, ask user about notes-app intake — the ARIA idea backlog processed today was likely NOT the phone notes app list. If user confirms it was, mark complete; otherwise notes-app intake is still pending. Do not perpetuate the harvest wave by default — let user direct. Read docs/user/USER_DASHBOARD.md for human-facing state. Final HEAD will update after this commit."
   }
 }

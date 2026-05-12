@@ -2,9 +2,9 @@
 
 **Purpose:** Human-facing continuity cockpit for Caleb. Quick orientation, not AI governance. Skim in 60 seconds to know where you are.
 
-**Last updated:** 2026-05-11 (end of long multi-day governance+ARIA session)
-**HEAD:** 8a0803c (will update after this commit)
-**Status:** Built tonight with loaded context — populated by Code with 3-day session in mind.
+**Last updated:** 2026-05-12 (continued multi-day governance+ARIA session — final harvest pass)
+**HEAD:** will update after this commit (previous: 68f3406)
+**Status:** Refreshed after 3-way generative synthesis (Code+Claude+GPT) and Cook Mode parallel-ops correction.
 
 ---
 
@@ -56,10 +56,17 @@
 INSPECT FIRST. No edits. Show relevant code only. Wait for next instruction.
 
 ### Priority before app work next session
-**Ask user whether they want notes app idea intake first.** User has a notes app list to share — queued as priority in CURRENT_HANDOFF.json `unresolved_threads`. If yes → run Idea Intake Mode protocol. If no → proceed to flagged-flow inspection.
+**Ask user whether they want notes app idea intake first.** User has a phone notes app list still pending — the 2026-05-12 harvest was ARIA idea backlog from chat, NOT the literal notes app list. Do NOT mark complete unless user explicitly confirms. If yes → run Idea Intake Mode protocol. If no → proceed to flagged-flow inspection.
 
 ### Active sidequest at last check
-End of long ARIA architecture session. Goal: finish pre-clear synthesis, do explanation pass, close cleanly. No active code-side sidequest.
+End of multi-day ARIA architecture session. Final harvest pass complete (3-way generative synthesis + Cook Mode correction + worked-example save). Goal: clean close. No active code-side sidequest.
+
+### Cook Mode operations (corrected framing)
+Three PARALLEL operations, not a tier ladder:
+- **Read-only audit** = inventory what exists, no synthesis-heavy decisions
+- **DIGEST** = synthesize what matters, rank/connect/compress, no commits without approval
+- **Build** = modify repo/app after approval
+Use based on need, not graduated trust. Read-only is not a weaker Digest.
 
 ### Recent inflection points (this session)
 1. Block C truncation → Code-as-writer / GPT-as-reviewer role split
