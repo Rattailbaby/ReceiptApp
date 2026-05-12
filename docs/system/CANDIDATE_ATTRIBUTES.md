@@ -1124,6 +1124,68 @@ The original Skeptic-as-role candidate stays valid as the LONG-TERM version. Ske
 
 Candidate only. Use Skeptic Pass on the next 2-3 architectural decisions, see if it catches real flaws.
 
+
+[2026-05-12] — Round Closer / Paste Loop Resolution Protocol (user-named, 3-AI converged)
+
+Problem:
+When user manually cross-pastes between GPT, Claude, and Code, they may stop deeply reading and keep pasting responses around even after the original reason for the iteration has been resolved. This creates four risks:
+1. Loop continues past the point of resolution (momentum, not need)
+2. Good details from one AI get silently flattened by next AI's synthesis
+3. User loses orientation — "I don't even know what got done"
+4. Token burn without proportional value gain
+
+This is distinct from LOCKED 37 (Cross-AI Reconciliation):
+- LOCKED 37 = how to disagree across AIs (synthesize, hold, or principled-disagree)
+- Round Closer = WHEN to stop and HOW to preserve detail through the stop
+
+It is also the informal version of Blind Trio Round that users actually end up doing reactively, vs. invoking BTR deliberately.
+
+Detection signal:
+Each AI in a cross-paste loop should notice when the original reason for the iteration appears resolved. When detected, surface to user:
+> "This round appears resolved. Stop cross-pasting unless you have a new question."
+
+The AI MUST NOT shorten or summarize prematurely. The loop closes only after all relevant AIs have weighed in OR user explicitly ends it.
+
+Round Closer output format (when loop is closing):
+- Original question
+- Resolved answer
+- Why this is resolved
+- Keep from GPT (specific phrase / idea / nuance)
+- Keep from Claude (specific phrase / idea / nuance)
+- Keep from Code (file truth / action / constraint)
+- What not to lose (good phrases, warnings, emotional texture, ideas user might like)
+- Final action (one clear step)
+- If unresolved: name exactly what remains unresolved
+
+Closing AI assignment (whoever does the final Round Closer):
+- Code = when action involves repo/file changes
+- GPT = when action requires human-readable synthesis or positioning
+- Claude = when action requires pressure-testing meaning or catching flattening
+User picks based on what comes next.
+
+Rules:
+- Do not close the round until all relevant AIs have been considered or user says enough
+- Do not say "use theirs" without preserving useful pieces from each AI
+- Do not flatten ideas into the smallest common summary
+- If one AI had a phrase, warning, or idea the user might like, preserve under "What not to lose"
+- If the loop is continuing only because of momentum (not new question), say so explicitly
+- End on one chosen synthesis owner when action is needed
+
+Why this matters:
+This session (2026-05-12) WAS the failure mode. The cross-paste loop went 5+ levels deep and the user said "I'm not even sure what happened, it all happened so fast lol." Three AIs independently converged on this as the strongest end-of-session reframe — stronger than park-this per Claude's call.
+
+Name options considered: Round Closer / Resolution Detector / Loop Closer / Synthesis Stop Signal / Cross-Paste Loop Guard / Paste Loop Resolution Protocol. GPT's pick: "Round Closer." Claude's framing: "Paste Loop Resolution Protocol."
+
+Connects to:
+- LOCKED 37 (Cross-AI Reconciliation) — Round Closer extends it with loop-termination + detail-preservation guarantees
+- Blind Trio Round — Round Closer is the informal reactive equivalent
+- Pre-Clear Synthesis Window (also candidate) — Round Closer is one specific case of this
+- Multi-Pass Generative pattern (saved 2026-05-12) — Round Closer protects its downside
+
+Status: candidate only. Use on next 2-3 cross-paste sessions, see if AIs naturally detect resolution. If users find themselves saying "is this round done?" — that's the trigger to formalize.
+
+Do NOT build tonight. Park as candidate. Build morning-fresh if it survives review.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
