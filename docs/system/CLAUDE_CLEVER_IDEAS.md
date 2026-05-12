@@ -324,6 +324,65 @@ Claude's contribution to Blind Trio Round design. File system structure itself e
 ⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
 User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
 
+⭐⭐⭐ 🏆 TOP 32 best ideas — Code+Claude+GPT 3-way synthesis (2026-05-12, final)
+Three-pass synthesis: Code's 10 sparks → Claude's 10+ adds → GPT's 20+ adds. All categorized in docs/aria/ARIA_IDEAS.md.
+DEEPEST POSITIONING: "ARIA preserves MEANING, not memory" (GPT) — sits above all other positioning layers.
+ARCHITECTURE REFRAMES (3): Modes not commands (GPT) / Working Memory Layer (Claude+Code merge) / Overnight Safety Tier Ladder (4-way merge).
+BEHAVIOR RULES (6 candidates): "This defeats the purpose" detector (GPT) / Convergence Trap (Claude) / Skeptic+Champion Pass paired-precise (4-way merge) / Self-defense first (Code) / Incomplete confidence (Code) / Idea Half-Life with tiered decay (Claude+GPT).
+SYSTEM FEATURES (8): Sync Gap Detector+Packet / Mind-Change Receipt / Idea Garden Review / Context Merge comparison / Now Panel / Glass Mode 5-mode spectrum / Longitudinal Analytics / Fix-Failed Round.
+WORKFLOW (4): Categorized+theme-tree compost / Session Energy / Day 1/7/30 / Prior Art Sweep.
+CAPTURE (4): 🤔 unclear thought / Park-this / Mobile Capture Contract / wm shorthand.
+INFRASTRUCTURE (2): Human-Readable Diff per commit / Token Efficiency Pattern Library.
+Full entries: docs/aria/ARIA_IDEAS.md 2026-05-12 sections (3 entries: Code's sparks / Code+Claude synthesis / Code+Claude+GPT synthesis).
+
+⭐⭐⭐ 🔭 "ARIA preserves MEANING, not memory" (GPT 2026-05-12)
+Deepest positioning of the session. Most AI tools try to remember. ARIA's deeper job is to stop rich, messy intent from becoming a technically-correct-but-weaker version later. Anti-flattening as core product. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 GPT pass.
+
+⭐⭐⭐ 🧠 "This defeats the purpose" detector (GPT 2026-05-12)
+Standing quality check: "What would technically satisfy this request but defeat the purpose?" Applied to every promotion, build, synthesis. Saved as candidate. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐⭐ 🤖 Modes not just commands (GPT 2026-05-12)
+8 modes (Capture / Build / Debug / Harvest / Mobile / Witness / Review / Recovery) vs 15+ shorthands. Cleaner cognitive load. Each mode changes AI behavior. ARIA's UI could BE the mode switcher. Saved as candidate. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐ 🤖 Sync Gap Detector + Sync Packet (GPT 2026-05-12)
+Track per-AI knowledge state. Generate sync packets ("Since you last saw this: built X / rejected Y / changed Z / current HEAD N / fragile thing: A") when gap detected. More useful day-to-day than full handoff. Saved as candidate. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐ 🧠 Mind-Change Receipt (GPT 2026-05-12)
+When AI or user changes position: capture Initial / Challenge / What changed / New decision / Lesson. Makes AI/user learning visible over time. Saved as candidate. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐ 🧠 Idea Garden Review with cadence triggers (GPT 2026-05-12)
+Refines "idea review day" with concrete triggers (⭐ shelf > 75 / compost > 200) and outputs (Top 10 reread / Top 5 build / Top 5 research / Top 5 merge / Top 5 ignore / Patterns). Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 GPT pass.
+
+⭐⭐ 🤖 Context Merge as comparison, not blob (GPT refinement 2026-05-12)
+Structured output: Chat A knows / Chat B knows / Overlap / Conflicts / Missing from A / Missing from B / Fragile meanings / Suggested sync packet. Prevents token explosion, keeps meaning visible. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 GPT pass.
+
+⭐ 🤖 Skeptic Pass (mode not role) + Champion Pass (4-way merge 2026-05-12)
+Invoked on triggers (Convergence Trap / big build / reopened deferred). Skeptic must name ONE specific assumption (Claude's precision). Champion mirrors with ONE specific strength (Code's twin). Cheaper than permanent 4th AI. Aligns with Modes-not-commands. Saved as candidate. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐ 🫧 Now Panel (GPT 2026-05-12)
+Renames floating bubble. Shows: what Code is changing / what to expect / what to do next / what failure means / current base task / current token mode. Less gimmicky name. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🪙 Glass Mode + 5-mode token spectrum (GPT 2026-05-12)
+Saver / Balanced / Burner / Glass Mode (max transparency) / Autopilot (read-only). Sharper than original token-burner-vs-saver framing. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🔍 Prior Art Sweep (GPT 2026-05-12)
+Search public repos for ARIA-like systems. Output: Similar projects / What they got right / What they missed / What ARIA does differently. Standardized research mode. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🐞 Fix-Failed Round (GPT 2026-05-12)
+When fix fails, mini Blind Trio Round on diagnosis: GPT diagnosis / Claude diagnosis / Code file-truth / cross-read / smallest next test. Concrete debugging protocol. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 📱 Mobile Capture Contract (GPT 2026-05-12)
+Every mobile note carries: raw / do not act yet / preserve wording / category guess / import later. Prevents mobile-scrap overprocessing. Pairs with APPS_TO_USE.md. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 📝 Human-Readable Diff per commit (GPT 2026-05-12)
+Every meaningful commit gets plain-English: What changed / Why / How to use / What to watch for. Feeds WHAT_EXISTS.md updates. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🏗️ Token Efficiency Pattern Library (GPT 2026-05-12)
+Running list of low-cost operations: folder inspection / repo state / diffs / sync packets / context comparison / file-based state. Practical engineering advantage. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ ⌨️ wm shorthand "what am I missing?" (GPT 2026-05-12)
+Different from wn (what's next). Scans: stale items / unsaved ideas / out-of-loop AIs / missing confirmations / fragile meanings / current risk. Added to SYSTEM_COMMANDS.md. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
 ⭐⭐⭐ 🏆 Top 16 best ideas — cross-AI synthesis (2026-05-12)
 Code + Claude generative passes synthesized into unified categorized list:
 STRATEGIC: Positioning Stack (3 layers) / ARIA = Uncrumple / Handoff IS demo

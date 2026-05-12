@@ -991,6 +991,139 @@ Connection:
 
 Candidate only. Test at next review session.
 
+[2026-05-12] — "This defeats the purpose" detector (GPT contribution)
+
+Standing quality check applied to every protocol, feature, build decision.
+
+Question: **"What would technically satisfy this request but defeat the purpose?"**
+
+Examples from this session where this would have fired:
+- "Save ideas" — could be flattened into "summarize and save half" (defeats NO IDEA WASTED)
+- "Blind Trio Round" — could be flattened into "ask 3 AIs and summarize" (defeats independent-phase-1)
+- "Mobile ARIA" — could be flattened into "run Code from phone" (defeats catch/sync distinction)
+- "USER_DASHBOARD" — could be flattened into "another AI governance file" (defeats human-facing)
+
+Where to apply:
+- Before promoting any candidate to LOCKED
+- Before building any deferred design
+- When AIs converge too easily (paired with Convergence Trap)
+- When user wonders if a "fix" actually fixes
+- At Blind Trio Round synthesis (mandatory check)
+
+Connection to existing principles:
+- Pairs with Convergence Trap (catches easy-agreement on wrong-shape solutions)
+- Refines NO IDEA WASTED RULE (capture protection at promotion time)
+- Refines Deferred Build Protection (verify-before-build step 3 already includes "defeat the purpose" check — formalize it)
+
+Candidate only. Apply to all builds for next 3 sessions, see if it catches real drift.
+
+[2026-05-12] — Modes not just commands (GPT — architectural reframe)
+
+Proposed: shift from 15+ shorthand commands to ~8 modes that change AI behavior.
+
+Modes:
+- **Capture Mode** (soc / quick-capture / unclear thought)
+- **Build Mode** (one file, minimal patch, test path)
+- **Debug Mode** (confidence narrowing, evidence ledger, Fix-Failed Round)
+- **Harvest Mode** (idea intake, tool sweep, save everything)
+- **Mobile Mode** (catch only, no Code prompts, queue for desktop)
+- **Witness Mode** (Loaded Witness — protect fragile intent before clear)
+- **Review Mode** (Idea Garden Review — corpus-scale review)
+- **Recovery Mode** (fresh-AI orientation, verify-before-build)
+
+Each mode changes AI behavior. User says "build mode" → AI adjusts response shape, verbosity, defaults. User says "harvest mode" → AI shifts to capture+categorize defaults.
+
+Why this matters:
+The shorthand family (soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round / hold that thought / what were we doing / back to base / system map / clear / handoff / health check / wn / wm / park-this) is reaching cognitive-load limit. 8 modes = cleaner mental model. Existing shorthands become invocations within modes.
+
+Eventually: ARIA's UI is a mode switcher. "What mode are you in?" → UI changes.
+
+Implementation:
+- Define mode behaviors in SYSTEM_COMMANDS.md
+- Existing shorthands map into modes
+- User can invoke modes by name OR by existing shorthand (which infers the mode)
+
+Candidate only. Test by trying explicit mode invocation for 2-3 sessions. If it reduces cognitive load, promote.
+
+[2026-05-12] — Sync Gap Detector + Sync Packet artifact (GPT contribution)
+
+Proposed: ARIA tracks per-AI knowledge state.
+
+For each AI:
+- Last commit they saw
+- Last decision they participated in
+- Gap from current state
+
+When gap detected: prompt "GPT is behind by N decisions. Generate sync packet?"
+
+Sync Packet format (NOT full handoff, NOT session log):
+```
+Since you last saw this:
+- we built X
+- rejected Y
+- changed meaning of Z
+- current HEAD is N
+- fragile thing to preserve: A
+```
+
+Why this matters:
+User named the exact pain ("one llm fell behind"). Full handoff is overkill for this case. Sync packet is the right granularity.
+
+Implementation:
+- Lives in git log + DECISIONS.md (already exists, mostly empty)
+- Code can generate sync packets from `git log --since=[date] --oneline` + DECISIONS entries
+- Shorthand: "sync packet for GPT"
+
+Candidate only. Test next time an AI gets out of sync.
+
+[2026-05-12] — Mind-Change Receipt (GPT contribution)
+
+When AI or user changes position on a decision, capture structured:
+- Initial position:
+- Challenge (what prompted reconsideration):
+- What changed (the actual reasoning shift):
+- New decision:
+- Lesson (what this means for future similar situations):
+
+Would have captured tonight's USER_DASHBOARD reversal cleanly:
+- Initial: "don't build tonight" (Code + GPT yield)
+- Challenge: user's "why not build while loaded?"
+- What changed: recognized context-dependent artifacts degrade after clear
+- New decision: build USER_DASHBOARD tonight
+- Lesson: AIs deferred against ARIA's own logical consistency — Loaded Witness principle protected the user
+
+Implementation:
+- Add to DECISIONS.md as a row type (alongside normal decisions)
+- Format consistent across all mind-changes
+- Searchable: "show me all my mind-changes about X"
+
+Candidate only. Test by capturing the next 3 mind-changes that happen.
+
+[2026-05-12] — Skeptic Pass (mode, not permanent role) (GPT refinement)
+
+The Skeptic role (user's candidate) gets refined as a MODE invokable on triggers, rather than a permanent 4th AI.
+
+Triggers for Skeptic Pass:
+- Convergence Trap fires (all AIs agree too easily)
+- New file/system is proposed
+- Idea seems too exciting
+- User about to build something big
+- Deferred build is being reopened
+- Before promoting to LOCKED
+
+Skeptic Pass prompt (Claude's specific-flaw refinement):
+> "Find the single assumption this idea depends on most. If that assumption is wrong, what breaks? Then say whether the risk is fatal, fixable, or not serious."
+
+Champion Pass mirrors:
+> "Find the single strength this idea has. State what specifically would be lost if we didn't do this. Then say whether the strength is sufficient on its own or whether it needs the rest of the idea."
+
+Why this matters:
+Cheaper than spinning up permanent 4th AI. Validates the pattern before committing to infrastructure. Aligns with "Modes not commands" architectural reframe.
+
+The original Skeptic-as-role candidate stays valid as the LONG-TERM version. Skeptic Pass is the NEAR-TERM cheap implementation.
+
+Candidate only. Use Skeptic Pass on the next 2-3 architectural decisions, see if it catches real flaws.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

@@ -6503,3 +6503,384 @@ First time in session a cross-AI comparison happened on GENERATIVE output (not p
 Per LOCKED 37 + Cross-AI Reconciliation Refinement: every step exercised. Per Self-defense-first rule: held positions stated before evaluating Claude's. Per Convergence Trap (just locked): would have been premature for Code to say "Claude's all better" — the rule protected against that.
 
 The rules protected the process. Loaded witness behavior validated again.
+
+
+[2026-05-12] — GPT's generative pass + Code 3-way synthesis (Code+Claude+GPT)
+
+User shared GPT's response after Code+Claude synthesis. Per Self-defense-first + Convergence Trap rules (just locked): Code holdings stated first, then GPT additions accepted, merges produced.
+
+═══════════════════════════════════════════════
+GPT'S GENUINELY NEW ADDITIONS (no Code or Claude equivalent)
+═══════════════════════════════════════════════
+
+⭐⭐⭐ "ARIA protects against FLATTENING" (GPT — strongest synthesis of session)
+The deepest product positioning yet. Most AI tools try to "remember." ARIA's deeper job is to stop rich, messy intent from becoming a technically-correct-but-weaker version later.
+
+Flattening examples this session:
+- Blind Trio Round → "ask 3 AIs and summarize" (loses the blindness)
+- NO IDEA WASTED → "save and build everything" (loses the promotion gate)
+- Mobile ARIA → "run Code from your phone" (loses the catch/sync distinction)
+- USER_DASHBOARD → "another AI governance file" (loses the human-facing-ness)
+
+The phrase that holds it together:
+> **"ARIA preserves MEANING across interruptions, tools, models, and future simplifications."**
+
+Not memory. MEANING.
+
+[Code: this is the cleanest single positioning of the entire 3-day session. Goes alongside Claude's "moat is the mental model" and my "compounding cost of interruption" as the three positioning layers — but this is the deepest. Belongs at the top of the positioning stack.]
+
+⭐⭐⭐ "This defeats the purpose" detector (GPT — quality check)
+Standing question every protocol/feature should pass:
+> "What would technically satisfy this request but defeat the purpose?"
+
+Examples:
+- "Save ideas" by summarizing away half
+- "Blind Trio Round" by letting AIs see each other too early
+- "Mobile ARIA" by asking user to run Code from phone
+- "Dashboard" written for AIs instead of Caleb
+
+[Code: GENUINELY NEW failure-mode detector. Sharper than the "user verification" step I had in Blind Trio synthesis check. This is the meta-test: did our solution lose the original intent? Worth elevating to a candidate rule applied to every locked attribute and every build.]
+
+⭐⭐⭐ Modes, not just commands (GPT)
+Bigger pattern than endless shorthands: MODES OF WORK.
+
+Possible modes:
+- Capture Mode — big mic button, no filter
+- Build Mode — minimal patch, one file
+- Debug Mode — confidence narrowing, evidence ledger
+- Harvest Mode — save everything, categorize, no filter
+- Mobile Mode — capture only, queue for desktop
+- Witness Mode — protect fragile intent before clear
+- Review Mode — idea shelf + candidates
+- Recovery Mode — fresh-AI orientation
+
+Each mode changes AI behavior. Cleaner than adding shorthands forever.
+
+ARIA's main UI could BE the mode switcher: "What mode are you in?"
+
+[Code: this is the strongest architectural reframe. The shorthand family (soc / sidequest / idea intake / tool sweep / blind round / phase two / synthesize round / hold that thought / etc.) all become MODE INVOCATIONS or settings within a mode. Not 15 commands — 8 modes. Much cleaner cognitive load. Adopt.]
+
+⭐⭐ Sync Gap Detector + Sync Packet as first-class artifact (GPT)
+Track per-AI state:
+- GPT last knew commit X / decision A
+- Claude last knew commit Y / decision B
+- Code last did commit Z / decision C
+- User last corrected meaning at moment D
+
+When gap detected: "GPT is behind by 3 decisions. Generate sync packet?"
+
+Sync Packet (NOT full handoff, NOT session log):
+```
+Since you last saw this:
+- we built X
+- rejected Y
+- changed meaning of Z
+- current HEAD is N
+- fragile thing to preserve: A
+```
+
+[Code: solves the EXACT problem user named in their backlog ("one llm fell behind") with the EXACT mechanism that uses git log + decisions log (which we have). Buildable today as a shorthand. More useful day-to-day than full handoff ceremony. Save as build-next-session candidate.]
+
+⭐⭐ Mind-Change Receipt (GPT)
+When AI or user changes position, capture:
+- Initial position:
+- Challenge:
+- What changed:
+- New decision:
+- Lesson:
+
+Would have captured tonight's USER_DASHBOARD reversal cleanly:
+- Initial: "don't build tonight" (Code + GPT yield)
+- Challenge: user's "why not build while loaded?"
+- What changed: realized context-dependent artifacts degrade after clear
+- New decision: build USER_DASHBOARD tonight
+- Lesson: AIs deferred against logical consistency with ARIA's own principle
+
+[Code: STRONG. This is the loaded-witness pattern made into a structured artifact. Makes AI/user learning VISIBLE over time. Pairs with the Longitudinal Analytics (Merge D from earlier).]
+
+⭐⭐ Idea Garden Review (GPT — refines "idea review day")
+Better name + concrete cadence + concrete outputs.
+
+Trigger when:
+- ⭐ shelf exceeds 75 items
+- compost exceeds 200 items
+- ideas feel noisy
+- before major ARIA build phase
+
+Outputs:
+- Top 10 to reread
+- Top 5 to build
+- Top 5 to research
+- Top 5 to merge
+- Top 5 to ignore for now
+- Patterns emerging
+- Ideas that deserve promotion
+
+[Code: GPT's outputs spec is sharper than Claude's "Harvest Session" or my "periodic idea-review session." Adopt GPT's name + outputs. Trigger thresholds give concrete invocation criteria.]
+
+⭐⭐ Cook Mode (read-only first) with explicit constraints (GPT)
+Sharper than my "DIGEST" framing AND Claude's "autonomous reading-only."
+
+Constraints (must be enforced):
+- Read only unless explicitly allowed
+- No commits without approval
+- Produce notes every phase
+- Stop at checkpoints
+- User defines max scope
+- Must output decisions/questions, not just patches
+
+Useful jobs for Cook Mode:
+- repo audit
+- idea review
+- prior art sweep
+- architecture extraction
+- documentation map
+- app feature planning
+- stale rule detection
+
+[Code: STRONGER than the safety-tier-ladder merge from earlier. The explicit constraints are what was missing. ADOPT GPT's framing as Tier 1 spec of the ladder. Tier 2 (digest) and Tier 3 (build) inherit constraints from Tier 1.]
+
+⭐ Now Panel (GPT — renames floating bubble)
+Less gimmicky name than "bubble." Same UI primitive:
+- What Code is changing
+- What you should expect to see
+- What you should do next
+- What failure means
+- Current base task
+- Current token mode
+
+Can start as text block in Code responses, later become UI overlay.
+
+[Code: adopt the rename. "Now Panel" is cleaner. The 6 fields it shows are what was missing from the original bubble idea.]
+
+⭐ Skeptic Pass (not permanent Skeptic role) (GPT — refines user's Skeptic)
+Mode, not 4th AI role. Triggered when:
+- All AIs agree too easily (CONVERGENCE TRAP fires)
+- New file/system is proposed
+- Idea seems too exciting
+- User about to build something big
+- Deferred build is being reopened
+
+Skeptic Pass prompt:
+"Find the single assumption this idea depends on most. If that assumption is wrong, what breaks?
+Then say whether the risk is fatal, fixable, or not serious."
+
+[Code: cheaper than spinning up a permanent 4th AI. Validates the role-as-mode pattern (consistent with GPT's bigger "Modes not commands" insight). MERGE with user's Skeptic-as-role: Skeptic is both — invokable as PASS (cheap, common) or as dedicated ROLE (when adversarial review needs sustained attention). The Champion mirrors this: Champion Pass / Champion Role.]
+
+⭐ Glass Mode (GPT — renames "show me everything")
+5-mode spectrum for token visibility:
+- Saver = concise, fewer checks
+- Balanced = normal
+- Burner = audits, visible checks
+- **Glass Mode** = maximum transparency, all relevant state shown
+- Autopilot = only for low-risk read-only work
+
+[Code: 5 modes is right granularity (vs my 2 or Claude's "decision checkpoints" reframe). ADOPT spectrum + "Glass Mode" name.]
+
+⭐ Context Merge as COMPARISON, not blob (GPT — refines user's Context Merge Button)
+Output structure:
+```
+Chat A knows:
+Chat B knows:
+Overlap:
+Conflicts:
+Missing from A:
+Missing from B:
+Fragile meanings:
+Suggested sync packet:
+```
+
+Not dump-everything-into-everywhere. Structured comparison.
+
+[Code: SHARPER than the original Context Merge Button idea. Adopt as the canonical spec. Prevents token explosion.]
+
+⭐ Prior Art Sweep (GPT — renames "public repo search")
+Use when:
+- Idea might already exist
+- Pattern hunting
+- Naming inspiration
+- Architecture comparison
+
+Output:
+- Similar projects
+- What they got right
+- What they missed
+- What ARIA does differently
+- Useful files/patterns
+
+[Code: standardized output makes the sweep reusable. Adopt.]
+
+⭐ Mobile Capture Contract (GPT)
+Every mobile note carries:
+- raw idea
+- do not act yet
+- preserve wording
+- category guess
+- import later
+
+[Code: prevents the mobile-scrap-overprocessing failure. Tiny but useful constraint. Pairs with APPS_TO_USE.md mobile-mode behavior.]
+
+⭐ Human-Readable Diff (GPT)
+Every meaningful commit gets a plain-English explanation:
+- What changed
+- Why it matters
+- How to use it now
+- What to watch for
+
+Feeds into WHAT_EXISTS.md.
+
+[Code: I've been doing this informally in commit messages but it's not structured. Making it a per-commit field would make WHAT_EXISTS auto-updatable from git log. Strong.]
+
+⭐ wm shorthand — "what am I missing?" (GPT)
+Different from wn (what's next).
+
+wm scans:
+- stale deferred items
+- unsaved ideas
+- out-of-loop AIs
+- missing confirmations
+- fragile meanings
+- current risk
+
+[Code: adopt. Different question shape than wn. Add to shorthand family.]
+
+⭐ Token Efficiency Pattern Library (GPT)
+Running list of discovered low-cost operations:
+- Inspect folder names before reading full files
+- Use repo state instead of chat paste
+- Read diffs instead of whole files
+- Sync packets instead of full handoffs
+- Context Merge comparison instead of blob transfer
+- File-based state instead of chat-history dependence
+
+[Code: practical engineering advantage. Builds over time. Good place: section in ARIA_IDEAS or eventual TOKEN_EFFICIENCY.md.]
+
+⭐ Categorized Clever Ideas Shelf (GPT — refines my compost theme-tree)
+Concrete categories:
+- capture / handoff / token / debugging / mobile / multi-AI / workflow / product / user-facing docs / future tech
+
+[Code: GPT's explicit category list is sharper than my "auto-cluster via embeddings." MERGE: human-defined categories from GPT + machine-clusters from embeddings = best of both. Categories give scaffold; clusters surface unexpected connections.]
+
+⭐ Fix-Failed Round (GPT — refines user's cross-LLM debugging compare)
+When a fix fails, mini Blind Trio Round on diagnosis:
+- GPT diagnosis
+- Claude diagnosis
+- Code file-truth diagnosis
+- Cross-read
+- Smallest next test
+
+[Code: applies BTR specifically to debugging. Concrete, repeatable. Adopt as a debugging protocol.]
+
+═══════════════════════════════════════════════
+GPT'S MERGES (where GPT refined a Code or Claude idea)
+═══════════════════════════════════════════════
+
+GPT improved on Claude's Idea Half-Life:
+Soften the "kill at 60 days" into tiered decay types:
+- fast-decay: depends on current context
+- medium-decay: needs review soon
+- slow-decay: evergreen architecture idea
+- dormant: keep, but hide from top shelf
+
+[Code: GPT's tiering is gentler than "kill" — adopt. Some ideas age into validity; should be retrievable not deleted.]
+
+GPT clarified Token Modes:
+The variable isn't text volume, it's VERIFICATION FREQUENCY (echoing Claude's decision-checkpoints). GPT's 5-mode spectrum operationalizes this.
+[Code: Claude proposed framing, GPT operationalized. Adopt combined.]
+
+═══════════════════════════════════════════════
+CODE HELD POSITIONS (per Self-defense-first rule)
+═══════════════════════════════════════════════
+
+Not yielding (no GPT equivalent or distinct from GPT's overlap):
+
+- ⭐ Compost theme-tree (Code) — GPT's Categorized Shelf with explicit categories MERGES with this (human-defined + machine-clustered = best of both), not replaces it
+- ⭐ Day 1/7/30 curriculum (Code) — no GPT equivalent
+- ⭐ 🤔 unclear thought capture (Code) — no GPT equivalent
+- ⭐ Self-defense first ordering rule (Code) — concrete protocol step GPT doesn't have
+- ⭐ Incomplete confidence rule (Code) — distinct from Convergence Trap (completeness questions vs consensus) and distinct from "defeats the purpose" detector (capability check vs goal check)
+- ⭐ One-line thesis "compounding cost of interruption" (Code) — different POSITIONING LAYER than GPT's "preserves meaning"
+- ⭐ AI-collaboration analytics (insight-level attribution) — Claude's Session Rating + Code's attribution = Merge D
+- ⭐ User IS the Loaded Witness observation — different angle from GPT's "mental model is the moat" or "preserves meaning"
+
+═══════════════════════════════════════════════
+UNIFIED POSITIONING STACK (4 layers now — was 3)
+═══════════════════════════════════════════════
+
+GPT's "preserves meaning" earns its own layer above the others:
+
+1. **DEEPEST identity** (GPT): "ARIA preserves MEANING across interruptions, tools, models, and future simplifications" — not memory, meaning
+2. **STRATEGIC defensibility** (Claude): "The mental model is the product, features are expressions"
+3. **CONSUMER pitch** (Code+Claude merge): "ARIA teaches you how to disagree with AI confidently"
+4. **USER-FELT value** (Code): "Working with AI without the compounding cost of interruption"
+
+Deploy by audience. Together they form ARIA's positioning architecture.
+
+═══════════════════════════════════════════════
+UNIFIED TOP IDEAS (Code+Claude+GPT, categorized)
+═══════════════════════════════════════════════
+
+🏆 STRATEGIC IDENTITY (5)
+1. ⭐⭐⭐ ARIA preserves MEANING across interruptions (GPT — deepest)
+2. ⭐⭐⭐ Positioning Stack — 4 layers by audience (Merge: Code + Claude + GPT)
+3. ⭐⭐ ARIA = Uncrumple structurally identical (Claude)
+4. ⭐⭐ User IS the Loaded Witness — ARIA teaches users to disagree with AI (Code observation)
+5. ⭐ Handoff ceremony IS the demo (Claude)
+
+🏆 ARCHITECTURE REFRAMES (3)
+6. ⭐⭐⭐ Modes not just commands — 8 modes vs 15 shorthands (GPT)
+7. ⭐⭐ Working Memory Layer — 5-item active surface (Claude + Code UI paths merge)
+8. ⭐⭐ Overnight Safety Tier Ladder with Cook Mode constraints (Merge: Claude + Code + user + GPT)
+
+🏆 BEHAVIOR RULES — candidates (6)
+9. ⭐⭐⭐ "This defeats the purpose" detector (GPT)
+10. ⭐⭐ Convergence Trap — easy consensus = Skeptic trigger (Claude)
+11. ⭐⭐ Skeptic Pass + Champion Pass — paired-precise modes (Merge: user + Code + Claude + GPT)
+12. ⭐ Self-defense first ordering (Code)
+13. ⭐ Incomplete confidence verification (Code)
+14. ⭐ Idea Half-Life with tiered decay (Claude + GPT refinement)
+
+🏆 SYSTEM FEATURES (8)
+15. ⭐⭐ Sync Gap Detector + Sync Packet (GPT)
+16. ⭐⭐ Mind-Change Receipt (GPT)
+17. ⭐⭐ Idea Garden Review with cadence triggers (GPT — refines user's idea review day)
+18. ⭐⭐ Context Merge as comparison (GPT — refines user's button)
+19. ⭐ Now Panel (GPT — renames bubble)
+20. ⭐ Glass Mode 5-mode token spectrum (GPT — refines decision checkpoints)
+21. ⭐ Longitudinal Analytics — session rating + AI attribution (Merge: Code + Claude)
+22. ⭐ Fix-Failed Round (GPT)
+
+🏆 WORKFLOW (4)
+23. ⭐ Categorized + Theme-tree compost (Merge: Code + GPT)
+24. ⭐ Session Energy Signal (Claude)
+25. ⭐ Day 1/7/30 curriculum (Code)
+26. ⭐ Prior Art Sweep (GPT)
+
+🏆 CAPTURE (4)
+27. ⭐ 🤔 unclear thought trigger (Code)
+28. ⭐ Park-this shorthand (user, earlier)
+29. ⭐ Mobile Capture Contract (GPT)
+30. ⭐ wm shorthand "what am I missing?" (GPT)
+
+🏆 INFRASTRUCTURE (2)
+31. ⭐ Human-Readable Diff per commit (GPT)
+32. ⭐ Token Efficiency Pattern Library (GPT)
+
+═══════════════════════════════════════════════
+[Code process note — third pass]
+═══════════════════════════════════════════════
+
+Three-way synthesis (Code+Claude+GPT) on generative output:
+- Code's 10 sparks + meta observation (1st pass)
+- Claude's 10+ ideas + cross-AI synthesis (2nd pass, Code+Claude merge)
+- GPT's 20+ ideas + 3-way synthesis (3rd pass, this entry)
+
+Self-defense-first rule fired three times. Convergence Trap fired (would have been premature to say "GPT's are all best" given the substantive material from all three sources). Cross-AI Reconciliation Refinement 6-step: every step exercised three times.
+
+The genuinely strongest single idea across all three passes: **"ARIA preserves meaning, not just memory"** (GPT). It reframes the entire product at a deeper layer than any of us had reached separately.
+
+The genuinely strongest workflow idea: **Modes not commands** (GPT). Cleaner architecture than the shorthand-family we've been building.
+
+The genuinely strongest rule: **"This defeats the purpose" detector** (GPT). Universal quality check applicable to every locked rule and built feature.
+
+GPT's contribution this pass was outsized. Stating that honestly rather than minimizing it. Self-defense-first doesn't mean "always hold equal weight to other AIs" — it means "state your case first then evaluate honestly." Honest evaluation: GPT brought the deepest synthesis of the three-pass generation.

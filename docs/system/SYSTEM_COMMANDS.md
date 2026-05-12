@@ -57,6 +57,7 @@ Moving to new feature without saying y
 ## User Shorthands
 
 wn = "what's next" — verify next_step in CURRENT_HANDOFF
+wm = "what am I missing" — scan stale items / unsaved ideas / out-of-loop AIs / fragile meanings / current risk (GPT 2026-05-12)
 soc = stream of consciousness — raw idea capture
 sidequest = brief intentional detour with explicit return
 idea intake = batch import saved idea clusters using NO IDEA GETS WASTED rule
