@@ -6992,3 +6992,49 @@ Honest distribution by source:
 - Code: 1 of 10 (the teaches-users observation)
 
 Per Self-defense-first applied honestly: Code's positioning observation is real, but most of my contributions this final pass were holds and merges rather than genuinely new ideas at this conceptual depth. GPT carried the generative weight this pass. That's the honest read.
+
+
+[2026-05-12] — ⭐ Round Closer / Resolution Anchor Pass (user-named, 3-AI converged, end-of-session)
+
+⭐ FLAGGED HIGH-SIGNAL because:
+1. User observed the failure mode WHILE LIVING IT (Pre-Clear Synthesis Window firing)
+2. 3 AIs converged on it as the strongest end-of-session reframe
+3. Claude rated it "stronger than park-this"
+4. It addresses a real friction, not a brainstormed gap
+
+Full candidate entry: docs/system/CANDIDATE_ATTRIBUTES.md (2026-05-12 entry)
+
+Core problem (in user's words):
+"I'm not even sure what happened, it all happened so fast lol"
+
+The pattern:
+Cross-paste loop between GPT/Claude/Code goes 5+ levels deep. User stops reading carefully, keeps pasting. Original question gets silently resolved. Loop continues from momentum. Sharp details get smoothed during synthesis. User loses orientation.
+
+Two-part solution:
+1. Round Closer = detect when loop is resolved, tell user to stop
+2. Resolution Anchor Pass = preserve sharp details from each AI before closing
+
+Output format (9 fields + Claude's addition of "What got smoothed away" — most valuable field, hardest to fill).
+
+Closing AI assignment:
+- Code → repo/file actions
+- GPT → human-readable synthesis
+- Claude → pressure-test meaning
+
+Connects to:
+- LOCKED 37 (Cross-AI Reconciliation) — extends with loop-termination
+- Multi-Pass Generative (saved earlier 2026-05-12) — protects its downside
+- Pre-Clear Synthesis Window (candidate) — Round Closer is one specific case
+- Blind Trio Round — Round Closer is the informal reactive equivalent users actually do
+
+Why user saved this:
+This session WAS the failure mode. The fact that user noticed it while living it is itself the strongest validation. The capture happened reactively, not proactively. Round Closer is the rule that would have caught the session 2 hours earlier.
+
+Status: save-only candidate, do not build tonight, build morning-fresh if survives review.
+
+Strongest clever ideas added during candidate refinement (see Code's response 2026-05-12 for full list):
+- Smoothing Diff (mechanical text diff between round 1 and final synthesis)
+- AI-of-record per round (each round names which AI owns the synthesis)
+- User Bookmark Mid-Loop (user can star a line, ARIA guarantees survival)
+- Loop Health Meter (rephrase-mode vs new-content detection)
+- Cool-down protocol (mandatory pause before re-paste after detected resolution)

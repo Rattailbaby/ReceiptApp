@@ -20,6 +20,9 @@ Every item here also lives in its normal category below.
 These are not the only good ideas — they are the ones an AI 
 thought were strong enough to flag explicitly.
 
+⭐ 🧠 Round Closer / Resolution Anchor Pass (2026-05-12, 3-AI converged)
+User-named pattern: detect when cross-paste loops between GPT/Claude/Code have resolved the original question, tell user to stop, AND preserve sharp details from each AI before closing. Includes Claude's killer field "What got smoothed away" — actively look backward at what disappeared from round 1 to final synthesis. Captured at end-of-session while user was LIVING the failure mode ("I'm not even sure what happened, it all happened so fast lol"). Strongest end-of-session reframe, stronger than park-this per Claude's call. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md (2026-05-12) and docs/aria/ARIA_IDEAS.md (2026-05-12 ⭐ entry). Save-only candidate, build morning-fresh.
+
 ⭐ AIs capture. User synthesizes. Never reverse this. (2026-05-09)
 The user is the synthesis layer. AIs capture everything raw. The 
 user reads everything. Reading one idea sparks a better idea or 

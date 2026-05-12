@@ -1154,6 +1154,7 @@ Round Closer output format (when loop is closing):
 - Keep from Claude (specific phrase / idea / nuance)
 - Keep from Code (file truth / action / constraint)
 - What not to lose (good phrases, warnings, emotional texture, ideas user might like)
+- **What got smoothed away** (Claude's addition 2026-05-12) — actively look backward: name specific phrases / ideas / details that appeared in round 1 or 2 but are ABSENT from the final synthesis. This is the hardest field to fill and the most valuable. Catches loss, not just gain.
 - Final action (one clear step)
 - If unresolved: name exactly what remains unresolved
 
