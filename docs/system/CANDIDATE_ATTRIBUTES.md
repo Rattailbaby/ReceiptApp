@@ -818,6 +818,90 @@ Don't create DEFERRED_BUILDS.md tonight. Create when first deferred build needs 
 
 Candidate only.
 
+[2026-05-12] — The Skeptic / 4th LLM role (devil's advocate by default)
+
+User raised the strongest single architectural idea in the final intake: a fourth AI role dedicated to active devil's-advocate behavior. The trio currently has no built-in adversarial voice.
+
+Current trio:
+- Code = file truth / execution
+- GPT = planning / orchestration / synthesis
+- Claude = systems pressure-test / loaded witness
+
+Proposed addition:
+- **The Skeptic** = active devil's-advocate by default. Argues against every new idea until it proves itself. Once an idea is solid, Skeptic gives great input. Until then, Skeptic's job is "what would break this?"
+
+Why this matters:
+The existing trio tends toward synthesis and validation. LOCKED 37 (Cross-AI Prompt Reconciliation) catches some over-eager promotion but operates as a side-effect of normal review. The Skeptic would make adversarial review a DEDICATED role, not a hopeful side-effect.
+
+This addresses the "AIs converge too easily" failure mode the user explicitly named: "two llms almost always tell me to do what the other says."
+
+Distinction from existing patterns:
+- Claude's pressure-test (LOCKED 37): triggered by review, defaults to synthesize
+- Skeptic: triggered by EVERY new idea, defaults to argue-against
+
+Implementation options:
+- Use one of the existing AIs in Skeptic mode for sessions where it's needed (cheapest)
+- Spawn a dedicated Claude/GPT chat configured as Skeptic-only (more expensive, more consistent)
+- Argument Swap feature (already saved as future product feature) is a partial implementation
+
+Connection to existing rules:
+- Extends LOCKED 37 (Cross-AI Prompt Reconciliation)
+- Complements Pre-mortem before promotion candidate (also from this session)
+- Implements the "what would break this?" missing-skeptic-role candidate from earlier this session
+
+Trigger conditions:
+- Promoting a candidate to LOCKED
+- Building a deferred design
+- Architecturally significant decisions
+- When user feels the trio is converging too easily
+
+Candidate only. Test by trying one Skeptic-mode session before promoting to LOCKED behavior pattern.
+
+[2026-05-12] — Periodic idea-review session (corpus-scale generative harvest)
+
+When the ⭐ shelf / candidate / compost list grows to 100+ items, run a periodic review session with all available AIs (trio + Skeptic).
+
+Process:
+1. All AIs read the relevant files (CLAUDE_CLEVER_IDEAS / ARIA_IDEAS / CANDIDATE_ATTRIBUTES)
+2. Each surfaces: best ideas / buried gems / outdated items / suggested promotions
+3. Skeptic challenges each surface
+4. User makes final calls
+5. Cleanup: promote / demote / mark "still relevant?" / archive
+
+Clever scaling techniques:
+- Diff-based review (only items since last review)
+- Cluster-based review (group related → review clusters not individuals)
+- Skeptic-first filter (only items that survive Skeptic get full review)
+- User-pre-filter (user marks 10 they care about; AIs deep-review those)
+- Voting/scoring (each AI gives 1-5 rating; convergence = signal)
+- Time-decay relevance check (auto-flag ideas saved >6 months ago)
+
+Cadence: monthly or when shelf hits a count threshold (50? 100?).
+
+Candidate only. Try at first natural moment (when shelf feels heavy) and refine.
+
+[2026-05-12] — Park-this shorthand (non-disruptive flow capture)
+
+Distinct from sidequest (which engages a detour) and from hold-that-thought (which preserves the thread mid-sidequest). Park-this is for ideas that arise DURING flow that the user doesn't want to engage now AT ALL — just queue without breaking concentration.
+
+Proposed behavior:
+- User says "park" or types a quick note prefixed with a keyword
+- AI captures to USER_DASHBOARD Quick Captures section silently
+- No response except "Parked." (or even silent ack)
+- User continues flow uninterrupted
+- Address at session end or explicit "show me parked" request
+
+Why this matters:
+Sidequest engages the AI in the detour. Park-this doesn't even engage. It's pure capture-without-engagement.
+
+Connection to existing rules:
+- Different from soc (which expects engagement)
+- Different from sidequest (which expects return)
+- Different from hold-that-thought (which expects sidequest)
+- Park-this is "pure background capture" — never interrupts the foreground task
+
+Candidate only. Try in next flow session.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

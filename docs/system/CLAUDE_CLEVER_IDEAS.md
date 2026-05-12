@@ -324,6 +324,42 @@ Claude's contribution to Blind Trio Round design. File system structure itself e
 ⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
 User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
 
+⭐ ⭐ 🧠 The Skeptic — 4th LLM role (devil's-advocate by default) (2026-05-12)
+User's idea from final intake. Strongest single new idea in the batch. Adds a 4th role to the trio (Code/GPT/Claude/Skeptic). Skeptic argues against by default until idea proves itself. Once solid, gives great input. Addresses "AIs converge too easily" failure mode. Distinct from Claude's pressure-test (which defaults to synthesize). Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐ 🧠 Periodic idea-review session (corpus-scale harvest) (2026-05-12)
+When ⭐ shelf hits ~100 items, run all-AI review session. Diff-based / cluster-based / Skeptic-first / vote-based scaling techniques. Knock through compost as it grows. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐ 🧠 Park-this shorthand (non-disruptive flow capture) (2026-05-12)
+Distinct from soc/sidequest/hold-that-thought. Pure background capture during flow — AI doesn't engage, just files it and continues. Try in next flow session. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐ 🔭 ARIA as teacher / guardian / third-person overlooker (2026-05-12)
+User's deep identity framing from final intake: "ARIA is taking care and watching over but not in a creepy way, just looking and guiding... every llm is third person, ARIA is the overlooker." Foundational identity statement to sit alongside "Frictionless re-entry into previous cognition." Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 MASSIVE IDEA INTAKE section.
+
+⭐ 🤖 Talk to multiple chats at once toggle (2026-05-12)
+User idea: manual workflow already happening, formalize as a product toggle. Connects to Blind Trio Round design. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🤖 Cross-chat context combine button (background, no token burn) (2026-05-12)
+Combine context of multiple chats for cross-reference. Background processing so it doesn't add to chat token loads. Strong technical insight. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🏗️ Token burner vs token saver user preference (2026-05-12)
+User-configurable verbosity. Some users need everything visible; others want concise. Bleeds into every ARIA function. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🏗️ Code can read folders without burning tokens (Glob/Grep don't load files into context) (2026-05-12)
+Technical insight worth leveraging. Use for cross-chat context sharing without paste. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🧠 Movable bubble window — real-time context (2026-05-12)
+"What's happening" bubble + persistent "YOU do this" bubble. Two UI patterns. Bubbles stay until replaced. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🤖 Auto-detect AI slowdown → trigger handoff (with user-review option) (2026-05-12)
+System self-aware degradation triggers handoff sequence. Two modes (user-involved learning vs hands-off automated). ARIA learns user's handoff preferences over time. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🏗️ User-renamable shorthands (preserve function, swap trigger word) (2026-05-12)
+Personalization of shorthand layer. Some users want "dump" instead of "soc". Keep underlying behavior. Stored in user-config. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
+⭐ 🤖 Overnight cook session — AI reads everything and builds (2026-05-12)
+Long-running session where AI fully digests the corpus and builds ARIA project. User walks away for a day. Needs API + budgeting + auto-recovery. Currently doable in partial form via Claude Code + extended thinking. Vision-scale. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 intake.
+
 ⭐ 🔭 Repo-as-training-data / ARIA built from real use (2026-05-11)
 Months of real sessions = natural application architecture. Markdown files = proven data model. CURRENT_HANDOFF.json = validated state schema. LOCKED_ATTRIBUTES = proven governance. Session texture = labeled training data. Friction = UI requirements. Most products build first, discover data model later. ARIA builds the data model THROUGH use, then wraps an interface around proven structure. Wrong simplification: "export markdown, feed to LLM." Actual meaning: the repo IS the spec. The structure encodes the design. Claude saved this from drift before close — loaded witness behavior in action. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Repo-as-training-data section.
 
