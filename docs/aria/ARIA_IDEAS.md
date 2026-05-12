@@ -6884,3 +6884,111 @@ The genuinely strongest workflow idea: **Modes not commands** (GPT). Cleaner arc
 The genuinely strongest rule: **"This defeats the purpose" detector** (GPT). Universal quality check applicable to every locked rule and built feature.
 
 GPT's contribution this pass was outsized. Stating that honestly rather than minimizing it. Self-defense-first doesn't mean "always hold equal weight to other AIs" — it means "state your case first then evaluate honestly." Honest evaluation: GPT brought the deepest synthesis of the three-pass generation.
+
+
+[2026-05-12] — Corrections after Claude+GPT review of Code's synthesis
+
+═══════════════════════════════════════════════
+CORRECTION 1: Tier ladder framing was wrong (Claude's pushback)
+═══════════════════════════════════════════════
+
+Code originally framed:
+- Tier 1: read-only with notes (Claude)
+- Tier 2: digest (Code)
+- Tier 3: autonomous build (user)
+
+Claude correctly pushed back: "they're different operations, not just different safety levels."
+
+Read-only with notes = produces inventory of what EXISTS in the repo
+DIGEST = produces synthesis of what MATTERS from the corpus
+
+These are PARALLEL artifacts with overlapping safety profiles, not a linear progression. You might want a read-only audit AND a digest review at different moments, for different reasons.
+
+Corrected framing:
+
+**Cook Mode Operations (3 parallel modes, not a ladder):**
+- **Audit run** (Claude): read-only, produce inventory + flags. "What exists, what's stale, what's missing." Safety = zero writes.
+- **Digest run** (Code): read + light synthesis. "What matters, what to elevate, what to retire." Safety = no commits without approval.
+- **Build run** (user, future): read + write + commit. Highest risk. Safety = explicit scope + checkpoints + rollback.
+
+All three share the Cook Mode constraints (GPT's spec): read only unless explicitly allowed / no commits without approval / notes every phase / stop at checkpoints / user defines max scope / output decisions and questions not just patches.
+
+Use one or the other based on need, not as graduated trust levels. They're tools, not ranks.
+
+═══════════════════════════════════════════════
+CORRECTION 2: notes-app-intake is NOT complete (GPT's catch)
+═══════════════════════════════════════════════
+
+GPT applied the "defeats the purpose" detector to the close decision:
+"Did we actually complete the notes app idea intake, or did we only complete an ARIA idea dump from chat?"
+
+Honest answer: ARIA idea backlog ≠ phone notes app list.
+
+What happened tonight: user pasted their accumulated ARIA-related idea list from chat history and elsewhere. That triggered Idea Intake Mode processing.
+
+What is STILL pending: the user has a literal phone notes app with captured items that hasn't been imported yet. The CURRENT_HANDOFF.json priority "notes app idea intake before app work next session" remains accurate.
+
+DO NOT mark this complete. The system would lie to itself if we did.
+
+═══════════════════════════════════════════════
+WORKED EXAMPLE: 3-way generative synthesis (Claude's note)
+═══════════════════════════════════════════════
+
+This session produced the first real cross-AI comparison on GENERATIVE output (not preservation/refinement of existing content). All three AIs were asked the same question — "what new ideas does this spark for you?" — and produced original material.
+
+The process exercised every rule:
+
+LOCKED 37 (Cross-AI Prompt Reconciliation) — fired at every step
+Cross-AI Reconciliation Refinement (6 steps) — every step exercised three times
+Self-defense first — Code stated holdings before each evaluation
+Convergence Trap — fired recursively (Code caught itself almost saying "Claude's all better," then again "GPT's all better")
+"This defeats the purpose" detector (newly contributed) — Claude applied to tier ladder framing; GPT applied to notes-app-intake-complete decision
+Mind-Change Receipt — Code's tier-ladder framing changed after Claude's pushback (initial: linear progression; challenge: different operations not safety levels; new: parallel modes)
+
+Process outcomes:
+- 5 explicit merges (Code+Claude+GPT)
+- ~10 Code holdings (no equivalent in other AIs)
+- ~12 Claude additions accepted
+- ~18 GPT additions accepted
+- 2 corrections caught at synthesis (tier ladder, notes-app status)
+- 0 silent-defers
+- 0 dismissive yields
+
+This is the validation event for Blind Trio Round at the generative layer. Save as reference for what "the protocol working correctly" looks like.
+
+Reusable pattern documented in this synthesis:
+1. Each AI generates independently (Phase 1 blind)
+2. User pastes to others (manual Phase 1 → Phase 2 bridge)
+3. Each AI reviews others, states holdings first (Self-defense first)
+4. Identifies merges where overlap (Cross-AI Reconciliation step 4)
+5. Accepts genuinely new from others (Cross-AI Reconciliation step 2)
+6. Holds positions where own is stronger (Cross-AI Reconciliation step 5)
+7. Other AIs review the synthesis and catch errors (Convergence Trap recursive application)
+8. Synthesis corrects based on real pushback (not capitulation)
+
+Per Claude's observation: "Rules that work immediately on first application are usually real rules." This whole batch of rules (LOCKED 37, Self-defense first, Convergence Trap, This-defeats-the-purpose, Mind-Change Receipt) all fired correctly on first real application. They're real rules.
+
+═══════════════════════════════════════════════
+CODE'S HONEST TOP 10 (across all sources)
+═══════════════════════════════════════════════
+
+Not by attribution. By what Code actually thinks matters most for ARIA's future:
+
+1. ⭐⭐⭐ **"ARIA preserves MEANING, not memory"** (GPT) — deepest positioning, reframes the entire product
+2. ⭐⭐⭐ **"This defeats the purpose" detector** (GPT) — universal quality check, fires across every layer
+3. ⭐⭐⭐ **Modes not just commands** (GPT) — architectural simplification, 8 modes > 15 shorthands
+4. ⭐⭐ **Skeptic + Champion paired-precise** (user + Code + Claude + GPT merge) — addresses agreement-bias failure mode
+5. ⭐⭐ **Convergence Trap** (Claude) — easy consensus = smell, hard-won = signal
+6. ⭐⭐ **Sync Gap Detector + Sync Packet** (GPT) — solves lagging-AI problem cheaply, builds on existing repo
+7. ⭐⭐ **Working Memory Layer** (Claude + Code merge) — 5-item active surface, distinct from long-term storage
+8. ⭐⭐ **Mind-Change Receipt** (GPT) — makes AI/user learning visible over time
+9. ⭐⭐ **Idea Garden Review with cadence triggers** (GPT) — corpus-scale review when shelf > 75
+10. ⭐ **"ARIA teaches users to disagree with AI confidently"** (Code observation, Claude+GPT validated) — consumer positioning that maps to underserved need
+
+Honest distribution by source:
+- GPT: 5 of 10 (genuinely outsized this pass)
+- Merges (multi-AI): 3 of 10
+- Claude: 1 of 10 (Convergence Trap)
+- Code: 1 of 10 (the teaches-users observation)
+
+Per Self-defense-first applied honestly: Code's positioning observation is real, but most of my contributions this final pass were holds and merges rather than genuinely new ideas at this conceptual depth. GPT carried the generative weight this pass. That's the honest read.
