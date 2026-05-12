@@ -324,6 +324,48 @@ Claude's contribution to Blind Trio Round design. File system structure itself e
 ⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
 User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
 
+⭐⭐⭐ 🏆 Top 16 best ideas — cross-AI synthesis (2026-05-12)
+Code + Claude generative passes synthesized into unified categorized list:
+STRATEGIC: Positioning Stack (3 layers) / ARIA = Uncrumple / Handoff IS demo
+RULES: Convergence Trap / Skeptic+Champion paired / Self-defense first / Incomplete confidence
+ARCHITECTURE: Working Memory Layer / Idea Half-Life / Overnight Safety Tier Ladder / Longitudinal Analytics
+WORKFLOW: Compost theme-tree / Session Energy Signal / Day 1/7/30 curriculum
+CAPTURE: 🤔 unclear thought / Park-this
+Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 cross-AI synthesis section.
+
+⭐⭐ 🧠 Convergence Trap — easy consensus = smell (Claude 2026-05-12)
+When all 3 AIs agree on first pass with no friction, that's a Skeptic-invocation trigger, NOT a green light. Easy consensus = shared training patterns. Hard-won consensus = signal. This session validated: "build tomorrow" agreed by all 3 AIs without friction; user pushed back as Loaded Witness; consensus was premature. Saved as candidate rule. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐ 🧠 Idea Half-Life — track age, cull intelligently (Claude 2026-05-12)
+Ideas in compost get timestamps. After 60 days without promotion → "still relevant?" prompt (promote / kill / defer max 3 times). Prevents compost from becoming graveyard. Produces meta-learning about which idea patterns survive. Saved as candidate rule. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+⭐⭐ 🤖 Working Memory Layer (Merge: Claude spec + Code UI paths) (2026-05-12)
+5-item active surface (current task / parked thread / active decision / one fragile intent / next action) served by multiple UI paths (bubble / status line / watch / sound / color). USER_DASHBOARD partially serves this already. Claude provided the cognitive-7-item grounding, Code provided the UI-path multiplicity. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Merge C.
+
+⭐⭐ 🤖 Overnight Safety Tier Ladder (Merge: Claude + Code + user) (2026-05-12)
+Tier 1 read-only with notes (Claude — safest) → Tier 2 digest with light synthesis (Code) → Tier 3 autonomous build (user — most ambitious). Validate through tiers. Don't skip to T3. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Merge A.
+
+⭐⭐ 🔭 Positioning Stack — 3 layers by audience (Merge: Code + Claude) (2026-05-12)
+Consumer: "ARIA teaches you how to disagree with AI confidently" (Claude framing + Code observation merged). User-felt: "Working with AI without the compounding cost of interruption" (Code). Strategic: "The mental model is the product, features are expressions" (Claude). Deploy by audience, not as competing taglines. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Merge B.
+
+⭐⭐ 🧠 Skeptic + Champion paired-precise roles (Merge: user + Code + Claude) (2026-05-12)
+Skeptic names ONE specific assumption (if it breaks, idea breaks — Claude's precision). Champion names ONE specific strength (the worth-keeping thing — Code's mirror). Both precise. User sees both clearly. Vague versions get dismissed. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Merge E.
+
+⭐⭐ 🔭 ARIA = Uncrumple — structurally identical (Claude 2026-05-12)
+ARIA organizes messy AI inputs and routes them. Uncrumple organizes messy receipts and routes them. Same product different domain. Every design decision in one feeds the other. Stronger statement than "Uncrumple is ARIA's proving ground." Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🤖 Session Energy Signal — flow vs winding down detection (Claude 2026-05-12)
+ARIA reads session energy and adjusts. In flow: capture aggressively, defer governance, don't interrupt. Winding down: surface admin, prep handoff. User did this intuitively all night. ARIA detecting explicitly = automatic adjustment. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🤖 Session Rating + AI-attribution = Longitudinal Analytics (Merge: Claude + Code) (2026-05-12)
+Session-level: 1-5 rating + one sentence (Claude). Insight-level: which AI led to which breakthrough (Code). Both → AGENT_ANALYTICS.md. 30 sec/session, compounds yearly. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Merge D.
+
+⭐ 🔭 Handoff ceremony IS the demo (Claude 2026-05-12)
+Record one clean handoff = most compelling ARIA marketing artifact. Visceral demonstration. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🏗️ Decision Checkpoints reframe of token modes (Claude 2026-05-12)
+Token burn modes are about TEXT VOLUME. Real variable is DECISION CHECKPOINTS — how often does ARIA stop and verify? Verbose = many. Concise = fewer. Sharper framing than original. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
 ⭐⭐ 🤖 Overnight DIGEST not overnight BUILD (Code spark 2026-05-12)
 Stepping-stone version of "AI cooks while I sleep." AI reads compost overnight, produces curated digest (redundancies / connections / promote-candidates / outdated items) — ~20 line summary not finished build. Lower budget ($5-15 vs hundreds). Achievable today via Claude Code agent script. Validates pattern before committing to autonomous build infrastructure. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Code's 10 sparks section.
 

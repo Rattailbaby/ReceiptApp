@@ -940,6 +940,57 @@ Implementation:
 
 Candidate only. Try across handoffs to see if it changes reconciliation quality.
 
+[2026-05-12] — Convergence Trap rule (Claude contribution)
+
+When all three trio AIs agree on first pass with no friction, that's not validation — it's a SMELL. AIs may be drawing from shared training patterns. Easy consensus is suspicious; hard-won consensus is signal.
+
+Proposed rule:
+If all three AIs agree on a proposal on the FIRST pass with no friction:
+- This is a TRIGGER, not a green light
+- Invoke the Skeptic before proceeding
+- Specifically: ask the Skeptic to name ONE assumption the agreed proposal depends on
+- If Skeptic's named assumption survives challenge → real consensus
+- If Skeptic's named assumption is plausibly wrong → consensus was premature
+
+Why this matters:
+LOCKED 37 prevents silent-defer between two AIs. Convergence Trap handles the opposite failure: when there's no disagreement to surface in the first place. This is the THIRD-AI version of the failure that LOCKED 37 catches between two AIs.
+
+Examples from this session where this should have fired:
+- "Build it tomorrow" decision before user pushed back — all 3 AIs agreed (Code + GPT + Claude) without friction. User played the Skeptic role and overrode. With this rule, Skeptic should have been invoked automatically.
+
+Connection to existing rules:
+- Pre-mortem before promotion (candidate): same family — force adversarial check before commitment
+- The Skeptic (4th role, candidate): the natural invocation target for this rule
+- Cross-AI Reconciliation Refinement (candidate): about how to handle disagreement; Convergence Trap is about how to handle agreement
+
+Candidate only. Test when next obvious consensus appears.
+
+[2026-05-12] — Idea Half-Life rule (Claude contribution)
+
+Some ideas decay fast (act now or lose the thread). Some age well (sitting for a month makes them stronger). Compost should track age and prompt for action when items have sat too long.
+
+Proposed rule:
+- Ideas saved in compost get age tracked (timestamp at capture)
+- After 60 days without promotion or build action, item gets auto-flagged
+- User prompted: "still relevant?" — three options:
+  - PROMOTE (move to candidate / build / roadmap)
+  - KILL (move to rejected with reason)
+  - DEFER (reset clock another 60 days, max 3 deferrals before forced kill)
+
+Why this matters:
+Without aging, compost becomes a graveyard. Ideas accumulate without ever being acted on or learned from. Aging forces explicit commit-or-cull decisions, which produces meta-learning (why did this idea die? what pattern of ideas keeps surviving?).
+
+Implementation:
+- Add age check to periodic idea-review session (already candidate)
+- Could be automated via Git timestamps + a script
+- Manual version: during review, sort by age, address oldest first
+
+Connection:
+- Periodic idea-review session candidate (this is what gets executed in those sessions)
+- "Save generously, promote selectively" (existing principle): aging is the "promote selectively" mechanism
+
+Candidate only. Test at next review session.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
