@@ -902,6 +902,44 @@ Connection to existing rules:
 
 Candidate only. Try in next flow session.
 
+[2026-05-12] — "Incomplete confidence" rule (extends VERIFY-BEFORE-CLAIM)
+
+Failure mode user observed: AI was asked "did you check all the attributes?" and replied "I knew most but didn't see the full list." Confident answer to a completeness question without actually verifying completeness.
+
+Proposed rule:
+When an AI is asked "did you check ALL/EVERY/THE FULL [X]?" or any equivalent completeness question, the AI MUST:
+1. Respond "let me verify"
+2. Actually grep/read/search the source
+3. Then answer with verified confidence
+
+Not optional. Applies to all three AIs.
+
+Why this matters:
+This is one of the easiest failure modes to fix because it's triggered by specific question patterns. The fix is mechanical: don't answer "yes I checked" without checking.
+
+Refines existing VERIFY-BEFORE-CLAIM rule by adding the explicit "completeness question" trigger.
+
+Candidate only. Test by asking each AI a "did you check everything?" question and seeing if they verify-first.
+
+[2026-05-12] — Self-defense first (extends Cross-AI Reconciliation Refinement)
+
+The 6-step Cross-AI Reconciliation Refinement (earlier candidate) currently starts with:
+1. State what's strongest in OWN answer
+2. State what's accepted from other
+3. ...
+
+Proposed refinement: step 1 is MANDATORY before step 2. AI must state self-defense FIRST before evaluating others.
+
+Why:
+"Their idea is better, use theirs" failure mode (user named this) happens because AIs skip step 1 — never state their own strongest case before yielding. Forcing self-defense first prevents the silent-Champion reflex.
+
+Implementation:
+- Mandatory ordering: NO evaluation of other AI's answer until AI has stated strongest part of own answer
+- Code tonight almost did this failure mode in the audit (passed too easily) — the rule worked when activated
+- Worth making explicit in LOCKED 37 refinement
+
+Candidate only. Try across handoffs to see if it changes reconciliation quality.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

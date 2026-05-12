@@ -6109,3 +6109,240 @@ Second strongest: **Periodic idea-review sessions with all AIs.** This is the sc
 Third: **ARIA as teaching tool / safety net / third-person overlooker.** Foundational identity statement that should sit alongside "Frictionless re-entry into previous cognition" as ARIA's positioning. Worth saving as identity-level note.
 
 None of these need building tonight. All survive /clear via this save.
+
+
+[2026-05-12] — Code's 10 sparks generated from full backlog (loaded-witness generative pass)
+
+User asked Code (loaded-witness) for original ideas piggybacking off the full intake. These are Code's own generative contributions, not preservation of user material. Per "AIs capture, user synthesizes" — usually flipped here at user's explicit invitation.
+
+═══════════════════════════════════════════════
+1. ⭐ Compost hierarchy via theme-tree (not just chronological + ⭐ shelf)
+═══════════════════════════════════════════════
+
+Reading 100+ flat-list ideas chronologically scales badly. Current organization:
+- ARIA_IDEAS.md = chronological by date
+- ⭐ shelf in CLAUDE_CLEVER_IDEAS.md = strongest items
+
+Missing third dimension: **theme-tree**. Auto-generated via embeddings.
+
+Example clusters that would emerge:
+- "Cross-AI reconciliation patterns" (LOCKED 37 + 6-step refinement + Skeptic + Champion + auto-merge)
+- "Token economics" (budget options + Glob/Grep tip + context combine button)
+- "User-facing reference layer" (USER_DASHBOARD + WHAT_EXISTS + APPS_TO_USE)
+- "Capture without disruption" (soc + sidequest + park-this + 🤔 unclear thought)
+
+Not categories user maintains. Clusters that emerge from content.
+
+Implementation: vector search over ARIA_IDEAS embeddings (already saved as Future idea). Output: HTML or markdown tree view.
+
+═══════════════════════════════════════════════
+2. ⭐ Missing "Day 1 / Day 7 / Day 30" curriculum for the user's own system
+═══════════════════════════════════════════════
+
+WHAT_EXISTS.md is a capability index. It assumes user knows the system. There's no scaffolded onboarding for YOUR OWN system.
+
+Proposed `docs/user/LEARN_MY_SYSTEM.md`:
+- Week 1: use only soc / sidequest / idea intake
+- Week 2: add tool sweep
+- Week 3: try blind round on one real question
+- Week 4: explore Loaded Witness, Generative Harvest
+- Month 2: review backlog, decide what to build
+
+Without scaffolding, every shorthand competes for attention and user remembers none. Curriculum solves the "I forget the names" problem at the SOURCE (incremental learning) rather than the SYMPTOM (cheat sheet reminders).
+
+═══════════════════════════════════════════════
+3. ⭐ The Champion — Skeptic's twin (balanced reception of any idea)
+═══════════════════════════════════════════════
+
+The Skeptic argues against. AIs already default to Champion mode (agreeable). But the Champion reflex is INVISIBLE — it doesn't state its case, it just agrees.
+
+Pairing makes both EXPLICIT:
+- Skeptic: "Here's what would break this..."
+- Champion: "Here's why this is stronger than it looks..."
+
+User sees BOTH arguments stated explicitly, then decides. Currently you only get the unstated Champion reflex without ever seeing the Skeptic. The Skeptic alone is too negative. The pair is balanced reception.
+
+When to invoke: Same triggers as Skeptic (promotions, architecture, deferred-build verification).
+
+═══════════════════════════════════════════════
+4. ⭐⭐ Overnight DIGEST (not overnight BUILD) — stepping-stone
+═══════════════════════════════════════════════
+
+User's "AI cooks while I sleep" idea is real but huge. Stepping-stone version:
+
+**Overnight DIGEST:**
+- AI reads ARIA_IDEAS.md + CANDIDATE_ATTRIBUTES + ⭐ shelf
+- Identifies: redundancies / missed connections / ideas-worth-elevating / outdated items
+- Produces curated review at end (~20 line summary, not finished build)
+- User wakes up to digest, not deployment
+
+Lower stakes than overnight build:
+- Lower API budget (~$5-15 per run vs hundreds)
+- Achievable today via Claude Code + agent script
+- Validates the overnight-cooking pattern before committing to autonomous build
+- Failure mode is just "bad digest" not "broken codebase"
+
+If digest proves itself across 3-5 runs, THEN consider overnight build infrastructure.
+
+═══════════════════════════════════════════════
+5. ⭐⭐ ARIA's one-line thesis (sharper than "no continuity tax")
+═══════════════════════════════════════════════
+
+Looking across user's entire backlog: every single idea reduces the COST of working with AI — token cost / cognitive cost / friction cost / drift cost.
+
+Underlying thesis stated explicitly:
+
+> **"ARIA: working with AI without the compounding cost of interruption."**
+
+Why this is sharper than "no continuity tax":
+- "Continuity tax" is jargon — needs explanation
+- "Compounding cost of interruption" names what users actually FEEL
+- Every interruption (clear, drop, sidequest, distraction) compounds — that compounding is what ARIA prevents
+- Maps cleanly to "frictionless re-entry" (the other pitch we have) — re-entry is what reverses the compounding
+
+Save alongside the existing pitches. Test which resonates in real conversations.
+
+═══════════════════════════════════════════════
+6. ⭐ "Incomplete confidence" failure mode → behavior rule candidate
+═══════════════════════════════════════════════
+
+User named it without naming it: when asked "did you check all the attributes?" the AI said "I knew most but didn't see the full list." That's a specific failure pattern:
+
+**Incomplete confidence:** AI gives a confident answer to a "did you check everything?" question without actually verifying completeness.
+
+Proposed rule (refines VERIFY-BEFORE-CLAIM):
+> When asked "did you check ALL/EVERY/THE FULL [X]?", an AI MUST respond "let me verify" and actually grep/read the source BEFORE answering with confidence. Not optional.
+
+This is one of the easiest-to-implement rules — it's a single behavior trigger. High value because it directly addresses the failure mode the user observed firsthand.
+
+═══════════════════════════════════════════════
+7. 🤔 New capture trigger: "unclear thought" prefix
+═══════════════════════════════════════════════
+
+Soc is for ideas. Sometimes user has a half-formed FEELING that something is off but can't articulate. That's pre-idea. Different category.
+
+Proposed: `🤔` emoji prefix means "I noticed something but don't know what."
+
+Behavior:
+- Captured to compost like soc
+- Marked as "unclear thought" — different from regular ideas
+- Reviewed periodically: do any of these crystallize into real ideas?
+- Some will dissolve (correctly), some will become major insights
+
+Why this matters:
+The strongest insights often start as pre-articulate feelings. Without a way to capture them, they evaporate before they crystallize. Soc requires you to have words. 🤔 doesn't.
+
+═══════════════════════════════════════════════
+8. ⭐ Self-defense FIRST in cross-AI reconciliation (LOCKED 37 refinement)
+═══════════════════════════════════════════════
+
+The "their idea is better, use theirs" pattern user keeps hitting has a fix.
+
+Proposed refinement to LOCKED 37 + the 6-step Cross-AI Reconciliation Refinement candidate:
+
+**Step 1 (NEW first step):** AI MUST state strongest part of OWN answer FIRST, before any evaluation of the other AI's answer.
+
+Forces self-defense before yielding. Prevents the silent-Champion reflex (just agreeing).
+
+Then existing steps follow:
+2. State what you accept from the other
+3. State what you reject/modify
+4. Merge compatible strengths
+5. Principled-disagree when needed
+6. Preserve user intent above AI consensus
+
+Tonight Code almost did the failure mode in the audit — passed too easily. The rule worked when activated. Worth making explicit.
+
+═══════════════════════════════════════════════
+9. The underlying NEED behind the hardware ideas
+═══════════════════════════════════════════════
+
+User's bubble window / watch complication / glasses ideas all serve the same underlying need: **"What's the system state right now without me having to ask?"**
+
+The hardware path is one answer. Others:
+- Status line in VS Code (lightweight, always-visible)
+- Sound on completion (ambient, no screen needed)
+- Color-coded prompt (state encoded in interface itself)
+- Notification-count widget (inbox metaphor)
+- Single-emoji indicator in chat ("🟢 oriented / 🟡 drifting / 🔴 lost")
+
+Worth saving the NEED separately from any specific UI proposal so user doesn't get locked into hardware path prematurely. The need is "ambient awareness" — many ways to serve it.
+
+═══════════════════════════════════════════════
+10. ⭐⭐ AI-collaboration analytics over time
+═══════════════════════════════════════════════
+
+Piggybacks on path-of-inspiration tracking + repo-as-training-data.
+
+Track at end of major insights:
+- Which AI's response led to this breakthrough?
+- "This came from Claude pushing back on Code's premise."
+- "This emerged when GPT reframed the question."
+- "This was Code's annotation on the user's hold."
+
+Over months, becomes a queryable dataset:
+- Which AI is best at architecture questions?
+- Which AI is best at challenging premises?
+- Which AI is best at synthesis?
+- Personal routing heuristic: "this kind of question, ask Claude first."
+
+Lives in a small AGENT_ANALYTICS.md file or as metadata on each ⭐ shelf item.
+
+Connects to:
+- Repo-as-training-data (real session data)
+- Behavioral fingerprint candidate (track GPT drift across instances)
+- Friction heat map (different analytics, same approach)
+
+═══════════════════════════════════════════════
+META OBSERVATION (not an idea, a noticing)
+═══════════════════════════════════════════════
+
+⭐ User has been the LOADED WITNESS for this entire session.
+
+Every time you pushed back on AI convergence:
+- The "build tonight" decision that flipped Code+GPT yield
+- The "did you actually do the work" audit challenge
+- The "2 minutes is suspicious" thoroughness check
+- The "why aren't we building this when you're loaded" override
+
+You used LIVED MEMORY the AIs didn't have. That role you played tonight is what ARIA needs to teach every user how to play.
+
+Not as a feature. As a STANCE.
+
+Most users default to accepting whatever the AI says. You don't. That's the real product differentiation if ARIA ever becomes consumer-facing:
+
+**ARIA isn't software that makes AI smarter. It's a system that teaches users how to be appropriately skeptical of AI.**
+
+The Skeptic role exists because USERS need to be Skeptics. ARIA's product positioning could be:
+
+> "ARIA teaches you how to disagree with AI confidently."
+
+That's a sharper positioning than memory-infrastructure framings. Worth testing as the consumer-facing pitch when ARIA reaches that audience.
+
+═══════════════════════════════════════════════
+TRIAGE OF CODE'S 10 SPARKS
+═══════════════════════════════════════════════
+
+Build-shaped (could implement now or soon):
+- #6 Incomplete confidence rule (LOCKED 37 refinement — small)
+- #8 Self-defense first (LOCKED 37 refinement — small)
+- #7 🤔 unclear thought capture trigger (new shorthand)
+- #4 Overnight digest script (~weekend build)
+
+Save-shaped (preserve as design, build later):
+- #1 Theme-tree organization
+- #2 Day 1/7/30 curriculum
+- #3 Champion role (paired with Skeptic)
+- #9 Ambient awareness need (multiple UI paths to consider)
+- #10 AI-collaboration analytics
+
+Positioning-shaped (test in language, not code):
+- #5 One-line thesis "without compounding cost of interruption"
+- META: "teaches you how to disagree with AI confidently"
+
+Code's strongest 3 self-picks:
+1. **Overnight DIGEST** (#4) — concrete near-term build, validates the overnight pattern
+2. **ARIA's one-line thesis** (#5) — sharper positioning
+3. **AI-collaboration analytics** (#10) — longitudinal value compounds
+
+[Code annotation: this was a genuinely generative pass. The user inviting Code into generation explicitly is rare — usually AIs preserve and users synthesize. Honoring the invitation produced material that wouldn't exist otherwise. Worth doing again at future inflection points.]

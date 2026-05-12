@@ -324,6 +324,36 @@ Claude's contribution to Blind Trio Round design. File system structure itself e
 ⭐ 🔭 Living Notepad / User-Facing Scratch Surface (2026-05-11)
 User soc idea: a USER_NOTEPAD.md (distinct from AI-facing files like CLAUDE.md and CURRENT_HANDOFF.json) that updates dynamically across the session. Contains: active shorthands / key principles / current next_step / parked HOLD threads / recent inflection points / quick reminders. The persistent always-on version of Mid-Session Orientation Snapshot. The "hold that thought" mechanic auto-saves to it. User-facing live reference, not AI-facing protocol. Genuine gap in current system — every existing file serves AIs. Needs refinement (user said so) but the core insight is real. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-11 Living Notepad section.
 
+⭐⭐ 🤖 Overnight DIGEST not overnight BUILD (Code spark 2026-05-12)
+Stepping-stone version of "AI cooks while I sleep." AI reads compost overnight, produces curated digest (redundancies / connections / promote-candidates / outdated items) — ~20 line summary not finished build. Lower budget ($5-15 vs hundreds). Achievable today via Claude Code agent script. Validates pattern before committing to autonomous build infrastructure. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 Code's 10 sparks section.
+
+⭐⭐ 🔭 ARIA one-line thesis: "working with AI without the compounding cost of interruption" (Code spark 2026-05-12)
+Sharper than "no continuity tax" — names what users feel, not the jargon. Every interruption compounds; ARIA stops the compounding. Maps cleanly to "frictionless re-entry" (re-entry reverses the compounding). Test alongside existing pitches in real conversations. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐⭐ 🤖 AI-collaboration analytics over time (Code spark 2026-05-12)
+Track which AI's response led to which breakthrough. Over months becomes a queryable dataset: which AI is best at architecture / pressure-test / synthesis. Personal routing heuristic. Lives as small AGENT_ANALYTICS.md. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🧠 Compost theme-tree (hierarchy beyond chronological + ⭐ shelf) (Code spark 2026-05-12)
+Auto-generated theme clusters via embeddings. Different cut than chronological or strongest. "All cross-AI reconciliation ideas" / "All token economics ideas." Solves the "100 flat items is unreadable" problem. Vector search future idea operationalized. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🧠 Day 1 / 7 / 30 curriculum for user's own system (Code spark 2026-05-12)
+WHAT_EXISTS assumes you know the system. Missing: scaffolded onboarding. Future docs/user/LEARN_MY_SYSTEM.md teaches your own shorthands incrementally. Solves "I forget the names" at the source not the symptom. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🧠 The Champion — Skeptic's twin (Code spark 2026-05-12)
+Skeptic argues against. AIs default to Champion mode (agreeable) but Champion is INVISIBLE — just agrees, doesn't state its case. Pairing makes both explicit. User sees both arguments before deciding. Balanced reception. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+⭐ 🧠 The user IS the Loaded Witness — "ARIA teaches you how to disagree with AI confidently" (Code spark 2026-05-12)
+Observation across whole session: user has been the Loaded Witness every time AI convergence drifted. Most users accept whatever AI says — this user doesn't. Real product differentiation: ARIA isn't software that makes AI smarter, it's a system that teaches users to be appropriately skeptical of AI. Sharper consumer-facing positioning. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12 META OBSERVATION.
+
+⭐ 🤖 "Incomplete confidence" rule + Self-defense first rule (Code spark 2026-05-12)
+Two small but concrete refinements: (1) when asked "did you check ALL?" AI MUST verify before answering. (2) In cross-AI reconciliation, MUST state strongest in OWN answer FIRST before evaluating other. Both address failure modes user named tonight. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
+
+🧠 🤔 Unclear thought capture trigger (Code spark 2026-05-12)
+New emoji prefix for half-formed feelings that aren't yet ideas. Different from soc (which assumes words). Captures pre-articulate noticing — "something feels off" without knowing why. Reviewed periodically; some crystallize, some dissolve. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
+🧠 The "ambient awareness" need (underlying user hardware ideas) (Code spark 2026-05-12)
+User's bubble window / watch / glasses ideas all serve same need: "what's system state right now without asking?" Many UI paths (VS Code status line / sound / color / inbox count) — hardware is just one. Save the NEED separately so future builds don't lock into hardware path prematurely. Full entry: docs/aria/ARIA_IDEAS.md 2026-05-12.
+
 ⭐ ⭐ 🧠 The Skeptic — 4th LLM role (devil's-advocate by default) (2026-05-12)
 User's idea from final intake. Strongest single new idea in the batch. Adds a 4th role to the trio (Code/GPT/Claude/Skeptic). Skeptic argues against by default until idea proves itself. Once solid, gives great input. Addresses "AIs converge too easily" failure mode. Distinct from Claude's pressure-test (which defaults to synthesize). Full entry: docs/system/CANDIDATE_ATTRIBUTES.md 2026-05-12.
 
