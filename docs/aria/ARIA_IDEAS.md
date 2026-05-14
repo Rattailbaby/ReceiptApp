@@ -7104,3 +7104,58 @@ Validation event:
 Status: save-only candidate, do not build tonight. The Windows-restart event itself is the validation — write the layer in calm conditions, not under the recovery it would have prevented.
 
 Do NOT build tonight. Park for morning-fresh review.
+
+---
+
+[2026-05-14] — Cognitive Mansion / Visual Idea Topology (architectural concept bundle)
+
+A bundle of related ARIA concepts that surfaced together. Saved as one entry because the meaning lives in the connections — each idea reinforces the others.
+
+⭐ Cognitive mansion metaphor
+- Rooms = idea clusters
+- Pathways = relationships between ideas
+- Heat = importance / how often a room is visited
+- Doors = questions that opened new threads
+The mansion is YOUR mind made navigable — not a generic knowledge graph. You walk through your own thinking.
+
+⭐ Visual brainstorm web with two views
+- Historical view: how ARIA actually grew (chronology + emergence path)
+- Visionary view: possible forward paths (branches not yet taken)
+Both views render the same node graph but with different axes — time vs possibility.
+
+Built-in star/importance rating in ARIA software
+- 1-4 stars on any idea or thread
+- Higher-star content auto-routes to other LLMs for cross-pollination
+- The star is a routing signal, not just visual weight
+This formalizes the ⭐ shelf pattern that emerged organically in CLAUDE_CLEVER_IDEAS.md.
+
+⭐ Ouroboros insight (Mandy's words, 2026-05-14)
+> "In order to build ARIA we need ARIA first — it's like a snake eating itself."
+ARIA's bootstrap problem stated precisely. The system we need to build the system we need. The user is currently doing manually what ARIA would do automatically. Every session is partial ARIA-by-hand.
+
+⭐ Brain on paper
+ARIA as a custom-fitted mental space matching YOUR brain specifically, not a generic productivity tool. Standard knowledge management tools are shoes that don't fit any foot in particular. ARIA fits because YOU shaped it through use. Cannot be copy-pasted to another user — it has to be grown.
+
+⭐ Meaning Trails
+Not just links between ideas — emergence paths showing WHY an idea formed. Each idea has provenance: "this came from {prior idea} + {situation} + {emotional context}." Removes the flattening that pure links cause. The trail preserves causality, not just association.
+
+Bubble persistence
+Threads stay soft-active in the background without hijacking focus. You can park a thought without losing it AND without it shouting at you. The bubble visualizes the thread but doesn't pull attention — it persists ambiently until you choose to return. Direct expression of "Hold the thread / Save the door."
+
+⭐ Human resonance weighting
+Only the user knows what emotionally mattered. AI can detect frequency, recency, structural importance, but cannot rank emotional weight. ARIA must let the user mark resonance and weight content accordingly. This is the layer AI fundamentally cannot do alone — it's the boundary where human cognition is load-bearing.
+
+"Still writing" detection
+A new thought is not necessarily done with the old one. ARIA should detect when a user has switched topics MID-THOUGHT vs DELIBERATELY. Switching mid-thought = preserve the door, the old thought is still open. Switching deliberately = save and close. Different system behaviors needed for each.
+
+Why this bundle matters:
+These ideas form one architectural surface — the visualization/topology/resonance layer of ARIA. They answer the question "how do we render cognition navigable without flattening it?" Each idea alone is partial. Together they describe a way of organizing thought that preserves emergence, emotion, and ambient persistence — the three things current AI tools systematically destroy.
+
+Connects to:
+- Live-State Continuity layer (earlier 2026-05-14 entry) — Cognitive Mansion is the visual companion to live-state preservation
+- NO IDEA WASTED RULE — Meaning Trails are how that rule could be enforced architecturally rather than as user discipline
+- Round Closer — Bubble persistence is the visual UI of what Round Closer protects mechanically
+- ARIA "meaning continuity, not memory" thesis — this bundle is the meaning-layer visualized
+- USER_DASHBOARD Live State HOLDs — first textual ancestor of Bubble persistence
+
+Status: save-only, do not build. This is design substrate for ARIA-as-product, not a near-term feature. The Ouroboros insight is the key tension to keep visible — building the visualization layer is itself an ARIA-needs-ARIA problem.
