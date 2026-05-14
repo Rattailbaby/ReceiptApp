@@ -7159,3 +7159,177 @@ Connects to:
 - USER_DASHBOARD Live State HOLDs — first textual ancestor of Bubble persistence
 
 Status: save-only, do not build. This is design substrate for ARIA-as-product, not a near-term feature. The Ouroboros insight is the key tension to keep visible — building the visualization layer is itself an ARIA-needs-ARIA problem.
+
+---
+
+[2026-05-14] — SOC: Forced-restart synthesis — 10 connected ARIA concepts
+
+Context for this batch:
+These ideas came from the forced Windows restart, recursive synthesis fatigue, and the realization that repo continuity survived better than human continuity.
+
+Core thread:
+ARIA is evolving from "AI workflow + handoff system" into navigable cognitive architecture that preserves topology, emergence, emotional weight, and human orientation during deep multi-AI sessions.
+
+Note on overlap with prior entries:
+Items #1, #3, #6 partially overlap with the Cognitive Mansion / Visual Idea Topology entry saved earlier 2026-05-14 (commit 07be76c). Saved here verbatim per NO IDEA WASTED — the SOC framing has additional detail and connections the prior entry did not capture. User reads both and synthesizes.
+
+---
+
+1. Cognitive Mansion / Navigable Mind Architecture
+User described needing to walk through ideas like rooms in a giant mansion:
+- what rooms contain
+- why the room exists
+- what inspired it
+- where pathways connect
+- what rooms became more important later
+- what rooms are still emotionally active
+
+Important: this is NOT a normal note graph or Obsidian clone. This is conceptual topology and navigable cognition.
+
+Key phrases:
+- "It's like trying to walk through a huge mental mansion."
+- "If I could put my brain down on paper and navigate it, that would be a game changer."
+
+Connect to: Meaning Trails, Orientation Debt, Thread Gravity, Warm Reconstruction, Visual Brainstorm Web, Human Resonance Weighting.
+
+---
+
+2. Repo Continuity vs Human Continuity
+Major realization: the repo reconstruction succeeded after restart, but the user still felt partially disconnected from the session.
+
+Important distinction:
+- repo continuity
+- live-state continuity
+- human continuity
+
+The unsolved problem is orientation and emotional topology, not just preserving files.
+
+Key phrase: "Repo continuity survived. Human continuity partially survived."
+
+---
+
+3. Recursive Ouroboros Insight
+"In order to build ARIA we need ARIA first."
+
+The process of building ARIA is itself proof-of-concept for ARIA.
+
+The system:
+- improves the thinking
+- that improves the system
+- that improves the thinking again
+
+Recursive cognition scaffold.
+
+---
+
+4. Human as Meaning Moderator
+User realized fully automatic synthesis is dangerous because the human knows what emotionally mattered.
+
+AI can:
+- organize
+- summarize
+- compare
+- surface patterns
+
+But the human still determines:
+- resonance
+- importance
+- emotional weight
+- what should survive synthesis
+
+Important phrase: "The user knows what mattered."
+
+---
+
+5. Topology Preservation vs Flattening
+User repeatedly noticed summaries and synthesis rounds flattening ideas.
+
+Important realization:
+Most systems preserve facts but destroy emergence path, emotional weight, minority branches, and idea trajectory.
+
+Key phrase: "What got smoothed away?"
+
+Connect to: Round Closer, Gem Flag, Resolution Anchor Pass, Cross-AI synthesis loops.
+
+---
+
+6. Bubble Persistence / Soft-active Threads
+User realized: just because conversation focus moves does not mean the user internally moved on.
+
+Ideas should remain:
+- soft-active
+- warm
+- revisit-able
+- emotionally present
+without hijacking focus.
+
+Connect to: Back Burner, Parked Threads, Heat Tags, Thread Gravity.
+
+---
+
+7. Long-run Read/Digest/Cook Mode
+Future possibility: AI slowly reads and understands repo topology over long periods without building automatically.
+
+Distinction:
+- read-only inventory mode
+- digest/synthesis mode
+- build/execution mode
+
+User specifically wants: deep understanding without reckless autonomous modification.
+
+---
+
+8. Multi-AI Controlled Conversation / Blind Round Expansion
+User wants independent AI thinking preserved BEFORE convergence.
+
+Structure:
+- each AI forms ideas separately
+- ideas preserved independently
+- then controlled synthesis phase begins
+- useful minority ideas must survive
+
+User explicitly does NOT want premature convergence.
+
+---
+
+9. Living Visual Idea Web
+Future ARIA direction:
+- visual trajectory map
+- idea evolution map
+- branch history
+- why ideas emerged
+- what caused pivots
+- unresolved gravity wells
+- user vs AI contributions
+- future trajectories
+
+Not cosmetic. Actual cognition navigation.
+
+---
+
+10. Session Interruption / Restart Recovery Layer
+Forced restart exposed missing layer: repo state recovered, but live cognitive state only partially recovered.
+
+Potential future concepts:
+- Last Camera Frame
+- Warm Recovery
+- Orientation Debt
+- Cognitive Snapshot
+- Recovery Questions
+- "What was emotionally live before interruption?"
+
+Important: this restart itself is the validation event.
+
+---
+
+Why save these together:
+Each item alone is partial. Together they describe ARIA's identity shift: from handoff system to navigable cognitive architecture. The forced-restart event was the catalyst that made the missing layer visible — preserving topology, emergence, emotional weight, and human orientation during deep multi-AI sessions. The Ouroboros tension (need ARIA to build ARIA) is the productive paradox; the realization (repo survived, human partially survived) is the diagnostic; the other 8 ideas are the architecture surfaces that would close the gap.
+
+Routing:
+- Architecture concepts: this entry
+- Live-State Continuity layer (earlier 2026-05-14): full architectural treatment of #2, #10, parts of #6
+- Cognitive Mansion (earlier 2026-05-14, commit 07be76c): full treatment of #1 and parts of #5, #9
+- Round Closer (2026-05-12): full treatment of #5
+- "AIs capture, user synthesizes" (2026-05-09): ancestor of #4
+
+Status: save-only. Do not build. Do not create UI. The whole point of this batch is to capture before flattening — the next move is rest, not implementation.
