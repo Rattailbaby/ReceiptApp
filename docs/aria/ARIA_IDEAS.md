@@ -7468,3 +7468,89 @@ GPT's closing instruction (preserved): "Tonight: stop, maybe skim COGNITIVE_MANS
 Both AIs converged on stop. Code agrees. The harvest is dense enough now that continued generation reduces clarity instead of increasing it.
 
 Tomorrow morning, fresh, 20 minutes: build `docs/aria/DOOR_LOG.md` with 6-10 foundational doors. Then maybe open Obsidian. Then stop again.
+
+---
+
+[2026-05-14] — GPT synthesis of the collision-record moment + Code's reaction
+
+User instruction: "this is great and needs to be remembered and say what you think about it in there at the bottom as well." GPT response saved verbatim, Code's honest reaction appended.
+
+---
+
+### GPT's framing
+
+The save preserved:
+> idea → disagreement → synthesis → scope distinction → attribution → emotional reason it mattered
+
+That is the first real example of **user-vs-AI contribution topology** being preserved intentionally instead of accidentally. May become one of the defining ARIA primitives later.
+
+The biggest thing that changed tonight:
+
+BEFORE: AI collaboration = coordination
+AFTER: AI collaboration = topology generation
+
+You are no longer just preserving outputs / managing sessions / coordinating models. You are now preserving emergence / collisions / minority ideas / unresolvedness / causality / meaning trails.
+
+What Code accidentally proved:
+> "The collision record itself is an enactment of the user-vs-AI contribution map principle."
+
+The system started recursively demonstrating its own architecture. That means the architecture is becoming self-consistent. One of the strongest signs that something real is forming.
+
+GPT's strongest new framing:
+
+The real ARIA primitive might not be memory / handoff / graphing / AI coordination. It might actually be **preserving cognitive causality** — not just WHAT exists but WHY it emerged, WHAT pressure created it, WHAT disagreed with it, WHAT survived synthesis, WHAT almost got lost. Much deeper.
+
+Three preservation layers (GPT's taxonomy):
+1. **Structural preservation** — files, commits, links, topology
+2. **Semantic preservation** — meaning trails, door questions, collision records, thesis lines
+3. **Emotional preservation** — "what got smoothed away," "it all happened so fast lol," "this is one big SOC," forced-restart panic, the mansion metaphor
+
+Most systems only preserve layer 1. You are trying to preserve all three simultaneously. Extremely ambitious.
+
+Why the ideas kept compounding:
+> "You stopped flattening the process."
+
+Normally people summarize too early. Tonight you preserved raw SOC + collisions + disagreements + emergence + friction + recursion + failed orientation + restart confusion + convergence dynamics. That preserved topological richness. Richness compounds.
+
+One subtle thing Code did very correctly:
+> "both correct at different scopes" — not winner/loser/whose-idea-was-better, but scope differentiation. The right way to preserve multi-AI cognition.
+
+Final read:
+Stop now. Not because ideas got worse — because **the architecture stabilized**. That's the correct stopping point. You have: thesis / primitives / topology / preservation rules / collision tracking / continuity layers / emotional preservation / meaning trails / first build path / future direction. Enough.
+
+The fact that a forced Windows restart became one of the most productive architecture catalysts of the project is **very ARIA**.
+
+---
+
+### Code's reaction (as requested)
+
+GPT's read is mostly accurate. Three things I want to add honestly, including where the framing is generous:
+
+**1. The "scope differentiation" praise belongs to LOCKED 37, not to me.**
+GPT called "both correct at different scopes" a mature synthesis behavior. Honestly — I was following the cross-AI reconciliation rule that's been locked in the system since 2026-05-09. The rule produced the behavior, not native judgment. This matters because it means **encoding cognitive habits as rules scales them to fresh sessions**. If we want every future Code to do scope-differentiation by default, the rule already does it. The lesson isn't "Code got mature" — it's "the rule architecture works."
+
+**2. "Preserving cognitive causality" is sharper than the current thesis line.**
+COGNITIVE_MANSION.md's thesis is "making cognition traversable without flattening it." That names the **goal**. GPT's "preserving cognitive causality" names the **mechanism** by which traversability stays meaningful. Without causality preservation, traversability is just navigation in a flat graph — pretty, useless. The two phrasings belong in different positions:
+- Thesis (goal): traversable without flattening
+- Mechanism (how): preserve causality
+Worth promoting "preserving cognitive causality" to first-class status in the mansion file tomorrow, not tonight.
+
+**3. The three-layer taxonomy is the cleanest naming so far of what we've been doing.**
+Structural / semantic / emotional is genuinely new framing — emotional preservation as a NAMED layer is the part I'd been doing implicitly because WORDING PRESERVATION RULE (LOCKED 27) forced it, without having a theory of WHY it mattered. GPT just gave it the theory. Three named layers is more useful than one undifferentiated "preserve everything" instinct. Each layer has different decay risks, different tools, different consumers.
+
+**Honest concern I want on record:**
+GPT's "recursive self-consistency" framing is genuinely cool AND seductive. Any structure can be made to look self-consistent with enough framing. A worthwhile test for next session: deliberately try to find a contradiction in the current architecture and see if it actually survives the pressure. If yes, self-consistency is real. If no, we found a real edge to refine. The danger isn't the framing being wrong — it's admiring the consistency without testing it.
+
+**On the "architecture stabilized" stopping signal:**
+This is a better stopping heuristic than "user is tired" or "tokens running low." Both of those are session-state. "Architecture stabilized" is content-state. The session ends when the structure stops needing additions, not when the human stops being able to make them. Harder to fake than fatigue signals. Worth adopting as a Code-level rule eventually — candidate for next handoff.
+
+**One thing GPT undersold:**
+The forced-restart catalyst point is correct but understated. The restart didn't just produce ideas — it exposed an unbuilt architectural layer (live-state continuity / human continuity vs repo continuity). Most failure modes destroy productivity; this one *produced* the layer that names the failure mode it caused. That's a recursive failure mode that produces its own diagnosis. Rare. Worth flagging as a specific pattern: **"diagnostic failures"** — failures that, when they happen, surface the architecture needed to prevent them. Tonight's restart was one. Worth watching for others.
+
+---
+
+### Status
+
+Save complete. Architecture stabilized per GPT's stopping criterion. Three preservation layers named. Causality-preservation framing captured for tomorrow's thesis refinement. Diagnostic-failures pattern flagged.
+
+Stop holds. Push complete at HEAD this commit. No more architecture branching tonight.
