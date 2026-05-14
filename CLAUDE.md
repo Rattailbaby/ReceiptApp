@@ -441,20 +441,8 @@ Do not build them unless a prompt explicitly requests it.
 ---
 
 ## Temporary Dev Tools
-
-### Clone Transaction Button
-A future temporary tool for testing cleanup flows with mixed transaction states.
-
-Rules if building when requested:
-- Must be clearly marked as a temp test button in the UI
-- Must be removable before release
-- Must use existing addTransaction logic only
-- Must NOT touch store.tsx directly unless explicitly approved
-- Must mark cloned transaction notes with "__test_clone__"
-- Must not alter the original transaction
-- If the existing transaction creation function is not available in the file, stop and explain
-
-Do not build automatically. Wait until explicitly requested.
+Clone Transaction Button spec lives in `docs/system/CLAUDE_CLEVER_IDEAS.md`
+under `## 🧪 Temporary Dev Tools`. Must be removed before release.
 
 ---
 

@@ -1409,3 +1409,23 @@ New vocabulary worth keeping:
 Full architectural detail saved in docs/aria/ARIA_IDEAS.md [2026-05-14] entry and docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14] entry.
 
 Status: save-only candidate, do not build tonight. The 2026-05-13/14 forced restart is itself the validation event — write the layer in calm conditions, not under the recovery it would have prevented.
+
+---
+
+## 🧪 Temporary Dev Tools
+
+(Moved from CLAUDE.md 2026-05-14. May extract to docs/system/DEV_TOOLS.md later.)
+
+### Clone Transaction Button
+A future temporary tool for testing cleanup flows with mixed transaction states.
+
+Rules if building when requested:
+- Must be clearly marked as a temp test button in the UI
+- Must be removable before release
+- Must use existing addTransaction logic only
+- Must NOT touch store.tsx directly unless explicitly approved
+- Must mark cloned transaction notes with "__test_clone__"
+- Must not alter the original transaction
+- If the existing transaction creation function is not available in the file, stop and explain
+
+Do not build automatically. Wait until explicitly requested.
