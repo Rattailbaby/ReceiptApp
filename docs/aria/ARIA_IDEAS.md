@@ -7554,3 +7554,56 @@ The forced-restart catalyst point is correct but understated. The restart didn't
 Save complete. Architecture stabilized per GPT's stopping criterion. Three preservation layers named. Causality-preservation framing captured for tomorrow's thesis refinement. Diagnostic-failures pattern flagged.
 
 Stop holds. Push complete at HEAD this commit. No more architecture branching tonight.
+
+---
+
+[2026-05-14] — Final session close: GPT + Code additions
+
+1. Break Test format (GPT) — correct tomorrow orientation protocol:
+Not "what happened?" — too broad.
+Instead 10 questions testing orientation not memorization:
+- 3 biggest realizations
+- what changed direction tonight
+- active hot threads
+- what got deferred
+- what should NOT be built yet
+- emotional reason Round Closer emerged
+- what forced restart revealed
+- first practical builds
+- what became architectural vs feature-level
+- what would be dangerous to forget
+
+2. Continuity Confidence (GPT) — after break/restart, user rates:
+fragmented / partial / mostly oriented / fully loaded
+Human continuity matters too, not just repo reconstruction.
+
+3. Break Snapshot (GPT) — before breaks, one AI writes:
+what was active, what mattered, what was emotionally hot,
+what was deferred, what NOT to lose, what the next move is.
+Cognitive checkpoint, not full summary.
+
+4. Preserve emergence before compression (GPT) — hidden
+connective thesis of the entire session. Everything flows
+from this: Round Closer, collision records, Meaning Trails,
+topology preservation, emotional preservation, Door Log,
+Cognitive Mansion, anti-flattening, archaeology mode,
+minority idea survival, scope differentiation.
+
+5. Diagnostic failures pattern (Code, ***) — failures are
+not interruptions to architecture discovery. They ARE the
+architecture discovery mechanism. Examples: forced restart
+revealed human continuity gap, copy-paste fog revealed
+Round Closer, convergence smoothing revealed topology
+preservation problem. Worth watching for more.
+
+6. Recursive self-consistency warning (Code, ***) —
+a self-consistent system can still be wrong. ARIA should
+be tested against deliberate contradictions next session
+before celebrating its own consistency.
+
+7. Tomorrow's actual order (all-AI convergence):
+1. Break Test
+2. Read SESSION_RECAP, COGNITIVE_MANSION, collision record
+3. Ask "what still feels alive after sleep?"
+4. Build DOOR_LOG.md with 6-10 foundational doors
+5. Stop
