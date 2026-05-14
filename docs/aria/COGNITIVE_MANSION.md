@@ -13,6 +13,8 @@ This file does not duplicate ARIA_IDEAS.md content — it gives the synthesis it
 
 ## Core thesis
 
+**Making cognition traversable without flattening it.**
+
 ARIA is not just memory, notes, handoff, or AI workflow.
 ARIA is externalized navigable cognition.
 
