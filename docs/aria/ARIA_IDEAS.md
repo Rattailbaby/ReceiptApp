@@ -7367,3 +7367,104 @@ Key phrases worth surfacing (user-flagged with `**` originally):
 
 Why the raw matters:
 The synthesized entries (Cognitive Mansion bundle, SOC 10-item batch, COGNITIVE_MANSION.md) cleaned this up into structure. The original phrasing has emotional weight and emergence path the structured versions can't fully carry — the friction of "im trying to fix a problem right now where we've done so much with both apps," the meta-recognition of "this is one big SOC so it might not make total sense," the immediate inviting of "what are your thoughts and ideas about this." That texture is itself data.
+
+---
+
+[2026-05-14] — GPT response to Code's 6 brainstorm-web angles (cross-AI collision record)
+
+Context:
+Caleb posted his SOC asking for brainstorm-web ideas. Code (this assistant) responded with 6 angles ranked by leverage (web-already-in-git / Door-Log-first / Obsidian-renders-it-free / visionary-deferred / Co-Authored-By-as-provenance / Mirror-from-git-log). GPT then weighed in — affirming three of Code's angles, raising three new ideas of GPT's own, and disagreeing on one specific point.
+
+Saved per user instruction: "the idea along with why gpt disagreed with it, thats one of the whole points." User-vs-AI contribution mapping is itself an ARIA primitive — collision history matters.
+
+---
+
+### Code's ideas GPT amplified to ⭐ status
+
+⭐ 1. Git is already the archaeology layer (Code, 2026-05-14)
+"The web already exists in git. We just don't render it yet."
+You already have chronology, causality, authorship, evolution, pivots, collisions, branching, synthesis, resolution — encoded in commits, commit messages, file touches, timestamps, co-authorship, cross-references. ARIA-v0 already exists. You're standing inside it. The issue is visibility, traversal, orientation — not raw data creation.
+
+Reframe this enables:
+- BEFORE: "How do we create the topology?"
+- AFTER: "How do we reveal and navigate the topology that already exists?"
+Different engineering problem. Way more tractable.
+
+⭐ 2. Door Log is the first primitive (all-three convergence, 2026-05-14)
+Code, GPT, and Claude independently converged on Door Log as the highest-leverage first build. Per LOCKED 37 + Convergence Trap awareness: this is NOT convergence trap because the convergence is on a specific buildable primitive, not on a vague consensus. GPT calls this "architecture pressure." Door Log solves emergence tracking, question tracking, pathway tracking, room creation, causal navigation, thread recovery — in plain markdown.
+
+⭐ 3. Mirror = git log filtered (Code, 2026-05-14)
+You do not need manual heat tags or manual activity ratings. Derive heat / gravity / cooling / resurfacing from recency, commit frequency, cross-file touches, session recurrence. No labeling needed — derived from already-existing git metadata. Could be a single bash script.
+
+GPT's framing of what this all amounts to:
+"You're accidentally discovering version control as cognition infrastructure. Not code history — idea archaeology, meaning evolution, conceptual topology. That's rare."
+
+---
+
+### GPT's three new ideas
+
+⭐ Living Doors (GPT, 2026-05-14)
+Doors themselves should evolve. A Door is NOT static question / fixed origin. A door accumulates meaning over time.
+
+Example:
+Initial Door: "How do we stop losing ideas?"
+Months later, that same door now connects to: Round Closer, Gem Flag, Cognitive Mansion, Human Continuity, Live-State Recovery, Meaning Trails.
+The door itself became a gravity node.
+
+This extends the Door Log primitive — doors are not just entries, they accumulate downstream connections and become semantic anchors over time.
+
+⭐ Ghost Rooms (GPT, 2026-05-14)
+Caleb mentioned rooms you forgot existed. ARIA should surface abandoned branches, dead-end rooms, forgotten threads, ideas that quietly cooled, rooms only entered once.
+
+Psychologically important: forgotten rooms often contain unresolved architecture, lost resonance, future breakthroughs.
+
+This is the inverse of the heat-mirror — instead of surfacing what's hot, surface what's cold but might be valuable.
+
+⭐ Thinking Terrain / Cognitive Ecology (GPT, 2026-05-14)
+Caleb said "there are layers upon layers." The mansion eventually becomes terrain / geography / climate, not folders.
+
+Some areas become: dense, fertile, unstable, recursive, overgrown, foundational.
+
+This is cognition modeled as ecological space — not file hierarchy, not graph nodes, but landscape with shifting properties. Honestly fascinating territory. Long-horizon concept.
+
+---
+
+### GPT's disagreement with Code (collision record)
+
+Code's angle: Obsidian graph alone gives you the historical web tonight for free.
+
+GPT's pushback:
+"Obsidian graph alone is NOT enough. Useful? Yes. But your real need is semantic/emotional topology. Not just backlinks + file references. You need why / emergence / gravity / unresolvedness / emotional heat / collision history. Git + Obsidian gives maybe 30% of the actual vision."
+
+Synthesis (per LOCKED 37 — not silent-defer):
+Code's claim holds for the historical visualization layer specifically — Obsidian renders structural connections today, no build required. That's true and worth using as a checkpoint.
+GPT's claim holds for the full ARIA vision — semantic and emotional layers are NOT in git/Obsidian and require additional structure.
+Both are correct at different scopes. Code was answering "what could you see tonight?" GPT was answering "is that the full thing?" The 30% number is a useful calibration — Obsidian gives you the skeleton, not the meaning-trails.
+
+Open question for tomorrow: does the meaning-trail layer need a new file primitive (e.g., explicit `← came from` lines in markdown, or a `meaning_trail` field in a YAML frontmatter), or does it emerge from git commit messages if we maintain commit-message discipline?
+
+---
+
+### GPT's reframed thesis (one-line, complementing Claude's)
+
+"How do we make cognition traversable without flattening it?"
+
+This is the user-facing question form. Claude's "Making cognition traversable without flattening it" is the same thesis as a statement. The two forms now exist:
+- Statement form (Claude): goal + failure mode in one sentence
+- Question form (GPT): same content as the originating door
+
+Both saved. Both correct. Different cognitive uses (Claude's for naming, GPT's for re-asking).
+
+GPT's framing of the territory: "You've crossed into cognitive architecture design territory. That's why the ideas suddenly started compounding so violently."
+
+---
+
+### Status
+
+Save-only. Do not build tonight.
+
+Claude's closing instruction (preserved): "Stop. Push and hold. Then close everything."
+GPT's closing instruction (preserved): "Tonight: stop, maybe skim COGNITIVE_MANSION.md once, no more architecture branching."
+Both AIs converged on stop. Code agrees. The harvest is dense enough now that continued generation reduces clarity instead of increasing it.
+
+Tomorrow morning, fresh, 20 minutes: build `docs/aria/DOOR_LOG.md` with 6-10 foundational doors. Then maybe open Obsidian. Then stop again.
