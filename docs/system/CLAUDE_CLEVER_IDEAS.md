@@ -23,6 +23,9 @@ thought were strong enough to flag explicitly.
 ⭐ 🧠 Round Closer / Resolution Anchor Pass (2026-05-12, 3-AI converged)
 User-named pattern: detect when cross-paste loops between GPT/Claude/Code have resolved the original question, tell user to stop, AND preserve sharp details from each AI before closing. Includes Claude's killer field "What got smoothed away" — actively look backward at what disappeared from round 1 to final synthesis. Captured at end-of-session while user was LIVING the failure mode ("I'm not even sure what happened, it all happened so fast lol"). Strongest end-of-session reframe, stronger than park-this per Claude's call. Full entry: docs/system/CANDIDATE_ATTRIBUTES.md (2026-05-12) and docs/aria/ARIA_IDEAS.md (2026-05-12 ⭐ entry). Save-only candidate, build morning-fresh.
 
+⭐ 🤖 Live-State Continuity layer (2026-05-14, Caleb-named, merges Round Closer + Comprehension Gate + Warm Reconstruction)
+Core thesis: "Repo continuity survived. Human/live-state continuity only partially survived." The 2026-05-13/14 Windows-restart recovery proved file-truth continuity works AND that it isn't enough — fresh Code reconstructed the repo perfectly, Caleb still needed help reconstructing the frame. Names a previously-unnamed ARIA gap: orientation debt. Three-layer continuity stack — Round Closer detects, Comprehension Gate verifies, Warm Reconstruction repairs. New vocabulary: intent breadcrumbs, mental snapshot, live-state packet, thread gravity, orientation debt, camera frame. Full entry: docs/aria/ARIA_IDEAS.md (2026-05-14) and docs/system/CANDIDATE_ATTRIBUTES.md (2026-05-14). Save-only candidate, do not build tonight.
+
 ⭐ AIs capture. User synthesizes. Never reverse this. (2026-05-09)
 The user is the synthesis layer. AIs capture everything raw. The 
 user reads everything. Reading one idea sparks a better idea or 
