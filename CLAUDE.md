@@ -531,22 +531,8 @@ Described in Receipt Rules above. Do not casually fix.
 ---
 
 ## Do Not Build Yet
-Do not build any of these unless explicitly requested in a prompt:
-
-- No Receipt button (requires receiptStatus data model first)
-- receiptStatus field on transactions
-- Fix All / Cleanup Mode
-- Recently Edited filter (requires updatedAt in store first)
-- Search tab rename
-- Expense Buckets vs Clients data model change
-- Notification listener
-- Later queue
-- PDF export
-- Full cleanup checklist redesign
-- Drag reorder clients
-- Client groups
-- Mileage tracking
-- Hours tracker
+Deferred features are listed in `docs/system/ROADMAP.md`.
+Do not build them unless a prompt explicitly requests it.
 
 ---
 
