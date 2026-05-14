@@ -430,27 +430,7 @@ Current app feature inventory lives in `docs/user/APP_STATE.md`.
 ---
 
 ## Known Issues
-
-### Keyboard Blocking Save Button
-Problem: Save button in Add/Edit Transaction is hidden or crowded by keyboard. User must manually dismiss keyboard to tap Save. A previous fix attempt made it worse.
-Goal: Save button always reachable while typing without refactoring the layout.
-Approach: improve KeyboardAvoidingView behavior, add scroll and bottom padding, set keyboardShouldPersistTaps="handled" correctly.
-Status: Not fixed yet. Approach carefully.
-
-### Android Back Button in index.tsx Modals
-Android back closes modals correctly in client-detail.tsx.
-This fix has NOT been applied to index.tsx modals yet.
-Need to audit: add transaction sheet, invoice confirm sheet, client edit modal.
-Do one modal at a time. Do not batch.
-
-### Copy Debug Info Button
-A Copy Debug Info button exists in the transaction detail sheet. It was added by mistake. Remove it as its own dedicated prompt. The user actually wants a Clone Transaction tool instead, which will be built separately.
-
-### Transaction Modal Background
-Transaction sheet opens over client page — background switches to client screen. Acceptable for now, not ideal long-term.
-
-### receipt Boolean vs receiptUri Inconsistency
-Described in Receipt Rules above. Do not casually fix.
+Active bugs and unresolved issues are tracked in `docs/system/KNOWN_ISSUES.md`.
 
 ---
 
