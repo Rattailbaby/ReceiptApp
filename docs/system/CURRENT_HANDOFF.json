@@ -548,7 +548,14 @@
     "Storage export — archive old invoiced data when phone fills up",
     "Tablet and large screen support — split view layout",
     "AI Development Workflow Manager SaaS — park until Uncrumple ships",
-    "Recently Edited filter — requires updatedAt in store first"
+    "Recently Edited filter — requires updatedAt in store first",
+    "[next-steps queue 1] Remove Copy Debug Info button from client-detail.tsx — one prompt, one line, zero risk",
+    "[next-steps queue 2] Fix keyboard blocking Save button in Add/Edit transaction sheets — careful approach, one file only",
+    "[next-steps queue 3] Add Clone Transaction button as temp dev tool — uses existing addTransaction, marks with __test_clone__",
+    "[next-steps queue 4] Polish cleanup action button visual states — active highlighted, resolved greyed, secondary softer",
+    "[next-steps queue 5] Add compact client label to transaction detail sheet — small colored label showing which client",
+    "[next-steps queue 6] Android back button closes modals in index.tsx — one modal at a time, test thoroughly",
+    "[next-steps queue 10] Later queue with reminder notifications — requires notification listener first"
   ],
 
   "roadmap_updates_needed": [

@@ -640,18 +640,9 @@ CASE 15: user deletes transaction while in filtered cleanup list
 ---
 
 ## Next Steps (in order)
-1. Remove Copy Debug Info button from client-detail.tsx — one prompt, one line, zero risk
-2. Fix keyboard blocking Save button in Add/Edit transaction sheets — careful approach, one file only
-3. Add Clone Transaction button as temp dev tool — uses existing addTransaction, marks with __test_clone__
-4. Polish cleanup action button visual states — active highlighted, resolved greyed, secondary softer
-5. Add compact client label to transaction detail sheet — small colored label showing which client
-6. Android back button closes modals in index.tsx — one modal at a time, test thoroughly
-7. Recently Edited filter in Explore — requires store updatedAt change first
-8. Cleanup Mode (Fix All) — after button polish is stable
-9. Notification listener for real Android bank notifications
-10. Later queue with reminder notifications — requires notification listener first
-11. End of month command screen and invoice generation
-12. PDF invoice export
+Current active task lives in `docs/system/CURRENT_HANDOFF.json` → `next_step`.
+Queued tasks live in the same file under `future_ideas_saved_not_built` (entries tagged `[next-steps queue N]`).
+Longer-horizon deferred features live in `docs/system/ROADMAP.md`.
 
 ---
 ## Workflow Rules
