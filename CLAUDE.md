@@ -459,37 +459,10 @@ Do not build automatically. Wait until explicitly requested.
 ---
 
 ## Future Concepts — Do Not Build Yet
-
-### Cleanup Checklist in Transaction Detail
-Future transaction detail may show a checklist: Add Tags / Add Receipt / No Receipt.
-Fixed items become checked or greyed. Remaining items stay highlighted.
-Requires receiptStatus data model before No Receipt can be added.
-
-### Receipt Status Field
-Future data model addition: receiptStatus with values attached / missing / unavailable.
-Needed before No Receipt button can exist.
-Requires coordinated store change — do not patch casually.
-
-### Fix All / Cleanup Mode
-Future mode: Fix All button on filtered lists enters a queue.
-User processes items quickly with Next / Skip / Exit controls.
-Primary action opens immediately per filter type.
-Do not build until cleanup button polish and smart return are fully stable.
-
-### Recently Edited Filter
-Future Explore filter showing transactions sorted by updatedAt newest first.
-Requires adding updatedAt timestamp to store editTransaction function first.
-Do not build as an Explore-only patch.
-
-### Transaction Context Label
-Future UI addition: small client label with client color shown inside transaction detail sheet.
-Helps user understand context during cleanup flows.
-Do not build until explicitly requested.
-
-### Cleanup Button Visual States
-Future polish: active issues highlighted, resolved issues greyed or checked, secondary actions styled softer.
-Inactive actions should never look clickable.
-Do not build until explicitly requested.
+Detailed feature specs for deferred concepts live in `docs/system/ROADMAP.md`
+under their named SAVE FOR LATER sections (Cleanup Checklist, Receipt Status
+Field, Recently Edited Filter, Fix All / Auto-Advance Cleanup, Transaction
+Context Label, Cleanup Button Visual States).
 
 ---
 

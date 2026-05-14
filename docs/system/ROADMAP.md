@@ -1356,6 +1356,38 @@ When: after UI polish
 
 ---
 
+## CLEANUP CHECKLIST IN TRANSACTION DETAIL (SAVE FOR LATER)
+
+Future transaction detail may show a checklist: Add Tags / Add Receipt / No Receipt.
+Fixed items become checked or greyed. Remaining items stay highlighted.
+Requires receiptStatus data model before No Receipt can be added.
+
+---
+
+## RECEIPT STATUS FIELD (SAVE FOR LATER)
+
+Future data model addition: receiptStatus with values attached / missing / unavailable.
+Needed before No Receipt button can exist.
+Requires coordinated store change — do not patch casually.
+
+---
+
+## TRANSACTION CONTEXT LABEL (SAVE FOR LATER)
+
+Future UI addition: small client label with client color shown inside transaction detail sheet.
+Helps user understand context during cleanup flows.
+Do not build until explicitly requested.
+
+---
+
+## CLEANUP BUTTON VISUAL STATES (SAVE FOR LATER)
+
+Future polish: active issues highlighted, resolved issues greyed or checked, secondary actions styled softer.
+Inactive actions should never look clickable.
+Do not build until explicitly requested.
+
+---
+
 ## SEARCH / EXPLORE TAB RENAME DECISION
 
 The current tab is labeled Search but it now acts as a cleanup workspace, Needs Attention destination, Missing Receipts queue, Untagged queue, Flagged review queue, and Tax Missing Receipts destination.
