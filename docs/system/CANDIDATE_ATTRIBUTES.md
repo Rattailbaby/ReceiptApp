@@ -1187,6 +1187,78 @@ Status: candidate only. Use on next 2-3 cross-paste sessions, see if AIs natural
 
 Do NOT build tonight. Park as candidate. Build morning-fresh if it survives review.
 
+
+[2026-05-14] — Live-State Continuity / Warm Reconstruction (merged architectural thread)
+
+This entry merges three previously-saved candidates into one architectural thread:
+1. Round Closer / Resolution Anchor Pass (saved 2026-05-12, HEADs 765bde9 / 2692ae2)
+2. Comprehension Gate
+3. Warm Reconstruction / Live-State Continuity
+
+Core insight (Caleb-named, 2026-05-14):
+> "Repo continuity survived the Windows restart.
+>  Human/live-state continuity only partially survived."
+
+What this names:
+Even when the repo is safe and a fresh AI reconstruction technically succeeds, the user can still lose:
+- orientation
+- emotional context
+- thread ordering
+- active mental frame
+- why the ideas mattered
+- what was still unresolved
+
+The gap between "files are fine" and "I know where I am" is the failure mode. Call it orientation debt — it accumulates silently across heavy sessions, forced restarts, long handoffs, and multi-day arcs. The Windows-update interrupt on 2026-05-13/14 made it visible because repo continuity was perfect AND the user still needed help reconstructing the frame.
+
+The three-layer solution stack:
+
+LAYER 1 — Round Closer (already saved)
+Closes multi-AI loops without flattening important contributions. Preserves "what got smoothed away." Operates at session/loop scale.
+
+LAYER 2 — Comprehension Gate
+Before continuing after a heavy session, restart, or handoff, the user answers a small set of orientation questions to verify the frame survived. Not a quiz of facts (that's the reconstruction test). A check of frame:
+- What was I trying to do?
+- What was the last live moment?
+- What was unresolved?
+- What mattered most?
+- What's the next move?
+If the answers come back thin or wrong, do not proceed — run Warm Reconstruction first.
+
+LAYER 3 — Warm Reconstruction / Live-State Continuity
+Recover the live-state, not just the repo state. Includes:
+- current emotional topology (energy, fatigue, where attention is leaning)
+- active threads (what's open, in what order)
+- thread gravity (which open thread is pulling hardest)
+- last live moment (what was happening immediately before interrupt)
+- intent breadcrumbs (the "I'm about to…" trail)
+- what mattered most before interruption (not what got logged — what was load-bearing)
+- camera frame (the angle the user was viewing the problem from)
+
+Vocabulary this thread introduces:
+- intent breadcrumbs — leading-edge of what user was about to do
+- mental snapshot — frame-level state at a moment in time
+- live-state packet — the warm equivalent of CURRENT_HANDOFF.json; transient by design
+- thread gravity — which open thread is most active in mind, regardless of formal priority
+- orientation debt — accumulated cost of frame drift across heavy sessions
+- camera frame — the user's current angle on the problem (zoom level, which axis is foregrounded)
+
+Why merge these three into one entry:
+Each candidate alone is partial. Round Closer closes loops. Comprehension Gate verifies orientation. Warm Reconstruction restores frame. Together they form a continuity stack that distinguishes repo-safety from human-safety. Saving them separately risks flattening the connective tissue — exactly the failure mode Round Closer was named for.
+
+Connects to:
+- Round Closer (this file, [2026-05-12])
+- Live State HOLDs in docs/user/USER_DASHBOARD.md
+- Loaded Witness Rule (CLAUDE_CODE_STARTER.md) — repo + warm AI = full continuity; repo alone is partial
+- "what were we doing" shorthand — informal Comprehension Gate trigger
+- "Repo is continuity infrastructure, not continuity itself" insight (ARIA_IDEAS.md, 2026-05-09)
+
+Why this matters:
+The 2026-05-13/14 Windows-update recovery proved repo continuity works. It also proved repo continuity is not enough. If ARIA's thesis is meaning continuity (not memory), then live-state continuity is the layer most worth protecting and currently the least built.
+
+Status: save-only candidate, do not build tonight. Park for morning-fresh review. Use the next forced-restart or post-handoff moment as validation: did the user's orientation come back in under 10 minutes? If yes, frame held. If no, this layer is needed and the failure modes will tell us how to build it.
+
+Do NOT auto-promote. Do NOT build tonight.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

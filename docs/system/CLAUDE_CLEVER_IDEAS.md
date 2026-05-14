@@ -1380,3 +1380,29 @@ Same emotional primitive: when Needs Attention hits zero, app says something. Wh
 CONNECTED_IDEAS.md = ideas that link to each other. User's synthesis process works by linking ideas, not just ranking them. An idea that connects two other ideas is often more valuable than either alone.
 
 ⭐ 🧠 Everything is a tool — see ## ⭐ You Should Really Look At These at top of file
+
+🤖 [2026-05-14] Live-State Continuity layer (Round Closer + Comprehension Gate + Warm Reconstruction merged)
+
+Caleb-named core thesis:
+> "Repo continuity survived. Human/live-state continuity only partially survived."
+
+The Windows-update interrupt on 2026-05-13/14 made a hidden ARIA gap visible. The repo was perfect — every commit pushed, working tree clean, recap written, notes-app resolved, Round Closer saved in three locations. Fresh Code reconstructed file truth on first turn. And Caleb still needed help reconstructing the frame.
+
+The gap between "files are fine" and "I know where I am" is the failure mode. Call it orientation debt.
+
+Three-layer continuity stack:
+1. Round Closer — closes multi-AI loops without flattening (already saved candidate)
+2. Comprehension Gate — pre-resume frame-check via small set of orientation questions
+3. Warm Reconstruction — frame-level repair when Gate fails
+
+New vocabulary worth keeping:
+- intent breadcrumbs — leading-edge "I was about to…" trail
+- mental snapshot — frame-level state at a moment
+- live-state packet — warm equivalent of CURRENT_HANDOFF.json
+- thread gravity — which open thread is pulling hardest in mind
+- orientation debt — accumulated frame drift across heavy sessions
+- camera frame — user's current angle on the problem
+
+Full architectural detail saved in docs/aria/ARIA_IDEAS.md [2026-05-14] entry and docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14] entry.
+
+Status: save-only candidate, do not build tonight. The 2026-05-13/14 forced restart is itself the validation event — write the layer in calm conditions, not under the recovery it would have prevented.

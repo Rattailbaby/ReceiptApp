@@ -7038,3 +7038,69 @@ Strongest clever ideas added during candidate refinement (see Code's response 20
 - User Bookmark Mid-Loop (user can star a line, ARIA guarantees survival)
 - Loop Health Meter (rephrase-mode vs new-content detection)
 - Cool-down protocol (mandatory pause before re-paste after detected resolution)
+
+---
+
+[2026-05-14] — Live-State Continuity layer (architectural merge: Round Closer + Comprehension Gate + Warm Reconstruction)
+
+Core thesis (Caleb-named):
+> "Repo continuity survived. Human/live-state continuity only partially survived."
+
+The Windows-update interrupt on 2026-05-13/14 made a hidden ARIA gap visible. The repo was perfect: every commit pushed, working tree clean, recap written, notes-app resolved, Round Closer saved in three locations. The fresh-Code reconstruction technically succeeded — file truth, next_step, shorthand family, all recoverable.
+
+And the user still needed help reconstructing the frame.
+
+That gap — between "files are fine" and "I know where I am" — is what this architectural thread names. Call it orientation debt. It accumulates silently across heavy sessions, forced restarts, long handoffs, and multi-day arcs. ARIA's existing continuity infrastructure protects the repo layer extremely well. It does not yet protect the live-state layer.
+
+The three-layer continuity stack this thread proposes:
+
+LAYER 1 — Round Closer (saved 2026-05-12)
+Closes multi-AI loops without flattening contributions. Session/loop scale. Already saved as candidate.
+
+LAYER 2 — Comprehension Gate
+Pre-resume orientation verification. Before a fresh AI continues after restart/handoff, the user answers a small set of frame-questions:
+- What was I trying to do?
+- What was the last live moment?
+- What was unresolved?
+- What mattered most?
+- What's the next move?
+If answers come back thin, do not proceed — escalate to Layer 3. This is a frame check, not a fact quiz. The reconstruction test (already in SESSION_RECAP) is the AI's version; Comprehension Gate is the user's version.
+
+LAYER 3 — Warm Reconstruction / Live-State Continuity
+Frame-level recovery, not just state-level. Targets:
+- emotional topology — energy, fatigue, where attention is leaning
+- active threads — what's open, in what order
+- thread gravity — which open thread is pulling hardest in mind, regardless of formal priority
+- last live moment — what was happening immediately before interrupt
+- intent breadcrumbs — the "I'm about to…" trail
+- what mattered most before interruption — load-bearing, not what got logged
+- camera frame — the user's current angle (zoom level, which axis is foregrounded)
+
+Vocabulary introduced (worth glossary entry eventually):
+- intent breadcrumbs — leading-edge "I was about to…" trail
+- mental snapshot — frame-level state at a moment in time
+- live-state packet — warm equivalent of CURRENT_HANDOFF.json; transient by design, regenerated fresh each interrupt
+- thread gravity — which open thread is most active in mind
+- orientation debt — accumulated cost of frame drift across heavy sessions
+- camera frame — user's current angle on the problem
+
+Why merge these three:
+- Round Closer alone protects loop-closure but not session-resumption
+- Comprehension Gate alone verifies but does not repair
+- Warm Reconstruction alone repairs but does not detect or close
+Together: detect (Round Closer at loop end) → verify (Comprehension Gate at resume) → repair (Warm Reconstruction when verification fails). Three operations, one continuity stack.
+
+Connects to / extends:
+- ARIA's "meaning continuity, not memory" thesis — this names the meaning layer's specific vulnerability
+- "Repo is continuity infrastructure, not continuity itself" (ARIA_IDEAS.md 2026-05-09) — this is the operational consequence
+- Loaded Witness Rule — witness preserves the warm layer; repo preserves the cold layer
+- USER_DASHBOARD Live State HOLDs — first attempt at a live-state packet primitive
+- "what were we doing" shorthand — already an informal Comprehension Gate trigger
+- Session Energy Signal (candidate 2026-05-12) — emotional topology piece, slots into Layer 3
+
+Validation event:
+2026-05-13/14 forced Windows restart. Repo continuity: 10/10 (clean save point, recap, notes-app resolved, Round Closer banked). Live-state continuity: ~6/10 — fresh Code reconstructed file truth fine, but Caleb still needed to ask "what were we even talking about." That gap is the proof this layer exists and is currently unbuilt.
+
+Status: save-only candidate, do not build tonight. The Windows-restart event itself is the validation — write the layer in calm conditions, not under the recovery it would have prevented.
+
+Do NOT build tonight. Park for morning-fresh review.
