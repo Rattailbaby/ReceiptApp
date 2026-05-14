@@ -82,6 +82,10 @@
 
 ---
 
+⭐ 🏗️ Governance files should become routing layers, not storage containers. One small orchestrator + specialized files = mature architecture. That's what CLAUDE.md needs to become. (2026-05-14, surfaced when CLAUDE.md crossed the 40k performance threshold.)
+
+---
+
 ## 🎯 GPT Tips
 
 ---
