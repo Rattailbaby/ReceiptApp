@@ -7839,3 +7839,38 @@ Entry paths (GPT) — guided traversal made concrete. Instead of opening to free
 Not re-saved (overlap): "graph remembers you / adapts to revisits" duplicates thread-temperature + topology-drift (already in the 2026-05-15 web backlog). "Memory movement not memory storage" restates the ARIA thesis.
 
 Round Closer note: the diagnosis resolved at the entry above. GPT's and Claude's subsequent passes were largely re-synthesis of an already-resolved round — momentum, not new questions. The round stays gated on Caleb's three open items (build-status idea, the unnamed reach, the two Code questions). Do not continue AI-to-AI synthesis until Caleb provides those.
+
+---
+
+[2026-05-15] — Web hands-on feedback round 2 (Caleb actually used ARIA_WEB.html)
+
+Caleb used the web and reported. This is primary data — not AI synthesis. Saved per NO IDEA WASTED. Folds into the web v3 design brief.
+
+CONCRETE FEATURE REQUESTS:
+- Movable nodes — let Caleb drag nodes (except the locked center) to arrange his own layout.
+- Secondary add-on tabs — filter tabs that stack ON TOP of the normal category tabs (combine filters).
+- Tabs too small in the web version — increase tab size / tap target.
+- Edge labels should name the relationship + direction — instead of flat "connected to", say parent/child or the relationship type (caused / revealed / part-of). Caleb hit this on "Archaeology Mode vs Navigation Mode" — connected to both Cognitive Mansion and git_web, but he can't tell which is parent, which is child, or what the collision means.
+- "Words to know" section — a glossary panel.
+- Inline term popups — when a jargon term appears INSIDE a node's description, clicking/hovering it pops up that term's own definition. (Example he gave: "generative pass" inside a CAME FROM field meant nothing to him.)
+- Order-of-existence mode — step through the web in creation order: click Next, branches open and jump exactly how the project was actually built. Requires creation-order data; Caleb explicitly asks that we START tracking creation order from now on for this purpose.
+- Branch-jump annotation — when Caleb realizes he switched to a new idea before finishing a previous one, let him mark it / add a note. A chance to circle back to threads abandoned mid-flight. (This is what-got-smoothed-away + still-writing detection, made interactive.)
+- Branch lines colored/numbered by build status — so Caleb can see which path leads to finished (shipped) ideas vs idea-only, and choose which path to follow.
+- The edge to the currently-selected node's main parent should be a distinct color; edges could also use shape to signal meaning — blurry / glowing / wavy lines = different relationship types or states.
+- Hover a node to show what it connects to — follow the trail without clicking.
+- Category tabs (thesis/principle/tool/rule/concept/vision) need descriptors AND examples — Caleb doesn't know what they mean or how they help him find what to look for.
+
+CONFUSIONS — prove the semantic diagnosis, hard:
+- Caleb read the "Making cognition traversable" node (plain_meaning + why + came_from) and said "I don't know what it is after reading any of that."
+- "generative pass" — jargon in a CAME FROM field, meaningless to him.
+- "Two views that must NOT be merged" (Archaeology vs Navigation) — he needs a concrete example to understand what the modes are and why they exist.
+- shipped / designed / idea markers are too similar — he can't tell them apart.
+- Caleb's framing of the fix: "if I showed this to another person it would explain itself to them rather than be trying to explain it." The web text must be self-explaining to someone with zero ARIA context.
+
+COMPREHENSION QUESTIONS Caleb asked (answered by Code in-conversation 2026-05-15, answers feed the plain-language rewrite):
+- What is a "generative pass"?
+- Why do paths followed outward from the thesis loop back to the thesis?
+- What decides the order of the 6 branches shown when the thesis is clicked, and why are only principle/concept/vision connected to the thesis directly, not tools/rules?
+- What do the 6 categories actually mean?
+
+Status: save-only, web v3 design input. Caleb is still exploring ("let me play around to see if I can put my finger on it") — more feedback expected. The build-status full idea is still pending per Caleb.
