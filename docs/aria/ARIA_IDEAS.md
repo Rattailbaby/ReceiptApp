@@ -7874,3 +7874,23 @@ COMPREHENSION QUESTIONS Caleb asked (answered by Code in-conversation 2026-05-15
 - What do the 6 categories actually mean?
 
 Status: save-only, web v3 design input. Caleb is still exploring ("let me play around to see if I can put my finger on it") — more feedback expected. The build-status full idea is still pending per Caleb.
+
+---
+
+[2026-05-15] — Code's clever ideas for ARIA web v3 (6 ideas)
+
+Code-authored, generated when Caleb asked for original ideas rather than restatements of his feedback. Connective thread: the current web assumes you are an explorer who already knows the terrain; every idea below assumes the opposite — you just walked in and need the building to talk to you. The shift is not prettier, it is more hospitable.
+
+1. The "I'm lost" button — one literal always-visible button. Press it: web clears everything, animates back to the gold thesis, shows one sentence. Caleb's core problem is getting lost; give him a one-click way to be un-lost. Most tools never build this because they assume the user is never lost.
+
+2. Thesis narrates a story, not a definition — clicking the center shows a 4-sentence story ("This started when a Windows update killed a session mid-flow. The files survived but Caleb didn't feel oriented. That gap got a name: orientation debt. Everything here grew from trying to close it."). A story you follow vs a definition you decode.
+
+3. Reading-level toggle — every node carries its explanation at 2-3 depths (like-I'm-5 / normal / technical); user picks. Fixes "worded in a way I can't digest" without permanently dumbing down — the technical version still exists for later. The web grows with the user.
+
+4. Comprehension tint — as Caleb marks nodes "I get this", a soft green glow spreads over that region; grey stays over what he hasn't cracked. He watches his own understanding fill the map in over weeks. Turns a static concept map into a progress bar for his own head, and shows at a glance where unfamiliar territory remains.
+
+5. Search takes a question, not a keyword — type "why does any of this exist?" and the web lights up a PATH (thesis -> repo-vs-human -> orientation-debt -> live-state) and walks it. The existing search box becomes the front door to guided traversal.
+
+6. "Why am I seeing this?" button — on every node, explains how you GOT here, not what the node is: "You're looking at this because you came from Round Closer, which was built on top of it." Orientation about the journey, not the destination. Most tools tell you what a thing is; almost none tell you why you're standing in front of it.
+
+Status: save-only, web v3 design fuel. The plain-language rewrite + words-to-know glossary remains the highest-leverage single fix; these six are the layer on top.
