@@ -7823,3 +7823,19 @@ Still open (round not fully closed):
 - Claude (renderer owner) has not yet synthesized the answers — should weigh in before the rebuild is locked.
 
 Status: save-only. This is the design brief for ARIA web v3. Next build is gated on the three open items above.
+
+---
+
+[2026-05-15] — GPT additions captured before loop close
+
+After the diagnosis above resolved, GPT produced a further synthesis pass. Most of it restated the resolved diagnosis (momentum, not new questions — see Round Closer note below). Capturing the genuinely-new parts before closing the loop:
+
+⭐ Story edges / typed edges (GPT) — NEW and strong. Right now all edges are flat "connects-to". Real relationships are: A CAUSED B / A REVEALED B / A FIXED B / A CONTRADICTS B / A EVOLVED INTO B. Typed edges would let the graph tell ARIA's evolution story instead of just showing adjacency. Connects directly to meaning_trails (causal paths) — story edges are how meaning trails get rendered. Strong v3 candidate.
+
+"What was breaking?" — GPT's sharper name for the emergence field already in the diagnosis above (item 2). Adopt "what was breaking" as the field's framing — it is more concrete than "emergence". Example, Orientation Debt: "The repo reconstructed perfectly after restart, but Caleb still felt lost and disconnected from the session."
+
+Entry paths (GPT) — guided traversal made concrete. Instead of opening to free exploration, the web opens with "choose what you're trying to understand": why did ARIA emerge / why did the restart matter / why do multi-AI loops get confusing / what should be built next / what exists vs ideas only / what is still unsolved. This is the specific shape of the guided-traversal idea already in the diagnosis.
+
+Not re-saved (overlap): "graph remembers you / adapts to revisits" duplicates thread-temperature + topology-drift (already in the 2026-05-15 web backlog). "Memory movement not memory storage" restates the ARIA thesis.
+
+Round Closer note: the diagnosis resolved at the entry above. GPT's and Claude's subsequent passes were largely re-synthesis of an already-resolved round — momentum, not new questions. The round stays gated on Caleb's three open items (build-status idea, the unnamed reach, the two Code questions). Do not continue AI-to-AI synthesis until Caleb provides those.
