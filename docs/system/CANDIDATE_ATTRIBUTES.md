@@ -1259,6 +1259,14 @@ Status: save-only candidate, do not build tonight. Park for morning-fresh review
 
 Do NOT auto-promote. Do NOT build tonight.
 
+
+[2026-05-14] — AI Identity Signature rule
+All three AIs should end responses with their name tag:
+-Claude / -GPT / -Code
+Enables cross-AI provenance in paste loops.
+Prerequisite for user-vs-AI contribution topology.
+Early ARIA primitive, formalize when ARIA product is built.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED

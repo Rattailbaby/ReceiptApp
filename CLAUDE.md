@@ -881,6 +881,25 @@ If a patch makes behavior worse:
 - Return to the last known working state before attempting another fix
 - Do not fix forward through a broken layout unless there is no safe revert
 
+---
+
+## AI IDENTITY SIGNATURE RULE
+
+Every response from Code must end with:
+
+-Code
+
+Purpose:
+When Caleb pastes Code's responses into Claude or GPT, those AIs need to
+know the source. Claude already ends with -Claude. GPT already ends with
+-GPT. Code is the missing one.
+
+This matters because:
+- Cross-AI collision records depend on knowing who said what
+- User-vs-AI contribution topology requires source attribution
+- Paste loops lose provenance without it
+- This is an early ARIA primitive for contribution tracking
+
 ## INTERNAL: DOC CLEANUP SUBROUTINE
 
 Called automatically by clear and handoff.
