@@ -7894,3 +7894,116 @@ Code-authored, generated when Caleb asked for original ideas rather than restate
 6. "Why am I seeing this?" button — on every node, explains how you GOT here, not what the node is: "You're looking at this because you came from Round Closer, which was built on top of it." Orientation about the journey, not the destination. Most tools tell you what a thing is; almost none tell you why you're standing in front of it.
 
 Status: save-only, web v3 design fuel. The plain-language rewrite + words-to-know glossary remains the highest-leverage single fix; these six are the layer on top.
+
+---
+
+# ARIA Web v3 Design Brief — user feedback session 2026-05-15
+
+Caleb pasted the full accumulated feedback batch — GPT's ideas, Claude's ideas, Code's ideas — with his own annotations after almost every item. Caleb: "youll be able to tell by my enthusiasm." Every idea and every annotation preserved. Organized by the rendering-vs-traversal split. Save-only — Caleb will discuss item-by-item in following turns (GPT's first, then Claude's, then Code's). Attribution tags: [GPT] [Claude] [Code] [Caleb].
+
+Two gating questions Caleb resolved in this batch:
+- Build-status "full idea" — there is none. Caleb: "idk what you mean." The whole point is just: shipped/designed/idea markers are too similar, make them obvious.
+- Plain-language rewrite — greenlit in this same session (separate instruction): rewrite all 29 plain_meaning fields zero-jargon, add an emergence field per node, add a words_to_know glossary.
+
+PRODUCT VISION (Caleb, the framing to preserve):
+"Instead of walking through a Willy Wonka factory without Willy Wonka — the building speaks to you, guides you, makes sure you're where you need to be." Earlier framing: museum (you look at it) vs a building that guides you (it talks back). The ARIA web is the second. Every idea below serves that: not prettier — more hospitable.
+
+## A. GRAPH RENDERING IDEAS (renderer / UI — would not survive swapping the renderer)
+
+- [Code] Collision-edge labeling — the amber dashed line means two AIs genuinely disagreed (not just connected). Needs a clear label. Caleb: "yes and let me expand on the arguments your both making so i can understand the path foward... or mark to ask more questions later."
+- [Code] Shipped/designed/idea encoding too subtle — make it obvious. Caleb's "build-status idea" turned out to BE just this.
+- [Caleb] Secondary add-on tabs — filter tabs that stack on top of the category tabs.
+- [Caleb] Tabs too small in the web version.
+- [Code] Colored/numbered lines by status — lines to shipped nodes solid+bright, lines to idea-only faint+dashed. Caleb: "gpt had an idea about blurry lines... blurrish lines for something, bright lines for something, diff colored lines, need more ideas on this."
+- [GPT] Different line styles for different relationship types ("story edges") — cause-and-effect vs connection vs collision vs evolved-into should look different.
+- [Caleb] Hover a node shows its connections — follow the trail without clicking.
+- [Code] Category tabs need descriptors — thesis/principle/tool/rule/concept/vision each get a one-line plain descriptor.
+- [⭐] Relationship labels on hover — hover the LINE (not a node) → "this caused this" / "this revealed this" / "this contradicts this." The line is currently anonymous.
+- [⭐] Confidence rings — a faint outer ring on nodes visited this session; see your path unintrusively.
+- [⭐] Zoom reveals detail — zoomed out = names only, zoom in = first sentence appears inside the node, zoom further = full panel inline. Caleb: "clever but maybe we can make it more interesting... what if i could zoom for another reason? ideas on this!"
+- [Code/Caleb] Movable nodes — drag every node except the locked thesis; layout saved to the browser so Caleb's arrangement persists; a "reset layout" button restores canonical positions.
+- [Caleb] Secondary tab rows — the current single tab row only answers "what type of thing is this?" The web may need five filter rows, each answering a different question:
+  1. Category — Thesis / Principle / Tool / Rule / Concept / Vision  (what type is this?)
+  2. Build Status — Shipped / Designed / Idea  (how real is this?)
+  3. Learning Status — I get it / Iffy / Confused / Important  (do I understand it? — feeds the user-state overlay, section C)
+  4. View Mode — Map / Story / Timeline / Roadmap / Learn  (what path am I on? — feeds traversal, section B)
+  5. Path Type — What happened / What to build / What I don't understand  (am I learning, building, or exploring?)
+  Rows 3-5 cross into other layers (user-state, traversal) but as a tab SYSTEM they are a rendering/UI spec.
+
+## B. COGNITION TRAVERSAL ARCHITECTURE (renderer-agnostic — how a human moves through their own thinking)
+
+- [Code] Parent/child vs flat "connected to" — "the most important structural note." Name the relationship + direction, don't just show a line exists.
+- [GPT ⭐] Relationship TYPES not just connections — A caused B / evolved into B / solved B / contradicted B / inspired B / emerged from B / depends on B / branches from B. Caleb: "yesss!!!!!!!!great idea, story logic > abstract."
+- [Caleb/Code] Words to know / inline term popups — every jargon word inside a description is clickable → pops its own plain definition.
+- [Caleb/Code] Order of Existence Mode / chronological path — click Next, follow the actual sequence of discoveries. [GPT ⭐] named it "Existence Order Mode" / timeline traversal / "cognitive archaeology." Caleb: "yesyesyes."
+- [⭐] "Why does this connect?" on click — in the panel, show WHY each connection exists in one plain sentence, not just a list.
+- [⭐ Code] "Story mode" — a play button animating the graph building itself in discovery order. Caleb: "or just something i can click through, like a next button... different buttons if i want to follow a set of rules for chronological vs time based vs other things... ideas on this, this could be cool." Caleb later (on Code's thesis-narrates idea): "story mode... another way to navigate... it'd be its own main starting point... the main branch would change depending on where i want to start — chronological, or idea-to-idea — id want options for both and more... need ideas for this."
+- [GPT ⭐] "Explain Like Human" mode — every node shows: simple explanation / real-world example / why it mattered / what problem it fixed / what was happening when it emerged. Caleb: "yesss."
+- [Code] Reading-level toggle — every node explained at ELI5 / normal / technical, user picks. Caleb: "BRILLIANT."
+- [GPT ⭐] Branch abandonment awareness — "maybe I switched ideas before finishing the previous one." Thought-continuity tracking; surface unfinished branches. Caleb: "i agree and some way to mark it!"
+- [Code/GPT] "Why am I seeing this?" button — explains how you GOT to this node, not what it is. Caleb: "absolutely!" / "so good!! yes!!"
+- [GPT] Breadcrumb mode — "You came from: Thesis → Orientation Debt → Live-State Continuity." Caleb: "good point!"
+- [GPT] Learn mode — guided lessons (Lesson 1: why ARIA emerged; Lesson 2: why the restart mattered; Lesson 3: why topology preservation matters). Caleb: "yesyesyesyesyes of course, this is obvious."
+- [GPT] Session-origin replay — click a node, it replays the actual conversation moment that caused it. Caleb: "is that possible?"
+- [Code] Search takes a question, not a keyword — type a question, the web lights up a PATH and walks it. Caleb: "woah yeah this is crazy good, maybe i can ask inside of nodes and ask a question about it — can we add an ai into this to help, or how would it work?"
+- [Code] Thesis narrates a story, not a definition. Caleb: "BRILLIANT" / wants it as its own navigation entry point (see Story mode above).
+- [Code] "I'm lost" button — one click, re-orient to thesis. Caleb: "maybe it could tell you why you are lost or what you might be looking for or not finding, or maybe you need things explained, or maybe you need to make a note if none of those choices work? give ideas on this!!!"
+- [GPT] The graph knows topology but not semantic guidance — "that's the next leap."
+- [GPT] Loop architecture — the graph is cyclical, not a tree (everything reinforces the thesis); GPT's key point: the ontology can stay cyclical, the user EXPERIENCE should be guided and linear. "That's a huge distinction."
+
+## C. USER-STATE OVERLAY (Caleb's personal marks/notes — kept separate from canonical data)
+
+- [⭐] "Still confused" flag — tap a node: red ring = confused, green ring = understood; filter to show only confused nodes → personal study list.
+- [Code] Comprehension tint — region glows green as Caleb marks nodes understood. Caleb: "i can have an 'i understand this now' button or an 'im iffy on it still' button — this and notes would be great... ideas to make this idea better needed!"
+- [Caleb] Notes on nodes/lines — write a note on any node or line, and copy it out with the node/line attached. Caleb: "ideas on this!"
+- [GPT] Node confidence levels — solid / experimental / speculative / emotional / contradictory. Caleb: "absolutely too!"
+- [GPT] Heat trails — show paths of recent cognitive movement ("you spent 40 minutes around orientation debt → live-state → break test") = thinking-momentum visualization. Caleb: "also good!"
+
+## D. THE LOOP QUESTION — three explanations, Caleb wants it explained further
+
+Caleb: "heres what the diff llms said about the confusion, need it to be explained further now."
+- [GPT] The graph models mutual influence, not strict hierarchy — the thesis influences everything and everything reinforces the thesis, so it's cyclical not tree-based. That's probably correct for cognition — but you still need guided linear traversal layered on top. Ontology cyclical, UX linear.
+- [Claude] All roads lead to the thesis; the connections off the thesis are whichever nodes have a direct edge to it; tools/rules connect further down the chain (downstream, not direct). The web should make that hierarchy visible.
+- [Code] It's a web not a tree, so it loops; the 6 thesis connections are hand-drawn edges to its most direct neighbors; tools/rules connect indirectly; there's no chronological or priority ordering yet. Caleb: "(ordering ideas necessary)."
+
+## E. Caleb's open "give me ideas on this" questions — for the one-by-one discussion round
+
+1. Collision edge — Caleb wants the two arguments (Code's "Obsidian gives this free" vs GPT's "only 30%") expanded so he can see the path forward or mark it to ask more later.
+2. Shipped/designed/idea — Caleb's idea for making the encoding obvious (he'll share).
+3. Colored/blurry/bright lines — "need more ideas on this."
+4. Story mode / click-through / different traversal buttons — "ideas on this, this could be cool."
+5. Notes on nodes+lines with copy-out — "ideas on this!"
+6. Zoom — "what if i could zoom for another reason? ideas on this!"
+7. "I'm lost" button that also tells you WHY you're lost / what you need — "give ideas on this!!!"
+8. Story mode as its own navigation entry point with selectable starting modes (chronological / idea-to-idea / more) — "need ideas for this."
+9. Comprehension tint + understand/iffy buttons + notes — "ideas to make this idea better needed!"
+10. Search-as-question — "can we add an AI into this to help? how would it work?"
+11. The hospitable-house metaphor — Caleb: "instead of walking through a big Willy Wonka factory without Willy Wonka, it's like the house speaks to you and guides you and makes sure you are where you need to be. my analogy was trash, can yall make this a better analogy."
+12. Session-origin replay — Caleb asked "is that possible?"
+
+## F. FUTURE AI-ASSISTED IDEAS (do NOT build — no AI/API functionality yet, preserve as future design only)
+
+- [Caleb] AI inside nodes — a live AI you can ask questions of about a specific node, right there in place. Caleb: "maybe i can ask inside of nodes and ask a question about it — can we add an ai into this to help, or how would it work?"
+- [Code/Caleb] AI-powered question-search — the question-based search (section B), if backed by a live AI, could answer freeform questions and route you to the right path.
+These need the web to become a real app with a backend. Far off. Save-only, future design material. Do not add AI/API functionality now.
+
+## NAMED FEATURE INDEX (Claude's save list — all 16, cross-referenced to sections above)
+
+1. Reading-level toggle (ELI5/normal/technical) — B
+2. AI inside nodes — F
+3. Comprehension tint ("I get this"/"iffy"+notes) — C
+4. "I'm lost" button with diagnostic routing (routes by what kind of lost: need explanation / need to find something / need to leave a note) — B
+5. Thesis as narrative story (4 sentences, not a definition) — B
+6. Relationship-type labels on edges (caused/evolved-into/contradicted/etc) — B
+7. Question-based search that lights up a path — B (AI-backed version: F)
+8. Session-origin replay (animate nodes appearing in commit order) — B
+9. Branch abandonment markers — B
+10. Breadcrumb trail showing path taken — B
+11. "Why am I seeing this?" button — B
+12. Movable nodes (except locked thesis) with saved layout — A
+13. Hover shows neighborhood connections — A
+14. Inline term popups (click jargon word in a description) — B
+15. Order-of-existence mode (chronological traversal) — B
+16. "I'm lost" routes by question type — same as #4
+
+Status: save-only. Design brief for ARIA web v3. Discussion proceeds one-by-one (GPT's items first, then Claude's, then Code's) per Caleb's stated plan. Do not build features. Do not add AI/API functionality. Do not move folders. This brief is a prime candidate to move into docs/aria/web/WEB_DESIGN.md when the folder consolidation happens.
