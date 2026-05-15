@@ -7791,3 +7791,35 @@ GPT is right that one mega-graph would re-flatten. But the four lenses must NOT 
 So GPT's "multiple coordinated lenses" is correct — and "coordinated" specifically means coordinated BY sharing one data file. Four renders, one source of truth. That is how you get GPT's four graphs without paying the entropy cost GPT did not mention.
 
 Status: save-only. v3+ — do not build lenses yet. v1 is still: render topology from ARIA_GRAPH.json, commit ARIA_WEB.html. The causality data already exists in the JSON (came_from fields); the causality lens is the most natural second view when the time comes.
+
+---
+
+[2026-05-15] — Round Closer artifact: ARIA web feedback diagnosis (resolved)
+
+Round: "what does Caleb's hands-on feedback about ARIA_WEB.html mean, and what is the next build?" Claude asked diagnostic questions, Caleb answered, GPT and Code each synthesized. This entry closes the round.
+
+Resolved diagnosis (Code + GPT converged — not a Convergence Trap; it is agreement on a diagnosis from shared evidence, not a forward build vote):
+
+The web SUCCEEDED as an orientation anchor — Caleb instantly knew where the center was and that the thesis was the core. It FAILED at navigation, meaning translation, and onboarding.
+
+The core finding: Caleb's "lost" is SEMANTIC, not visual. Asked whether node definitions help or give more unfamiliar words, he said "the latter." The definitions explain jargon with jargon. The web is a topology map for people who already know the terms; Caleb needs a cognition onboarding system. Different things.
+
+Five resolved fix-directions:
+1. Plain-language definitions — rewrite plain_meaning with zero ARIA jargon inside any definition. Explain as if to someone who walked in cold.
+2. Emergence field (GPT) — every node needs "what was happening that forced this idea into existence?" in human language. Example — Round Closer: "Caleb got trapped in multi-AI copy-paste loops and stopped knowing what had already been resolved; important ideas were being smoothed away." This is distinct from plain_meaning.
+3. Origin paths / narrative — the thesis is currently a dead end. It should route ("start here", "where it began"). Humans remember causality, not categories. Example chain: forced restart -> orientation debt -> live-state continuity -> morning reorientation.
+4. Bold build status — shipped/designed/idea encoding is too subtle to parse. Needs immediate confidence-readability: solid glowing = shipped, hollow = designed, ghosted = idea.
+5. Guided traversal, not free exploration (GPT) — Caleb's unnamed "something I keep trying to do" is probably wanting a guided path (Start Here -> what problem -> related paths -> why it emerged -> next direction), not click-random-bubbles.
+
+GPT's category reframe: the web should evolve from "knowledge visualization" toward "interactive guided cognition traversal." GPT's sharpest line: the graph thinks in objects; Caleb's brain thinks in questions, problems, movement — which is why Door Log keeps resurfacing.
+
+Code scope-differentiation (LOCKED 37): GPT's "guided cognition traversal" is correct as the HORIZON. The next COMMIT is narrower and concrete — rewrite plain_meaning in plain language + add an emergence field + make build status bold. Those three are ~80% of what Caleb needs now. Full guided-traversal interaction is v3, not the next commit.
+
+Code structural note (what the other two smoothed away): the emergence field and the plain-language rewrite are NEW/CHANGED node data — they belong in the canonical docs/aria/ARIA_GRAPH.json FIRST, then the render. This folds into the already-queued Fix 2 (JSON reconciliation). Sequence: Fix 2 (sync + add emergence field + plain-language rewrite of plain_meaning) -> then Claude re-renders. Do not let the rewrite live only in the HTML; that recreates the drift.
+
+Still open (round not fully closed):
+- Caleb's own idea about making build status more readable (he said he would expand on it)
+- The unnamed "something I keep trying to do" — GPT guesses guided traversal; Code offered drag-to-stay / breadcrumb-trail / cluster-zoom / mark-a-node. Unconfirmed.
+- Claude (renderer owner) has not yet synthesized the answers — should weigh in before the rebuild is locked.
+
+Status: save-only. This is the design brief for ARIA web v3. Next build is gated on the three open items above.
