@@ -7770,3 +7770,24 @@ Eventually add these fields to graph nodes:
 Then the graph stops being a static knowledge map and becomes a living cognition map. That is where this naturally wants to go.
 
 Status: save-only. Architecture principle, not a build instruction. The current ARIA_GRAPH.json (29 nodes, hand-curated) is correct for this phase — keep it manual until naming and relationships stabilize.
+
+---
+
+[2026-05-15] — Four Coordinated Lenses (GPT) + Code reconciliation
+
+GPT's realization: the current graph is concept topology — it shows what exists and how ideas connect, but NOT time, causality, priority, emotion, sequence, workflow, or decision pressure. Forcing all of those into one mega-graph would recreate the flattening problem. GPT proposes separate lenses:
+
+1. Topology Graph (what Claude built) — architecture shape. What connects to what, what is foundational, where collisions are. Stays structural, not roadmap-focused.
+2. Causality / Emergence Graph — why things emerged. What problem caused an idea, what failure revealed it, what emotional friction generated it. Example chain: forced restart -> orientation debt -> live-state continuity -> break test -> morning reorientation. GPT calls this the most important future graph — it preserves cognitive causality.
+3. Build / Roadmap Graph — what should happen next. What is blocked, depends on what, partially built, abandoned, risky, active. Practical, not philosophical.
+4. Emotional / Heat Graph — what still emotionally matters. Some ideas are technically important but emotionally dead; others keep resurfacing organically.
+
+Code reconciliation (LOCKED 37 — synthesis, not deferral):
+GPT is right that one mega-graph would re-flatten. But the four lenses must NOT become four separate data files — that is the entropy trap (see Code's architecture answer 2026-05-15: "three separate JSON files = guaranteed entropy"). The correct structure is what the Living Graph Architecture entry already names: ONE canonical ARIA_GRAPH.json, four computed VIEWS.
+- Topology lens = the current default render.
+- Causality lens = filter/order by came_from + dates (the data is already in every node's came_from field).
+- Roadmap lens = filter by build_status + dependency edges.
+- Emotional/Heat lens = needs the future heat/last_touched/importance fields added (Living Graph Architecture's recommendation).
+So GPT's "multiple coordinated lenses" is correct — and "coordinated" specifically means coordinated BY sharing one data file. Four renders, one source of truth. That is how you get GPT's four graphs without paying the entropy cost GPT did not mention.
+
+Status: save-only. v3+ — do not build lenses yet. v1 is still: render topology from ARIA_GRAPH.json, commit ARIA_WEB.html. The causality data already exists in the JSON (came_from fields); the causality lens is the most natural second view when the time comes.
