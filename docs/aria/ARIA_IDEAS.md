@@ -7729,3 +7729,44 @@ Context: Claude built a working interactive D3 force-directed web (29 nodes) ins
 15. ⭐ Realization — this is approaching cognition as terrain — living navigable thought geography, not notes/folders/dashboards. Normal productivity tools feel insufficient because they flatten topology.
 
 Status: save-only. All v2+ backlog for the ARIA web. v1 is ARIA_GRAPH.json (canonical data) + basic render. Do not build these yet. Do not let this list displace the v1 build.
+
+---
+
+[2026-05-15] — Living Graph Architecture (GPT)
+
+The architecture shift made concrete by building ARIA_GRAPH.json + ARIA_WEB.html separately:
+
+    ARIA_GRAPH.json = canonical cognition/topology data
+    ARIA_WEB.html   = viewer/renderer for that data
+
+Consequence: update the JSON, and the web updates automatically later — without rebuilding the whole visualization system. Data and renderer are decoupled. This is why separating graph data from rendering matters: it is the clearest explanation yet of the decoupling principle.
+
+### What can eventually update automatically (just by editing the JSON)
+1. New nodes — e.g. Round Closer v2, Contradiction Mode, Topology Drift. Add to ARIA_GRAPH.json, they appear in the web.
+2. New edges — e.g. door_log connects-to meaning_trails. Add the edge object, the relationship appears visually.
+3. Build status evolution — nodes move idea -> designed -> partial -> shipped; the web reflects progression visually.
+4. Thread heat — nodes show hot / warm / cooling / archived as visual overlays.
+5. Orientation overlays — Morning Reorientation, Break Test, Live-State Continuity could feed temporary overlays into the graph.
+
+### Very important — do NOT automate everything yet
+Right now, manual curation is GOOD. Reasons:
+- concepts are still evolving
+- naming is still stabilizing
+- relationships are still changing
+- architecture is still emerging
+
+If you automate too early, you freeze unstable cognition into rigid structure. That is dangerous. The correct current phase is human-curated topology.
+
+### Best future direction (NOT yet)
+    Repo files -> parsed into graph updates -> graph JSON updates -> web reflects changes
+
+### Strong future recommendation
+Eventually add these fields to graph nodes:
+- last_touched
+- importance
+- heat
+- confidence
+
+Then the graph stops being a static knowledge map and becomes a living cognition map. That is where this naturally wants to go.
+
+Status: save-only. Architecture principle, not a build instruction. The current ARIA_GRAPH.json (29 nodes, hand-curated) is correct for this phase — keep it manual until naming and relationships stabilize.
