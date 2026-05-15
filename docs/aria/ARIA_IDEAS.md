@@ -7688,3 +7688,44 @@ Relation:
 This supports Break Test, Door Log, Live-State Continuity, and Warm Reconstruction. It is the lightweight daily-cadence companion to those — Break Test is a rigorous orientation check; Morning Reorientation is the gentle generated preamble that makes the check answerable. Where Live-State Continuity / Warm Reconstruction are the full repair layer, Morning Reorientation is the cheap first pass run every heavy-session morning.
 
 Status: save-only candidate, do not build yet. Do not touch app code.
+
+---
+
+[2026-05-15] — ARIA web visualization: ideas from building the first prototype
+
+Context: Claude built a working interactive D3 force-directed web (29 nodes) inside its chat artifact. These ideas surfaced FROM building it — observations and feature ideas from Claude and GPT. Saved per NO IDEA WASTED. All are visualization-layer ideas; none are v1. v1 is ARIA_GRAPH.json + a basic render. These are the v2+ backlog.
+
+### Problems Claude noticed mid-build (bugs/fixes for v2)
+- Thesis node floats randomly every load — should be pinned to center always; it is the gravity well everything orbits.
+- Definitions are hardcoded — out of sync the moment a source file changes; it is a snapshot, not a live view.
+- Drag-to-pan and click-node gestures fight each other — panning sometimes accidentally clicks a node and closes the panel.
+
+### Feature ideas from Claude (building observations)
+- ⭐ Thread temperature on nodes — nodes touched in last 7 days glow brighter, nodes untouched 60 days visibly dust over. Web becomes a heat map of actual cognitive activity.
+- ⭐ Meaning Trail mode — click a node, show the causal path that led to it (not all connections equally). Round Closer → copy-paste fog → Blind Trio Round → convergence-flattens realization.
+- ⭐ Archaeology vs Navigation toggle — one graph, two lenses. Archaeology = messy real emergence order with timestamps. Navigation = clean forward "what to build next" paths.
+- ⭐ "New since last session" highlight — nodes added this session pulse or get a distinct ring. Open the web, immediately see what changed. Direct orientation fix.
+- Session-visited tracking — nodes clicked this session get a checkmark/fill change; see explored vs unread.
+- 2-hop exploration — "show neighborhood" button reveals everything 2 hops out from a selected node.
+- Stable layout option — save manual arrangement to localStorage so the graph stops reshuffling; build durable mental map of where things live.
+- Door Log as a special node — should look different (door-shaped), not just another green node; it is the seed of the whole mansion. Visual hierarchy.
+- Export to printable static HTML — render current graph state as a file Code commits to docs/user/ARIA_WEB.html.
+
+### GPT's 15 clever ideas
+1. ⭐ Fog level — web visually shows when cognition is fragmented (clear = stable clusters, foggy = disconnected drifting nodes). Based on unresolved threads, stale nodes, too many hot paths, missing revisit cycles. Turns "I feel lost" into something visible.
+2. ⭐ Follow my path — record HOW the user navigated the web, creating meaning trails; later "show me how I discovered X."
+3. ⭐ Why this matters mode — every node shows why the user cared emotionally. "Round Closer emerged because you got lost during copy-paste loops and feared smoothing away good ideas." Terms alone are dead; emotional why is memorable.
+4. ⭐ Topology drift — nodes move over time based on resurfacing frequency, connection density, emotional weight, active builds, collisions. The map evolves.
+5. ⭐ Contradiction mode *** — web shows contradictions, tensions, unresolved conflicts, competing directions — not just harmony. Otherwise the map becomes propaganda. Connects to recursive-self-consistency warning.
+6. ⭐ Zoom levels — far zoom = clusters, mid zoom = named concepts, close zoom = full history + collision records + original SOC. Mirrors real cognition scales.
+7. ⭐ Alive vs archived — distinguish ideas that are emotionally active from ideas important historically but no longer alive.
+8. ⭐ Question gravity — questions that resurface, spawn multiple ideas, touch multiple sessions become gravity wells. Likely how the mansion self-organizes.
+9. ⭐ Cognitive weather — areas feel dense / unstable / fertile / overgrown / foundational / cooling / recursive. Cognition is ecological, not hierarchical.
+10. ⭐ "I still don't understand this" — mark nodes as still-confusing; AIs then generate simpler definitions, examples, relationship explanations. Adaptive cognition scaffolding.
+11. ⭐ The wall version — giant plotted map: printable, annotatable, sticky-note compatible, physically walkable. Respects spatial thinking.
+12. ⭐ Thread pulse — nodes softly pulse if unresolved / emotionally active / resurfacing / recently collided. Supports soft-active thread detection.
+13. ⭐ "What got smoothed away" visible — faded ghost nodes, hidden paths, abandoned branches, "removed during synthesis." One of the most original session ideas.
+14. ⭐ Human vs repo continuity overlay — show both: repo "fully synchronized" while human "partial orientation." Makes the core diagnostic visible.
+15. ⭐ Realization — this is approaching cognition as terrain — living navigable thought geography, not notes/folders/dashboards. Normal productivity tools feel insufficient because they flatten topology.
+
+Status: save-only. All v2+ backlog for the ARIA web. v1 is ARIA_GRAPH.json (canonical data) + basic render. Do not build these yet. Do not let this list displace the v1 build.
