@@ -1,0 +1,417 @@
+
+<h2 class="sr-only">ARIA concept web v2 — fixed layout, canonical data, click any node to explore definitions and connections</h2>
+<style>
+#aw { font-family: var(--font-mono); width: 100%; user-select: none; }
+#aw-bar { display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:8px 0 8px; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:0; }
+#aw-search { font-family:var(--font-mono); font-size:11px; padding:4px 9px; border:0.5px solid var(--color-border-secondary); border-radius:3px; background:var(--color-background-secondary); color:var(--color-text-primary); width:140px; }
+.cb { font-family:var(--font-mono); font-size:9px; padding:3px 7px; border-radius:3px; cursor:pointer; border:0.5px solid; background:transparent; transition:all .12s; }
+#aw-main { display:flex; position:relative; gap:8px; }
+#aw-wrap { flex:1; min-height:500px; overflow:hidden; position:relative; border:0.5px solid var(--color-border-tertiary); border-radius:6px; background:var(--color-background-secondary); }
+#aw-svg { width:100%; height:500px; cursor:grab; }
+#aw-svg.grab { cursor:grabbing; }
+#aw-panel { width:250px; border:0.5px solid var(--color-border-tertiary); border-radius:6px; padding:12px; background:var(--color-background-primary); overflow-y:auto; display:none; flex-shrink:0; max-height:500px; }
+#aw-panel.open { display:block; }
+#pc { font-size:8px; letter-spacing:.14em; margin-bottom:3px; font-weight:500; }
+#pt { font-size:12px; font-weight:500; color:var(--color-text-primary); margin-bottom:8px; line-height:1.4; }
+.pf { margin-bottom:7px; }
+.pfl { font-size:8px; letter-spacing:.1em; color:var(--color-text-tertiary); margin-bottom:1px; }
+.pfv { font-size:10px; color:var(--color-text-secondary); line-height:1.6; }
+#pconns { font-size:8px; letter-spacing:.1em; color:var(--color-text-tertiary); margin:8px 0 5px; }
+.cpill { display:inline-block; font-size:9px; padding:2px 6px; border-radius:2px; margin:2px; cursor:pointer; border:0.5px solid; }
+#pcl { font-family:var(--font-mono); font-size:9px; padding:4px 8px; border:0.5px solid var(--color-border-secondary); border-radius:3px; background:transparent; color:var(--color-text-secondary); cursor:pointer; width:100%; margin-top:8px; }
+.bs-shipped { font-size:7px; padding:1px 4px; border-radius:2px; background:#22c55e20; border:0.5px solid #22c55e60; color:#22c55e; }
+.bs-designed { font-size:7px; padding:1px 4px; border-radius:2px; background:#3b82f620; border:0.5px solid #3b82f660; color:#3b82f6; }
+.bs-idea { font-size:7px; padding:1px 4px; border-radius:2px; background:#ffffff10; border:0.5px solid #ffffff30; color:#ffffff60; }
+#aw-legend { position:absolute; bottom:8px; left:8px; background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:4px; padding:7px 9px; font-size:8px; }
+.li { display:flex; align-items:center; gap:4px; margin-bottom:2px; color:var(--color-text-secondary); }
+.ld { width:7px; height:7px; border-radius:50%; }
+#aw-status { position:absolute; top:7px; right:8px; font-size:8px; color:var(--color-text-tertiary); font-family:var(--font-mono); }
+#aw-legend2 { position:absolute; bottom:8px; right:8px; background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:4px; padding:7px 9px; font-size:8px; }
+</style>
+
+<div id="aw">
+<div id="aw-bar">
+  <input id="aw-search" placeholder="search...">
+  <button class="cb" data-c="ALL" style="border-color:#888;color:#888">all</button>
+  <button class="cb" data-c="thesis" style="border-color:#f59e0b;color:#f59e0b">thesis</button>
+  <button class="cb" data-c="principle" style="border-color:#3b82f6;color:#3b82f6">principle</button>
+  <button class="cb" data-c="tool" style="border-color:#22c55e;color:#22c55e">tool</button>
+  <button class="cb" data-c="rule" style="border-color:#ef4444;color:#ef4444">rule</button>
+  <button class="cb" data-c="concept" style="border-color:#a855f7;color:#a855f7">concept</button>
+  <button class="cb" data-c="vision" style="border-color:#ec4899;color:#ec4899">vision</button>
+</div>
+<div id="aw-main">
+  <div id="aw-wrap">
+    <svg id="aw-svg"></svg>
+    <div id="aw-status">scroll to zoom · drag to pan · click to explore</div>
+    <div id="aw-legend">
+      <div class="li"><div class="ld" style="background:#f59e0b"></div>thesis</div>
+      <div class="li"><div class="ld" style="background:#3b82f6"></div>principle</div>
+      <div class="li"><div class="ld" style="background:#22c55e"></div>tool</div>
+      <div class="li"><div class="ld" style="background:#ef4444"></div>rule</div>
+      <div class="li"><div class="ld" style="background:#a855f7"></div>concept</div>
+      <div class="li"><div class="ld" style="background:#ec4899"></div>vision</div>
+    </div>
+    <div id="aw-legend2">
+      <div class="li">── connects-to</div>
+      <div class="li" style="color:#f59e0b">╌╌ collision</div>
+      <div class="li">● shipped &nbsp;◎ designed &nbsp;○ idea</div>
+    </div>
+  </div>
+  <div id="aw-panel">
+    <div id="pc"></div>
+    <div id="pt"></div>
+    <div class="pf"><div class="pfl">PLAIN MEANING</div><div class="pfv" id="ppm"></div></div>
+    <div class="pf"><div class="pfl">WHY IT EXISTS</div><div class="pfv" id="pwy"></div></div>
+    <div class="pf"><div class="pfl">CAME FROM</div><div class="pfv" id="pcf"></div></div>
+    <div class="pf"><div class="pfl">BUILD STATUS</div><div class="pfv" id="pbs"></div></div>
+    <div class="pf"><div class="pfl">SAVED WHERE</div><div class="pfv" id="psw" style="word-break:break-all;font-size:9px"></div></div>
+    <div id="pconns">CONNECTED TO</div>
+    <div id="pcl2"></div>
+    <button id="pcl">close ×</button>
+  </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const C={thesis:'#f59e0b',principle:'#3b82f6',tool:'#22c55e',rule:'#ef4444',concept:'#a855f7',vision:'#ec4899'};
+const N=[
+  {id:'thesis',lb:'Making cognition\ntraversable without\nflattening it',cat:'thesis',x:400,y:260,start:true,
+   pm:'ARIA is externalized navigable cognition — the design target names both the goal and the failure mode it solves.',
+   wy:'Everything ARIA does flows from this single principle.',
+   cf:'Emerged 2026-05-14 as the clearest formulation of what ARIA is becoming.',
+   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md'},
+  {id:'preserve_emergence',lb:'Preserve emergence\nbefore compression',cat:'principle',x:200,y:95,
+   pm:"Don't flatten ideas into summaries before understanding why they mattered.",
+   wy:'Round Closer, Meaning Trails, archaeology mode, anti-flattening all flow from this.',
+   cf:'Named as the hidden connective thesis of the 2026-05-12 session.',
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'repo_vs_human',lb:'Repo continuity ≠\nHuman continuity',cat:'principle',x:400,y:65,
+   pm:'Files surviving a restart and YOU feeling oriented are two different problems.',
+   wy:'The forced Windows restart proved file-truth recovery works but orientation still failed.',
+   cf:'2026-05-14 forced Windows restart — repo was clean, user still felt lost.',
+   bs:'idea',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'diagnostic_failures',lb:'Diagnostic failures',cat:'principle',x:610,y:95,
+   pm:"Failures aren't interruptions to architecture discovery — they ARE the discovery mechanism.",
+   wy:'Every major ARIA concept emerged from a real failure, not brainstorming.',
+   cf:'Pattern noticed: restart→human continuity gap, copy-paste fog→Round Closer.',
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'git_web',lb:'The web already\nexists in git',cat:'principle',x:710,y:190,
+   pm:"Every commit and cross-reference is already the historical topology. The problem is rendering it, not building it.",
+   wy:'Reframes the visual web from a construction project to a visualization project.',
+   cf:"Code's insight during the 2026-05-14 brainstorm web discussion.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'recursive_warning',lb:'Recursive self-\nconsistency warning',cat:'rule',x:740,y:280,
+   pm:'A self-consistent system can still be wrong. Test ARIA against deliberate contradictions.',
+   wy:'Prevents ARIA from becoming a system that only proves itself to itself.',
+   cf:'Code flagged this *** during the 2026-05-12 cross-AI synthesis.',
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'convergence_trap',lb:'Convergence Trap',cat:'rule',x:715,y:360,
+   pm:"When all three AIs agree too easily, that's suspicious — not validation.",
+   wy:'Easy consensus = possible shared blind spots. Hard-won consensus = real signal.',
+   cf:"Claude's contribution to the 2026-05-12 generative pass.",
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'loaded_witness',lb:'Loaded Witness',cat:'rule',x:680,y:440,
+   pm:"Never clear all three AIs simultaneously. Keep at least one context-heavy AI loaded.",
+   wy:"The loaded AI holds lived context the repo can't capture.",
+   cf:'LOCKED during 2026-05-11 after near-loss of session context.',
+   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md'},
+  {id:'no_idea_wasted',lb:'No Idea Wasted',cat:'rule',x:620,y:510,
+   pm:'Save everything at capture time. Never filter during intake.',
+   wy:'Ideas lost at capture are unrecoverable. Filter at promotion, not intake.',
+   cf:'LOCKED during 2026-05-09 as a foundational ARIA principle.',
+   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md'},
+  {id:'self_defense_first',lb:'Self-defense first',cat:'rule',x:520,y:555,
+   pm:"State the strongest part of YOUR answer before evaluating the other AI's answer.",
+   wy:"Prevents silent capitulation where AIs just defer to each other.",
+   cf:"Code's contribution to the 2026-05-12 cross-AI reconciliation.",
+   bs:'shipped',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'locked_37',lb:'LOCKED 37:\nCross-AI Reconciliation',cat:'rule',x:400,y:570,
+   pm:'Synthesize or principled-disagree — never silent-defer.',
+   wy:'Silent deferral produces false consensus and loses valuable disagreements.',
+   cf:'LOCKED during 2026-05-11 as governance rule #37.',
+   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md'},
+  {id:'idea_half_life',lb:'Idea Half-Life',cat:'rule',x:280,y:555,
+   pm:"60 days without promotion triggers a still-relevant check. Without aging, compost becomes a graveyard.",
+   wy:'Prevents the compost from becoming a place ideas feel handled but never get built.',
+   cf:"Claude's contribution during the 2026-05-12 generative pass.",
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'round_closer',lb:'Round Closer /\nResolution Anchor Pass',cat:'tool',x:575,y:370,
+   pm:"Detect when a cross-AI paste loop has resolved and stop, preserving each AI's unique contributions.",
+   wy:'Cross-paste loops kept producing value while the user lost orientation.',
+   cf:'Emerged 2026-05-12 while Caleb was LIVING the failure mode.',
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'blind_trio',lb:'Blind Trio Round',cat:'tool',x:595,y:280,
+   pm:'Each AI thinks independently before cross-reading. Forces divergent thinking before convergence.',
+   wy:'Prevents premature consensus and preserves minority ideas.',
+   cf:'Designed during 2026-05-11 as a formal protocol.',
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'door_log',lb:'Door Log',cat:'tool',x:480,y:460,
+   pm:'Log the question that opened each major thread. Questions are reusable; ideas are not.',
+   wy:'Questions are the real navigation primitive of the Cognitive Mansion.',
+   cf:'All three AIs independently converged on this as the first buildable primitive.',
+   bs:'designed',sw:'docs/aria/COGNITIVE_MANSION.md'},
+  {id:'gem_flag',lb:'Gem Flag (**)',cat:'tool',x:405,y:490,
+   pm:'Mark any idea with ** so it must survive the next AI pass or be explicitly dropped.',
+   wy:'Prevents valuable details from being silently smoothed away during synthesis.',
+   cf:"Claude's idea during the 2026-05-14 paste loop discussion.",
+   bs:'shipped',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'park_this',lb:'Park-this shorthand',cat:'tool',x:320,y:500,
+   pm:'Non-disruptive flow capture — park an idea silently without engaging a detour.',
+   wy:'Soc requires words. Sidequest requires engagement. Park-this requires neither.',
+   cf:"User's idea during 2026-05-12 as a flow-state primitive.",
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'cognitive_mansion',lb:'Cognitive Mansion',cat:'concept',x:155,y:195,
+   pm:'ARIA as navigable cognitive topology. Rooms = idea clusters. Doors = questions. Heat = emotional energy.',
+   wy:'Most systems preserve facts. The mansion preserves WHY things exist and how they connect.',
+   cf:"Emerged from user's SOC about needing to walk through ideas like rooms.",
+   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md'},
+  {id:'orientation_debt',lb:'Orientation Debt',cat:'concept',x:115,y:305,
+   pm:'The accumulated cost of frame drift across heavy sessions. The repo survives but you feel lost anyway.',
+   wy:'Names what users experience after heavy sessions without calling it a system failure.',
+   cf:'Named during the 2026-05-14 forced restart recovery.',
+   bs:'idea',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'meaning_trails',lb:'Meaning Trails',cat:'concept',x:145,y:400,
+   pm:"Not backlinks — causal emergence paths showing WHY an idea formed, not just what it connects to.",
+   wy:"Links show what connects. Trails show how it got there. That's the missing layer.",
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'archaeology_nav',lb:'Archaeology Mode\nvs Navigation Mode',cat:'concept',x:100,y:475,
+   pm:'Two views that must NOT be merged: how things actually grew vs clean forward paths.',
+   wy:'Mixing them destroys both. One is history, the other is potential energy.',
+   cf:"Claude's contribution during the 2026-05-14 generative pass.",
+   bs:'designed',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'live_state',lb:'Live-State Continuity\n(3-layer stack)',cat:'concept',x:215,y:450,
+   pm:'Round Closer + Comprehension Gate + Warm Reconstruction — distinguishes repo-safety from human-safety.',
+   wy:'The three layers together close loops, verify orientation, and repair frame when verification fails.',
+   cf:'Merged architectural thread from the 2026-05-14 forced restart session.',
+   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md'},
+  {id:'scope_diff',lb:'Scope differentiation',cat:'concept',x:195,y:525,
+   pm:'Two AIs seeming to disagree may both be right at different scopes — not contradiction, different zoom levels.',
+   wy:'Prevents false conflict when AIs are answering different versions of the same question.',
+   cf:'Emerged from the Code-vs-GPT Obsidian disagreement during 2026-05-14.',
+   bs:'shipped',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'collision_records',lb:'Collision Records',cat:'concept',x:305,y:520,
+   pm:"Intentionally saving 'Code thought X, GPT disagreed with Y, synthesis was Z' as durable repo entries.",
+   wy:'Disagreements contain the most signal — preserving them prevents false consistency.',
+   cf:'First real user-vs-AI contribution topology preserved on purpose, 2026-05-14.',
+   bs:'shipped',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'aria_uncrumple',lb:'ARIA = Uncrumple\n(structurally identical)',cat:'concept',x:215,y:160,
+   pm:'Same architecture, different domain. Every Uncrumple design decision is an ARIA design decision.',
+   wy:'You built the problem before you built the solution.',
+   cf:"Claude's insight during the 2026-05-12 generative pass.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'ghost_rooms',lb:'Ghost Rooms',cat:'vision',x:120,y:540,
+   pm:"Surface what's cold but might be valuable — abandoned branches and forgotten threads.",
+   wy:'Forgotten rooms often contain the most important unresolved architecture.',
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'living_doors',lb:'Living Doors',cat:'vision',x:235,y:568,
+   pm:'Doors accumulate meaning over time and become gravity nodes. The door becomes an entire wing.',
+   wy:'Static questions become dynamic anchors as more ideas pass through them.',
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'thread_temp',lb:'Thread Temperature',cat:'vision',x:370,y:548,
+   pm:"Actual decay — a thread hot three days ago and untouched is cooling. Show this visually.",
+   wy:"Prevents threads from going cold before you're ready by making cooling visible.",
+   cf:"Claude's contribution extending the heat-tag concept.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+  {id:'ouroboros',lb:'Ouroboros\n(ARIA needs ARIA)',cat:'vision',x:460,y:535,
+   pm:'In order to build ARIA we need ARIA first. The recursion is the proof of concept.',
+   wy:"The process of building ARIA is itself the demonstration that ARIA works.",
+   cf:"Mandy's words: 'It's like a snake eating itself.' 2026-05-14.",
+   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
+];
+
+const E=[
+  {f:'thesis',t:'preserve_emergence',ty:'connects-to'},
+  {f:'thesis',t:'cognitive_mansion',ty:'connects-to'},
+  {f:'thesis',t:'repo_vs_human',ty:'connects-to'},
+  {f:'thesis',t:'meaning_trails',ty:'connects-to'},
+  {f:'thesis',t:'aria_uncrumple',ty:'connects-to'},
+  {f:'preserve_emergence',t:'round_closer',ty:'connects-to'},
+  {f:'preserve_emergence',t:'meaning_trails',ty:'connects-to'},
+  {f:'preserve_emergence',t:'collision_records',ty:'connects-to'},
+  {f:'preserve_emergence',t:'gem_flag',ty:'connects-to'},
+  {f:'preserve_emergence',t:'no_idea_wasted',ty:'connects-to'},
+  {f:'repo_vs_human',t:'orientation_debt',ty:'connects-to'},
+  {f:'repo_vs_human',t:'live_state',ty:'connects-to'},
+  {f:'repo_vs_human',t:'loaded_witness',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'door_log',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'ghost_rooms',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'living_doors',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'thread_temp',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'archaeology_nav',ty:'connects-to'},
+  {f:'cognitive_mansion',t:'meaning_trails',ty:'connects-to'},
+  {f:'door_log',t:'living_doors',ty:'connects-to'},
+  {f:'door_log',t:'meaning_trails',ty:'connects-to'},
+  {f:'door_log',t:'git_web',ty:'connects-to'},
+  {f:'round_closer',t:'live_state',ty:'connects-to'},
+  {f:'round_closer',t:'gem_flag',ty:'connects-to'},
+  {f:'round_closer',t:'collision_records',ty:'connects-to'},
+  {f:'round_closer',t:'blind_trio',ty:'connects-to'},
+  {f:'convergence_trap',t:'loaded_witness',ty:'connects-to'},
+  {f:'convergence_trap',t:'blind_trio',ty:'connects-to'},
+  {f:'convergence_trap',t:'self_defense_first',ty:'connects-to'},
+  {f:'locked_37',t:'self_defense_first',ty:'connects-to'},
+  {f:'locked_37',t:'collision_records',ty:'connects-to'},
+  {f:'locked_37',t:'scope_diff',ty:'connects-to'},
+  {f:'diagnostic_failures',t:'round_closer',ty:'connects-to'},
+  {f:'diagnostic_failures',t:'orientation_debt',ty:'connects-to'},
+  {f:'diagnostic_failures',t:'live_state',ty:'connects-to'},
+  {f:'git_web',t:'collision_records',ty:'connects-to'},
+  {f:'git_web',t:'thread_temp',ty:'connects-to'},
+  {f:'orientation_debt',t:'live_state',ty:'connects-to'},
+  {f:'orientation_debt',t:'park_this',ty:'connects-to'},
+  {f:'no_idea_wasted',t:'idea_half_life',ty:'connects-to'},
+  {f:'no_idea_wasted',t:'park_this',ty:'connects-to'},
+  {f:'recursive_warning',t:'convergence_trap',ty:'connects-to'},
+  {f:'scope_diff',t:'collision_records',ty:'connects-to'},
+  {f:'ouroboros',t:'thesis',ty:'connects-to'},
+  {f:'ouroboros',t:'git_web',ty:'connects-to'},
+  {f:'aria_uncrumple',t:'cognitive_mansion',ty:'connects-to'},
+  {f:'archaeology_nav',t:'git_web',ty:'connects-to'},
+  // Collision edge: Code vs GPT Obsidian disagreement
+  {f:'git_web',t:'archaeology_nav',ty:'collision'},
+];
+
+let af='ALL',st='',sel=null;
+const nMap=Object.fromEntries(N.map(n=>[n.id,n]));
+
+function getConn(id){
+  const ids=new Set();
+  E.forEach(e=>{if(e.f===id)ids.add(e.t);if(e.t===id)ids.add(e.f);});
+  return [...ids].map(i=>nMap[i]).filter(Boolean);
+}
+
+function showPanel(nd){
+  sel=nd.id;
+  const col=C[nd.cat];
+  document.getElementById('pc').style.color=col;
+  document.getElementById('pc').textContent=nd.cat.toUpperCase()+' · '+{'shipped':'● SHIPPED','designed':'◎ DESIGNED','idea':'○ IDEA'}[nd.bs];
+  document.getElementById('pt').textContent=nd.lb.replace(/\n/g,' ');
+  document.getElementById('ppm').textContent=nd.pm;
+  document.getElementById('pwy').textContent=nd.wy;
+  document.getElementById('pcf').textContent=nd.cf;
+  document.getElementById('pbs').innerHTML=`<span class="bs-${nd.bs}">${nd.bs}</span>`;
+  document.getElementById('psw').textContent=nd.sw;
+  const conn=getConn(nd.id);
+  const cl=document.getElementById('pcl2');
+  cl.innerHTML='';
+  document.getElementById('pconns').textContent=`CONNECTED TO (${conn.length})`;
+  conn.forEach(cn=>{
+    const p=document.createElement('span');
+    p.className='cpill';
+    p.textContent=cn.lb.replace(/\n/g,' ');
+    p.style.color=C[cn.cat];
+    p.style.borderColor=C[cn.cat]+'50';
+    p.style.background=C[cn.cat]+'12';
+    p.onclick=()=>showPanel(cn);
+    cl.appendChild(p);
+  });
+  document.getElementById('aw-panel').classList.add('open');
+  draw();
+}
+
+function hidePanel(){sel=null;document.getElementById('aw-panel').classList.remove('open');draw();}
+
+function draw(){
+  const svg=d3.select('#aw-svg');
+  svg.selectAll('*').remove();
+  const W=document.getElementById('aw-wrap').clientWidth||700;
+  const H=500;
+  svg.attr('width',W).attr('height',H);
+
+  // Scale positions from design space (100-750, 65-580) to canvas
+  const scaleX=d3.scaleLinear().domain([80,760]).range([40,W-40]);
+  const scaleY=d3.scaleLinear().domain([55,590]).range([30,H-30]);
+
+  const vN=N.filter(n=>{
+    const mc=af==='ALL'||n.cat===af;
+    const ms=st===''||n.lb.toLowerCase().includes(st)||n.pm.toLowerCase().includes(st);
+    return mc&&ms;
+  });
+  const vIds=new Set(vN.map(n=>n.id));
+  const vE=E.filter(e=>vIds.has(e.f)&&vIds.has(e.t));
+
+  const g=svg.append('g');
+  const zoom=d3.zoom().scaleExtent([0.3,3]).on('zoom',ev=>{
+    g.attr('transform',ev.transform);
+    const d=ev.sourceEvent&&ev.sourceEvent.type==='mousemove';
+    svg.node().classList.toggle('grab',d);
+  });
+  svg.call(zoom);
+
+  const connSel=sel?new Set(getConn(sel).map(n=>n.id)):new Set();
+
+  // Draw edges
+  const eg=g.append('g');
+  vE.forEach(e=>{
+    const s=nMap[e.f],t=nMap[e.t];
+    if(!s||!t)return;
+    const sx=scaleX(s.x),sy=scaleY(s.y),tx=scaleX(t.x),ty=scaleY(t.y);
+    const isConn=!sel||(e.f===sel||e.t===sel);
+    const isColl=e.ty==='collision';
+    eg.append('line')
+      .attr('x1',sx).attr('y1',sy).attr('x2',tx).attr('y2',ty)
+      .attr('stroke',isColl?'#f59e0b':(isConn?'#ffffff30':'#ffffff0c'))
+      .attr('stroke-width',isColl?1.5:(isConn?1:0.5))
+      .attr('stroke-dasharray',isColl?'5 4':'none')
+      .attr('opacity',isConn?1:0.4);
+  });
+
+  // Draw nodes
+  const ng=g.append('g');
+  vN.forEach(nd=>{
+    const nx=scaleX(nd.x),ny=scaleY(nd.y);
+    const isThesis=nd.start;
+    const isSel=nd.id===sel;
+    const isConn=connSel.has(nd.id);
+    const isDim=sel&&!isSel&&!isConn;
+    const r=isThesis?38:22;
+    const col=C[nd.cat];
+    const opac=isDim?0.25:1;
+    const grp=ng.append('g').attr('transform',`translate(${nx},${ny})`).style('cursor','pointer').attr('opacity',opac);
+
+    // Build status visual: shipped=solid fill, designed=open, idea=very faint
+    const fillOp=nd.bs==='shipped'?0.28:nd.bs==='designed'?0.12:0.05;
+    const strokeW=isThesis?2.5:isSel?2.5:1.2;
+    const strokeDash=nd.bs==='idea'?'4 3':'none';
+
+    grp.append('circle').attr('r',r)
+      .attr('fill',col).attr('fill-opacity',fillOp)
+      .attr('stroke',col).attr('stroke-width',strokeW)
+      .attr('stroke-dasharray',strokeDash);
+
+    if(isSel){
+      grp.append('circle').attr('r',r+5).attr('fill','none').attr('stroke',col).attr('stroke-width',0.5).attr('opacity',0.4);
+    }
+
+    // Label
+    const lines=nd.lb.split('\n');
+    const lh=isThesis?9:8;
+    const totalH=(lines.length-1)*lh*1.3;
+    lines.forEach((ln,i)=>{
+      grp.append('text')
+        .attr('text-anchor','middle')
+        .attr('y',i*lh*1.3-totalH/2)
+        .attr('fill',col)
+        .attr('font-size',isThesis?`${lh}px`:`${lh}px`)
+        .attr('font-family','monospace')
+        .attr('font-weight',isThesis?'500':'400')
+        .text(ln);
+    });
+
+    grp.on('click',(ev)=>{ev.stopPropagation();showPanel(nd);});
+  });
+
+  svg.on('click',()=>hidePanel());
+}
+
+document.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>{af=b.dataset.c;sel=null;document.getElementById('aw-panel').classList.remove('open');draw();}));
+document.getElementById('aw-search').addEventListener('input',e=>{st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('aw-panel').classList.remove('open');draw();});
+document.getElementById('pcl').addEventListener('click',hidePanel);
+
+draw();
+</script>
