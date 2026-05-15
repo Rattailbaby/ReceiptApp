@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIA Concept Web</title>
+<style>
+/* Portability shim — defines the CSS variables the widget expects.
+   Original widget built inside Claude.ai, which supplies these vars.
+   This :root block lets the file render standalone in any browser.
+   Widget CSS and visualization logic below are untouched. */
+:root {
+  --font-mono: 'SF Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+  --color-background-primary: #0e0e11;
+  --color-background-secondary: #16161a;
+  --color-text-primary: #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+  --color-border-secondary: #3f3f46;
+  --color-border-tertiary: #27272a;
+}
+html, body {
+  background: #0e0e11;
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 16px;
+  font-family: var(--font-mono);
+}
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+</head>
+<body>
 
 <h2 class="sr-only">ARIA concept web v2 — fixed layout, canonical data, click any node to explore definitions and connections</h2>
 <style>
@@ -415,3 +455,6 @@ document.getElementById('pcl').addEventListener('click',hidePanel);
 
 draw();
 </script>
+
+</body>
+</html>
