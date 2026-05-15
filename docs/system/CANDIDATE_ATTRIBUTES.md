@@ -1282,6 +1282,22 @@ continuity on its own (the failed Break Test, 2026-05-15, proved this).
 Lightweight daily-cadence companion to Break Test / Live-State Continuity /
 Warm Reconstruction. Save-only, do not build yet.
 
+
+[2026-05-15] — Caleb-Direct Signal markers
+When part of a Code response is addressed to Caleb specifically (not GPT
+or Claude), mark it visually so it survives cross-pasting between AIs.
+General marker:
+  ⚠️ ***CALEB READ THIS*** ⚠️
+When the round is resolved and the next move depends on Caleb, end the
+response with:
+  🔴 ***YOUR TURN, CALEB. DO NOT SEND THIS TO OTHER AIs YET.*** 🔴
+Then ask only the exact questions needed to move forward — nothing more.
+Reason: Caleb cross-pastes between the three AIs; without a visual signal
+he cannot tell when a message contains something for him specifically, or
+when the loop should stop and he should act instead of paste. Exact marker
+wording is Caleb's (2026-05-15). Pairs with the AI Identity Signature
+rule. Promote to CLAUDE.md if it proves useful across sessions.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
