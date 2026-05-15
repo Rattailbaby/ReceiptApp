@@ -7665,3 +7665,26 @@ GPT listed "scope differentiation" as a mature multi-AI behavior. Code flagged o
 The Break Test asks, among other things, "what would be dangerous to forget?" This artifact answers part of it directly: it would be dangerous to forget that the best-of lists themselves smoothed. Three AIs explicitly practicing emergence-preservation still flattened — they dropped the only shipped work, dropped a merged architectural unit in favor of its recognizable fragment, and dropped a mechanism in favor of its visible effect. That is live proof that flattening is not a problem you solve once. It recurs even inside the systems built to prevent it. The fix is not a better list — it is the Round Closer field "what got smoothed away" being mandatory, every round, forever.
 
 Status: Round Closer artifact. Save-only. No build action.
+
+---
+
+[2026-05-15] — Morning Reorientation
+
+Problem:
+After a heavy ARIA session, the user may technically have everything saved but still not know what to remember, what changed, or what matters today. The failed Break Test proved orientation debt is real — repo continuity does not deliver human continuity on its own.
+
+Core prompt:
+"What am I supposed to remember today?"
+
+Behavior:
+At the start of the next session after a heavy Level 2 / Level 3 session, generate a short morning reorientation section with:
+- 3 things that mattered most
+- 3 things that changed
+- 3 things not to build yet
+- the first practical action
+- one question for the user: "What still feels alive after sleep?"
+
+Relation:
+This supports Break Test, Door Log, Live-State Continuity, and Warm Reconstruction. It is the lightweight daily-cadence companion to those — Break Test is a rigorous orientation check; Morning Reorientation is the gentle generated preamble that makes the check answerable. Where Live-State Continuity / Warm Reconstruction are the full repair layer, Morning Reorientation is the cheap first pass run every heavy-session morning.
+
+Status: save-only candidate, do not build yet. Do not touch app code.

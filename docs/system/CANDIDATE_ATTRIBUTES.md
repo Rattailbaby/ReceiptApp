@@ -1267,6 +1267,21 @@ Enables cross-AI provenance in paste loops.
 Prerequisite for user-vs-AI contribution topology.
 Early ARIA primitive, formalize when ARIA product is built.
 
+
+[2026-05-15] — Morning Reorientation
+At the start of the next session after a heavy Level 2 / Level 3 session,
+generate a short morning reorientation section before any other work:
+- 3 things that mattered most
+- 3 things that changed
+- 3 things not to build yet
+- the first practical action
+- one question for the user: "What still feels alive after sleep?"
+Core prompt: "What am I supposed to remember today?"
+Reason: orientation debt is real — repo continuity does not deliver human
+continuity on its own (the failed Break Test, 2026-05-15, proved this).
+Lightweight daily-cadence companion to Break Test / Live-State Continuity /
+Warm Reconstruction. Save-only, do not build yet.
+
 ## Promoted (moved to LOCKED_ATTRIBUTES)
 
 [2026-05-06] — Add sheet footer investigation — RESOLVED
