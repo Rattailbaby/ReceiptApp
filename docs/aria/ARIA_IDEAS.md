@@ -7607,3 +7607,61 @@ before celebrating its own consistency.
 3. Ask "what still feels alive after sleep?"
 4. Build DOOR_LOG.md with 6-10 foundational doors
 5. Stop
+
+---
+
+[2026-05-15] — Round Closer artifact: three-list best-of comparison
+
+Status: Round Closer artifact AND Break Test evidence. Morning-after the 2026-05-14 session. The round being closed: "what mattered most this session?" — asked to all three AIs independently, lists then compared.
+
+Why this is a Round Closer artifact:
+Three independent best-of lists came in (Code, Claude, GPT). Rather than flatten them into one merged list, this entry preserves convergence, divergence, and what got smoothed away — the Round Closer format applied to a real round. First time the protocol has been used on a retrospective-selection round rather than a cross-paste loop.
+
+---
+
+### Hard-core convergence — all three lists, independently
+
+Seven items appeared on every list:
+
+1. The thesis — "making cognition traversable without flattening it"
+2. Repo continuity ≠ human continuity — the forced-restart diagnostic
+3. The web already exists in git — render, don't build
+4. Door Log as first primitive — questions outlast summaries
+5. Diagnostic failures — failures are the architecture discovery mechanism
+6. Recursive self-consistency warning — self-consistent ≠ correct
+7. Preserve emergence before compression — the operating principle under the thesis (GPT ranked it #1; Code folded it in as the mechanism beneath the thesis)
+
+Convergence-Trap check: NOT a trap. Convergence Trap fires on agreement about a forward decision (build it / ship it). This is agreement on a retrospective selection from shared lived material. Agreement on "what was the session's spine" is expected and healthy. The trap would be agreeing the spine is finished — it is not.
+
+---
+
+### What each AI uniquely surfaced
+
+Code: three preservation layers (structural / semantic / emotional), cognitive causality as the mechanism under the thesis, collision records as a named artifact, the CLAUDE.md trim as honorable mention.
+
+Claude: Ghost Rooms, Living Doors, tomorrow's concrete order. Tightest list — 10 items, genuinely filtered. By the standard the user set ("things that matter, not everything") Claude's list was the best-disciplined.
+
+GPT: Cognitive Mansion as a category-shift, Meaning Trails, Archaeology/Navigation mode separation, user-vs-AI topology, emotional-weight preservation, scope differentiation, soft-active threads. Most comprehensive — 15 items, but length started to lose the filter the user asked for. Strong unique items: Archaeology/Navigation split, soft-active threads.
+
+---
+
+### What got smoothed away — the Round Closer field
+
+The three lists missed three things. These are the most important part of this artifact:
+
+1. The CLAUDE.md trim was the ONLY concrete shipped deliverable.
+Every other item on all three lists is design — captured ideas, named concepts, future builds. The trim → routing-layer refactor (commits f7f689c through e4c0dc6, plus APP_STATE.md and KNOWN_ISSUES.md created) is the one completed, working, shipped deliverable of the session. All three AIs dropped it or filed it as honorable mention. Design feels more exciting than finished work, so finished work got smoothed out of the best-of lists. This is itself a flattening failure mode — the lists optimized for interesting over done.
+
+2. Live-State Continuity stack vanished as a merged unit.
+GPT listed Round Closer alone. Nobody named the Round Closer + Comprehension Gate + Warm Reconstruction merge — which was a whole commit (fd6d477) and the architectural unit. The merge was the point; the individual pieces are partial. The best-of lists picked the recognizable piece (Round Closer) and dropped the synthesis that gave it its place in a stack. Ironic: this is exactly the flattening Round Closer was named to prevent.
+
+3. LOCKED 37 was the mechanism behind scope differentiation.
+GPT listed "scope differentiation" as a mature multi-AI behavior. Code flagged on 2026-05-14 that it was not native judgment — it was LOCKED 37 (Cross-AI Prompt Reconciliation) producing the behavior. The behavior survived all three lists; the mechanism did not. The mechanism is more valuable than the instance, because it is reusable: encoding a cognitive habit as a rule scales it to every fresh session. The lists preserved the visible behavior and smoothed away the reason it happened — which is the precise distinction (what vs why) the whole session was about preserving.
+
+---
+
+### Why this artifact matters as Break Test evidence
+
+The Break Test asks, among other things, "what would be dangerous to forget?" This artifact answers part of it directly: it would be dangerous to forget that the best-of lists themselves smoothed. Three AIs explicitly practicing emergence-preservation still flattened — they dropped the only shipped work, dropped a merged architectural unit in favor of its recognizable fragment, and dropped a mechanism in favor of its visible effect. That is live proof that flattening is not a problem you solve once. It recurs even inside the systems built to prevent it. The fix is not a better list — it is the Round Closer field "what got smoothed away" being mandatory, every round, forever.
+
+Status: Round Closer artifact. Save-only. No build action.
