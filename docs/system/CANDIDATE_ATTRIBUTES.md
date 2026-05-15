@@ -1283,7 +1283,7 @@ Lightweight daily-cadence companion to Break Test / Live-State Continuity /
 Warm Reconstruction. Save-only, do not build yet.
 
 
-[2026-05-15] — Caleb-Direct Signal markers
+[2026-05-15] — Caleb-Direct Signal markers — PROMOTED 2026-05-15 → CLAUDE.md CALEB-DIRECT SIGNAL RULE (user said "lock the markers")
 When part of a Code response is addressed to Caleb specifically (not GPT
 or Claude), mark it visually so it survives cross-pasting between AIs.
 General marker:

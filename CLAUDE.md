@@ -900,6 +900,30 @@ This matters because:
 - Paste loops lose provenance without it
 - This is an early ARIA primitive for contribution tracking
 
+---
+
+## CALEB-DIRECT SIGNAL RULE
+
+When part of a Code response is addressed to Caleb specifically — not to
+GPT or Claude — mark it so it is visually unmistakable when the message is
+cross-pasted between AIs.
+
+General Caleb-direct marker:
+⚠️ ***CALEB READ THIS*** ⚠️
+
+When the round is resolved and the next move depends on Caleb, end the
+response with:
+🔴 ***YOUR TURN, CALEB. DO NOT SEND THIS TO OTHER AIs YET.*** 🔴
+
+Then ask only the exact questions needed to move forward — nothing more.
+
+Purpose:
+Caleb cross-pastes responses between GPT, Claude, and Code. Without a
+visual signal he cannot tell when a message contains something for him
+specifically, or when the loop should stop and he should act instead of
+paste. These markers make the "stop pasting, your turn" moment impossible
+to miss. Exact marker wording is Caleb's.
+
 ## INTERNAL: DOC CLEANUP SUBROUTINE
 
 Called automatically by clear and handoff.
