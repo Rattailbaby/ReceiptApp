@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ARIA Concept Web</title>
+<title>ARIA Concept Web v3</title>
 <style>
-/* Portability shim — defines the CSS variables the widget expects.
-   Original widget built inside Claude.ai, which supplies these vars.
-   This :root block lets the file render standalone in any browser.
-   Widget CSS and visualization logic below are untouched. */
+/* Portability shim — Code-added. The v3 widget was built inside Claude.ai,
+   which supplies these CSS variables. This :root block + document wrapper
+   let the file render standalone in any browser. Widget markup and
+   visualization logic below are Claude's v3, untouched. */
 :root {
   --font-mono: 'SF Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
   --color-background-primary: #0e0e11;
@@ -39,293 +39,266 @@ html, body {
 </head>
 <body>
 
-<h2 class="sr-only">ARIA concept web — fixed layout, canonical data synced to ARIA_GRAPH.json v2, click any node to explore plain-language definitions and connections</h2>
+<h2 class="sr-only">ARIA concept web v3 — plain language, emergence stories, hover to explore</h2>
 <style>
-#aw { font-family: var(--font-mono); width: 100%; user-select: none; }
-#aw-bar { display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:8px 0 8px; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:0; }
-#aw-search { font-family:var(--font-mono); font-size:11px; padding:4px 9px; border:0.5px solid var(--color-border-secondary); border-radius:3px; background:var(--color-background-secondary); color:var(--color-text-primary); width:140px; }
-.cb { font-family:var(--font-mono); font-size:9px; padding:3px 7px; border-radius:3px; cursor:pointer; border:0.5px solid; background:transparent; transition:all .12s; }
-#aw-main { display:flex; position:relative; gap:8px; }
-#aw-wrap { flex:1; min-height:500px; overflow:hidden; position:relative; border:0.5px solid var(--color-border-tertiary); border-radius:6px; background:var(--color-background-secondary); }
-#aw-svg { width:100%; height:500px; cursor:grab; }
-#aw-svg.grab { cursor:grabbing; }
-#aw-panel { width:250px; border:0.5px solid var(--color-border-tertiary); border-radius:6px; padding:12px; background:var(--color-background-primary); overflow-y:auto; display:none; flex-shrink:0; max-height:500px; }
-#aw-panel.open { display:block; }
-#pc { font-size:8px; letter-spacing:.14em; margin-bottom:3px; font-weight:500; }
-#pt { font-size:12px; font-weight:500; color:var(--color-text-primary); margin-bottom:8px; line-height:1.4; }
-.pf { margin-bottom:7px; }
-.pfl { font-size:8px; letter-spacing:.1em; color:var(--color-text-tertiary); margin-bottom:1px; }
-.pfv { font-size:10px; color:var(--color-text-secondary); line-height:1.6; }
-#pconns { font-size:8px; letter-spacing:.1em; color:var(--color-text-tertiary); margin:8px 0 5px; }
-.cpill { display:inline-block; font-size:9px; padding:2px 6px; border-radius:2px; margin:2px; cursor:pointer; border:0.5px solid; }
-#pcl, .pcl { font-family:var(--font-mono); font-size:9px; padding:4px 8px; border:0.5px solid var(--color-border-secondary); border-radius:3px; background:transparent; color:var(--color-text-secondary); cursor:pointer; width:100%; margin-top:8px; }
-.bs-shipped { font-size:7px; padding:1px 4px; border-radius:2px; background:#22c55e20; border:0.5px solid #22c55e60; color:#22c55e; }
-.bs-designed { font-size:7px; padding:1px 4px; border-radius:2px; background:#3b82f620; border:0.5px solid #3b82f660; color:#3b82f6; }
-.bs-idea { font-size:7px; padding:1px 4px; border-radius:2px; background:#ffffff10; border:0.5px solid #ffffff30; color:#ffffff60; }
-#aw-legend { position:absolute; bottom:8px; left:8px; background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:4px; padding:7px 9px; font-size:8px; }
-.li { display:flex; align-items:center; gap:4px; margin-bottom:2px; color:var(--color-text-secondary); }
-.ld { width:7px; height:7px; border-radius:50%; }
-#aw-status { position:absolute; top:7px; right:8px; font-size:8px; color:var(--color-text-tertiary); font-family:var(--font-mono); }
-#aw-legend2 { position:absolute; bottom:8px; right:8px; background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:4px; padding:7px 9px; font-size:8px; }
-#aw-gloss-panel { width:250px; border:0.5px solid var(--color-border-tertiary); border-radius:6px; padding:12px; background:var(--color-background-primary); overflow-y:auto; display:none; flex-shrink:0; max-height:500px; }
-#aw-gloss-panel.open { display:block; }
-#aw-gloss-panel h3 { font-size:9px; letter-spacing:.14em; color:var(--color-text-primary); margin:0 0 8px; }
-.gt { font-size:10px; font-weight:500; color:var(--color-text-primary); margin-top:9px; }
-.gd { font-size:9px; color:var(--color-text-secondary); line-height:1.6; }
+#aw{font-family:var(--font-mono);width:100%}
+#bar{display:flex;flex-wrap:wrap;gap:5px;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:0}
+#bar-title{font-size:11px;color:#f59e0b;letter-spacing:.1em;margin-right:4px;white-space:nowrap;align-self:center}
+#aw-search{font-family:var(--font-mono);font-size:10px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:3px;background:var(--color-background-secondary);color:var(--color-text-primary);width:130px}
+.cb{font-family:var(--font-mono);font-size:8px;padding:3px 6px;border-radius:3px;cursor:pointer;border:0.5px solid;background:transparent;line-height:1.2;text-align:left}
+.cb .cs{font-size:7px;opacity:.6;display:block}
+#aw-main{display:flex;gap:8px}
+#aw-wrap{flex:1;min-height:480px;overflow:hidden;position:relative;border:0.5px solid var(--color-border-tertiary);border-radius:6px;background:var(--color-background-secondary)}
+#aw-svg{width:100%;height:480px;cursor:grab}
+#aw-svg.gr{cursor:grabbing}
+#panel{width:255px;border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:12px;background:var(--color-background-primary);overflow-y:auto;display:none;flex-shrink:0;max-height:480px}
+#panel.open{display:block}
+#pc{font-size:7px;letter-spacing:.14em;margin-bottom:2px}
+#pt{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;line-height:1.35}
+.pf{margin-bottom:7px}
+.pfl{font-size:7px;letter-spacing:.1em;color:var(--color-text-tertiary);margin-bottom:1px}
+.pfv{font-size:10px;color:var(--color-text-secondary);line-height:1.65}
+.pfe{font-size:10px;color:var(--color-text-primary);line-height:1.6;padding:6px 8px;background:var(--color-background-secondary);border-radius:4px;border-left:2px solid #f59e0b;margin-bottom:7px}
+#pconns{font-size:7px;letter-spacing:.1em;color:var(--color-text-tertiary);margin:8px 0 4px}
+.cp{display:inline-block;font-size:8px;padding:2px 5px;border-radius:2px;margin:2px;cursor:pointer;border:0.5px solid}
+#pcl{font-family:var(--font-mono);font-size:9px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:3px;background:transparent;color:var(--color-text-secondary);cursor:pointer;width:100%;margin-top:8px}
+#aw-leg{position:absolute;bottom:8px;left:8px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:7px 9px;font-size:7px}
+.li{display:flex;align-items:center;gap:4px;margin-bottom:2px;color:var(--color-text-secondary)}
+.ld{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+#aw-hint{position:absolute;top:7px;right:8px;font-size:7px;color:var(--color-text-tertiary)}
+#aw-leg2{position:absolute;bottom:8px;right:8px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:4px;padding:7px 9px;font-size:7px;color:var(--color-text-secondary)}
+#aw-leg2 div{margin-bottom:2px}
+#start-banner{position:absolute;top:8px;left:8px;background:#f59e0b15;border:0.5px solid #f59e0b40;border-radius:5px;padding:7px 10px;font-size:9px;color:#f59e0b;max-width:220px;display:none;line-height:1.5}
+#start-banner b{display:block;margin-bottom:3px;font-size:10px}
 </style>
-
 <div id="aw">
-<div id="aw-bar">
-  <input id="aw-search" placeholder="search...">
-  <button class="cb" data-c="ALL" style="border-color:#888;color:#888">all</button>
-  <button class="cb" data-c="thesis" style="border-color:#f59e0b;color:#f59e0b">thesis</button>
-  <button class="cb" data-c="principle" style="border-color:#3b82f6;color:#3b82f6">principle</button>
-  <button class="cb" data-c="tool" style="border-color:#22c55e;color:#22c55e">tool</button>
-  <button class="cb" data-c="rule" style="border-color:#ef4444;color:#ef4444">rule</button>
-  <button class="cb" data-c="concept" style="border-color:#a855f7;color:#a855f7">concept</button>
-  <button class="cb" data-c="vision" style="border-color:#ec4899;color:#ec4899">vision</button>
-  <button class="cb" id="aw-gloss-btn" style="border-color:#888;color:#888">words to know</button>
+<div id="bar">
+  <span id="bar-title">ARIA WEB</span>
+  <input id="aw-search" placeholder="search or ask...">
+  <button class="cb" data-c="ALL" style="border-color:#888;color:#888">all<span class="cs">everything</span></button>
+  <button class="cb" data-c="thesis" style="border-color:#f59e0b;color:#f59e0b">thesis<span class="cs">the core idea</span></button>
+  <button class="cb" data-c="principle" style="border-color:#3b82f6;color:#3b82f6">principle<span class="cs">truths we found</span></button>
+  <button class="cb" data-c="tool" style="border-color:#22c55e;color:#22c55e">tool<span class="cs">use today</span></button>
+  <button class="cb" data-c="rule" style="border-color:#ef4444;color:#ef4444">rule<span class="cs">hard limits</span></button>
+  <button class="cb" data-c="concept" style="border-color:#a855f7;color:#a855f7">concept<span class="cs">named ideas</span></button>
+  <button class="cb" data-c="vision" style="border-color:#ec4899;color:#ec4899">vision<span class="cs">not built yet</span></button>
 </div>
 <div id="aw-main">
-  <div id="aw-wrap">
-    <svg id="aw-svg"></svg>
-    <div id="aw-status">scroll to zoom · drag to pan · click to explore</div>
-    <div id="aw-legend">
-      <div class="li"><div class="ld" style="background:#f59e0b"></div>thesis</div>
-      <div class="li"><div class="ld" style="background:#3b82f6"></div>principle</div>
-      <div class="li"><div class="ld" style="background:#22c55e"></div>tool</div>
-      <div class="li"><div class="ld" style="background:#ef4444"></div>rule</div>
-      <div class="li"><div class="ld" style="background:#a855f7"></div>concept</div>
-      <div class="li"><div class="ld" style="background:#ec4899"></div>vision</div>
-    </div>
-    <div id="aw-legend2">
-      <div class="li">── connects-to</div>
-      <div class="li" style="color:#f59e0b">╌╌ collision</div>
-      <div class="li">● shipped &nbsp;◎ designed &nbsp;○ idea</div>
-    </div>
+<div id="aw-wrap">
+  <svg id="aw-svg"></svg>
+  <div id="aw-hint">scroll to zoom · drag nodes · click to explore</div>
+  <div id="start-banner"><b>Start here →</b>This whole project started when a Windows update closed a session mid-flow. The files survived — but the feeling of orientation didn't. Everything on this map grew from that gap.<br><br>Click any connected node to follow the story.</div>
+  <div id="aw-leg">
+    <div class="li"><div class="ld" style="background:#f59e0b"></div>thesis — the core</div>
+    <div class="li"><div class="ld" style="background:#3b82f6"></div>principle — foundational truth</div>
+    <div class="li"><div class="ld" style="background:#22c55e"></div>tool — use now</div>
+    <div class="li"><div class="ld" style="background:#ef4444"></div>rule — hard limit</div>
+    <div class="li"><div class="ld" style="background:#a855f7"></div>concept — named idea</div>
+    <div class="li"><div class="ld" style="background:#ec4899"></div>vision — future</div>
   </div>
-  <div id="aw-panel">
-    <div id="pc"></div>
-    <div id="pt"></div>
-    <div class="pf"><div class="pfl">PLAIN MEANING</div><div class="pfv" id="ppm"></div></div>
-    <div class="pf"><div class="pfl">WHAT WAS HAPPENING WHEN THIS EMERGED</div><div class="pfv" id="pem"></div></div>
-    <div class="pf"><div class="pfl">WHY IT EXISTS</div><div class="pfv" id="pwy"></div></div>
-    <div class="pf"><div class="pfl">CAME FROM</div><div class="pfv" id="pcf"></div></div>
-    <div class="pf"><div class="pfl">BUILD STATUS</div><div class="pfv" id="pbs"></div></div>
-    <div class="pf"><div class="pfl">SAVED WHERE</div><div class="pfv" id="psw" style="word-break:break-all;font-size:9px"></div></div>
-    <div id="pconns">CONNECTED TO</div>
-    <div id="pcl2"></div>
-    <button id="pcl">close ×</button>
+  <div id="aw-leg2">
+    <div>● solid = shipped (real)</div>
+    <div>◎ outline = designed (planned)</div>
+    <div>○ faint = idea (not yet designed)</div>
+    <div style="margin-top:3px;color:#f59e0b80">╌╌ collision (disagreement)</div>
   </div>
-  <div id="aw-gloss-panel">
-    <h3>WORDS TO KNOW</h3>
-    <div id="gloss-list"></div>
-    <button class="pcl" id="aw-gloss-close">close ×</button>
-  </div>
+</div>
+<div id="panel">
+  <div id="pc"></div>
+  <div id="pt"></div>
+  <div class="pfe" id="pem" style="display:none"></div>
+  <div class="pf"><div class="pfl">PLAIN MEANING</div><div class="pfv" id="ppm"></div></div>
+  <div class="pf"><div class="pfl">WHY IT EXISTS</div><div class="pfv" id="pwy"></div></div>
+  <div class="pf"><div class="pfl">CAME FROM</div><div class="pfv" id="pcf"></div></div>
+  <div class="pf"><div class="pfl">BUILD STATUS</div><div class="pfv" id="pbs"></div></div>
+  <div class="pf"><div class="pfl">SAVED WHERE</div><div class="pfv" id="psw" style="font-size:8px;word-break:break-all"></div></div>
+  <div id="pconns">CONNECTED TO</div>
+  <div id="pcl2"></div>
+  <button id="pcl">close ×</button>
+</div>
 </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
-/* Data synced to docs/aria/web/ARIA_GRAPH.json v2 (2026-05-15):
-   pm = plain_meaning (zero-jargon), em = emergence ("what was breaking"),
-   wy = why_it_exists, cf = came_from, sw = saved_where. */
 const C={thesis:'#f59e0b',principle:'#3b82f6',tool:'#22c55e',rule:'#ef4444',concept:'#a855f7',vision:'#ec4899'};
-const N=[
-  {id:'thesis',lb:'Making cognition\ntraversable without\nflattening it',cat:'thesis',x:400,y:260,start:true,
-   pm:'The whole point of ARIA: let a person walk back through their own thinking later without it getting squashed into a short summary that loses the parts that mattered.',
-   em:'Caleb kept losing the thread of his own ideas after breaks, and summaries kept throwing away the details that made the ideas worth having.',
-   wy:'Every tool that stores ideas also flattens them; ARIA exists to preserve the topology instead.',
-   cf:"Claude's one-line synthesis, 2026-05-14, distilled from the whole session.",
-   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md [Core thesis]'},
-  {id:'preserve_emergence',lb:'Preserve emergence\nbefore compression',cat:'principle',x:200,y:95,
-   pm:'Write down how an idea actually came about before you shorten it — because shortening too early throws away the story of how you got there.',
-   em:'When the AIs kept summarizing the conversation, the details and the feeling behind ideas started disappearing, and Caleb stopped recognizing his own thinking.',
-   wy:"Summaries kept flattening the session's ideas; this is the operating rule that prevents it.",
-   cf:'GPT named it the hidden connective thesis of the session, 2026-05-14.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 final close]'},
-  {id:'repo_vs_human',lb:'Repo continuity ≠\nHuman continuity',cat:'principle',x:400,y:65,
-   pm:'Your saved files surviving a computer restart is one thing. You actually feeling like you know where you were is a completely separate thing — and the second one is the hard, unsolved part.',
-   em:'A Windows update killed a work session; every file came back perfectly, but Caleb still felt lost and disconnected when he returned.',
-   wy:'The forced restart proved files recovered but the user did not; this names the real unsolved problem.',
-   cf:'The 2026-05-13/14 Windows restart recovery.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 Live-State Continuity]'},
-  {id:'diagnostic_failures',lb:'Diagnostic failures',cat:'principle',x:610,y:95,
-   pm:'When something breaks, the breakage usually points straight at what was missing. Failures are not just interruptions — they are how you discover what to build next.',
-   em:'Caleb noticed every big idea in this project had come from something going wrong, never from planned brainstorming.',
-   wy:'The forced restart, copy-paste fog, and convergence smoothing each exposed the layer needed to fix them.',
-   cf:"Code's addition, 2026-05-14.",
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 final close]'},
-  {id:'git_web',lb:'The web already\nexists in git',cat:'principle',x:710,y:190,
-   pm:'The full history of how this project grew is already recorded in its saved version history. Nobody has to build that history — it only needs to be shown.',
-   em:"Caleb wanted a visual map of how the ideas grew, and it turned out the record of that growth was already sitting in the project's saved history.",
-   wy:"Reframes the visualization job from 'create topology' to 'reveal topology that already exists'.",
-   cf:"Code's insight, 2026-05-14, GPT-amplified.",
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]'},
-  {id:'recursive_warning',lb:'Recursive self-\nconsistency warning',cat:'rule',x:740,y:280,
-   pm:'A set of ideas can all fit together neatly and still be wrong. Before trusting how well it all connects, deliberately try to poke holes in it.',
-   em:'The ARIA ideas started fitting together so neatly it became tempting to trust them just for being consistent.',
-   wy:'The architecture started demonstrating itself recursively, which is seductive and needs a counterweight.',
-   cf:"Code's addition, 2026-05-14.",
-   bs:'designed',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 final close]'},
-  {id:'convergence_trap',lb:'Convergence Trap',cat:'rule',x:715,y:360,
-   pm:'When all three AIs agree right away, treat that as a warning sign, not proof — fast agreement can just mean they all share the same blind spot.',
-   em:'All three AIs once agreed on something instantly and were wrong; Caleb pushing back turned out to be the right call.',
-   wy:"All three AIs once agreed 'build it tonight' and were wrong; the user's pushback was right.",
-   cf:'2026-05-12 session, a validated event.',
-   bs:'designed',sw:'docs/user/SESSION_RECAP_2026-05-12.md'},
-  {id:'loaded_witness',lb:'Loaded Witness',cat:'rule',x:680,y:440,
-   pm:'Never reset all three AIs at the same time. Keep at least one of them still holding the live memory of the conversation, so nothing is lost.',
-   em:'A work session nearly lost all its context because too much was cleared at once.',
-   wy:"Clearing all AIs at once loses all warm context; one must stay loaded as a witness.",
-   cf:'Codified in the session starter, 2026-05-12.',
-   bs:'shipped',sw:'docs/system/CLAUDE_CODE_STARTER.md [Loaded Witness Rule]'},
-  {id:'no_idea_wasted',lb:'No Idea Wasted',cat:'rule',x:620,y:510,
-   pm:'Save every idea the moment it shows up. Never decide an idea is not worth keeping while you are still capturing it — sort the strong from the weak later.',
-   em:'Ideas were getting filtered out as they were spoken, and sometimes the discarded one was the key to the best idea.',
-   wy:'A filtered idea that gets discarded might have been the connection point for the most important insight.',
-   cf:'Locked as a foundational ARIA principle, 2026-05-11.',
-   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md [NO IDEA GETS WASTED RULE]'},
-  {id:'self_defense_first',lb:'Self-defense first',cat:'rule',x:520,y:555,
-   pm:"When two AIs compare answers, each should first say what is strongest in its own answer before judging the other's — so good points do not get dropped just to agree.",
-   em:'AIs kept just deferring to each other instead of defending their own good points, so real combining of ideas never happened.',
-   wy:"Without it, AIs collapse into 'use theirs' and real merges never happen.",
-   cf:'Named during the 2026-05-12 cross-AI synthesis.',
-   bs:'shipped',sw:'docs/user/SESSION_RECAP_2026-05-12.md'},
-  {id:'locked_37',lb:'LOCKED 37:\nCross-AI Reconciliation',cat:'rule',x:400,y:570,
-   pm:'When AIs disagree, they must either combine their answers or disagree out loud with reasons — never quietly give in.',
-   em:'Quiet giving-in between AIs was producing fake agreement and erasing the disagreements that carried the most insight.',
-   wy:'Mutual deference between AIs loses signal; synthesis or principled disagreement preserves it.',
-   cf:'Promoted to LOCKED_ATTRIBUTES section 37, 2026-05-09.',
-   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md [section 37]'},
-  {id:'idea_half_life',lb:'Idea Half-Life',cat:'rule',x:280,y:555,
-   pm:'An idea saved for 60 days without being used gets a check-in: is this still relevant? Without that, the pile of saved ideas turns into a junk drawer nobody trusts.',
-   em:'The collection of saved ideas kept growing with no way to tell which ones were still alive.',
-   wy:'Without aging, the idea compost becomes a graveyard you stop trusting.',
-   cf:'2026-05-12 session.',
-   bs:'designed',sw:'docs/user/SESSION_RECAP_2026-05-12.md'},
-  {id:'round_closer',lb:'Round Closer /\nResolution Anchor Pass',cat:'tool',x:575,y:370,
-   pm:'When you have been copy-pasting answers between Claude, GPT, and Code for a while, this notices the question is already answered and tells you to stop — after saving the best bits from each AI.',
-   em:'Caleb got stuck copy-pasting between the AIs long after the question was answered, and good details were getting smoothed away each time.',
-   wy:'Cross-paste loops kept producing value while the user lost orientation and good details got smoothed away.',
-   cf:'The 2026-05-12 session was itself the failure mode it describes.',
-   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-12]'},
-  {id:'blind_trio',lb:'Blind Trio Round',cat:'tool',x:595,y:280,
-   pm:"Ask each AI the same question separately, before any of them see the others' answers — so you get three genuinely independent takes instead of three that copied each other.",
-   em:'AIs reading each other too early produced samey answers and lost the value of independent thinking.',
-   wy:'Premature convergence flattens independent thinking; blind first-takes stay uncontaminated.',
-   cf:'Designed and validated across the 2026-05-11/12 sessions.',
-   bs:'designed',sw:'docs/system/SYSTEM_COMMANDS.md [blind round]'},
-  {id:'door_log',lb:'Door Log',cat:'tool',x:480,y:460,
-   pm:'A running list of the exact question that kicked off each major piece of work. You can always re-ask a question; you cannot always get back the feeling of an idea.',
-   em:'Caleb needed to navigate the project by the questions that started things, because questions were easier to remember than summaries.',
-   wy:'You can re-ask a question; you cannot re-feel an idea the same way twice.',
-   cf:'Three-way convergence (Code/GPT/Claude), 2026-05-14; named the first buildable primitive.',
-   bs:'designed',sw:'docs/aria/COGNITIVE_MANSION.md [Door Log]'},
-  {id:'gem_flag',lb:'Gem Flag (**)',cat:'tool',x:405,y:490,
-   pm:'Mark a sentence with ** and it is promised to survive the next round of summarizing — or be dropped only with a stated reason.',
-   em:"Good specific phrasings kept vanishing when one AI's answer got summarized by the next.",
-   wy:'Important phrases get smoothed away in synthesis; an explicit marker forces keep-or-drop-with-reason.',
-   cf:'Session marker convention; not yet a dedicated repo entry.',
-   bs:'shipped',sw:'(no dedicated repo entry yet)'},
-  {id:'park_this',lb:'Park-this shorthand',cat:'tool',x:320,y:500,
-   pm:'A quick way to set an idea aside without stopping to fully write it up or chase it down — it is saved, and you keep moving.',
-   em:'Capturing an idea mid-flow always meant breaking focus; Caleb wanted a way to save one without the interruption.',
-   wy:'Capturing an idea mid-flow should not require engaging a full sidequest; park-this is silent capture.',
-   cf:'Deferred next-build candidate, 2026-05-12.',
-   bs:'designed',sw:'docs/user/SESSION_RECAP_2026-05-12.md [deferred to next session]'},
-  {id:'cognitive_mansion',lb:'Cognitive Mansion',cat:'concept',x:155,y:195,
-   pm:'Picture your ideas as rooms in a house you can walk through — rooms are clusters of ideas, doorways are the questions that opened them, and how warm a room feels shows how active that thinking still is.',
-   em:'Caleb described his ideas as a huge mental mansion he needed to walk through and remember why he built each room.',
-   wy:'The user thinks spatially; a mansion you can walk through fits the brain better than a file tree.',
-   cf:"Caleb's SOC metaphor, 2026-05-14.",
-   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md'},
-  {id:'orientation_debt',lb:'Orientation Debt',cat:'concept',x:115,y:305,
-   pm:'The slowly-building cost of losing track of where you are across many heavy work sessions. Nothing got deleted — you just do not feel on top of it anymore.',
-   em:"After heavy sessions Caleb's files were all fine but he still felt lost, and that feeling had no name.",
-   wy:'Names the silent thing that makes the user feel lost even when nothing was deleted.',
-   cf:'Live-State Continuity work, 2026-05-14.',
-   bs:'idea',sw:'docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14]'},
-  {id:'meaning_trails',lb:'Meaning Trails',cat:'concept',x:145,y:400,
-   pm:"Not just 'this idea links to that idea' — the actual chain of why one idea led to the next. The route, not just the dots.",
-   em:'Plain links between ideas showed that things connected but lost the reason and the order they connected in.',
-   wy:"Plain links say 'this relates to that' but lose why; trails keep the causality.",
-   cf:'Cognitive Mansion synthesis, 2026-05-14.',
-   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md [Meaning Trails]'},
-  {id:'archaeology_nav',lb:'Archaeology Mode\nvs Navigation Mode',cat:'concept',x:100,y:475,
-   pm:'Two different ways to look at the project that should never be mixed: one shows how things actually happened, messy and with wrong turns; the other shows a clean plan for what to do next.',
-   em:"Mixing 'what happened' with 'what to do next' made past mistakes look like recommended steps.",
-   wy:'Preserving real emergence is a different job from showing clean forward paths; merging them destroys both.',
-   cf:'Cognitive Mansion two-modes design, 2026-05-14.',
-   bs:'designed',sw:'docs/aria/COGNITIVE_MANSION.md [Two modes]'},
-  {id:'live_state',lb:'Live-State Continuity\n(3-layer stack)',cat:'concept',x:215,y:450,
-   pm:'A set of three tools that together protect not just your files but your sense of where you are — closing loops, checking you still feel oriented, and rebuilding that feeling when it is lost.',
-   em:"The forced restart showed that protecting files is not enough; the person's mental footing needs protecting too.",
-   wy:'Repo continuity is not enough; the warm human state needs its own preservation layer.',
-   cf:'Merge of Round Closer + Comprehension Gate + Warm Reconstruction, 2026-05-14.',
-   bs:'designed',sw:'docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14]'},
-  {id:'scope_diff',lb:'Scope differentiation',cat:'concept',x:195,y:525,
-   pm:'Two answers that seem to disagree are often both right — they are just answering slightly different versions of the question. Name the two situations instead of picking a winner.',
-   em:'AIs looked like they were contradicting each other when they were really answering different-sized questions.',
-   wy:'Winner/loser thinking destroys valid ideas; scope-splitting preserves both.',
-   cf:'Surfaced 2026-05-14; the behavior is produced by LOCKED 37 cross-AI reconciliation.',
-   bs:'shipped',sw:'docs/system/LOCKED_ATTRIBUTES.md [section 37]'},
-  {id:'collision_records',lb:'Collision Records',cat:'concept',x:305,y:520,
-   pm:"On purpose, writing down 'one AI thought X, another disagreed with Y, here is what we settled on' — keeping the disagreement, not just the conclusion.",
-   em:'Disagreements between AIs carried the most insight but were getting erased the moment a conclusion was reached.',
-   wy:'Disagreement is where the load-bearing thinking happens; flattening it loses the most valuable part.',
-   cf:'2026-05-14, the first deliberately-preserved collision record.',
-   bs:'shipped',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 collision]'},
-  {id:'aria_uncrumple',lb:'ARIA = Uncrumple\n(structurally identical)',cat:'concept',x:215,y:160,
-   pm:'ARIA and the Uncrumple receipt app are the same shape of system in two different worlds — both take messy raw input and turn it into something organized and usable.',
-   em:'Caleb noticed the receipt app he was building and the thinking-system he was building had the exact same underlying structure.',
-   wy:'Both route messy evidence to usable decisions; the architecture transfers across domains.',
-   cf:'Cross-pollination synthesis, 2026-05-09 through 2026-05-12.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md'},
-  {id:'ghost_rooms',lb:'Ghost Rooms',cat:'vision',x:120,y:540,
-   pm:'Show the ideas that were started once and then forgotten — abandoned threads often hold the most important unfinished thinking.',
-   em:'Caleb realized he kept starting ideas and moving on, and wanted the forgotten ones surfaced instead of lost.',
-   wy:'Forgotten rooms often contain lost resonance and future breakthroughs.',
-   cf:'GPT, 2026-05-14.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]'},
-  {id:'living_doors',lb:'Living Doors',cat:'vision',x:235,y:568,
-   pm:'A question you asked once keeps gathering more ideas over time, until that single question becomes a whole area of its own.',
-   em:'Some early questions kept attracting new ideas months later — they were growing, not staying put.',
-   wy:'A question asked months ago keeps gathering meaning; the door becomes the room.',
-   cf:'GPT, 2026-05-14.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]'},
-  {id:'thread_temp',lb:'Thread Temperature',cat:'vision',x:370,y:548,
-   pm:"Show how 'warm' each idea is — recently worked-on ideas glow, ideas left untouched for a long time visibly cool down — so you can see at a glance what is still active.",
-   em:'Every idea on the map looked equally alive, hiding which ones Caleb was actually still working on.',
-   wy:'Every node looking equally alive hides which threads are actually active versus cooling.',
-   cf:'Claude, while building the first web prototype, 2026-05-15.',
-   bs:'idea',sw:'docs/aria/ARIA_IDEAS.md [2026-05-15 web visualization backlog]'},
-  {id:'ouroboros',lb:'Ouroboros\n(ARIA needs ARIA)',cat:'vision',x:460,y:535,
-   pm:'To build ARIA properly you would already need ARIA to keep the project organized. That loop is not a problem — doing it by hand right now is itself the proof the idea works.',
-   em:"Caleb's friend Mandy described it as a snake eating its own tail: you need the thing in order to build the thing.",
-   wy:'Building ARIA requires ARIA; the recursion is not a bug, it is the proof of concept.',
-   cf:"Mandy's phrasing ('the snake eating itself'), via Caleb, 2026-05-14.",
-   bs:'idea',sw:'docs/aria/COGNITIVE_MANSION.md [Ouroboros]'},
-];
 
-const WORDS=[
-  {t:'ARIA',d:'The system this whole project is building: a way to save not just your files but your sense of where you were in your own thinking, so you can pick up cleanly after a break.'},
-  {t:'node',d:'One bubble on the web. One idea.'},
-  {t:'edge',d:'A line between two bubbles. A relationship between two ideas.'},
-  {t:'thesis',d:'The one core idea everything else serves. There is only one. (Also one of the six categories.)'},
-  {t:'principle',d:'A belief about how to think or work. One of the six categories.'},
-  {t:'tool',d:'A concrete thing you do or use — a method or a step. One of the six categories.'},
-  {t:'rule',d:'A hard always-or-never; a guardrail. One of the six categories.'},
-  {t:'concept',d:'A named idea that describes something but is not itself an action. One of the six categories.'},
-  {t:'vision',d:'A future idea, not built yet, maybe not buildable yet. One of the six categories.'},
-  {t:'repo',d:"Short for repository: the project's folder of files plus its complete saved history of every change ever made."},
-  {t:'commit',d:'One saved snapshot in that history, with a short note on what changed.'},
-  {t:'the three AIs',d:'Claude, GPT, and Code — the three assistants Caleb works with. Claude and GPT plan and think; Code makes the actual file changes.'},
-  {t:'cross-paste loop',d:"Copying one AI's answer into another AI, over and over — useful at first, but easy to keep doing past the point the question was already answered."},
-  {t:'flattening',d:'Squashing rich ideas into a short summary that loses the important parts. The main thing ARIA exists to prevent.'},
-  {t:'session',d:'One continuous stretch of working with an AI before its memory is reset.'},
-  {t:'handoff',d:'Passing the project state from one session to the next so nothing is lost.'},
-  {t:'topology',d:"The shape of how ideas connect — which ideas link to which, and how. The 'map' part of the web."},
+// Plain-language rewrite — Code's v2 data translated for humans
+const N=[
+  {id:'thesis',lb:'Making cognition\ntraversable\nwithout flattening it',cat:'thesis',x:400,y:255,start:true,bs:'idea',
+   pm:"A design goal: make it easy to move through complex thinking without losing the details that make ideas meaningful.",
+   wy:"If you can't navigate your own thinking, the best ideas get lost. This names both what we're building toward and the failure we're trying to prevent.",
+   em:"This came into focus after a forced Windows restart. The files survived perfectly — but the feeling of knowing where we were didn't. That gap needed a name.",
+   cf:"Emerged 2026-05-14 as the clearest statement yet of what ARIA is becoming.",
+   sw:"docs/aria/COGNITIVE_MANSION.md"},
+  {id:'preserve_emergence',lb:'Preserve emergence\nbefore compression',cat:'principle',x:200,y:95,bs:'idea',
+   pm:"Don't summarize ideas too quickly. When you rush to compress thinking, you lose the important parts of how and why ideas formed.",
+   wy:"Every time a complex idea gets turned into a short summary, something gets lost. Often the thing that made the idea valuable.",
+   em:"Noticed when AI synthesis rounds kept smoothing out the details and friction that made ideas meaningful. The polished version lost the point.",
+   cf:"Named as the hidden connective principle of the 2026-05-12 session.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'repo_vs_human',lb:'Repo continuity ≠\nHuman continuity',cat:'principle',x:400,y:65,bs:'idea',
+   pm:"Your files being safe doesn't mean YOU feel oriented. After the Windows restart, everything was saved — but Caleb still felt lost. Those are different problems.",
+   wy:"Most tools only solve the file-safety problem. ARIA also needs to solve the human-orientation problem.",
+   em:"The forced Windows restart proved this directly. The repo was perfectly intact. Caleb still needed help reconstructing what had been happening.",
+   cf:"Named during the 2026-05-14 forced restart recovery.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'diagnostic_failures',lb:'Diagnostic failures',cat:'principle',x:610,y:95,bs:'idea',
+   pm:"The things that go wrong aren't just problems — they're clues about what the system needs. Every major ARIA idea came from something breaking.",
+   wy:"If you treat failures as interruptions, you miss what they're telling you. Failures are the architecture discovery mechanism.",
+   em:"Pattern noticed across: restart exposed human continuity gap, copy-paste fog exposed Round Closer, convergence smoothing exposed the anti-flattening principle.",
+   cf:"Pattern noticed and named during the 2026-05-14 session.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'git_web',lb:'The web already\nexists in git',cat:'principle',x:710,y:190,bs:'idea',
+   pm:"Every save in the project records when ideas appeared, in what order, and how they connect. The map of ARIA is already built — it just needs to be shown.",
+   wy:"Reframes the visual web project from 'build a map' to 'render the map that already exists.' Much more tractable.",
+   em:"Realized during the ARIA web discussion when Code noticed that commit history, commit messages, and file references already encode the idea topology.",
+   cf:"Code's insight during the 2026-05-14 brainstorm web discussion.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'recursive_warning',lb:'Recursive self-\nconsistency warning',cat:'rule',x:740,y:280,bs:'designed',
+   pm:"A system that seems to prove itself might still be wrong. Just because ARIA's ideas all connect neatly doesn't mean they're correct.",
+   wy:"Self-consistent systems are seductive. ARIA needs to be tested against deliberate contradictions, not just celebrated for internal coherence.",
+   em:"Code flagged this with *** after noticing that the cross-AI synthesis was producing very clean agreement — which should itself be suspicious.",
+   cf:"Code flagged this during the 2026-05-12 cross-AI synthesis.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'convergence_trap',lb:'Convergence Trap',cat:'rule',x:715,y:360,bs:'designed',
+   pm:"When three AIs all agree immediately, that's suspicious — not reassuring. Real agreement takes friction. Easy agreement might just mean everyone had the same obvious thought.",
+   wy:"Prevents false confidence from forming when all three AIs happen to agree on first pass.",
+   em:"Named after noticing that 'build it tonight' was agreed by all three AIs without friction — and the user correctly overrode it. Easy consensus had been premature.",
+   cf:"Claude's contribution to the 2026-05-12 generative pass.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'loaded_witness',lb:'Loaded Witness',cat:'rule',x:680,y:440,bs:'shipped',
+   pm:"Never clear all three AIs at once. Keep at least one that remembers what happened, so context isn't completely lost.",
+   wy:"The AI that stays loaded holds the lived context — the why behind decisions — that no file can fully capture.",
+   em:"Established after a session where clearing all AIs at once meant losing the texture and reasoning that made decisions make sense.",
+   cf:"LOCKED during the 2026-05-11 session as a core governance rule.",
+   sw:"docs/system/LOCKED_ATTRIBUTES.md"},
+  {id:'no_idea_wasted',lb:'No Idea Wasted',cat:'rule',x:620,y:510,bs:'shipped',
+   pm:"Save every idea when it arrives. Don't filter in the moment. Review and choose later.",
+   wy:"Ideas lost at the capture moment can't be recovered. Filtering happens at the promotion stage, not at capture.",
+   em:"Established after noticing that in-the-moment filtering was losing ideas that turned out to be important when seen in full context later.",
+   cf:"LOCKED during the 2026-05-09 session as a foundational principle.",
+   sw:"docs/system/LOCKED_ATTRIBUTES.md"},
+  {id:'self_defense_first',lb:'Self-defense first',cat:'rule',x:520,y:555,bs:'shipped',
+   pm:"Before saying 'the other AI's answer is better,' first say what's good about your own answer. This prevents silent agreement that loses valuable differences.",
+   wy:"When AIs silently defer to each other, useful distinctions disappear. This rule forces them to articulate their own position before evaluating others.",
+   em:"Named after repeatedly seeing AIs say 'use the other one's answer' without identifying what their own answer had that the other's didn't.",
+   cf:"Code's contribution to the 2026-05-12 cross-AI reconciliation.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'locked_37',lb:'LOCKED 37:\nCross-AI Reconciliation',cat:'rule',x:400,y:570,bs:'shipped',
+   pm:"When two AIs disagree, they must either blend the best parts of both answers, or clearly explain why they're staying with their own view. Silent agreement is not allowed.",
+   wy:"Silent deferral produces false consensus and buries valuable disagreements that could improve the final result.",
+   em:"LOCKED as rule #37 after observing that AIs were frequently just agreeing with each other without engaging the actual tension.",
+   cf:"LOCKED during 2026-05-11 as governance rule #37.",
+   sw:"docs/system/LOCKED_ATTRIBUTES.md"},
+  {id:'idea_half_life',lb:'Idea Half-Life',cat:'rule',x:280,y:555,bs:'designed',
+   pm:"Ideas that sit untouched for too long should be reviewed: are they still relevant? Either use them, officially drop them, or set a reminder. Otherwise the idea list becomes a graveyard.",
+   wy:"Without aging, saved ideas accumulate until you stop trusting the list. The system needs to cull as well as collect.",
+   em:"Named after noticing that the ideas list was growing rapidly with no mechanism to clear out what had become irrelevant or already-built.",
+   cf:"Claude's contribution during the 2026-05-12 generative pass.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'round_closer',lb:'Round Closer /\nResolution Anchor Pass',cat:'tool',x:575,y:370,bs:'designed',
+   pm:"When you've been copying and pasting between AI systems for too long, you lose track of what's already been figured out. This detects that and tells you to stop — then saves the best parts from each AI before closing.",
+   wy:"Cross-paste loops kept producing ideas while the user lost orientation. Someone needed to say 'this is resolved, here's what we learned.'",
+   em:"Emerged during the 2026-05-12 session while Caleb was living the failure mode — he said 'I'm not even sure what happened, it all happened so fast.'",
+   cf:"Emerged 2026-05-12 while Caleb was living the failure mode.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'blind_trio',lb:'Blind Trio Round',cat:'tool',x:595,y:280,bs:'designed',
+   pm:"Each AI thinks through a problem separately before seeing what the others said. This prevents everyone from just agreeing with the first answer given.",
+   wy:"When AIs can see each other's thinking, they tend to converge on the first reasonable answer. Independent thinking produces better variety.",
+   em:"Designed after noticing that showing AIs each other's responses early caused them to lose their own distinct perspectives.",
+   cf:"Designed during 2026-05-11 as a formal multi-AI protocol.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'door_log',lb:'Door Log',cat:'tool',x:480,y:460,bs:'designed',
+   pm:"Write down the question that started each major idea — not the idea itself. Questions are easier to remember and reuse than summaries.",
+   wy:"You can re-ask a question. You can't re-feel an idea the same way twice. The question that opened a thread is the most portable and reusable thing about it.",
+   em:"All three AIs independently arrived at this as the first thing to build when designing the Cognitive Mansion navigation system.",
+   cf:"All three AIs converged on this as the first buildable primitive of the Cognitive Mansion.",
+   sw:"docs/aria/COGNITIVE_MANSION.md"},
+  {id:'gem_flag',lb:'Gem Flag (**)',cat:'tool',x:405,y:490,bs:'shipped',
+   pm:"Put ** next to any idea you don't want to lose. The next AI reading it must either keep that part or explain why they're dropping it.",
+   wy:"Important details kept getting silently smoothed away during AI synthesis. The ** creates a protection mechanism.",
+   em:"Designed after Caleb noticed that copy-pasting between AIs was causing important details to quietly disappear with each pass.",
+   cf:"Designed during the 2026-05-14 paste loop discussion.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'park_this',lb:'Park-this shorthand',cat:'tool',x:320,y:500,bs:'designed',
+   pm:"A way to save an idea without getting distracted by it. You note it and keep going, instead of stopping everything to explore it.",
+   wy:"Capturing ideas mid-flow without losing momentum. Different from a sidequest (which you follow) — this just stores and continues.",
+   em:"Named after repeatedly observing that interesting ideas emerging mid-session were either lost (if ignored) or derailed the session (if explored).",
+   cf:"User's idea during the 2026-05-12 session as a flow-state primitive.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'cognitive_mansion',lb:'Cognitive Mansion',cat:'concept',x:155,y:195,bs:'idea',
+   pm:"ARIA imagined as a building you walk through. Each idea is a room. The question that created the idea is the door. Some rooms are hot and active; others are dusty and forgotten.",
+   wy:"Most systems store information as flat lists. The mansion metaphor captures that ideas have relationships, temperature, history, and physical location in your mind.",
+   em:"Emerged when Caleb described needing to walk through ideas 'like rooms in a huge mental mansion' to understand what he'd built.",
+   cf:"Emerged from user's SOC about needing to walk through ideas like rooms.",
+   sw:"docs/aria/COGNITIVE_MANSION.md"},
+  {id:'orientation_debt',lb:'Orientation Debt',cat:'concept',x:115,y:305,bs:'idea',
+   pm:"That feeling after a long or interrupted session where you know important things happened but can't place yourself. The files are fine but you feel lost.",
+   wy:"Names a real experience that most tools don't address. Understanding this as a distinct problem is the first step to solving it.",
+   em:"Named directly from the 2026-05-14 forced Windows restart. The repo was perfectly intact. Caleb still needed help reconstructing what had been happening.",
+   cf:"Named during the 2026-05-14 forced restart recovery.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'meaning_trails',lb:'Meaning Trails',cat:'concept',x:145,y:400,bs:'idea',
+   pm:"Instead of just linking 'A connects to B,' showing the path: 'A caused B because C was happening.' The why matters as much as the what.",
+   wy:"Most knowledge systems only show connections. Meaning Trails show causality — how ideas grew from problems and other ideas.",
+   em:"Named when discussing why normal backlinks in note systems feel insufficient. They show connection but not emergence.",
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'archaeology_nav',lb:'Archaeology Mode\nvs Navigation Mode',cat:'concept',x:100,y:475,bs:'designed',
+   pm:"Two different ways of looking at the same ideas. Archaeology: how things actually happened (messy, real, in time order). Navigation: what to do next (clean, forward-looking). Mixing them causes confusion.",
+   wy:"A past wrong turn looks like a recommended next step if you mix these views. Memory and plan need separate maps.",
+   em:"Named after realizing that one graph was trying to do two incompatible things — tell a history and give directions at the same time.",
+   cf:"Claude's contribution during the 2026-05-14 generative pass.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'live_state',lb:'Live-State Continuity\n(3-layer stack)',cat:'concept',x:215,y:450,bs:'designed',
+   pm:"Three tools working together to help you re-orient after a break or interruption: one closes open loops, one checks if you know where you are, and one rebuilds your mental frame if you don't.",
+   wy:"Files surviving an interruption doesn't mean YOU feel oriented. This three-layer approach addresses both.",
+   em:"Assembled from three separate ideas that each solved a different part of the same problem: getting lost after interruption.",
+   cf:"Merged architectural thread from the 2026-05-14 forced restart session.",
+   sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
+  {id:'scope_diff',lb:'Scope differentiation',cat:'concept',x:195,y:525,bs:'shipped',
+   pm:"When two people seem to disagree, they might both be right — just answering different versions of the question. One says 'this works tonight,' the other says 'this isn't the full answer.' Both can be true.",
+   wy:"Prevents false arguments by checking whether people are answering the same question before treating disagreement as real conflict.",
+   em:"Emerged from the Code-vs-GPT Obsidian disagreement. Code said 'this gives you the historical web tonight.' GPT said 'that's only 30%.' Both were right at different scopes.",
+   cf:"Emerged from the Code-vs-GPT Obsidian disagreement during 2026-05-14.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'collision_records',lb:'Collision Records',cat:'concept',x:305,y:520,bs:'shipped',
+   pm:"Saving the moments when two AIs genuinely disagreed, including both views and how it resolved. Disagreements contain important information that gets lost if you only save the conclusion.",
+   wy:"The tension between two views often contains more signal than the resolution. Preserving the collision preserves that signal.",
+   em:"First real intentional use was saving the Code-vs-GPT Obsidian scope disagreement as a named record rather than just accepting the synthesis.",
+   cf:"First real user-vs-AI contribution topology preserved on purpose, 2026-05-14.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'aria_uncrumple',lb:'ARIA = Uncrumple\n(structurally identical)',cat:'concept',x:215,y:160,bs:'idea',
+   pm:"ARIA and Uncrumple solve the same problem in different areas. Uncrumple organizes messy receipts. ARIA organizes messy thinking. Same structure, different content.",
+   wy:"Every design decision made for Uncrumple reveals something true about ARIA, and vice versa. Building one builds the other.",
+   em:"Noticed when realizing the same routing-and-organization architecture appeared in both apps independently.",
+   cf:"Claude's insight during the 2026-05-12 generative pass.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'ghost_rooms',lb:'Ghost Rooms',cat:'vision',x:120,y:540,bs:'idea',
+   pm:"Ideas that were explored once and never returned to. They might contain important unfinished thinking — or they might be dead ends. Either way, they deserve a look.",
+   wy:"Forgotten rooms often contain the most important unresolved architecture. Surfacing them prevents permanent loss.",
+   em:"Named when realizing the concept map needed a way to show what had been quietly abandoned, not just what was currently active.",
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'living_doors',lb:'Living Doors',cat:'vision',x:235,y:568,bs:'idea',
+   pm:"The questions that opened major threads don't stay fixed. Over time they accumulate connections and become central hubs. The question 'how do we stop losing ideas?' eventually connected to dozens of other ideas.",
+   wy:"A door that's been walked through many times becomes different from one that's only been opened once. Tracking this shows which questions have been the most generative.",
+   em:"Named when discussing how the Door Log should evolve — static question entries would eventually become dynamic gravity nodes.",
+   cf:"GPT's contribution during the 2026-05-14 Cognitive Mansion discussion.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'thread_temp',lb:'Thread Temperature',cat:'vision',x:370,y:548,bs:'idea',
+   pm:"Ideas have temperature. A hot idea is being actively thought about. A cooling idea was touched recently but set aside. A cold idea hasn't been revisited in a while. Showing this helps you see what's being neglected.",
+   wy:"Without temperature, all ideas look equally important. Showing decay makes the live ones visible and the neglected ones findable.",
+   em:"Named after realizing that heat-tagging ideas manually was too slow — the system should derive temperature from activity patterns automatically.",
+   cf:"Claude's contribution extending the heat-tag concept.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
+  {id:'ouroboros',lb:'Ouroboros\n(ARIA needs ARIA)',cat:'vision',x:460,y:535,bs:'idea',
+   pm:"To build ARIA properly, you need ARIA already working. The system you're building is the same system you need to build it. This isn't a problem — it's proof the concept is real.",
+   wy:"If a tool is genuinely useful, you'd want to use it while building it. The recursion is evidence of validity, not a paradox.",
+   em:"Named when Mandy said 'it's like a snake eating itself' during a discussion about the recursive nature of building ARIA using the ARIA process.",
+   cf:"Mandy's words: 'It's like a snake eating itself.' 2026-05-14.",
+   sw:"docs/aria/ARIA_IDEAS.md"},
 ];
 
 const E=[
@@ -364,7 +337,6 @@ const E=[
   {f:'diagnostic_failures',t:'round_closer',ty:'connects-to'},
   {f:'diagnostic_failures',t:'orientation_debt',ty:'connects-to'},
   {f:'diagnostic_failures',t:'live_state',ty:'connects-to'},
-  {f:'git_web',t:'archaeology_nav',ty:'connects-to'},
   {f:'git_web',t:'collision_records',ty:'connects-to'},
   {f:'git_web',t:'thread_temp',ty:'connects-to'},
   {f:'orientation_debt',t:'live_state',ty:'connects-to'},
@@ -377,10 +349,11 @@ const E=[
   {f:'ouroboros',t:'git_web',ty:'connects-to'},
   {f:'aria_uncrumple',t:'cognitive_mansion',ty:'connects-to'},
   {f:'archaeology_nav',t:'git_web',ty:'connects-to'},
+  {f:'git_web',t:'archaeology_nav',ty:'collision'},
 ];
 
-let af='ALL',st='',sel=null;
 const nMap=Object.fromEntries(N.map(n=>[n.id,n]));
+let af='ALL',st='',sel=null;
 
 function getConn(id){
   const ids=new Set();
@@ -388,18 +361,26 @@ function getConn(id){
   return [...ids].map(i=>nMap[i]).filter(Boolean);
 }
 
+function bsLabel(bs){
+  if(bs==='shipped')return'<span style="background:#22c55e20;border:0.5px solid #22c55e60;color:#22c55e;font-size:7px;padding:1px 5px;border-radius:2px">● shipped — real and working</span>';
+  if(bs==='designed')return'<span style="background:#3b82f620;border:0.5px solid #3b82f660;color:#3b82f6;font-size:7px;padding:1px 5px;border-radius:2px">◎ designed — planned, not built</span>';
+  return'<span style="background:#ffffff10;border:0.5px solid #ffffff25;color:#ffffff50;font-size:7px;padding:1px 5px;border-radius:2px">○ idea — captured, not yet designed</span>';
+}
+
 function showPanel(nd){
   sel=nd.id;
-  document.getElementById('aw-gloss-panel').classList.remove('open');
   const col=C[nd.cat];
+  const bsMap={shipped:'● SHIPPED',designed:'◎ DESIGNED',idea:'○ IDEA'};
   document.getElementById('pc').style.color=col;
-  document.getElementById('pc').textContent=nd.cat.toUpperCase()+' · '+{'shipped':'● SHIPPED','designed':'◎ DESIGNED','idea':'○ IDEA'}[nd.bs];
+  document.getElementById('pc').textContent=nd.cat.toUpperCase()+' · '+bsMap[nd.bs];
   document.getElementById('pt').textContent=nd.lb.replace(/\n/g,' ');
+  const em=document.getElementById('pem');
+  if(nd.em){em.textContent='What was breaking: '+nd.em;em.style.display='block';}
+  else em.style.display='none';
   document.getElementById('ppm').textContent=nd.pm;
-  document.getElementById('pem').textContent=nd.em;
   document.getElementById('pwy').textContent=nd.wy;
   document.getElementById('pcf').textContent=nd.cf;
-  document.getElementById('pbs').innerHTML=`<span class="bs-${nd.bs}">${nd.bs}</span>`;
+  document.getElementById('pbs').innerHTML=bsLabel(nd.bs);
   document.getElementById('psw').textContent=nd.sw;
   const conn=getConn(nd.id);
   const cl=document.getElementById('pcl2');
@@ -407,131 +388,116 @@ function showPanel(nd){
   document.getElementById('pconns').textContent=`CONNECTED TO (${conn.length})`;
   conn.forEach(cn=>{
     const p=document.createElement('span');
-    p.className='cpill';
-    p.textContent=cn.lb.replace(/\n/g,' ');
-    p.style.color=C[cn.cat];
-    p.style.borderColor=C[cn.cat]+'50';
-    p.style.background=C[cn.cat]+'12';
+    p.className='cp';p.textContent=cn.lb.replace(/\n/g,' ');
+    p.style.color=C[cn.cat];p.style.borderColor=C[cn.cat]+'50';p.style.background=C[cn.cat]+'12';
     p.onclick=()=>showPanel(cn);
     cl.appendChild(p);
   });
-  document.getElementById('aw-panel').classList.add('open');
+  document.getElementById('panel').classList.add('open');
+  const banner=document.getElementById('start-banner');
+  if(nd.start)banner.style.display='block';else banner.style.display='none';
   draw();
 }
 
-function hidePanel(){sel=null;document.getElementById('aw-panel').classList.remove('open');draw();}
-
-function showGlossary(){
-  document.getElementById('aw-panel').classList.remove('open');
-  const list=document.getElementById('gloss-list');
-  list.innerHTML='';
-  WORDS.forEach(w=>{
-    const t=document.createElement('div');t.className='gt';t.textContent=w.t;
-    const d=document.createElement('div');d.className='gd';d.textContent=w.d;
-    list.appendChild(t);list.appendChild(d);
-  });
-  document.getElementById('aw-gloss-panel').classList.add('open');
-}
+function hidePanel(){sel=null;document.getElementById('panel').classList.remove('open');document.getElementById('start-banner').style.display='none';draw();}
 
 function draw(){
-  const svg=d3.select('#aw-svg');
-  svg.selectAll('*').remove();
-  const W=document.getElementById('aw-wrap').clientWidth||700;
-  const H=500;
+  const svg=d3.select('#aw-svg');svg.selectAll('*').remove();
+  const W=document.getElementById('aw-wrap').clientWidth||680;
+  const H=480;
   svg.attr('width',W).attr('height',H);
-
-  // Scale positions from design space (100-750, 65-580) to canvas
-  const scaleX=d3.scaleLinear().domain([80,760]).range([40,W-40]);
-  const scaleY=d3.scaleLinear().domain([55,590]).range([30,H-30]);
-
+  const sx=d3.scaleLinear().domain([80,760]).range([45,W-45]);
+  const sy=d3.scaleLinear().domain([55,590]).range([35,H-35]);
   const vN=N.filter(n=>{
     const mc=af==='ALL'||n.cat===af;
-    const ms=st===''||n.lb.toLowerCase().includes(st)||n.pm.toLowerCase().includes(st);
+    const ms=st===''||n.lb.toLowerCase().includes(st)||n.pm.toLowerCase().includes(st)||n.em.toLowerCase().includes(st);
     return mc&&ms;
   });
   const vIds=new Set(vN.map(n=>n.id));
   const vE=E.filter(e=>vIds.has(e.f)&&vIds.has(e.t));
-
-  const g=svg.append('g');
-  const zoom=d3.zoom().scaleExtent([0.3,3]).on('zoom',ev=>{
-    g.attr('transform',ev.transform);
-    const d=ev.sourceEvent&&ev.sourceEvent.type==='mousemove';
-    svg.node().classList.toggle('grab',d);
-  });
-  svg.call(zoom);
-
   const connSel=sel?new Set(getConn(sel).map(n=>n.id)):new Set();
 
-  // Draw edges
-  const eg=g.append('g');
+  const g=svg.append('g');
+  const zoom=d3.zoom().scaleExtent([0.25,4]).on('zoom',ev=>{g.attr('transform',ev.transform);});
+  svg.call(zoom);
+
+  // Hover glow helper
+  let hoverId=null;
+
+  // Edges
   vE.forEach(e=>{
-    const s=nMap[e.f],t=nMap[e.t];
-    if(!s||!t)return;
-    const sx=scaleX(s.x),sy=scaleY(s.y),tx=scaleX(t.x),ty=scaleY(t.y);
-    const isConn=!sel||(e.f===sel||e.t===sel);
+    const s=nMap[e.f],t=nMap[e.t];if(!s||!t)return;
+    const isActive=!sel||(e.f===sel||e.t===sel);
     const isColl=e.ty==='collision';
-    eg.append('line')
-      .attr('x1',sx).attr('y1',sy).attr('x2',tx).attr('y2',ty)
-      .attr('stroke',isColl?'#f59e0b':(isConn?'#ffffff30':'#ffffff0c'))
-      .attr('stroke-width',isColl?1.5:(isConn?1:0.5))
+    g.append('line').attr('class','edge-'+e.f+' edge-'+e.t)
+      .attr('x1',sx(s.x)).attr('y1',sy(s.y)).attr('x2',sx(t.x)).attr('y2',sy(t.y))
+      .attr('stroke',isColl?'#f59e0b':isActive?'#ffffff35':'#ffffff08')
+      .attr('stroke-width',isColl?1.5:isActive?1:0.5)
       .attr('stroke-dasharray',isColl?'5 4':'none')
-      .attr('opacity',isConn?1:0.4);
+      .attr('opacity',isActive?1:0.3);
   });
 
-  // Draw nodes
-  const ng=g.append('g');
+  // Drag behavior for non-thesis nodes
+  const drag=d3.drag()
+    .on('start',(ev,d)=>{d._dragging=true;})
+    .on('drag',(ev,d)=>{
+      if(d.start)return;
+      d.x=Math.round(d3.scaleLinear().domain([45,W-45]).range([80,760])(ev.x));
+      d.y=Math.round(d3.scaleLinear().domain([35,H-35]).range([55,590])(ev.y));
+      draw();
+    })
+    .on('end',(ev,d)=>{setTimeout(()=>d._dragging=false,50);});
+
+  // Nodes
   vN.forEach(nd=>{
-    const nx=scaleX(nd.x),ny=scaleY(nd.y);
-    const isThesis=nd.start;
+    const nx=sx(nd.x),ny=sy(nd.y);
     const isSel=nd.id===sel;
     const isConn=connSel.has(nd.id);
     const isDim=sel&&!isSel&&!isConn;
-    const r=isThesis?38:22;
+    const r=nd.start?40:nd.bs==='shipped'?24:22;
     const col=C[nd.cat];
-    const opac=isDim?0.25:1;
-    const grp=ng.append('g').attr('transform',`translate(${nx},${ny})`).style('cursor','pointer').attr('opacity',opac);
+    const fillOp=nd.bs==='shipped'?0.3:nd.bs==='designed'?0.12:0.05;
+    const grp=g.append('g').attr('transform',`translate(${nx},${ny})`).style('cursor',nd.start?'pointer':'move').attr('opacity',isDim?0.18:1);
 
-    // Build status visual: shipped=solid fill, designed=open, idea=very faint
-    const fillOp=nd.bs==='shipped'?0.28:nd.bs==='designed'?0.12:0.05;
-    const strokeW=isThesis?2.5:isSel?2.5:1.2;
-    const strokeDash=nd.bs==='idea'?'4 3':'none';
+    // Glow ring on hover
+    const glowRing=grp.append('circle').attr('r',r+8).attr('fill','none').attr('stroke',col).attr('stroke-width',0.5).attr('opacity',0);
 
     grp.append('circle').attr('r',r)
       .attr('fill',col).attr('fill-opacity',fillOp)
-      .attr('stroke',col).attr('stroke-width',strokeW)
-      .attr('stroke-dasharray',strokeDash);
+      .attr('stroke',col)
+      .attr('stroke-width',nd.start?2.5:isSel?2.5:nd.bs==='shipped'?1.8:1.2)
+      .attr('stroke-dasharray',nd.bs==='idea'?'4 3':'none');
 
-    if(isSel){
-      grp.append('circle').attr('r',r+5).attr('fill','none').attr('stroke',col).attr('stroke-width',0.5).attr('opacity',0.4);
+    if(isSel)grp.append('circle').attr('r',r+7).attr('fill','none').attr('stroke',col).attr('stroke-width',0.5).attr('opacity',0.45);
+
+    // Build status icon in corner
+    if(!nd.start){
+      const icon=nd.bs==='shipped'?'●':nd.bs==='designed'?'◎':'○';
+      grp.append('text').attr('text-anchor','middle').attr('x',r-2).attr('y',-r+8).attr('fill',col).attr('font-size','8px').attr('opacity',0.7).text(icon);
     }
 
-    // Label
     const lines=nd.lb.split('\n');
-    const lh=isThesis?9:8;
-    const totalH=(lines.length-1)*lh*1.3;
+    const lh=nd.start?9:8;
+    const totalH=(lines.length-1)*lh*1.35;
     lines.forEach((ln,i)=>{
-      grp.append('text')
-        .attr('text-anchor','middle')
-        .attr('y',i*lh*1.3-totalH/2)
-        .attr('fill',col)
-        .attr('font-size',isThesis?`${lh}px`:`${lh}px`)
-        .attr('font-family','monospace')
-        .attr('font-weight',isThesis?'500':'400')
-        .text(ln);
+      grp.append('text').attr('text-anchor','middle').attr('y',i*lh*1.35-totalH/2)
+        .attr('fill',col).attr('font-size',`${lh}px`).attr('font-family','monospace')
+        .attr('font-weight',nd.start?'500':'400').text(ln);
     });
 
-    grp.on('click',(ev)=>{ev.stopPropagation();showPanel(nd);});
+    grp.on('mouseenter',()=>{glowRing.attr('opacity',0.6);})
+       .on('mouseleave',()=>{glowRing.attr('opacity',0);})
+       .on('click',(ev)=>{if(!nd._dragging){ev.stopPropagation();showPanel(nd);}})
+       .call(drag);
   });
 
   svg.on('click',()=>hidePanel());
 }
 
-document.querySelectorAll('.cb[data-c]').forEach(b=>b.addEventListener('click',()=>{af=b.dataset.c;sel=null;document.getElementById('aw-panel').classList.remove('open');document.getElementById('aw-gloss-panel').classList.remove('open');draw();}));
-document.getElementById('aw-search').addEventListener('input',e=>{st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('aw-panel').classList.remove('open');draw();});
+document.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>{af=b.dataset.c;sel=null;document.getElementById('panel').classList.remove('open');document.getElementById('start-banner').style.display='none';draw();}));
+document.getElementById('aw-search').addEventListener('input',e=>{st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('panel').classList.remove('open');draw();});
 document.getElementById('pcl').addEventListener('click',hidePanel);
-document.getElementById('aw-gloss-btn').addEventListener('click',showGlossary);
-document.getElementById('aw-gloss-close').addEventListener('click',()=>document.getElementById('aw-gloss-panel').classList.remove('open'));
-
+window.addEventListener('resize',()=>draw());
 draw();
 </script>
 
