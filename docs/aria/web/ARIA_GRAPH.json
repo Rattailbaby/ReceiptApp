@@ -7,12 +7,22 @@
     "edge_count": 48,
     "start_node": "thesis",
     "categories": ["thesis", "principle", "tool", "rule", "concept", "vision"],
-    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file. v3 (2026-05-16): Node Understanding Spec fields added to the schema — why_caleb_cared, real_example, how_to_use_this (optional, mainly tool/rule nodes), and open_questions (array of strings) on nodes, plus an optional why on edges (a plain-sentence explanation of the relationship). Only the thesis node and the thesis->preserve_emergence edge are populated as worked examples; the other 28 nodes and 47 edges are not yet filled.",
+    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file. v3 (2026-05-16): Node Understanding Spec fields added to the schema — why_caleb_cared, real_example, how_to_use_this (optional, mainly tool/rule nodes), and open_questions (array of strings) on nodes, plus an optional why on edges (a plain-sentence explanation of the relationship). Only the thesis node and the thesis->preserve_emergence edge are populated as worked examples; the other 28 nodes and 47 edges are not yet filled. A meta.origin block was added 2026-05-16 holding the reconciled project-level ARIA origin story (full evidence in docs/aria/ARIA_IDEAS.md).",
     "schema": {
       "node": ["id", "label", "category", "plain_meaning", "emergence", "why_it_exists", "came_from", "why_caleb_cared", "real_example", "how_to_use_this", "open_questions", "build_status", "saved_where", "source", "synced_at", "fixed_position", "start_node"],
       "edge": ["from", "to", "type", "why"],
       "build_status_values": ["shipped", "designed", "idea"],
       "edge_types": ["connects-to", "collision"]
+    },
+    "origin": {
+      "true_origin": "April 29, 2026. While building Uncrumple, Caleb feared losing context, momentum, and the thread of his thinking while switching between AI tools and long sessions.",
+      "first_system_response": "A two-file master system to carry state forward between tools and sessions.",
+      "system_origin": "Handoff machinery, locked attributes, session logs, and JSON continuity matured after that.",
+      "reusability_moment": "2026-05-06. The system was recognized as reusable beyond Uncrumple — closer to a DevOS.",
+      "naming_origin": "DevOS -> AI-Resilient Infrastructure Architecture -> ARIA (~2026-05-09).",
+      "crystallization_event": "The forced Windows restart (~2026-05-13/14) proved repo continuity can survive while human orientation still fails. It did not start ARIA; it revealed the next layer.",
+      "plain_english": "ARIA began from Caleb's fear of losing context, momentum, and meaning while switching between AI tools and long sessions. The first answer was a two-file master system for carrying state forward. That evolved into handoff machinery, then a reusable DevOS, then ARIA. The forced Windows restart came later and proved a deeper problem: files can survive while human orientation still fails.",
+      "evidence": "Reconciled from three independent archaeologies (Code repo dig, GPT memory, Claude conversation search), 2026-05-16. Full evidence in docs/aria/ARIA_IDEAS.md [2026-05-16 ARIA Origin Reconciliation]."
     }
   },
   "words_to_know": [
