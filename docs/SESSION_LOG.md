@@ -1,5 +1,12 @@
 # SESSION LOG
 
+## 2026-05-16 — ARIA web: JSON made fully canonical + renderer fetch cutover
+
+- `docs/aria/web/ARIA_GRAPH.json` — added Node Understanding Spec fields to the schema (why_caleb_cared, real_example, how_to_use_this, open_questions on nodes; optional why on edges); populated the thesis node and the thesis->preserve_emergence edge as worked examples. Added a `meta.origin` block holding the reconciled April-29 ARIA origin story. Backfilled `fixed_position` x/y for all 29 nodes and a `short` label on every node — layout data that previously lived only in the HTML. Version 2 -> 4.
+- `docs/aria/web/ARIA_WEB.html` — removed the embedded copy of graph data; the renderer now fetches `./ARIA_GRAPH.json` at load and transforms the canonical fields to its shape. Added a fallback message if the fetch fails (`file://` no longer works — open via GitHub Pages). No visual redesign; layout, zones, START HERE, drag, hover, panels preserved.
+- Result: `ARIA_GRAPH.json` is the single source of truth for meaning + layout; `ARIA_WEB.html` is purely the renderer. Confirmed working on the live GitHub Pages URL.
+- Commits: e18ef31, 083ed2b, 5aa752b, 01f8633, 3ade60e.
+
 ## 2026-05-07 — Add Transaction footer pinned via absolute positioning above keyboard
 
 - In `app/client-detail.tsx`, replaced the JS-layer keyboard-offset workaround (which failed on device) with absolute footer positioning that pins the Save/Cancel button above the keyboard.
