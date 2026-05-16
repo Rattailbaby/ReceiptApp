@@ -70,11 +70,20 @@ html, body {
 #aw-leg2 div{margin-bottom:2px}
 #start-banner{position:absolute;top:8px;left:8px;background:#f59e0b15;border:0.5px solid #f59e0b40;border-radius:5px;padding:7px 10px;font-size:9px;color:#f59e0b;max-width:220px;display:none;line-height:1.5}
 #start-banner b{display:block;margin-bottom:3px;font-size:10px}
+#tour-start{font-family:var(--font-mono);font-size:8px;padding:3px 8px;border-radius:3px;cursor:pointer;border:0.5px solid #f59e0b;background:#f59e0b18;color:#f59e0b;align-self:center;font-weight:500}
+#tour-box{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:#0e0e11f2;border:0.5px solid #f59e0b66;border-radius:6px;padding:9px 11px;font-size:9px;color:var(--color-text-primary);max-width:300px;display:none;line-height:1.5;z-index:6}
+#tour-box.open{display:block}
+#tour-box .ts{font-size:7px;letter-spacing:.12em;color:#f59e0b;margin-bottom:3px}
+#tour-box .tl{font-size:11px;font-weight:500;margin-bottom:3px}
+#tour-box .tw{color:var(--color-text-secondary);margin-bottom:8px}
+#tour-box button{font-family:var(--font-mono);font-size:8px;padding:3px 8px;border:0.5px solid var(--color-border-secondary);border-radius:3px;background:transparent;color:var(--color-text-secondary);cursor:pointer;margin-right:4px}
+#tour-box button:hover{border-color:#f59e0b66;color:#f59e0b}
 </style>
 <div id="aw">
 <div id="bar">
   <span id="bar-title">ARIA WEB</span>
   <input id="aw-search" placeholder="search or ask...">
+  <button id="tour-start">▶ start here</button>
   <button class="cb" data-c="ALL" style="border-color:#888;color:#888">all<span class="cs">everything</span></button>
   <button class="cb" data-c="thesis" style="border-color:#f59e0b;color:#f59e0b">thesis<span class="cs">the core idea</span></button>
   <button class="cb" data-c="principle" style="border-color:#3b82f6;color:#3b82f6">principle<span class="cs">truths we found</span></button>
@@ -88,6 +97,12 @@ html, body {
   <svg id="aw-svg"></svg>
   <div id="aw-hint">scroll to zoom · drag nodes · click to explore</div>
   <div id="start-banner"><b>Start here →</b>This whole project started when a Windows update closed a session mid-flow. The files survived — but the feeling of orientation didn't. Everything on this map grew from that gap.<br><br>Click any connected node to follow the story.</div>
+  <div id="tour-box">
+    <div class="ts" id="tour-step"></div>
+    <div class="tl" id="tour-label"></div>
+    <div class="tw" id="tour-why"></div>
+    <button id="tour-back">← back</button><button id="tour-next">next →</button><button id="tour-exit">exit</button>
+  </div>
   <div id="aw-leg">
     <div class="li"><div class="ld" style="background:#f59e0b"></div>thesis — the core</div>
     <div class="li"><div class="ld" style="background:#3b82f6"></div>principle — foundational truth</div>
@@ -497,6 +512,34 @@ function draw(){
 document.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>{af=b.dataset.c;sel=null;document.getElementById('panel').classList.remove('open');document.getElementById('start-banner').style.display='none';draw();}));
 document.getElementById('aw-search').addEventListener('input',e=>{st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('panel').classList.remove('open');draw();});
 document.getElementById('pcl').addEventListener('click',hidePanel);
+
+// START HERE — guided path through 5 foundational nodes, in order
+const TOUR=[
+  {id:'thesis',why:'Start here — the one idea everything else serves.'},
+  {id:'repo_vs_human',why:'The gap that started it all: your files survived a restart, but your sense of where you were did not.'},
+  {id:'orientation_debt',why:'That gap has a name — the quiet cost of losing your place across heavy sessions.'},
+  {id:'round_closer',why:'The first real tool built to fight it — it tells you when a cross-paste loop is done.'},
+  {id:'cognitive_mansion',why:'Where it is all heading — ARIA as a space you can walk through, room by room.'},
+];
+let tourStep=-1;
+function tourShow(){
+  const t=TOUR[tourStep];
+  const nd=nMap[t.id];
+  if(!nd){alert('START HERE error: node id "'+t.id+'" is not in the graph.');return;}
+  document.getElementById('tour-step').textContent='STEP '+(tourStep+1)+' OF '+TOUR.length;
+  document.getElementById('tour-label').textContent=nd.lb.replace(/\n/g,' ');
+  document.getElementById('tour-why').textContent=t.why;
+  document.getElementById('tour-back').style.visibility=tourStep>0?'visible':'hidden';
+  document.getElementById('tour-next').style.visibility=tourStep<TOUR.length-1?'visible':'hidden';
+  document.getElementById('tour-box').classList.add('open');
+  showPanel(nd);
+  document.getElementById('start-banner').style.display='none';
+}
+document.getElementById('tour-start').addEventListener('click',()=>{tourStep=0;tourShow();});
+document.getElementById('tour-next').addEventListener('click',()=>{if(tourStep<TOUR.length-1){tourStep++;tourShow();}});
+document.getElementById('tour-back').addEventListener('click',()=>{if(tourStep>0){tourStep--;tourShow();}});
+document.getElementById('tour-exit').addEventListener('click',()=>{tourStep=-1;document.getElementById('tour-box').classList.remove('open');hidePanel();});
+
 window.addEventListener('resize',()=>draw());
 draw();
 </script>
