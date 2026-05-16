@@ -1,15 +1,15 @@
 {
   "meta": {
-    "version": 3,
+    "version": 4,
     "generated": "2026-05-15",
     "generated_at_commit": "ab9783a",
     "node_count": 29,
     "edge_count": 48,
     "start_node": "thesis",
     "categories": ["thesis", "principle", "tool", "rule", "concept", "vision"],
-    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file. v3 (2026-05-16): Node Understanding Spec fields added to the schema — why_caleb_cared, real_example, how_to_use_this (optional, mainly tool/rule nodes), and open_questions (array of strings) on nodes, plus an optional why on edges (a plain-sentence explanation of the relationship). Only the thesis node and the thesis->preserve_emergence edge are populated as worked examples; the other 28 nodes and 47 edges are not yet filled. A meta.origin block was added 2026-05-16 holding the reconciled project-level ARIA origin story (full evidence in docs/aria/ARIA_IDEAS.md).",
+    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file. v3 (2026-05-16): Node Understanding Spec fields added to the schema — why_caleb_cared, real_example, how_to_use_this (optional, mainly tool/rule nodes), and open_questions (array of strings) on nodes, plus an optional why on edges (a plain-sentence explanation of the relationship). Only the thesis node and the thesis->preserve_emergence edge are populated as worked examples; the other 28 nodes and 47 edges are not yet filled. A meta.origin block was added 2026-05-16 holding the reconciled project-level ARIA origin story (full evidence in docs/aria/ARIA_IDEAS.md). v4 (2026-05-16): backfilled layout data so the JSON is fully canonical — a short field (2-line node label) on every node, and fixed_position x/y filled for all 29 nodes (previously only thesis had coordinates), sourced from the embedded copy in ARIA_WEB.html. Unblocks the renderer fetch cutover.",
     "schema": {
-      "node": ["id", "label", "category", "plain_meaning", "emergence", "why_it_exists", "came_from", "why_caleb_cared", "real_example", "how_to_use_this", "open_questions", "build_status", "saved_where", "source", "synced_at", "fixed_position", "start_node"],
+      "node": ["id", "label", "short", "category", "plain_meaning", "emergence", "why_it_exists", "came_from", "why_caleb_cared", "real_example", "how_to_use_this", "open_questions", "build_status", "saved_where", "source", "synced_at", "fixed_position", "start_node"],
       "edge": ["from", "to", "type", "why"],
       "build_status_values": ["shipped", "designed", "idea"],
       "edge_types": ["connects-to", "collision"]
@@ -58,6 +58,7 @@
     {
       "id": "thesis",
       "label": "Making cognition traversable without flattening it",
+      "short": "Traversable\nCognition",
       "category": "thesis",
       "plain_meaning": "The whole point of ARIA: let a person walk back through their own thinking later without it getting squashed into a short summary that loses the parts that mattered.",
       "emergence": "Caleb kept losing the thread of his own ideas after breaks, and summaries kept throwing away the details that made the ideas worth having.",
@@ -72,11 +73,12 @@
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
       "start_node": true,
-      "fixed_position": { "x": 400, "y": 260 }
+      "fixed_position": { "x": 400, "y": 262 }
     },
     {
       "id": "preserve_emergence",
       "label": "Preserve emergence before compression",
+      "short": "Preserve\nEmergence",
       "category": "principle",
       "plain_meaning": "Write down how an idea actually came about before you shorten it — because shortening too early throws away the story of how you got there.",
       "emergence": "When the AIs kept summarizing the conversation, the details and the feeling behind ideas started disappearing, and Caleb stopped recognizing his own thinking.",
@@ -86,11 +88,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 final close]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 218, "y": 94 }
     },
     {
       "id": "repo_vs_human",
       "label": "Repo continuity != Human continuity",
+      "short": "Files ≠\nOrientation",
       "category": "principle",
       "plain_meaning": "Your saved files surviving a computer restart is one thing. You actually feeling like you know where you were is a completely separate thing — and the second one is the hard, unsolved part.",
       "emergence": "A Windows update killed a work session; every file came back perfectly, but Caleb still felt lost and disconnected when he returned.",
@@ -100,11 +103,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 Live-State Continuity]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 400, "y": 62 }
     },
     {
       "id": "diagnostic_failures",
       "label": "Diagnostic failures",
+      "short": "Failures\nTeach Us",
       "category": "principle",
       "plain_meaning": "When something breaks, the breakage usually points straight at what was missing. Failures are not just interruptions — they are how you discover what to build next.",
       "emergence": "Caleb noticed every big idea in this project had come from something going wrong, never from planned brainstorming.",
@@ -114,11 +118,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 final close]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 582, "y": 94 }
     },
     {
       "id": "git_web",
       "label": "The web already exists in git",
+      "short": "Map Exists\nin Git",
       "category": "principle",
       "plain_meaning": "The full history of how this project grew is already recorded in its saved version history. Nobody has to build that history — it only needs to be shown.",
       "emergence": "Caleb wanted a visual map of how the ideas grew, and it turned out the record of that growth was already sitting in the project's saved history.",
@@ -128,11 +133,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 688, "y": 192 }
     },
     {
       "id": "recursive_warning",
       "label": "Recursive self-consistency warning",
+      "short": "Self-Proof\nWarning",
       "category": "rule",
       "plain_meaning": "A set of ideas can all fit together neatly and still be wrong. Before trusting how well it all connects, deliberately try to poke holes in it.",
       "emergence": "The ARIA ideas started fitting together so neatly it became tempting to trust them just for being consistent.",
@@ -142,11 +148,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 final close]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 722, "y": 268 }
     },
     {
       "id": "convergence_trap",
       "label": "Convergence Trap",
+      "short": "Convergence\nTrap",
       "category": "rule",
       "plain_meaning": "When all three AIs agree right away, treat that as a warning sign, not proof — fast agreement can just mean they all share the same blind spot.",
       "emergence": "All three AIs once agreed on something instantly and were wrong; Caleb pushing back turned out to be the right call.",
@@ -156,11 +163,12 @@
       "saved_where": "docs/user/SESSION_RECAP_2026-05-12.md",
       "source": "docs/user/SESSION_RECAP_2026-05-12.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 708, "y": 348 }
     },
     {
       "id": "loaded_witness",
       "label": "Loaded Witness",
+      "short": "Loaded\nWitness",
       "category": "rule",
       "plain_meaning": "Never reset all three AIs at the same time. Keep at least one of them still holding the live memory of the conversation, so nothing is lost.",
       "emergence": "A work session nearly lost all its context because too much was cleared at once.",
@@ -170,11 +178,12 @@
       "saved_where": "docs/system/CLAUDE_CODE_STARTER.md [Loaded Witness Rule]",
       "source": "docs/system/CLAUDE_CODE_STARTER.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 678, "y": 428 }
     },
     {
       "id": "no_idea_wasted",
       "label": "No Idea Wasted",
+      "short": "No Idea\nWasted",
       "category": "rule",
       "plain_meaning": "Save every idea the moment it shows up. Never decide an idea is not worth keeping while you are still capturing it — sort the strong from the weak later.",
       "emergence": "Ideas were getting filtered out as they were spoken, and sometimes the discarded one was the key to the best idea.",
@@ -184,11 +193,12 @@
       "saved_where": "docs/system/LOCKED_ATTRIBUTES.md [NO IDEA GETS WASTED RULE]",
       "source": "docs/system/LOCKED_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 622, "y": 498 }
     },
     {
       "id": "self_defense_first",
       "label": "Self-defense first",
+      "short": "State Your\nCase First",
       "category": "rule",
       "plain_meaning": "When two AIs compare answers, each should first say what is strongest in its own answer before judging the other's — so good points do not get dropped just to agree.",
       "emergence": "AIs kept just deferring to each other instead of defending their own good points, so real combining of ideas never happened.",
@@ -198,11 +208,12 @@
       "saved_where": "docs/user/SESSION_RECAP_2026-05-12.md",
       "source": "docs/user/SESSION_RECAP_2026-05-12.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 528, "y": 545 }
     },
     {
       "id": "locked_37",
       "label": "LOCKED 37: Cross-AI Reconciliation",
+      "short": "LOCKED 37\nReconcile",
       "category": "rule",
       "plain_meaning": "When AIs disagree, they must either combine their answers or disagree out loud with reasons — never quietly give in.",
       "emergence": "Quiet giving-in between AIs was producing fake agreement and erasing the disagreements that carried the most insight.",
@@ -212,11 +223,12 @@
       "saved_where": "docs/system/LOCKED_ATTRIBUTES.md [section 37]",
       "source": "docs/system/LOCKED_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 408, "y": 562 }
     },
     {
       "id": "idea_half_life",
       "label": "Idea Half-Life",
+      "short": "Idea\nHalf-Life",
       "category": "rule",
       "plain_meaning": "An idea saved for 60 days without being used gets a check-in: is this still relevant? Without that, the pile of saved ideas turns into a junk drawer nobody trusts.",
       "emergence": "The collection of saved ideas kept growing with no way to tell which ones were still alive.",
@@ -226,11 +238,12 @@
       "saved_where": "docs/user/SESSION_RECAP_2026-05-12.md",
       "source": "docs/user/SESSION_RECAP_2026-05-12.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 288, "y": 545 }
     },
     {
       "id": "round_closer",
       "label": "Round Closer / Resolution Anchor Pass",
+      "short": "Round\nCloser",
       "category": "tool",
       "plain_meaning": "When you have been copy-pasting answers between Claude, GPT, and Code for a while, this notices the question is already answered and tells you to stop — after saving the best bits from each AI.",
       "emergence": "Caleb got stuck copy-pasting between the AIs long after the question was answered, and good details were getting smoothed away each time.",
@@ -240,11 +253,12 @@
       "saved_where": "docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-12]",
       "source": "docs/system/CANDIDATE_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 565, "y": 365 }
     },
     {
       "id": "gem_flag",
       "label": "Gem Flag (**)",
+      "short": "Gem\nFlag **",
       "category": "tool",
       "plain_meaning": "Mark a sentence with ** and it is promised to survive the next round of summarizing — or be dropped only with a stated reason.",
       "emergence": "Good specific phrasings kept vanishing when one AI's answer got summarized by the next.",
@@ -254,11 +268,12 @@
       "saved_where": null,
       "source": null,
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 400, "y": 478 }
     },
     {
       "id": "park_this",
       "label": "Park-this shorthand",
+      "short": "Park\nThis",
       "category": "tool",
       "plain_meaning": "A quick way to set an idea aside without stopping to fully write it up or chase it down — it is saved, and you keep moving.",
       "emergence": "Capturing an idea mid-flow always meant breaking focus; Caleb wanted a way to save one without the interruption.",
@@ -268,11 +283,12 @@
       "saved_where": "docs/user/SESSION_RECAP_2026-05-12.md [deferred to next session]",
       "source": "docs/user/SESSION_RECAP_2026-05-12.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 318, "y": 488 }
     },
     {
       "id": "blind_trio",
       "label": "Blind Trio Round",
+      "short": "Blind\nTrio Round",
       "category": "tool",
       "plain_meaning": "Ask each AI the same question separately, before any of them see the others' answers — so you get three genuinely independent takes instead of three that copied each other.",
       "emergence": "AIs reading each other too early produced samey answers and lost the value of independent thinking.",
@@ -282,11 +298,12 @@
       "saved_where": "docs/system/SYSTEM_COMMANDS.md [blind round]",
       "source": "docs/system/SYSTEM_COMMANDS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 582, "y": 278 }
     },
     {
       "id": "door_log",
       "label": "Door Log",
+      "short": "Door\nLog",
       "category": "tool",
       "plain_meaning": "A running list of the exact question that kicked off each major piece of work. You can always re-ask a question; you cannot always get back the feeling of an idea.",
       "emergence": "Caleb needed to navigate the project by the questions that started things, because questions were easier to remember than summaries.",
@@ -296,11 +313,12 @@
       "saved_where": "docs/aria/COGNITIVE_MANSION.md [Door Log]",
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 472, "y": 452 }
     },
     {
       "id": "cognitive_mansion",
       "label": "Cognitive Mansion",
+      "short": "Cognitive\nMansion",
       "category": "concept",
       "plain_meaning": "Picture your ideas as rooms in a house you can walk through — rooms are clusters of ideas, doorways are the questions that opened them, and how warm a room feels shows how active that thinking still is.",
       "emergence": "Caleb described his ideas as a huge mental mansion he needed to walk through and remember why he built each room.",
@@ -310,11 +328,12 @@
       "saved_where": "docs/aria/COGNITIVE_MANSION.md",
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 150, "y": 198 }
     },
     {
       "id": "orientation_debt",
       "label": "Orientation Debt",
+      "short": "Orientation\nDebt",
       "category": "concept",
       "plain_meaning": "The slowly-building cost of losing track of where you are across many heavy work sessions. Nothing got deleted — you just do not feel on top of it anymore.",
       "emergence": "After heavy sessions Caleb's files were all fine but he still felt lost, and that feeling had no name.",
@@ -324,11 +343,12 @@
       "saved_where": "docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14]",
       "source": "docs/system/CANDIDATE_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 112, "y": 302 }
     },
     {
       "id": "meaning_trails",
       "label": "Meaning Trails",
+      "short": "Meaning\nTrails",
       "category": "concept",
       "plain_meaning": "Not just 'this idea links to that idea' — the actual chain of why one idea led to the next. The route, not just the dots.",
       "emergence": "Plain links between ideas showed that things connected but lost the reason and the order they connected in.",
@@ -338,11 +358,12 @@
       "saved_where": "docs/aria/COGNITIVE_MANSION.md [Meaning Trails]",
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 140, "y": 392 }
     },
     {
       "id": "archaeology_nav",
       "label": "Archaeology Mode vs Navigation Mode",
+      "short": "History vs\nNext Steps",
       "category": "concept",
       "plain_meaning": "Two different ways to look at the project that should never be mixed: one shows how things actually happened, messy and with wrong turns; the other shows a clean plan for what to do next.",
       "emergence": "Mixing 'what happened' with 'what to do next' made past mistakes look like recommended steps.",
@@ -352,11 +373,12 @@
       "saved_where": "docs/aria/COGNITIVE_MANSION.md [Two modes]",
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 96, "y": 468 }
     },
     {
       "id": "live_state",
       "label": "Live-State Continuity (3-layer stack)",
+      "short": "Live-State\nContinuity",
       "category": "concept",
       "plain_meaning": "A set of three tools that together protect not just your files but your sense of where you are — closing loops, checking you still feel oriented, and rebuilding that feeling when it is lost.",
       "emergence": "The forced restart showed that protecting files is not enough; the person's mental footing needs protecting too.",
@@ -366,11 +388,12 @@
       "saved_where": "docs/system/CANDIDATE_ATTRIBUTES.md [2026-05-14]",
       "source": "docs/system/CANDIDATE_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 208, "y": 442 }
     },
     {
       "id": "scope_diff",
       "label": "Scope differentiation",
+      "short": "Both Can\nBe Right",
       "category": "concept",
       "plain_meaning": "Two answers that seem to disagree are often both right — they are just answering slightly different versions of the question. Name the two situations instead of picking a winner.",
       "emergence": "AIs looked like they were contradicting each other when they were really answering different-sized questions.",
@@ -380,11 +403,12 @@
       "saved_where": "docs/system/LOCKED_ATTRIBUTES.md [section 37]",
       "source": "docs/system/LOCKED_ATTRIBUTES.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 188, "y": 518 }
     },
     {
       "id": "collision_records",
       "label": "Collision Records",
+      "short": "Collision\nRecords",
       "category": "concept",
       "plain_meaning": "On purpose, writing down 'one AI thought X, another disagreed with Y, here is what we settled on' — keeping the disagreement, not just the conclusion.",
       "emergence": "Disagreements between AIs carried the most insight but were getting erased the moment a conclusion was reached.",
@@ -394,11 +418,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 collision]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 300, "y": 512 }
     },
     {
       "id": "aria_uncrumple",
       "label": "ARIA = Uncrumple (structurally identical)",
+      "short": "Same\nStructure",
       "category": "concept",
       "plain_meaning": "ARIA and the Uncrumple receipt app are the same shape of system in two different worlds — both take messy raw input and turn it into something organized and usable.",
       "emergence": "Caleb noticed the receipt app he was building and the thinking-system he was building had the exact same underlying structure.",
@@ -408,11 +433,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 212, "y": 155 }
     },
     {
       "id": "ghost_rooms",
       "label": "Ghost Rooms",
+      "short": "Ghost\nRooms",
       "category": "vision",
       "plain_meaning": "Show the ideas that were started once and then forgotten — abandoned threads often hold the most important unfinished thinking.",
       "emergence": "Caleb realized he kept starting ideas and moving on, and wanted the forgotten ones surfaced instead of lost.",
@@ -422,11 +448,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 118, "y": 538 }
     },
     {
       "id": "living_doors",
       "label": "Living Doors",
+      "short": "Living\nDoors",
       "category": "vision",
       "plain_meaning": "A question you asked once keeps gathering more ideas over time, until that single question becomes a whole area of its own.",
       "emergence": "Some early questions kept attracting new ideas months later — they were growing, not staying put.",
@@ -436,11 +463,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-14 GPT response]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 228, "y": 562 }
     },
     {
       "id": "thread_temp",
       "label": "Thread Temperature",
+      "short": "Thread\nTemp",
       "category": "vision",
       "plain_meaning": "Show how 'warm' each idea is — recently worked-on ideas glow, ideas left untouched for a long time visibly cool down — so you can see at a glance what is still active.",
       "emergence": "Every idea on the map looked equally alive, hiding which ones Caleb was actually still working on.",
@@ -450,11 +478,12 @@
       "saved_where": "docs/aria/ARIA_IDEAS.md [2026-05-15 web visualization backlog]",
       "source": "docs/aria/ARIA_IDEAS.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 362, "y": 545 }
     },
     {
       "id": "ouroboros",
       "label": "Ouroboros (ARIA needs ARIA)",
+      "short": "ARIA\nNeeds ARIA",
       "category": "vision",
       "plain_meaning": "To build ARIA properly you would already need ARIA to keep the project organized. That loop is not a problem — doing it by hand right now is itself the proof the idea works.",
       "emergence": "Caleb's friend Mandy described it as a snake eating its own tail: you need the thing in order to build the thing.",
@@ -464,7 +493,7 @@
       "saved_where": "docs/aria/COGNITIVE_MANSION.md [Ouroboros]",
       "source": "docs/aria/COGNITIVE_MANSION.md",
       "synced_at": "ab9783a",
-      "fixed_position": { "x": null, "y": null }
+      "fixed_position": { "x": 452, "y": 528 }
     }
   ],
   "edges": [
