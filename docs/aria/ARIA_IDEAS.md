@@ -8069,3 +8069,29 @@ Meta-insights worth keeping above the idea list:
 - Self-applying flag: Claude's "False Completion Warning" (batch B) applies to this very entry — ~75 ideas now exist for one unbuilt email feature; idea generation is not the same as resolution.
 
 Status: save-only. Round closed (see Code note below). Do not build. Do not generate more ideas for this feature.
+
+---
+
+[2026-05-16] — Architecture shift: the trio workflow became multimodal
+
+The ARIA web moved the project from purely language-space into spatial /
+interaction-space. That changed the collaboration architecture.
+
+Before: all three AIs worked mostly through text reasoning.
+Now:
+- Caleb = lived interaction / perception signal (the only continuous human perception layer)
+- GPT = visual interpretation + sequencing (can directly inspect screenshots)
+- Code = implementation + canonical structure
+- Claude = traversal / emotional UX reasoning — but currently lacks direct visual access (Caleb hit image limits in that chat, and Code cannot receive screenshots at all)
+
+Why screenshots became high-leverage: one screenshot instantly exposed the squeeze bug, hierarchy weakness, movement confusion, status-visibility weakness, and density problems — far faster than any text description.
+
+Future idea — "visual perception packets": Caleb sends a screenshot + a 2-sentence feeling + what he instinctively tried to do. Then GPT interprets spatial friction, Claude interprets traversal/emotional friction, Code implements the concrete fix. The first genuinely multimodal trio workflow ARIA has produced.
+
+### Code's addition (LOCKED 37 — not silent-defer)
+
+The observation is accurate. But the multimodal split has a structural consequence the packet idea must account for: **Code cannot see screenshots.** When GPT interprets a screenshot and hands Code "fix the squeeze," Code implements *blind* — and, critically, cannot *verify* the fix visually either. So a visual perception packet must translate visual problems into **measurable / structural terms**, not just feelings. "Looks squished" is not Code-actionable or Code-verifiable; "the graph renders 480px tall inside a 1400px-wide container" is — Code can fix that and validate against a concrete target. Rule of thumb for the packet: every visual symptom GPT names should come with a measurable handle Code can check after the fix without seeing it.
+
+Second flag: Claude is the traversal/UX role but currently cannot see the thing it reasons about (image limit). That is a real gap in the current setup — the UX-reasoning role is working from text descriptions and memory of what it built, not from the rendered artifact. Worth solving (or routing around) if the multimodal workflow is going to be relied on.
+
+Status: save-only, architecture acknowledgement. Do not build. The visual-perception-packet protocol is a future candidate, not a current task.
