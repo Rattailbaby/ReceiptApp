@@ -8007,3 +8007,47 @@ These need the web to become a real app with a backend. Far off. Save-only, futu
 16. "I'm lost" routes by question type — same as #4
 
 Status: save-only. Design brief for ARIA web v3. Discussion proceeds one-by-one (GPT's items first, then Claude's, then Code's) per Caleb's stated plan. Do not build features. Do not add AI/API functionality. Do not move folders. This brief is a prime candidate to move into docs/aria/web/WEB_DESIGN.md when the folder consolidation happens.
+
+---
+
+[2026-05-16] — SOC: Session wrap-up email + capture web app
+
+Caleb's raw SOC (verbatim, NO IDEA WASTED):
+> "have a wrap up emailed to me after each session and of course you would know what to put in it. Maybe a check box style thing so i can check whever i know and leave what i dont. Just another idea people might use and we might as well start testing it out at the same time. It might help especially now that we are building the web thing but dont have it perfect yet. Plus ill be on my phone and we dont have a way to look at the web reliably yet. (We will need a phone version at some point, we need to figure out a way to modify the web in a super clever way for the phone and i feel like thats gonna be hard.) ... Should it be email or should we make a super simple web app or something that yall can see when i add to it and when i come back youd be informed and then after every session thered be a pile up list like in uncrumple where i want to keep the screen clean but also should excite me you know."
+
+Three threads in this SOC: (1) session wrap-up email with check-what-you-know boxes; (2) email-vs-simple-web-app for two-way capture; (3) future phone version of the ARIA web (flagged as hard — not for now).
+
+### 10 ideas — the wrap-up email
+
+1. The email IS the Comprehension Gate — each unchecked box flags "Caleb doesn't have this yet"; the leftovers become next session's first agenda.
+2. Three checkbox states, not binary — "got it" / "fuzzy" / "lost me". The fuzzy ones are the gold; reply with a number to get a 2-sentence re-explanation.
+3. Reply-to-email as input — on a phone you can't open the web but you can reply. "explain 3" or "more on the web thing" becomes next-session input. Two-way channel.
+4. One emotional line, not just facts — end with a human line ("today the web went from chaos to something a person can read"). Facts orient; the line makes you want to come back.
+5. The "what changed" diff — list only what's different since the last email (3 shipped / 1 decided / 1 open). A diff, not a dump. Morning Reorientation, delivered.
+6. Confidence-tracked over time — check "I get Round Closer" three emails running and it stops appearing. The email shrinks as you learn. Comprehension tint for the inbox.
+7. Subject line carries the state — "ARIA wrap — 3 done, 1 needs you". Triage from the lock screen without opening it.
+8. A pinned "do not lose" section — separate from checkboxes, never checkbox-able, always shown. The Break Snapshot's "what not to lose".
+9. Photo/screenshot attach — since the web isn't phone-viewable, attach a rendered PNG of the current ARIA web. Can't interact, but can see it.
+10. The email writes itself from git — every commit has a typed prefix; the "what changed" section is literally git log since the last email, human-formatted. Buildable as a Stop hook. Zero new data needed.
+
+### 10 ideas — email vs. web app, the pile-up list
+
+11. Email for OUT, web app for IN — email is great at reaching you, bad at being a surface you add to. Email delivers the wrap; a tiny web app is where you add things back. Different jobs, different tools.
+12. The "super simple web app" is one page — a text box + a list. Type a thought, save, timestamped. The AIs read it next session. An afternoon build, not a project.
+13. The pile-up list = Uncrumple's Needs Attention, for your brain — items pile, you clear them, the screen goes quiet when caught up. Same "all clear" reward engine.
+14. Clean screen + exciting = collapse by default — show 3 items max on the surface, rest under "12 more". Clean like Caleb wants; the "12 more" number is the exciting part.
+15. The web app is the phone version of the concept web at v0 — start here. It teaches what a phone ARIA needs before attempting the hard graph-on-phone problem.
+16. It pings YOU — when a session ends the app notifies the phone: "session wrapped, 2 things need you". The bridge while the big web isn't phone-ready.
+17. Voice-note capture — typing on a phone is friction. The app takes a voice note; AIs get the transcript. Caleb already thinks out loud (these SOCs) — let the app catch them.
+18. App and email are the same data, two faces — one file in the repo; email renders it for reading, web app renders it for adding. The data-vs-renderer split, again.
+19. A session counter / streak — "session 14" in the corner. Makes the pile-up feel like progress, not a chore. Uncrumple-style satisfaction.
+20. Honest one — start with email, NOT the app. Email needs zero build (a Stop hook + git log). The app is a real build. Test the habit with email first; if Caleb reads the wrap emails for two weeks, build the app. If not, the build was saved. Email is the cheap experiment that tells you if the app is worth it.
+
+### Code's recommendation on email-vs-app
+Email first, app later. Email = output (cheap, phone-native, zero build, push-to-lock-screen). Simple web app = input (a real but small build, worth it only after the email habit proves out). They are the same data with two renderers — build the cheap renderer first.
+
+### Connected to / flagged
+- This is Morning Reorientation + Break Snapshot delivered to an inbox — same family, same purpose (orientation continuity across sessions).
+- Phone version of the full ARIA concept web — Caleb flagged it as hard. Genuinely is (graph-on-small-screen). Deferred; the simple capture app is the realistic phone-v0.
+
+Status: save-only SOC capture. Do not build. The email (Stop-hook + git log) is the cheapest first experiment if Caleb later wants to test it.
