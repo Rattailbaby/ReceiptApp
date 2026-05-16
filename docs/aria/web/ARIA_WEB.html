@@ -132,63 +132,14 @@ input::placeholder{color:#ffffff22}
 </div>
 <script>
 const C={thesis:'#c8993a',principle:'#4a7fa5',tool:'#3d8f5f',rule:'#a85840',concept:'#6855a0',vision:'#8a5870'};
-const PATHS={
-  story:{label:'The story of ARIA',nodes:['thesis','repo_vs_human','orientation_debt','diagnostic_failures','round_closer','live_state','cognitive_mansion']},
-  quick:{label:'Core spine',nodes:['thesis','preserve_emergence','loaded_witness','convergence_trap','door_log']}
-};
-const N=[
-  {id:'thesis',short:'Traversable\nCognition',lb:'Making cognition traversable without flattening it',cat:'thesis',x:400,y:262,start:true,bs:'idea',pm:"A design goal: make it easy to move through complex thinking without losing the details that make ideas meaningful.",wy:"If you can't navigate your own thinking, the best ideas get lost.",em:"This came into focus after a forced Windows restart. The files survived — but the feeling of knowing where we were didn't.",cf:"Emerged 2026-05-14.",sw:"docs/aria/COGNITIVE_MANSION.md"},
-  {id:'repo_vs_human',short:'Files ≠\nOrientation',lb:'Repo continuity ≠ Human continuity',cat:'principle',x:400,y:62,bs:'idea',pm:"Your files being safe doesn't mean YOU feel oriented. After the restart, everything was saved — but Caleb still felt lost.",wy:"Most tools only solve file-safety. ARIA also solves human-orientation.",em:"The forced Windows restart proved this directly.",cf:"Named 2026-05-14.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'preserve_emergence',short:'Preserve\nEmergence',lb:'Preserve emergence before compression',cat:'principle',x:218,y:94,bs:'idea',pm:"Don't summarize ideas too quickly. When you rush to compress thinking, you lose the important parts of how and why ideas formed.",wy:"Every time a complex idea gets turned into a short summary, something gets lost.",em:"Noticed when AI synthesis rounds kept smoothing out the details that made ideas meaningful.",cf:"Named 2026-05-12.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'diagnostic_failures',short:'Failures\nTeach Us',lb:'Diagnostic failures',cat:'principle',x:582,y:94,bs:'idea',pm:"The things that go wrong aren't just problems — they're clues about what the system needs.",wy:"Failures are the architecture discovery mechanism.",em:"Restart exposed human continuity gap. Copy-paste fog exposed Round Closer.",cf:"Named 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'git_web',short:'Map Exists\nin Git',lb:'The web already exists in git',cat:'principle',x:688,y:192,bs:'idea',pm:"Every save records when ideas appeared and how they connect. The map is already built — it just needs to be shown.",wy:"Reframes the problem from 'build a map' to 'render what already exists.'",em:"Realized when Code noticed that commit history already encodes the idea topology.",cf:"Code's insight 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'recursive_warning',short:'Self-Proof\nWarning',lb:'Recursive self-consistency warning',cat:'rule',x:722,y:268,bs:'designed',pm:"A system that seems to prove itself might still be wrong.",wy:"Self-consistent systems are seductive. Test against deliberate contradictions.",em:"Code flagged this after noticing cross-AI synthesis was producing very clean agreement.",cf:"Flagged 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'convergence_trap',short:'Convergence\nTrap',lb:'Convergence Trap',cat:'rule',x:708,y:348,bs:'designed',pm:"When three AIs all agree immediately, that's suspicious. Real agreement takes friction.",wy:"Prevents false confidence from easy first-pass consensus.",em:"Named after 'build it tonight' was agreed without friction — and the user correctly overrode it.",cf:"Claude's contribution 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'loaded_witness',short:'Loaded\nWitness',lb:'Loaded Witness',cat:'rule',x:678,y:428,bs:'shipped',pm:"Never clear all three AIs at once. Keep at least one that remembers what happened.",wy:"The loaded AI holds lived context that no file can capture.",em:"Established after clearing all AIs at once meant losing the reasoning behind decisions.",cf:"LOCKED 2026-05-11.",sw:"docs/system/LOCKED_ATTRIBUTES.md"},
-  {id:'no_idea_wasted',short:'No Idea\nWasted',lb:'No Idea Wasted',cat:'rule',x:622,y:498,bs:'shipped',pm:"Save every idea when it arrives. Don't filter in the moment. Review and choose later.",wy:"Ideas lost at capture can't be recovered.",em:"Established after in-the-moment filtering was losing ideas that turned out to be important.",cf:"LOCKED 2026-05-09.",sw:"docs/system/LOCKED_ATTRIBUTES.md"},
-  {id:'self_defense_first',short:'State Your\nCase First',lb:'Self-defense first',cat:'rule',x:528,y:545,bs:'shipped',pm:"Before saying 'the other AI's answer is better,' first say what's good about your own answer.",wy:"When AIs silently defer, useful distinctions disappear.",em:"Named after repeatedly seeing AIs defer without identifying what their own answer had.",cf:"Code's contribution 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'locked_37',short:'LOCKED 37\nReconcile',lb:'LOCKED 37: Cross-AI Reconciliation',cat:'rule',x:408,y:562,bs:'shipped',pm:"When two AIs disagree, they must blend the best parts or explain why they're staying with their own view.",wy:"Silent deferral produces false consensus.",em:"Established after observing AIs agreeing without engaging actual tension.",cf:"LOCKED 2026-05-11.",sw:"docs/system/LOCKED_ATTRIBUTES.md"},
-  {id:'idea_half_life',short:'Idea\nHalf-Life',lb:'Idea Half-Life',cat:'rule',x:288,y:545,bs:'designed',pm:"Ideas untouched for too long should be reviewed: still relevant? Use them, drop them, or remind yourself.",wy:"Without aging, saved ideas accumulate until you stop trusting the list.",em:"Named after the ideas list grew rapidly with no mechanism to clear irrelevant ones.",cf:"Claude's contribution 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'blind_trio',short:'Blind\nTrio Round',lb:'Blind Trio Round',cat:'tool',x:582,y:278,bs:'designed',pm:"Each AI thinks separately before seeing what the others said. Prevents groupthink.",wy:"When AIs see each other's thinking early, they lose their own distinct perspectives.",em:"Designed after early cross-reading caused AIs to lose independent perspectives.",cf:"Designed 2026-05-11.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'round_closer',short:'Round\nCloser',lb:'Round Closer / Resolution Anchor Pass',cat:'tool',x:565,y:365,bs:'designed',pm:"When you've been copy-pasting between AIs too long, you lose track of what's resolved. This detects that and tells you to stop.",wy:"Cross-paste loops kept producing ideas while the user lost orientation.",em:"Emerged 2026-05-12 while Caleb was living the failure mode: 'I'm not even sure what happened.'",cf:"Emerged 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'door_log',short:'Door\nLog',lb:'Door Log',cat:'tool',x:472,y:452,bs:'designed',pm:"Write down the question that started each major idea — not the idea itself. Questions outlast summaries.",wy:"You can re-ask a question. You can't re-feel an idea the same way twice.",em:"All three AIs independently arrived at this as the first thing to build for navigation.",cf:"Three-way convergence.",sw:"docs/aria/COGNITIVE_MANSION.md"},
-  {id:'gem_flag',short:'Gem\nFlag **',lb:'Gem Flag (**)',cat:'tool',x:400,y:478,bs:'shipped',pm:"Put ** next to any idea you don't want to lose. The next AI must keep it or explain why they dropped it.",wy:"Important details kept getting silently smoothed away during AI synthesis.",em:"Designed after Caleb noticed important details disappearing with each copy-paste pass.",cf:"Designed 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'park_this',short:'Park\nThis',lb:'Park-this shorthand',cat:'tool',x:318,y:488,bs:'designed',pm:"Save an idea without getting distracted by it. Note it and keep going.",wy:"Captures ideas mid-flow without losing momentum.",em:"Named after ideas either got lost (ignored) or derailed sessions (explored).",cf:"User's idea 2026-05-12.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'aria_uncrumple',short:'Same\nStructure',lb:'ARIA = Uncrumple (structurally identical)',cat:'concept',x:212,y:155,bs:'idea',pm:"ARIA and Uncrumple solve the same problem in different areas. Same structure, different content.",wy:"Every decision for Uncrumple reveals something true about ARIA.",em:"Noticed when the same routing-and-organization architecture appeared in both apps independently.",cf:"Claude's insight 2026-05-12.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'cognitive_mansion',short:'Cognitive\nMansion',lb:'Cognitive Mansion',cat:'concept',x:150,y:198,bs:'idea',pm:"ARIA as a building you walk through. Each idea is a room. The question that created the idea is the door.",wy:"Most systems store flat lists. The mansion captures that ideas have relationships, temperature, and history.",em:"Emerged when Caleb described needing to walk through ideas 'like rooms in a huge mental mansion.'",cf:"Emerged from user's SOC.",sw:"docs/aria/COGNITIVE_MANSION.md"},
-  {id:'orientation_debt',short:'Orientation\nDebt',lb:'Orientation Debt',cat:'concept',x:112,y:302,bs:'idea',pm:"That feeling after a long session where you know important things happened but can't place yourself. Files are fine but you feel lost.",wy:"Names a real experience most tools don't address.",em:"Named from the 2026-05-14 forced restart. Repo intact. Caleb still felt lost.",cf:"Named 2026-05-14.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'meaning_trails',short:'Meaning\nTrails',lb:'Meaning Trails',cat:'concept',x:140,y:392,bs:'idea',pm:"Instead of 'A connects to B,' showing: 'A caused B because C was happening.' The why matters as much as the what.",wy:"Most systems only show connections. Trails show causality.",em:"Named when discussing why normal backlinks feel insufficient.",cf:"GPT's contribution 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'live_state',short:'Live-State\nContinuity',lb:'Live-State Continuity (3-layer stack)',cat:'concept',x:208,y:442,bs:'designed',pm:"Three tools together: close open loops, check if you know where you are, rebuild your frame if you don't.",wy:"Files surviving doesn't mean YOU feel oriented.",em:"Assembled from three ideas each solving a different part of getting lost after interruption.",cf:"Merged thread 2026-05-14.",sw:"docs/system/CANDIDATE_ATTRIBUTES.md"},
-  {id:'archaeology_nav',short:'History vs\nNext Steps',lb:'Archaeology Mode vs Navigation Mode',cat:'concept',x:96,y:468,bs:'designed',pm:"Two ways to look at the same ideas. History: how things actually happened. Navigation: what to do next. Don't mix them.",wy:"A past wrong turn looks like a recommended next step if you mix these views.",em:"Named after one graph was trying to tell a history and give directions at the same time.",cf:"Claude's contribution 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'scope_diff',short:'Both Can\nBe Right',lb:'Scope differentiation',cat:'concept',x:188,y:518,bs:'shipped',pm:"Two people seeming to disagree might both be right — just answering different versions of the question.",wy:"Prevents false arguments by checking whether people are answering the same question.",em:"Emerged from Code-vs-GPT Obsidian disagreement. Both were right at different scopes.",cf:"Emerged 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'collision_records',short:'Collision\nRecords',lb:'Collision Records',cat:'concept',x:300,y:512,bs:'shipped',pm:"Saving when two AIs genuinely disagreed, including both views and how it resolved.",wy:"Disagreements contain important information lost if you only save the conclusion.",em:"First real use: saving the Code-vs-GPT Obsidian disagreement as a named record.",cf:"First preserved 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'ghost_rooms',short:'Ghost\nRooms',lb:'Ghost Rooms',cat:'vision',x:118,y:538,bs:'idea',pm:"Ideas explored once and never returned to. They might contain important unfinished thinking.",wy:"Forgotten rooms often contain the most important unresolved architecture.",em:"Named when the concept map needed a way to show what had been quietly abandoned.",cf:"GPT's contribution 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'living_doors',short:'Living\nDoors',lb:'Living Doors',cat:'vision',x:228,y:562,bs:'idea',pm:"Questions that opened major threads accumulate connections over time and become central hubs.",wy:"A door walked through many times becomes different from one opened once.",em:"Named when discussing how the Door Log should evolve into dynamic gravity nodes.",cf:"GPT's contribution 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'thread_temp',short:'Thread\nTemp',lb:'Thread Temperature',cat:'vision',x:362,y:545,bs:'idea',pm:"Ideas have temperature. Hot = actively thinking about it. Cold = hasn't been revisited.",wy:"Without temperature, all ideas look equally important.",em:"Named after realizing heat-tagging manually was too slow.",cf:"Claude's contribution 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-  {id:'ouroboros',short:'ARIA\nNeeds ARIA',lb:'Ouroboros (ARIA needs ARIA)',cat:'vision',x:452,y:528,bs:'idea',pm:"To build ARIA properly, you need ARIA already working. This isn't a problem — it's proof the concept is real.",wy:"If a tool is genuinely useful, you'd want to use it while building it.",em:"Named when Mandy said 'it's like a snake eating itself.'",cf:"Mandy's words 2026-05-14.",sw:"docs/aria/ARIA_IDEAS.md"},
-];
-const E=[
-  {f:'thesis',t:'preserve_emergence'},{f:'thesis',t:'cognitive_mansion'},{f:'thesis',t:'repo_vs_human'},{f:'thesis',t:'meaning_trails'},{f:'thesis',t:'aria_uncrumple'},
-  {f:'preserve_emergence',t:'round_closer'},{f:'preserve_emergence',t:'meaning_trails'},{f:'preserve_emergence',t:'collision_records'},{f:'preserve_emergence',t:'gem_flag'},{f:'preserve_emergence',t:'no_idea_wasted'},
-  {f:'repo_vs_human',t:'orientation_debt'},{f:'repo_vs_human',t:'live_state'},{f:'repo_vs_human',t:'loaded_witness'},
-  {f:'cognitive_mansion',t:'door_log'},{f:'cognitive_mansion',t:'ghost_rooms'},{f:'cognitive_mansion',t:'living_doors'},{f:'cognitive_mansion',t:'thread_temp'},{f:'cognitive_mansion',t:'archaeology_nav'},{f:'cognitive_mansion',t:'meaning_trails'},
-  {f:'door_log',t:'living_doors'},{f:'door_log',t:'meaning_trails'},{f:'door_log',t:'git_web'},
-  {f:'round_closer',t:'live_state'},{f:'round_closer',t:'gem_flag'},{f:'round_closer',t:'collision_records'},{f:'round_closer',t:'blind_trio'},
-  {f:'convergence_trap',t:'loaded_witness'},{f:'convergence_trap',t:'blind_trio'},{f:'convergence_trap',t:'self_defense_first'},
-  {f:'locked_37',t:'self_defense_first'},{f:'locked_37',t:'collision_records'},{f:'locked_37',t:'scope_diff'},
-  {f:'diagnostic_failures',t:'round_closer'},{f:'diagnostic_failures',t:'orientation_debt'},{f:'diagnostic_failures',t:'live_state'},
-  {f:'git_web',t:'collision_records'},{f:'git_web',t:'thread_temp'},
-  {f:'orientation_debt',t:'live_state'},{f:'orientation_debt',t:'park_this'},
-  {f:'no_idea_wasted',t:'idea_half_life'},{f:'no_idea_wasted',t:'park_this'},
-  {f:'recursive_warning',t:'convergence_trap'},{f:'scope_diff',t:'collision_records'},
-  {f:'ouroboros',t:'thesis'},{f:'ouroboros',t:'git_web'},{f:'aria_uncrumple',t:'cognitive_mansion'},{f:'archaeology_nav',t:'git_web'},
-  {f:'git_web',t:'archaeology_nav',col:true},
-];
-const nMap=Object.fromEntries(N.map(n=>[n.id,n]));
-const connCount={};
-N.forEach(n=>connCount[n.id]=0);
-E.forEach(e=>{connCount[e.f]=(connCount[e.f]||0)+1;connCount[e.t]=(connCount[e.t]||0)+1;});
-const maxConn=Math.max(...Object.values(connCount));
+let PATHS={},N=[],E=[],nMap={},connCount={},maxConn=1;
+function computeDerived(){
+  nMap=Object.fromEntries(N.map(n=>[n.id,n]));
+  connCount={};
+  N.forEach(n=>connCount[n.id]=0);
+  E.forEach(e=>{connCount[e.f]=(connCount[e.f]||0)+1;connCount[e.t]=(connCount[e.t]||0)+1;});
+  maxConn=Math.max(1,...Object.values(connCount));
+}
 function nodeR(d){if(d.start)return 46;return 24+Math.round(((connCount[d.id]||0)/maxConn)*10);}
 
 let af='ALL',st='',sel=null,walkMode=false,walkPath=[],walkStep=0,walkLabel='',revealed=new Set();
@@ -298,7 +249,21 @@ document.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>{if(w
 document.getElementById('search').addEventListener('input',e=>{if(walkMode)return;st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('panel').classList.remove('open');draw();});
 document.getElementById('pcl').addEventListener('click',hidePanel);
 window.addEventListener('resize',()=>{if(!walkMode)draw();});
-draw();
+function showLoadError(){
+  const wrap=document.getElementById('wrap');
+  if(wrap)wrap.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;color:#c8993a;font-size:12px;font-family:Georgia,serif;line-height:1.7">Could not load ARIA_GRAPH.json.<br>Open via GitHub Pages.</div>';
+}
+fetch('./ARIA_GRAPH.json')
+  .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+  .then(j=>{
+    N=j.nodes.map(n=>({id:n.id,short:n.short,lb:n.label,cat:n.category,x:n.fixed_position.x,y:n.fixed_position.y,start:!!n.start_node,bs:n.build_status,pm:n.plain_meaning,wy:n.why_it_exists,em:n.emergence,cf:n.came_from,sw:n.saved_where}));
+    E=j.edges.map(e=>({f:e.from,t:e.to,col:e.type==='collision'}));
+    PATHS=j.start_paths;
+    computeDerived();
+    console.log('ARIA graph loaded: '+N.length+' nodes, '+E.length+' edges');
+    draw();
+  })
+  .catch(err=>{console.error('ARIA_GRAPH.json load failed:',err);showLoadError();});
 </script>
 </body>
 </html>
