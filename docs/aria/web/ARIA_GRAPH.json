@@ -34,6 +34,16 @@
     { "term": "handoff", "definition": "Passing the project's state from one session to the next so nothing is lost." },
     { "term": "topology", "definition": "The shape of how ideas connect — which ideas link to which, and how. The 'map' part of the web." }
   ],
+  "start_paths": {
+    "story": {
+      "label": "The story of ARIA — 7 stops",
+      "nodes": ["thesis", "repo_vs_human", "orientation_debt", "diagnostic_failures", "round_closer", "live_state", "cognitive_mansion"]
+    },
+    "quick": {
+      "label": "Core spine — 5 stops",
+      "nodes": ["thesis", "preserve_emergence", "loaded_witness", "convergence_trap", "door_log"]
+    }
+  },
   "nodes": [
     {
       "id": "thesis",
