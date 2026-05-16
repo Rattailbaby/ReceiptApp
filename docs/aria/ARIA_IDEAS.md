@@ -8094,4 +8094,16 @@ The observation is accurate. But the multimodal split has a structural consequen
 
 Second flag: Claude is the traversal/UX role but currently cannot see the thing it reasons about (image limit). That is a real gap in the current setup — the UX-reasoning role is working from text descriptions and memory of what it built, not from the rendered artifact. Worth solving (or routing around) if the multimodal workflow is going to be relied on.
 
+### Claude's refinement — the feeling matters more than the screenshot
+
+⭐ The 2-sentence feeling is probably the most important part of a visual perception packet — more than the screenshot itself. A screenshot shows *layout*; Caleb's short reaction names the actual *human friction*. "The circles are too hard to read" was more useful than any screenshot would have been, because it named the feeling directly. Text descriptions of visual friction are not lower-resolution than screenshots — for friction, they are often higher-resolution, because they point at the felt problem instead of the pixels.
+
+Example feeling-sentences that each pinpoint a real fix:
+- "the circles are too hard to read" -> readability / contrast
+- "it feels random" -> missing hierarchy / no start point
+- "I don't know where to go next" -> missing guided traversal
+- "I clicked and felt more lost" -> selection behavior compounds confusion
+
+Revised perception packet, in priority order: (1) what felt wrong — the feeling sentence, (2) what Caleb instinctively tried to do, (3) what he noticed, (4) the screenshot last, as confirmation not primary signal.
+
 Status: save-only, architecture acknowledgement. Do not build. The visual-perception-packet protocol is a future candidate, not a current task.
