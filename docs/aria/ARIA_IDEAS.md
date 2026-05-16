@@ -8107,3 +8107,30 @@ Example feeling-sentences that each pinpoint a real fix:
 Revised perception packet, in priority order: (1) what felt wrong — the feeling sentence, (2) what Caleb instinctively tried to do, (3) what he noticed, (4) the screenshot last, as confirmation not primary signal.
 
 Status: save-only, architecture acknowledgement. Do not build. The visual-perception-packet protocol is a future candidate, not a current task.
+
+---
+
+[2026-05-16] — Web v5 hands-on test + ARIA origin question
+
+Caleb tested the live v5 web. GPT triaged the friction into 5 buckets:
+
+1. Spatial stability (Code) — dragging a node grabs other nodes it passes; nodes sometimes disappear leaving only their lines; refresh scatters the layout; clicking "ALL" recovers it (partial reset). Likely causes: drag collision behaviour, z-index/selection overlap, unstable transform persistence, layout reset on refresh, no node-locking. State management incomplete, not broken.
+2. Density / readability (Code + Claude) — the side panel is too small and narrow, text too small, large dead vertical space below the close button; graph and panel compete for space instead of cooperating. Panel should be resizable. Caleb used Ctrl+scroll to zoom the whole page as a workaround.
+3. Theme / emotional tone (Claude's lane) — colors are "a lot": neon white/pink, same palette as Uncrumple. Works for Uncrumple, not here. Caleb wants something that "matches my brain" — "tranquil but also focused". This is cognitive-atmosphere design, not a technical color bug.
+4. Organization vs freedom — some nodes have only 1-2 connectors and feel scattered. Caleb wants the graph at least semi-organized from the start — rooms/zones/neighborhoods, not a floating universe. This is where Cognitive Mansion may become literal UI architecture (zones, not raw topology).
+5. ARIA origin story (see below).
+
+Caleb's working method this round: send screenshot + feeling to GPT, GPT writes the Code prompt, Code implements. Caleb: "still unsure why to use Claude rn" — answer: bucket 3 (emotional tone / palette / what state the web should create) is exactly Claude's lane.
+
+### ARIA origin question — restart was crystallization, not origin
+
+Caleb questioned the thesis node's emergence text ("This came into focus after a forced Windows restart"). He is right to: the forced restart was the crystallization moment, not ARIA's origin.
+
+GPT reconstructed a deeper origin chain — IMPORTANT: this is GPT's reconstruction from memory, NOT verified against the repo files:
+continuity pain -> preserving momentum -> handoff artifacts -> multi-AI continuity -> "preserve meaning not memory" -> "pick up exactly where your brain left off" -> ARIA -> traversable cognition -> cognitive mansion -> web.
+
+Earliest proto-ARIA phrasings GPT attributes to Caleb (also unverified): "a way to carry your brain from one chat to the next"; "pick up exactly where you left off"; "preserve meaning, not memory"; "the risk isn't damage, it's drift"; "don't interrupt genuine inspiration flow unless there's a reason".
+
+Caleb's instinct: the current emergence story is too simplified, and the real trail is probably in the repo files. He asked the trio to agree on the real origin before anything is rewritten.
+
+Status: save-only. Do NOT rewrite the thesis node's emergence text yet — the origin must be verified against actual repo history first (real archaeology, Code's domain — git log + earliest dated files, not memory). Web bugs (buckets 1-2) await a scoped Code prompt. Bucket 3 is Claude's. Bucket 4 is a design decision.
