@@ -8157,3 +8157,13 @@ The real origin chain (repo-verified):
 Conclusion: the thesis node's emergence text ("This came into focus after a forced Windows restart") is wrong as an origin claim. The restart was the crystallization of the traversable-cognition framing, ~10 days after ARIA the system already existed (as a handoff/DevOS system), and the continuity tooling that became ARIA predates the repo's first commit. GPT's memory reconstruction was directionally right (continuity pain -> handoff -> DevOS -> ARIA) but vague; this is the evidence.
 
 Status: save-only — evidence for the trio to assemble the real story together (Caleb's instruction: "lets all try putting it together, together"). Do NOT rewrite the thesis node em text until the trio confirms. When it is rewritten, the honest origin is: "ARIA began as a handoff/continuity system for building Uncrumple across AI sessions; on 2026-05-06 it was recognized as a reusable DevOS; later renamed ARIA. The forced Windows restart was a later crystallization, not the start."
+
+### Deeper dig (2026-05-16) — the repo CANNOT contain ARIA's origin
+
+Followed the trail further back:
+- The earliest SESSION_LOG.md entry is dated 2026-04-30 — and it shows the handoff system being REFINED, not created: HANDOFF_GENERATOR made "AI-assistant-agnostic" (it had been ChatGPT-specific), the JSON schema gaining a file_updates_needed block, LOCKED_ATTRIBUTES section 28 being expanded. By 2026-04-30 the system already had 28+ locked sections, a generator, a receiver, a SESSION_LOG, and a docs/system/ folder.
+- The git history's first commit is literally "initial commit - full system backup" — a backup of an already-mature system, not the system being born.
+
+Conclusion: **the repo's git history begins AFTER the system was already built.** Repo archaeology can reconstruct the system's evolution from ~2026-04-30 onward (handoff refinement -> 2026-05-06 DevOS realization -> ARIA rename -> restart crystallization), but it structurally CANNOT show the true origin — the conversations where Caleb first felt the continuity pain and the idea of a "handoff" was first proposed. That origin happened in chat, before any file existed, and is not recoverable from git.
+
+Where the true origin lives: GPT's and Claude's chat histories (GPT especially — Caleb says GPT has been open continuously since the idea began), and possibly Caleb's notes app. The repo gives the system's documented evolution; the AIs' earliest conversations give the human origin. Both halves are needed for the real story.
