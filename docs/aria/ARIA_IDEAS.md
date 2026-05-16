@@ -8134,3 +8134,26 @@ Earliest proto-ARIA phrasings GPT attributes to Caleb (also unverified): "a way 
 Caleb's instinct: the current emergence story is too simplified, and the real trail is probably in the repo files. He asked the trio to agree on the real origin before anything is rewritten.
 
 Status: save-only. Do NOT rewrite the thesis node's emergence text yet — the origin must be verified against actual repo history first (real archaeology, Code's domain — git log + earliest dated files, not memory). Web bugs (buckets 1-2) await a scoped Code prompt. Bucket 3 is Claude's. Bucket 4 is a design decision.
+
+---
+
+[2026-05-16] — ARIA origin: repo archaeology (Code, evidence-based)
+
+Caleb asked the trio to find the real ARIA origin instead of trusting the thesis node's "forced Windows restart" emergence text. GPT reconstructed a chain from memory; this entry is the evidence dig from the actual repo (git log + earliest files). Source of each claim noted.
+
+Evidence:
+- First commit `693afbc` "initial commit - full system backup" already contained CLAUDE.md (941 lines), the Uncrumple app, the HANDOFF system, LOCKED_ATTRIBUTES, SESSION_LOG, ROADMAP. NO docs/aria/ folder. NO "ARIA" name. -> the handoff/continuity system existed BEFORE the repo's first commit and before the name.
+- SYSTEM_EVOLUTION.md earliest entry [2026-05-06] "Major architecture expansion" — its "starting state" already lists "LOCKED_ATTRIBUTES, HANDOFF system, SESSION_LOG, CLAUDE.md, ROADMAP existed." The continuity tooling predates 2026-05-06.
+- That same 2026-05-06 entry's "Bigger realization": "The system is not Uncrumple-specific. It is a reusable Development Operating System (DevOS)... Uncrumple is the first app running on it." -> this is when the system became its own thing.
+- Naming history: ARIA_README.md line 88 "Previous expansion: AI-Resilient Infrastructure Architecture." SYSTEM_EVOLUTION (2026-05-09 entry) "ARIA still partially named DevOS / AI-Resilient Infrastructure Architecture." CURRENT_HANDOFF.json: "ARIA renamed from AI-Resilient Infrastructure Architecture to Ambient Reasoning and Insight Architecture."
+
+The real origin chain (repo-verified):
+1. Before the first commit — a handoff / continuity system existed: HANDOFF generator+receiver, LOCKED_ATTRIBUTES, SESSION_LOG, candidate-attributes-in-JSON. Built to keep Uncrumple development continuous across AI chat sessions. THIS is the seed: continuity tooling for building the app.
+2. 2026-05-06 — the "bigger realization": the system is not Uncrumple-specific, it is a reusable DevOS. The system became its own entity.
+3. ~2026-05-06 to 05-09 — named "DevOS" / "AI-Resilient Infrastructure Architecture".
+4. ~2026-05-09+ — renamed "ARIA — Ambient Reasoning and Insight Architecture". Working pitch: "pick up exactly where your brain left off."
+5. 2026-05-13/14 — the forced Windows restart. This crystallized the cognition/web/traversable framing (repo continuity != human continuity, orientation debt, Cognitive Mansion). A LATE chapter — NOT the origin.
+
+Conclusion: the thesis node's emergence text ("This came into focus after a forced Windows restart") is wrong as an origin claim. The restart was the crystallization of the traversable-cognition framing, ~10 days after ARIA the system already existed (as a handoff/DevOS system), and the continuity tooling that became ARIA predates the repo's first commit. GPT's memory reconstruction was directionally right (continuity pain -> handoff -> DevOS -> ARIA) but vague; this is the evidence.
+
+Status: save-only — evidence for the trio to assemble the real story together (Caleb's instruction: "lets all try putting it together, together"). Do NOT rewrite the thesis node em text until the trio confirms. When it is rewritten, the honest origin is: "ARIA began as a handoff/continuity system for building Uncrumple across AI sessions; on 2026-05-06 it was recognized as a reusable DevOS; later renamed ARIA. The forced Windows restart was a later crystallization, not the start."
