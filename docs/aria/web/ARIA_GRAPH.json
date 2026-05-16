@@ -1,16 +1,16 @@
 {
   "meta": {
-    "version": 2,
+    "version": 3,
     "generated": "2026-05-15",
     "generated_at_commit": "ab9783a",
     "node_count": 29,
     "edge_count": 48,
     "start_node": "thesis",
     "categories": ["thesis", "principle", "tool", "rule", "concept", "vision"],
-    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file.",
+    "note": "Canonical data for the ARIA visual web. The renderer reads this file and never hardcodes node data. Spec lives in docs/aria/COGNITIVE_MANSION.md. v2 (2026-05-15): every plain_meaning rewritten in zero-jargon language — no ARIA terms inside a definition — and an emergence field added to every node ('what was happening / what was breaking when this idea emerged', one plain human sentence). A words_to_know glossary was added for terms a newcomer still would not know. why_it_exists and came_from are kept from v1 as the more technical layer. synced_at is the commit at which a node was last verified against its source file. v3 (2026-05-16): Node Understanding Spec fields added to the schema — why_caleb_cared, real_example, how_to_use_this (optional, mainly tool/rule nodes), and open_questions (array of strings) on nodes, plus an optional why on edges (a plain-sentence explanation of the relationship). Only the thesis node and the thesis->preserve_emergence edge are populated as worked examples; the other 28 nodes and 47 edges are not yet filled.",
     "schema": {
-      "node": ["id", "label", "category", "plain_meaning", "emergence", "why_it_exists", "came_from", "build_status", "saved_where", "source", "synced_at", "fixed_position", "start_node"],
-      "edge": ["from", "to", "type"],
+      "node": ["id", "label", "category", "plain_meaning", "emergence", "why_it_exists", "came_from", "why_caleb_cared", "real_example", "how_to_use_this", "open_questions", "build_status", "saved_where", "source", "synced_at", "fixed_position", "start_node"],
+      "edge": ["from", "to", "type", "why"],
       "build_status_values": ["shipped", "designed", "idea"],
       "edge_types": ["connects-to", "collision"]
     }
@@ -53,6 +53,10 @@
       "emergence": "Caleb kept losing the thread of his own ideas after breaks, and summaries kept throwing away the details that made the ideas worth having.",
       "why_it_exists": "Every tool that stores ideas also flattens them; ARIA exists to preserve the topology instead.",
       "came_from": "Claude's one-line synthesis, 2026-05-14, distilled from the whole session.",
+      "why_caleb_cared": "Caleb kept walking away from heavy sessions and coming back to find every file intact but himself lost — he could not feel his way back into his own thinking. He cared because losing the thread of your own ideas, again and again, is exhausting and quietly discouraging. He wanted to return to the work and still recognize his own mind in it.",
+      "real_example": "After the forced Windows restart, every file came back perfectly — the repo was completely intact. But Caleb sat back down not knowing what he had been doing, why it mattered, or what the next move was. The files survived; his place in the work did not. That exact gap is what 'traversable without flattening' means: the repo was traversable, the thinking was not.",
+      "how_to_use_this": "Use it as the yardstick for every other ARIA idea. For anything proposed, ask: does this help a person walk back through their own thinking without it being flattened into a lossy summary? If it does not serve that, it does not belong in ARIA.",
+      "open_questions": ["Can 'meaning' actually be preserved in a file, or does writing anything down always flatten it a little?", "Is the thesis a buildable feature, or a direction that individual features only point toward?", "Where should the project-level ARIA origin story live, and does the thesis node need its own origin field?"],
       "build_status": "idea",
       "saved_where": "docs/aria/COGNITIVE_MANSION.md [Core thesis]",
       "source": "docs/aria/COGNITIVE_MANSION.md",
@@ -454,7 +458,7 @@
     }
   ],
   "edges": [
-    { "from": "thesis", "to": "preserve_emergence", "type": "connects-to" },
+    { "from": "thesis", "to": "preserve_emergence", "type": "connects-to", "why": "Preserving emergence before compression is the thesis made operational — it is the specific discipline that stops cognition from being flattened into a lossy summary." },
     { "from": "thesis", "to": "cognitive_mansion", "type": "connects-to" },
     { "from": "thesis", "to": "repo_vs_human", "type": "connects-to" },
     { "from": "thesis", "to": "meaning_trails", "type": "connects-to" },
