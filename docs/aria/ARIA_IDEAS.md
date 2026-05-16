@@ -6009,6 +6009,94 @@ Clever ways to make this smarter:
 This is one of the strongest meta-features of the batch. Belongs in ARIA roadmap as a major operating mode: "review mode" or "idea harvest cleanup".]
 
 ═══════════════════════════════════════════════
+
+═══════════════════════════════════════════════
+[2026-05-16] IDEA ABUNDANCE PROBLEM
+═══════════════════════════════════════════════
+
+Before LLMs, the bottleneck was writing down and preserving every idea —
+ideas were hard to generate and easy to lose. Every tool from index cards
+to Notion was built for scarcity: capture everything, organize carefully.
+
+With LLMs, idea capture is solved. The new bottleneck is navigating,
+sorting, returning to, and understanding thousands of generated
+possibilities without drowning in them.
+
+  Old problem: "I might lose the idea."
+  New problem: "I have too many ideas to know which ones matter, where
+  they came from, what they solve, or what to build next."
+
+ARIA is not just solving memory loss. It is solving idea abundance. This
+is why ARIA keeps generating ideas about itself and then needing Round
+Closer — the problem lives inside the solution (Ouroboros again).
+
+Practical implication for the web: the confidence map and heat map matter
+more than they first looked. In a world of scarcity you capture
+everything; in a world of abundance you need to know which things you
+actually understand, which are still alive, and which were captured and
+then forgotten.
+
+Related: Round Closer, Cognitive Mansion, ARIA Web, Comprehension Gate,
+Phone Continuity Layer, Start Here paths, Returnability, Preserve
+emergence before compression, Ouroboros.
+
+Surfaced by Code 2026-05-16; written up independently by GPT and Claude
+the same day (three-way convergence). Status: save only, do not build.
+
+═══════════════════════════════════════════════
+[2026-05-16] ARIA ORIGIN RECONCILIATION — current best evidence
+═══════════════════════════════════════════════
+
+Three independent archaeologies, reconciled:
+
+1. Claude (conversation history): earliest recoverable session is
+   April 29, 2026, during Uncrumple building. Earliest proto-ARIA moment
+   that same session — Claude suggested switching to ChatGPT to save
+   tokens; Caleb said "sounds like you know how we should work going
+   forward — I'm guessing you and Code should have different master
+   files." Also: "is that a good idea or you think I'll lose something
+   like context and everything we've gone over?" The two-file master
+   system invented that day is the direct ancestor of the handoff system.
+
+2. Code (repo evidence): by the first commit / April 30 SESSION_LOG
+   entry, the handoff machinery was already mature. 2026-05-06: reusable
+   DevOS realization. Later renamed through "AI-Resilient Infrastructure
+   Architecture." ~2026-05-09: ARIA naming. The repo cannot contain the
+   true origin — git history begins with a backup of an already-built
+   system.
+
+3. GPT (memory reconstruction): the deeper seed was not memory storage
+   but preserving active thinking state — context, momentum, unresolved
+   intent, next move, meaning. "Preserve meaning, not memory."
+
+Three-layer origin:
+- True origin: ~April 29, 2026 — fear of losing context, momentum, and
+  meaning when switching between AI tools and long sessions.
+- System origin: handoff / locked attributes / JSON continuity machinery
+  (April 29 → ~May 6).
+- Naming origin: DevOS → AI-Resilient Infrastructure Architecture → ARIA
+  (~May 9).
+- Crystallization: the forced Windows restart (~May 13-14) did NOT start
+  ARIA. It proved the next layer: repo continuity can survive while human
+  orientation still fails.
+
+Best origin wording so far (GPT's, endorsed by all three):
+"ARIA began from Caleb's fear of losing context, momentum, and meaning
+while switching between AI tools and long sessions. The first answer was
+a two-file master system for carrying state forward. That evolved into
+handoff machinery, then a reusable DevOS, then ARIA. The forced Windows
+restart came later and proved a deeper problem: files can survive while
+human orientation still fails."
+
+Code note: the thesis node's `emergence` field in ARIA_GRAPH.json does
+NOT currently claim the restart started ARIA — it is already
+conservative, and `repo_vs_human` frames the restart correctly too. So
+there is no wrong text to "correct." The origin story is an ADDITION, not
+a correction, and still needs a home (a meta/origin block in the JSON, or
+a section in COGNITIVE_MANSION.md). Thesis-node wording NOT patched —
+pending Caleb's approval of where it should live.
+
+═══════════════════════════════════════════════
 🔭 EXTERNAL RESEARCH
 ═══════════════════════════════════════════════
 
