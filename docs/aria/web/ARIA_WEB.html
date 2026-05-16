@@ -47,11 +47,11 @@ html, body {
 #aw-search{font-family:var(--font-mono);font-size:10px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:3px;background:var(--color-background-secondary);color:var(--color-text-primary);width:130px}
 .cb{font-family:var(--font-mono);font-size:8px;padding:3px 6px;border-radius:3px;cursor:pointer;border:0.5px solid;background:transparent;line-height:1.2;text-align:left}
 .cb .cs{font-size:7px;opacity:.6;display:block}
-#aw-main{display:flex;gap:8px}
-#aw-wrap{flex:1;min-height:480px;overflow:hidden;position:relative;border:0.5px solid var(--color-border-tertiary);border-radius:6px;background:var(--color-background-secondary)}
-#aw-svg{width:100%;height:480px;cursor:grab}
+#aw-main{display:flex;gap:8px;height:calc(100vh - 90px);min-height:420px}
+#aw-wrap{flex:1;overflow:hidden;position:relative;border:0.5px solid var(--color-border-tertiary);border-radius:6px;background:var(--color-background-secondary)}
+#aw-svg{width:100%;height:100%;cursor:grab}
 #aw-svg.gr{cursor:grabbing}
-#panel{width:255px;border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:12px;background:var(--color-background-primary);overflow-y:auto;display:none;flex-shrink:0;max-height:480px}
+#panel{width:255px;border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:12px;background:var(--color-background-primary);overflow-y:auto;display:none;flex-shrink:0;max-height:100%}
 #panel.open{display:block}
 #pc{font-size:7px;letter-spacing:.14em;margin-bottom:2px}
 #pt{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;line-height:1.35}
@@ -419,10 +419,16 @@ function hidePanel(){sel=null;document.getElementById('panel').classList.remove(
 function draw(){
   const svg=d3.select('#aw-svg');svg.selectAll('*').remove();
   const W=document.getElementById('aw-wrap').clientWidth||680;
-  const H=480;
+  const H=document.getElementById('aw-wrap').clientHeight||480;
   svg.attr('width',W).attr('height',H);
-  const sx=d3.scaleLinear().domain([80,760]).range([45,W-45]);
-  const sy=d3.scaleLinear().domain([55,590]).range([35,H-35]);
+  // Uniform aspect-preserving scale — design space is x:80-760, y:55-590.
+  // Scale both axes by the SAME factor and center, so the graph fills the
+  // viewport without stretching into a horizontal strip on wide screens.
+  const dX0=80,dY0=55,dW=680,dH=535,pad=44;
+  const scale=Math.min((W-pad*2)/dW,(H-pad*2)/dH);
+  const offX=(W-dW*scale)/2,offY=(H-dH*scale)/2;
+  const sx=v=>offX+(v-dX0)*scale;
+  const sy=v=>offY+(v-dY0)*scale;
   const vN=N.filter(n=>{
     const mc=af==='ALL'||n.cat===af;
     const ms=st===''||n.lb.toLowerCase().includes(st)||n.pm.toLowerCase().includes(st)||n.em.toLowerCase().includes(st);
@@ -457,8 +463,8 @@ function draw(){
     .on('start',(ev,d)=>{d._dragging=true;})
     .on('drag',(ev,d)=>{
       if(d.start)return;
-      d.x=Math.round(d3.scaleLinear().domain([45,W-45]).range([80,760])(ev.x));
-      d.y=Math.round(d3.scaleLinear().domain([35,H-35]).range([55,590])(ev.y));
+      d.x=Math.round(dX0+(ev.x-offX)/scale);
+      d.y=Math.round(dY0+(ev.y-offY)/scale);
       draw();
     })
     .on('end',(ev,d)=>{setTimeout(()=>d._dragging=false,50);});
