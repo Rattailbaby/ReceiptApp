@@ -64,6 +64,17 @@ input::placeholder{color:#ffffff22}
 .path-card h4{font-size:12px;color:#ddd0b0;margin:0 0 4px;font-weight:normal;font-family:Georgia,serif}
 .path-card p{font-size:9px;color:#ffffff30;margin:0;line-height:1.5}
 #path-cancel{font-size:9px;color:#ffffff20;background:none;border:none;cursor:pointer;padding:5px 10px;font-family:inherit;letter-spacing:.04em}
+#gloss-btn{font-family:inherit;font-size:8px;padding:3px 7px;border-radius:3px;cursor:pointer;border:0.5px solid #c8993a40;background:transparent;color:#c8993a;line-height:1.3;text-align:left;transition:opacity .2s}
+#gloss-btn:hover{opacity:.7}
+#glossary-overlay{position:absolute;inset:0;background:#0d0a06f5;display:none;flex-direction:column;border-radius:8px;z-index:25;padding:18px 20px;overflow-y:auto}
+#glossary-overlay.on{display:flex}
+#glossary-overlay h3{font-size:13px;color:#c8993a;margin:0 0 2px;letter-spacing:.12em;font-family:Georgia,serif;font-weight:normal;font-style:italic}
+#glossary-overlay .gsub{font-size:9px;color:#ffffff28;margin-bottom:14px;font-family:Georgia,serif;font-style:italic}
+.gterm{margin-bottom:11px;padding-bottom:11px;border-bottom:0.5px solid #ffffff0c}
+.gt-name{font-size:11px;color:#e8dfc8;font-weight:600;font-family:Georgia,serif;margin-bottom:3px}
+.gt-def{font-size:10px;color:#a89878;line-height:1.6;font-family:Georgia,serif}
+#gloss-close{position:absolute;top:12px;right:14px;font-size:9px;color:#ffffff30;background:none;border:0.5px solid #ffffff14;border-radius:4px;padding:4px 9px;cursor:pointer;font-family:inherit;letter-spacing:.04em;z-index:26}
+#gloss-close:hover{background:#ffffff06}
 </style>
 </head>
 <body>
@@ -78,6 +89,7 @@ input::placeholder{color:#ffffff22}
   <button class="cb" data-c="rule" style="border-color:#a85840;color:#a85840">rule<span class="cs">hard limits</span></button>
   <button class="cb" data-c="concept" style="border-color:#6855a0;color:#6855a0">concept<span class="cs">named ideas</span></button>
   <button class="cb" data-c="vision" style="border-color:#8a5870;color:#8a5870">vision<span class="cs">not built yet</span></button>
+  <button id="gloss-btn">glossary<span class="cs">word list</span></button>
 </div>
 <div id="main">
   <div id="wrap">
@@ -115,6 +127,12 @@ input::placeholder{color:#ffffff22}
       </div>
       <button id="path-cancel">cancel</button>
     </div>
+    <div id="glossary-overlay">
+      <button id="gloss-close">close</button>
+      <h3>words to know</h3>
+      <div class="gsub">plain-language definitions for terms a newcomer might not know.</div>
+      <div id="gloss-list"></div>
+    </div>
   </div>
   <div id="panel">
     <div id="pc"></div>
@@ -132,7 +150,7 @@ input::placeholder{color:#ffffff22}
 </div>
 <script>
 const C={thesis:'#c8993a',principle:'#4a7fa5',tool:'#3d8f5f',rule:'#a85840',concept:'#6855a0',vision:'#8a5870'};
-let PATHS={},N=[],E=[],nMap={},connCount={},maxConn=1;
+let PATHS={},N=[],E=[],nMap={},connCount={},maxConn=1,GLOSSARY=[];
 function computeDerived(){
   nMap=Object.fromEntries(N.map(n=>[n.id,n]));
   connCount={};
@@ -248,6 +266,9 @@ document.getElementById('path-cancel').addEventListener('click',()=>document.get
 document.querySelectorAll('.cb').forEach(b=>b.addEventListener('click',()=>{if(walkMode)return;af=b.dataset.c;sel=null;document.getElementById('panel').classList.remove('open');draw();}));
 document.getElementById('search').addEventListener('input',e=>{if(walkMode)return;st=e.target.value.toLowerCase().trim();sel=null;document.getElementById('panel').classList.remove('open');draw();});
 document.getElementById('pcl').addEventListener('click',hidePanel);
+function renderGlossary(){const l=document.getElementById('gloss-list');l.innerHTML='';GLOSSARY.forEach(w=>{const d=document.createElement('div');d.className='gterm';const n=document.createElement('div');n.className='gt-name';n.textContent=w.term;const def=document.createElement('div');def.className='gt-def';def.textContent=w.definition;d.appendChild(n);d.appendChild(def);l.appendChild(d);});}
+document.getElementById('gloss-btn').addEventListener('click',()=>{renderGlossary();document.getElementById('glossary-overlay').classList.add('on');});
+document.getElementById('gloss-close').addEventListener('click',()=>document.getElementById('glossary-overlay').classList.remove('on'));
 window.addEventListener('resize',()=>{if(!walkMode)draw();});
 function showLoadError(){
   const wrap=document.getElementById('wrap');
@@ -259,6 +280,7 @@ fetch('./ARIA_GRAPH.json')
     N=j.nodes.map(n=>({id:n.id,short:n.short,lb:n.label,cat:n.category,x:n.fixed_position.x,y:n.fixed_position.y,start:!!n.start_node,bs:n.build_status,pm:n.plain_meaning,wy:n.why_it_exists,em:n.emergence,cf:n.came_from,sw:n.saved_where}));
     E=j.edges.map(e=>({f:e.from,t:e.to,col:e.type==='collision'}));
     PATHS=j.start_paths;
+    GLOSSARY=j.words_to_know||[];
     computeDerived();
     console.log('ARIA graph loaded: '+N.length+' nodes, '+E.length+' edges');
     draw();
