@@ -1,5 +1,9 @@
 # SESSION LOG
 
+## 2026-05-16 — ARIA web: glossary panel
+
+- `docs/aria/web/ARIA_WEB.html` — added a "glossary" button to the top bar that opens an overlay listing the 17 `words_to_know` term definitions from `ARIA_GRAPH.json`. Fully data-driven from the canonical file; additive only — graph, layout, zones, START HERE, drag, hover, panels untouched. First feature to consume the post-cutover canonical pipeline. Confirmed working on the live Pages URL.
+
 ## 2026-05-16 — ARIA web: JSON made fully canonical + renderer fetch cutover
 
 - `docs/aria/web/ARIA_GRAPH.json` — added Node Understanding Spec fields to the schema (why_caleb_cared, real_example, how_to_use_this, open_questions on nodes; optional why on edges); populated the thesis node and the thesis->preserve_emergence edge as worked examples. Added a `meta.origin` block holding the reconciled April-29 ARIA origin story. Backfilled `fixed_position` x/y for all 29 nodes and a `short` label on every node — layout data that previously lived only in the HTML. Version 2 -> 4.
