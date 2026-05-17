@@ -6096,6 +6096,53 @@ a correction, and still needs a home (a meta/origin block in the JSON, or
 a section in COGNITIVE_MANSION.md). Thesis-node wording NOT patched —
 pending Caleb's approval of where it should live.
 
+[Code update 2026-05-16: resolved — a meta.origin block was added to
+ARIA_GRAPH.json (commit 5aa752b) holding this reconciled origin story.]
+
+═══════════════════════════════════════════════
+[2026-05-16] PLAYABLE COGNITION / THOUGHT SANDBOX
+═══════════════════════════════════════════════
+
+Status: SAVE ONLY — future direction, do not build, do not over-define.
+
+While testing the ARIA web, Caleb noticed that the untangle feature
+starts to make the graph feel playable — not a game for points, but
+physically interacting with thought.
+
+Core idea:
+ARIA could eventually let users organize, untangle, follow, replay, and
+reshape their own thinking through direct interaction. Every other
+knowledge tool makes you a passive reader of a map; this would make you a
+participant shaping the space your thoughts live in — the difference
+between a library and a workshop.
+
+Examples:
+- untangle crossing lines
+- drag ideas into rooms
+- follow guided trails
+- reveal origin paths
+- mark nodes as understood / fuzzy / important
+- replay how an idea emerged
+- watch confusion turn into structure
+
+Related idea — Claude as rapid prototype mirror:
+Claude can generate multiple interaction versions right in chat before
+Code commits a real one to the repo, letting Caleb feel different
+possibilities before locking one in. (This is how the untangle widget
+itself came to exist.)
+
+Important caution:
+Do not over-define this yet. The full shape is still emerging. Defining
+the rules now could lock out the full picture later. Save the seed and
+the reason it mattered, not the final system.
+
+Name candidates: Playable Cognition, Thought Sandbox (current best),
+Untangle Mode, Cognition Playground, Meaning Workshop. Probably a future
+mode, not a current feature.
+
+Surfaced by Caleb 2026-05-16 while Code worked on the layout optimizer;
+named by GPT, endorsed by Claude.
+
 ═══════════════════════════════════════════════
 🔭 EXTERNAL RESEARCH
 ═══════════════════════════════════════════════
